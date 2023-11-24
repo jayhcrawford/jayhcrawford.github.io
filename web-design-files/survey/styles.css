@@ -1,0 +1,50 @@
+
+
+label {
+    display: inline-block;
+    padding: 0.2em;
+  }
+  
+  h1 {
+    font-family: Verdana;
+  }
+  
+  body {
+    color: white;
+    font-family: Verdana;
+    background: rgb(90, 100, 130);
+  }
+  
+  input {
+    background-color: rgb(100, 120, 170);
+    color: white;
+    border: none;
+  }
+  
+  ::placeholder {
+    color: rgba(255, 255, 255, 70%)
+  }
+  
+  textarea {
+    font-size: 18px;
+    background-color: rgb(100, 120, 170);
+    color: white;
+    border: none;
+  }
+  
+  button {
+    padding: 1em 4em;
+    font-family: Verdana;
+    
+  }
+  
+  hr {
+    border: 0;
+  }
+  
+  input {
+    font-size: 18px;
+  }
+  
+  
+  
