@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="styles.css">
+  <title>Sign Up For Jay's Newsletter</title>
+  <head>
+    <h1 id="title">Sign Up For Jay's Newsletter</h1>
+  </head>
+  <body>
+    <p id="description">
+      If you are interested in knowing what Jay is up to right now, you can sign up for his email newsletter! :)
+    </p>
+    <hr>
+    <form id="survey-form">
+      <div>
+      <label id="name-label" for="name">Your Name
+      <input id="name" type="text" required placeholder="Name"></input>
+      </label>
+      </div>
+      <div>
+      <label id="email-label" for="email">Your Email
+      <input id="email" type="email" required placeholder="Email"></input>
+      </label>
+      </div>
+      <div>
+      <label id="number-label" for="number">Your Age
+      <input id="number" type="number" min="10" max="120" required placeholder="Age"></input>
+      </label>
+      </div>
+      <hr>
+      <div>
+      <label for="dropdown">How Did You Hear About Us?
+      <select id="dropdown">
+        <option value="">Select An Option</option>
+        <option value="1">A Friend</option>
+        <option value="2">Google</option>
+        <option value="3">Yahoo</option>
+        <option value="4">Other</option>
+      </select>
+      </div>
+      </label>
+      <hr>
+    <div>
+      What Other Things Would You Like To See From Jay?
+    <div>
+    <input type="checkbox" value="1">More YouTube Content</input>
+    </div>
+    <div>
+    <input type="checkbox" value="2">More Blog Content</input>
+    </div>
+    <div>
+    <input type="checkbox" value="3">More Music</input>
+    </div>
+    <div>
+    <input type="checkbox" value="4">OnlyFans!</input>
+    </div>
+    <div>
+    <input type="checkbox" value="5">Free Money</input>
+    </div>
+    </div>
+    <hr>
+    <div>
+      <textarea placeholder="Anything Else You Want To Say to The Jayster?" cols="45" rows="6"></textarea>
+    </div>
+    <hr>
+    <div>
+      </label>
+      <label for="radio-buttons" name="other-offers">Would You Like To Recieve Other Offers?
+        <input type="radio" value="1" checked name="other-offers">Yes</input>
+        <input type="radio" value="2" name="other-offers">No</input>
+      </label>
+      </div>
+    <hr>
+    <div>
+    <label for="new-radio">Do You Like My Submission Form?
+        <input type="radio" value="1" checked  name="do-you-like">Yes</input>
+        <input type="radio" value="2"  name="do-you-like">No</input>
+        <input type="radio" value="3"  name="do-you-like">I Don't Care</input>
+      </label>
+    </div>
+    <hr>
+    <div class="submit-button">
+    <label for="submit">
+    <button id="submit">Submit</button>
+    </label>
+    </div>
+    </form>
+  </body>
+</html>
