@@ -1,18 +1,32 @@
+/* white border box */
+/* white border box */
+/* white border box */
+
+/* .link-box, .home-button, p {
+    border: 2px dotted white;
+} */
+
+/* white border box */
+/* white border box */
+/* white border box */
+
+
 /* standard elements */
 
 * {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: rgba(50, 90, 250, 100);
     color: white;
+    box-sizing: border-box;
+   
 }
 
-body {
-    position: aboslute;
-    top: 2rem;
+p {
+    padding: 1.5rem;
 }
 
 h1 {
-
+    visibility: hidden;
 }
 
 h2 {
@@ -35,24 +49,23 @@ a:hover {
     background-color: rgba(20, 70, 200, 100);
 }
 
+/* --------------- classes ---------------- */
+/* classes */
 /* classes */
 
-.home-button {;
+/* body-style is the div container class within body elements that will style them */
+
+.home-button {
     position: absolute;
-    top: .7rem;
-    left: 0;
-    border-style: dotted;
-    letter-spacing: .1em;
+    top: .8rem;
     font-size: 1.4rem;
-    margin: 10px;
-    padding: 5px;
+    padding: .3rem;
 }
 
 /* this styles a basic link list in the body text */
 
 .link-box {
     display: block;
-    border: 2px dotted white;
     justify-content: left;
     font-size: 1.2rem;
 }
@@ -61,36 +74,7 @@ a:hover {
 /* this styles the large bold text (ex. "Acting) on pages other than index */
 
 .current-page {
-    margin-top: 6em;
     display: block;
-    border-style: dotted;
-    max-width: 8em;
-    text-align: center;
+    text-align: left;
+    padding-left: 2rem;
 }
-
-/* header and footer */
-
-.top-page {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(255, 255, 255, 10%);
-    height: 50px;
-    padding: 20px;
-    color: rgba(255, 255, 255, 20%);
-    min-width: 100%;
-    text-align: center;
-   }
-
-
-.bottom-page {
-    position: fixed;
-    bottom: 0;
-    background: rgba(255, 255, 255, 10%);
-    height: 50px;
-    padding: 20px;
-    color: rgba(255, 255, 255, 70%);
-    min-width: 100%;
-    left: 0;
-    text-align: center;
-   }
