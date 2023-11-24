@@ -1,35 +1,26 @@
+/* standard elements */
+
 * {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: rgba(50, 90, 250, 100);
-}
-
-body {
     color: white;
 }
 
-.body-text {
-    padding-top: 5em;
-    padding-left: 2em;
-    padding-right: 2em;
-    max-width: 100%;
-}
-
-hr {
-    border: none;
+body {
+    position: aboslute;
+    top: 2rem;
 }
 
 h1 {
-    max-width: 12.5em;
-    border-style: dotted;
-    letter-spacing: .1em;
-    font-size: 16px;
-    background: rgba(255, 255, 255, 0%);
+
 }
 
-.link-box {
-    display: flex;
-    justify-content: left;
-    font-size: 1.2rem;
+h2 {
+    font-size: 140%;
+}
+
+li {
+    padding: .2rem;
 }
 
 ul {
@@ -44,23 +35,30 @@ a:hover {
     background-color: rgba(20, 70, 200, 100);
 }
 
-.bottom-page {
- position: fixed;
- bottom: 0;
- background: rgba(255, 255, 255, 10%);
- height: 50px;
- padding: 20px;
- color: rgba(255, 255, 255, 70%);
- min-width: 100%;
- left: 0;
- text-align: center;
+/* classes */
+
+.home-button {;
+    position: absolute;
+    top: .7rem;
+    left: 0;
+    border-style: dotted;
+    letter-spacing: .1em;
+    font-size: 1.4rem;
+    margin: 10px;
+    padding: 5px;
 }
 
-.web-design-projects {
+/* this styles a basic link list in the body text */
+
+.link-box {
     display: block;
-    width: 50%;
-    padding: 20px;
+    border: 2px dotted white;
+    justify-content: left;
+    font-size: 1.2rem;
 }
+
+
+/* this styles the large bold text (ex. "Acting) on pages other than index */
 
 .current-page {
     margin-top: 6em;
@@ -70,13 +68,7 @@ a:hover {
     text-align: center;
 }
 
-h2 {
-    font-size: 140%;
-}
-
-li {
-    padding: .2rem;
-}
+/* header and footer */
 
 .top-page {
     position: fixed;
@@ -90,6 +82,15 @@ li {
     text-align: center;
    }
 
-   .home-button {
-    background: rgba(255, 255, 255, 0%);
+
+.bottom-page {
+    position: fixed;
+    bottom: 0;
+    background: rgba(255, 255, 255, 10%);
+    height: 50px;
+    padding: 20px;
+    color: rgba(255, 255, 255, 70%);
+    min-width: 100%;
+    left: 0;
+    text-align: center;
    }
