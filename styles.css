@@ -84,6 +84,35 @@ a:hover {
 /*------ Post Properties ---------*/
 
 
+
+
+@media only screen and (max-width: 600px) {
+    .image-block {
+        display: block;
+    }
+    
+    .blog-image-tab {
+        padding-top: 1rem;
+        display: block;
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+    .blog-post-title {
+        font-size: 1.5rem;
+        padding-left: 1rem;
+    }
+    
+    .blog-description {
+        padding: 0;
+        margin-left: 1rem;
+        margin-right: 2rem;
+    }
+}
+
+
+@media only screen and (min-width: 601px) {
 .image-block {
     display: flex;
 }
@@ -96,4 +125,5 @@ a:hover {
     padding: 0;
     margin-left: 1rem;
     margin-right: 2rem;
+}
 }
