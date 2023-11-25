@@ -2,7 +2,7 @@
 /* white border box */
 /* white border box */
 
-.blogpost, h1, .link-box, p, .current-page, #location-bar, .image-block {
+/* .blogpost, h1, .link-box, p, .current-page, #location-bar, .image-block {
     border: 2px dotted white;
 } 
 
