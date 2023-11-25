@@ -2,9 +2,9 @@
 /* white border box */
 /* white border box */
 
-/* .link-box, .home-button, p {
+.blogpost, .link-box, .home-button, p, .current-page, #location-bar, .image-block {
     border: 2px dotted white;
-} */
+} 
 
 /* white border box */
 /* white border box */
@@ -17,16 +17,11 @@
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: rgba(50, 90, 250, 100);
     color: white;
-    box-sizing: border-box;
    
 }
 
 p {
     padding: 1.5rem;
-}
-
-h1 {
-    visibility: hidden;
 }
 
 h2 {
@@ -77,4 +72,32 @@ a:hover {
     display: block;
     text-align: left;
     padding-left: 2rem;
+    font-size: 2.2rem;
+}
+
+/* --------------- ID's ---------------- */
+/* ID's */
+/* ID's */
+
+#location-bar {
+    padding: .5rem;
+}
+
+#hidden {
+    visibility: hidden;
+}
+
+
+/*------ Post Properties ---------*/
+/*------ Post Properties ---------*/
+/*------ Post Properties ---------*/
+
+
+.image-block > img {
+    height: 10rem;
+}
+
+.blogpost {
+    margin: auto;
+    max-width: 20%
 }
