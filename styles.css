@@ -32,6 +32,12 @@ li {
     padding: .2rem;
 }
 
+hr {
+    border: 1px solid white;
+    width: 90%;
+    margin: 2rem;
+}
+
 ul {
     list-style: none;
 }
@@ -103,6 +109,10 @@ a:hover {
         font-size: 1.5rem;
         padding-left: 1rem;
     }
+
+    h1 {
+        text-decoration: underline;
+    }
     
     .blog-description {
         padding: 0;
@@ -116,6 +126,11 @@ a:hover {
 .image-block {
     display: flex;
 }
+
+.image-block div .blog-post-title { 
+    padding: 1rem;
+}
+
 
 .blog-image-tab {
     width: 14rem;
