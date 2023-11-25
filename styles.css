@@ -2,7 +2,7 @@
 /* white border box */
 /* white border box */
 
-.blogpost, .link-box, .home-button, p, .current-page, #location-bar, .image-block {
+.blogpost, .link-box, p, .current-page, #location-bar, .image-block {
     border: 2px dotted white;
 } 
 
@@ -50,12 +50,6 @@ a:hover {
 
 /* body-style is the div container class within body elements that will style them */
 
-.home-button {
-    position: absolute;
-    top: .8rem;
-    font-size: 1.4rem;
-    padding: .3rem;
-}
 
 /* this styles a basic link list in the body text */
 
@@ -83,9 +77,6 @@ a:hover {
     padding: .5rem;
 }
 
-#hidden {
-    visibility: hidden;
-}
 
 
 /*------ Post Properties ---------*/
