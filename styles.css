@@ -67,10 +67,7 @@ ul {
 
 a {
     color: white;
-}
-
-a:hover {
-    background-color: rgba(20, 70, 200, 100);
+    text-decoration: none;
 }
 
 .video-container {
@@ -88,7 +85,10 @@ a:hover {
 /* classes */
 /* classes */
 
-/* body-style is the div container class within body elements that will style them */
+
+.text-link {
+    text-decoration: underline;
+}
 
 
 /* this styles a basic link list in the body text */
