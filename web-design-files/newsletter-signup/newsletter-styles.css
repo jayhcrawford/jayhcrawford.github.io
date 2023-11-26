@@ -1,193 +1,123 @@
- /* ------ Classes ------ */
-/* ------ Classes ------ */
-/* ------ Classes ------ */
+* {
+  border: white doted;
+}
+
+hr {
+  border: 0;
+}
+
+input {
+  background-color: rgb(100, 120, 170);
+  color: white;
+  border: none;
+  font-size: 18px;
+}
+
+#anything-else {
+  width: 80%;
+  height: 90px;
+}
+
+body {
+  color: white;
+  font-family: Verdana;
+  background: rgb(90, 100, 130);
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 70%)
+}
+  
+textarea {
+  font-size: 18px;
+  background-color: rgb(100, 120, 170);
+  color: white;
+  border: none;
+}
+
+label {
+  display: inline-block;
+  padding: 0.2em;
+}
 
 /*-- contains all page contents--*/
 
 .full-content {
   max-width: 90%;
   margin: auto;
+  max-width: 700px;
 }
 
 /*-- contains all page contents--*/
 
 
-/* ------ (close) Classes ------ */
-/* ------ (close) Classes ------ */
-/* ------ (close) Classes ------ */
+/* -- BEGIN MEDIA QUERIES --*/
+/* -- BEGIN MEDIA QUERIES --*/
+/* -- BEGIN MEDIA QUERIES --*/
 
-  
+
+
 /*--Desktop--*/
-@media only screen and (min-width: 601px) {
-  * {
-    border: white dotted;
-  }
-  
-  label {
-    display: inline-block;
-    padding: 0.2em;
-  }
-  
-  
+/*--Desktop--*/
+@media only screen and (min-width: 601px) {   
   h1 {
     font-family: Verdana;
-  }
-  
-  
-  body {
-    color: white;
-    font-family: Verdana;
-    background: rgb(90, 100, 130);
-  }
-    
-  input {
-    background-color: rgb(100, 120, 170);
-    color: white;
-    border: none;
-  }
-    
-  ::placeholder {
-    color: rgba(255, 255, 255, 70%)
-  }
-    
-  textarea {
-    font-size: 18px;
-    background-color: rgb(100, 120, 170);
-    color: white;
-    border: none;
+    font-size: 2.5rem;
+    text-align: center;
   }
     
   button {
-    padding: 1em 4em;
+    padding: 1.2em 6em;
     font-family: Verdana;
+    font-size: 1rem;
+    font-weight: bold;
       
   }
-    
-  hr {
-    border: 0;
-  }
-    
-  input {
-    font-size: 18px;
-  }
+
+/* ------ Classes ------ */
+.submit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem;
 }
+/* ------ (close) Classes ------ */
+}
+
 
 
 /*--Phone and Tablet--*/
+/*--Phone and Tablet--*/
 @media only screen and (min-width: 320px) and (max-width: 600px) {
-  * {
-    border: white dotted;
-  }
-  
-  label {
-    display: inline-block;
-    padding: 0.2em;
-  }
-  
-  
-  h1 {
-    font-family: Verdana;
-  }
-  
-  
-  body {
-    color: white;
-    font-family: Verdana;
-    background: rgb(90, 100, 130);
-  }
-    
-  input {
-    background-color: rgb(100, 120, 170);
-    color: white;
-    border: none;
-  }
-    
-  ::placeholder {
-    color: rgba(255, 255, 255, 70%)
-  }
-    
-  textarea {
-    font-size: 18px;
-    background-color: rgb(100, 120, 170);
-    color: white;
-    border: none;
-  }
-    
-  button {
+    button {
     padding: 1em 4em;
     font-family: Verdana;
+    font-weight: bold;
       
   }
-    
-  hr {
-    border: 0;
-  }
-    
-  input {
-    font-size: 18px;
-  }
+/* ------ Classes ------ */
+.submit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ------ (close) Classes ------ */
 }
 
 
+
 /*--Small Screens--*/
-@media only screen and (max-width: 320px) {
-  * {
-    border: white dotted;
-    box-sizing: border-box;
-  }
-  
-  label {
-    display: inline-block;
-    padding: 0.2em;
-  }
-  
-  
+/*--Small Screens--*/
+@media only screen and (max-width: 320px) {   
   h1 {
     font-family: Verdana;
     font-size: 1.5rem;
   }
-  
-  
-  body {
-    color: white;
-    font-family: Verdana;
-    background: rgb(90, 100, 130);
-  }
-    
-  input {
-    background-color: rgb(100, 120, 170);
-    color: white;
-    border: none;
-  }
-    
-  ::placeholder {
-    color: rgba(255, 255, 255, 70%)
-  }
-    
-  textarea {
-    font-size: 18px;
-    background-color: rgb(100, 120, 170);
-    color: white;
-    border: none;
-  }
-    
-  .submit-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
   button {
     font-family: Verdana;   
-    width: 100px;
-  }
-    
-  hr {
-    border: 0;
-  }
-    
-  input {
-    font-size: 18px;
+    padding: 1rem 2rem;
+    font-weight: bold;
   }
 
   #email {
@@ -198,7 +128,11 @@
     width: 100%;
   }
 
-  #anything-else {
-    width: 100%;
-  }
+/* ------ Classes ------ */
+.submit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ------ (close) Classes ------ */
 }
