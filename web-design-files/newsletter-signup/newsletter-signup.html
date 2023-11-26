@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="styles.css">
-  <title>Sign Up For Jay's Newsletter</title>
-  <head>
+<link rel="stylesheet" href="newsletter-styles.css">
+  <!-- contains all page contents-->
+  <div class="full-content">
+  <!-- contains all page contents-->
+
+  <!-- top of page -->
+    <title>Sign Up For Jay's Newsletter</title>
+      <head>
     <h1 id="title">Sign Up For Jay's Newsletter</h1>
-  </head>
+      </head>
+  <!-- (close) top of page -->
+
+
+  <!-- body -->
   <body>
     <p id="description">
       If you are interested in knowing what Jay is up to right now, you can sign up for his email newsletter! :)
     </p>
     <hr>
+  
+  <!-- begin form -->
     <form id="survey-form">
       <div>
       <label id="name-label" for="name">Your Name
@@ -59,7 +70,7 @@
     </div>
     <hr>
     <div>
-      <textarea placeholder="Anything Else You Want To Say to The Jayster?" cols="45" rows="6"></textarea>
+      <textarea id="anything-else" placeholder="Anything Else?"></textarea>
     </div>
     <hr>
     <div>
@@ -78,11 +89,17 @@
       </label>
     </div>
     <hr>
+
+    <!-- submit button -->
     <div class="submit-button">
     <label for="submit">
     <button id="submit">Submit</button>
     </label>
-    </div>
-    </form>
-  </body>
+    </div>     
+    <!-- (close) submit button -->
+    
+    </form>   <!-- (close) form -->
+
+  </body> <!-- (close) body -->
+  </div> <!--(close) .full-content class; contains all page contents-->
 </html>
