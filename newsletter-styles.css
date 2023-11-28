@@ -1,17 +1,20 @@
+:root {
+  --fun-color-1: rgb(220, 161, 188);
+}
+
 * {
   border: white doted;
+}
+
+h1 {
+  font-weight: 800;
+  line-height: 2rem;
 }
 
 hr {
   border: 0;
 }
 
-input {
-  background-color: rgb(100, 120, 170);
-  color: white;
-  border: none;
-  font-size: 18px;
-}
 
 #anything-else {
   width: 80%;
@@ -19,9 +22,9 @@ input {
 }
 
 body {
-  color: white;
+  color: navy;
   font-family: Verdana;
-  background: rgb(90, 100, 130);
+  background: rgb(214, 214, 214);
 }
 
 ::placeholder {
@@ -46,9 +49,24 @@ label {
   max-width: 90%;
   margin: auto;
   max-width: 700px;
+  background-color: white;
+  padding: 1rem;
+  padding-top: 0rem;
+  padding-bottom: 2rem;
+  margin-top: 0;
+  box-shadow: 10px 10px 10px rgb(152, 152, 152);
 }
 
 /*-- contains all page contents--*/
+
+#title {
+  background-color: white;
+  padding: 1rem;
+  text-align: center;
+  top: -20;
+}
+
+
 
 
 /* -- BEGIN MEDIA QUERIES --*/
@@ -60,27 +78,17 @@ label {
 /*--Desktop--*/
 /*--Desktop--*/
 @media only screen and (min-width: 601px) {   
-  h1 {
-    font-family: Verdana;
-    font-size: 2.5rem;
-    text-align: center;
-  }
     
-  button {
-    padding: 1.2em 6em;
-    font-family: Verdana;
-    font-size: 1rem;
-    font-weight: bold;
-      
+  .submit-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
 /* ------ Classes ------ */
-.submit-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1.5rem;
-}
+
+
+
 /* ------ (close) Classes ------ */
 }
 
@@ -89,12 +97,7 @@ label {
 /*--Phone and Tablet--*/
 /*--Phone and Tablet--*/
 @media only screen and (min-width: 320px) and (max-width: 600px) {
-    button {
-    padding: 1em 4em;
-    font-family: Verdana;
-    font-weight: bold;
-      
-  }
+
 /* ------ Classes ------ */
 .submit-button {
   display: flex;
@@ -135,4 +138,21 @@ label {
   align-items: center;
 }
 /* ------ (close) Classes ------ */
+}
+
+
+
+.anim-elements {
+  position: relative;
+}
+
+#wobble1 {
+  height: 20px;
+  width: 100px;
+  background-color: var(--fun-color-1);
+  position: absolute;
+  transform: rotate(20deg);
+  top: 5%;
+  left: 10%;  
+  z-index: -1;
 }
