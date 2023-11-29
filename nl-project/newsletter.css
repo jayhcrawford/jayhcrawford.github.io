@@ -1,3 +1,17 @@
+/* color variables in root */
+
+:root {
+  --hero-color: #8aff82;
+  --bg-color: #1c1a26;
+  --fg-color: #c8c1f5;
+
+}
+
+p {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  line-height: 2.55rem;
+}
+
 *,
 ::before,
 ::after {
@@ -11,13 +25,12 @@ html {
 }
 
 body {
-  font-family: 'Baskervville', serif;
   color: linen;
-  background-color: rgb(20, 30, 40);
+  background-color: var(--bg-color);
 }
 
 h1 {
-  font-family: 'Anton', sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 h2, h3, h4, h5, h6 {
@@ -67,27 +80,8 @@ hr {
 
 .hero-title {
   text-align: center;
-  color: orangered;
+  color: var(--hero-color);
   font-size: 8rem;
-}
-
-.hero-subtitle {
-  font-size: 2.4rem;
-  color: orangered;
-  text-align: center;
-}
-
-.author {
-  font-size: 2rem;
-  font-family: "Raleway", sans-serif;
-}
-
-.author-name a:hover {
-  background-color: #306203;
-}
-
-.publish-date {
-  color: rgba(255, 255, 255, 0.5);
 }
 
 .social-icons {
@@ -100,10 +94,11 @@ hr {
 }
 
 .first-paragraph::first-letter {
-  font-size: 6rem;
-  color: orangered;
+  font-size: 8rem;
+  color: var(--hero-color);
   float: left;
   margin-right: 1rem;
+  margin-top: 1rem;
 }
 
 .quote {
@@ -184,4 +179,42 @@ hr {
   .text {
     font-size: 1.6rem;
   } 
+}
+
+/*----ID's----*/
+
+#my_header {
+  padding: 1rem;
+  height: 5rem;
+  text-decoration: underline;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+#location-bar {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  line-height: 1rem;
+  height: 3rem;
+  font-size: 1.8rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/*----Classes-----*/
+
+.hero-img {
+  opacity: .3;
+  box-shadow: 0 0 40px var(--fg-color);
+}
+
+
+.hero-subtitle {
+  font-size: 2.4rem;
+  color: var(--hero-color);
+  text-align: center;
+  margin-top: 1.8rem;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  line-height: 4rem;
 }
