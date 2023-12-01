@@ -1,40 +1,4 @@
-/* white border box */
-/* white border box */
-/* white border box */
-
-/* .blogpost, h1, .link-box, p, .current-page, #location-bar, .image-block {
-    border: 2px dotted white;
-} 
-
-/* white border box */
-/* white border box */
-/* white border box */
-
-
 /* standard elements */
-
-
-/* desktop view */
-@media only screen and (min-width: 1200px) {
-    * {
-        max-width: 800px;
-        margin: auto; 
-    }
-
-    .current-page {
-        display: block;
-        text-align: left;
-        padding: 1.5rem;
-        padding-top: 1rem;
-        font-size: 2.2rem;
-    }
-
-    h1 {
-        padding: 2rem;
-    }
-}
-/* (close) desktop view */
-
 
 * {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -56,9 +20,8 @@ li {
 }
 
 hr {
-    border: 1px solid white;
-    width: 90%;
-    margin: 2rem;
+    border: 3px solid white;
+    margin: 2rem auto;
 }
 
 ul {
@@ -68,6 +31,18 @@ ul {
 a {
     color: white;
     text-decoration: none;
+}
+/* ---------------(close)standard elements ---------------- */  
+
+/* --------------- classes ---------------- */
+
+.warning {
+    background-color: red;
+
+}
+
+.text-link {
+    text-decoration: underline;
 }
 
 .video-container {
@@ -79,16 +54,6 @@ a {
     width: 80%;
     margin: auto;
 }
-  
-
-/* --------------- classes ---------------- */
-/* classes */
-/* classes */
-
-
-.text-link {
-    text-decoration: underline;
-}
 
 
 /* this styles a basic link list in the body text */
@@ -97,13 +62,6 @@ a {
     display: block;
     justify-content: left;
     font-size: 1.2rem;
-}
-
-@media only screen and (max-width: 600px) {
-    .link-box li {
-        height: 2.2rem; 
-    }
-
 }
 
 
@@ -115,21 +73,86 @@ a {
     padding-left: 2rem;
     font-size: 2.2rem;
 }
+/* ---------------(close) Classes ---------------- */
 
 /* --------------- ID's ---------------- */
-/* ID's */
-/* ID's */
 
 #location-bar {
     padding: .5rem;
 }
+/* ---------------(close) ID's ---------------- */
+
+
+/*------Media Queries---------*/
+
+
+/*---Desktop View Media Queries----- */
+@media only screen and (min-width: 1200px) {
+    * {
+        max-width: 800px;
+        margin: auto; 
+    }
+
+    .current-page {
+        display: block;
+        text-align: left;
+        padding: 1.5rem;
+        padding-top: 1rem;
+        font-size: 2.2rem;
+    }
+
+    h1 {
+        padding: 2rem;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    hr {
+        width: 95%;
+    }
+}
+
+/*------ Post Properties (Tablet/Desktop) ---------*/
+@media only screen and (min-width: 601px) {
+    .image-block {
+        display: flex;
+    }
+
+    .image-block div .blog-post-title { 
+        padding: 1rem;
+    }
+
+
+    .blog-image-tab {
+        width: 14rem;
+    }
+
+    .blog-description {
+        padding: 0;
+        margin-left: 1rem;
+        margin-right: 2rem;
+    }
+    
+}
+
+/*------ (close) Post Properties (Tablet/Desktop) ---------*/
+/*------(close) desktop view Media Queries----- */
 
 
 
-/*------ Post Properties ---------*/
-/*------ Post Properties ---------*/
-/*------ Post Properties ---------*/
 
+/*----tablet/large phone Media Queries-----*/
+@media only screen and (max-width: 600px) {
+    .link-box li {
+        height: 2.2rem; 
+    }
+
+
+}
+/*----(close) tablet/large phone Media Queries-----*/
+
+
+/*----small phone Media Queries-----*/
 
 
 /*------ Post Properties (Mobile) ---------*/
@@ -163,26 +186,13 @@ a {
 }
 /*------ (close) Post Properties (Mobile) ---------*/
 
-
-/*------ Post Properties (Tablet/Desktop) ---------*/
-@media only screen and (min-width: 601px) {
-    .image-block {
-        display: flex;
-    }
-
-    .image-block div .blog-post-title { 
-        padding: 1rem;
-    }
-
-
-    .blog-image-tab {
-        width: 14rem;
-    }
-
-    .blog-description {
-        padding: 0;
-        margin-left: 1rem;
-        margin-right: 2rem;
+@media only screen and (max-width: 600px) {
+    hr {
+        width: 100%;
     }
 }
-/*------ (close) Post Properties (Tablet/Desktop) ---------*/
+/*----(close) small phone-----*/
+
+
+
+

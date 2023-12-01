@@ -1,0 +1,54 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />    
+    <link rel="stylesheet" href="styles.css" />
+  
+  </head>
+  <nav id="navbar">
+    <ol>    
+      <li><a>Welcome</a></li>
+      <li><a id="projects" href="#projects">Projects</a></li>
+      <li><a id="about-more" href="#about-more">About + More</a></li>
+      <li><a id="github" href="jayhcrawford.github.io" target="_blank">My GitHub</a></li>
+    </ol>
+  </nav>
+
+
+<section id="welcome-section">
+  <h1>Welcome To My Portfolio</h1>
+  <a id="profile-link" href="https://github.com/jayhcrawford/jayhcrawford.github.io/blob/main/README.txt" target="_blank">Who is Jay?</a>
+</section>
+
+<section id="projects">
+  <article class="portfolio-piece">
+    <div class="project-tile"><h2>This is a Project</h2>
+    <a></a>
+    </div>
+    
+  </article>
+</section>
+
+<section id="about-more">
+  
+</section>
+
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+@media screen and (max-width: 600px){
+  background-color: black;
+}
+
+#navbar {
+  position: fixed;
+}
+
+** end of undefined **
+
