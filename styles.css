@@ -2,8 +2,9 @@
 :root {
     --standard-page-color: rgba(50, 90, 250, 100);
     --standard-font-color: white;
-    --dropdown-hover-color: black;
-    --dropdown-button-color: black;
+    --dropdown-hover-color: #112254;
+    --dropdown-button-color: #112254;
+    --standard-page-shadow-color: rgba(0,0,0,0.2);
 }
 
 
@@ -36,7 +37,7 @@ ul {
 }
 
 a {
-    color: white;
+    color: var(--standard-font-color);
     text-decoration: none;
 }
 /* ---------------(close)standard elements ---------------- */  
@@ -52,7 +53,6 @@ a {
 
 .warning {
     background-color: red;
-
 }
 
 .text-link {
@@ -100,7 +100,7 @@ a {
 
 /*---Desktop View Media Queries----- */
 @media only screen and (min-width: 1200px) {
-    * {
+    .full-content {
         max-width: 800px;
         margin: auto; 
     }
@@ -212,44 +212,31 @@ a {
 
 
 
-@media only screen and (max-width: 683px) {
-    #location-bar {
-        flex-direction: column;
-    }
 
-    .dropdown-button {
-        background-color: var(--standard-page-color);
-        min-width: 200px;
-    }
+
+/*-------This is for the navbar------*/
+
+
+/*navbar small screen media queries*/
+@media only screen and (max-width: 683px) {
+
 }
 
+
+/*navbar medium screen media queries*/
 @media only screen and (min-width: 684px) and (max-width: 1200px) {
     #location-bar {
-            max-width: 70%;
-            margin: auto;
-            position: relative;
-            display: flex;
-            flex-direction: row;
-            justify-content:space-around;
-          }
-    
-}
-
-@media only screen and (min-width: 1201px) {
-    #location-bar {
-        max-width: 80%;
-        margin: auto;
-        position: relative;
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-          
     }
 }
 
 
-/* --------------- nav-bar elements ---------------- */  
+/*navbar large screen media queries*/
+@media only screen and (min-width: 1201px) {
+    #location-bar {
+        display: flex;
+    }
+}
 
 
 
@@ -261,6 +248,7 @@ a {
     border: 2px solid white;
     box-shadow: 2px 2px 5px black;
     margin: 10px;
+    cursor: pointer;
 }
 
 
@@ -269,7 +257,7 @@ a {
     position: absolute;
     background-color: var(--standard-page-color);
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px var(--standard-page-shadow-color);
     z-index: 1;
     border: 1px solid var(--standard-font-color);
 }
@@ -281,11 +269,17 @@ a {
     display: block;
 }
 
-.drop-down-hidden a:hover {background-color: var(--dropdown-hover-color);}
+.drop-down-hidden a:hover {
+    background-color: var(--dropdown-hover-color);
+}
 
-.dropdown:hover .drop-down-hidden {display: block;}
+.dropdown:hover .drop-down-hidden {
+    display: block
+}
 
-.dropdown:hover .dropdown-button {background-color: var(--dropdown-button-color);}
+.dropdown:hover .dropdown-button {
+    background-color: var(--dropdown-button-color);
+}
 
 
 
