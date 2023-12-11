@@ -97,6 +97,10 @@ blockquote {
   margin-bottom: 2rem;
 }
 
+#my_header a:visited {
+  color: var(--hr-color);
+}
+
 #location-bar {
   margin-top: 2rem;
   color: var(--hr-color);

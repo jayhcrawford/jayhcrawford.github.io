@@ -1,43 +1,70 @@
 :root {
-  --fun-color-1: rgb(220, 161, 188);
+  --hero-text-color: white;
+  --background-color-1: #3545DE;
+  --background-color-1-shadow: rgba(0, 0, 49, 0.5);
+  --background-color-2: #357ADE;
+  --button-color: linear-gradient(180deg, #35DE6E, #2A9427);
+  --button-color-hover: linear-gradient(180deg, #f4f489, #2A9427);
+  --button-color-click: linear-gradient(180deg, #185b2e, #093b07);
+  --button-outline: #0f5f0e;
+  --input-area-text-color: navy;
+  
 }
 
+
+
 * {
-  border: white doted;
+  letter-spacing: .01ch;
 }
 
 h1 {
   font-weight: 800;
-  line-height: 2rem;
+  line-height: 3rem;
+  color: var(--hero-text-color);
+  font-size: 3rem;
+  text-shadow: 2px 2px black;
 }
 
 hr {
   border: 0;
 }
 
-
-#anything-else {
-  width: 80%;
-  height: 90px;
-}
-
 body {
-  color: navy;
-  font-family: Verdana;
-  background: rgb(214, 214, 214);
+  color: var(--input-area-text-color);;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: var(--background-color-1);
   padding: 1rem;
   padding-bottom: 4rem;
 }
 
+input, select {
+  cursor: pointer;
+}
+
+input {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+select {
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  color: var(--input-area-text-color);;
+}
+
 ::placeholder {
-  color: rgba(255, 255, 255, 70%)
+  color: var(--input-area-text-color);;
 }
   
 textarea {
-  font-size: 18px;
-  background-color: rgb(100, 120, 170);
-  color: white;
-  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: white;
+  color: var(--input-area-text-color);;
+  border: 2px solid white;
 }
 
 label {
@@ -45,29 +72,119 @@ label {
   padding: 0.2em;
 }
 
-/*-- contains all page contents--*/
+button {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  background-image: var(--button-color);
+  border: 0px;
+  outline: 2px solid var(--button-outline);
+  paint-order: stroke fill;
+  font-size: 1.2rem;
+  color: white;
+  text-shadow: 1px 1px black;
+  box-shadow: 3px 3px 10px var(--background-color-1-shadow);
+  cursor: pointer;
+}
 
+button:hover {
+  background-image: var(--button-color-hover);
+}
+
+button:active {
+  background-image: var(--button-color-click);
+}
+
+/*-- contains all page contents--*/
 .full-content {
   max-width: 90%;
   margin: auto;
   max-width: 700px;
-  background-color: white;
+  background-color: var(--background-color-2);
   padding: 1rem;
   padding-top: 0rem;
   padding-bottom: 2rem;
   margin-top: 0;
-  box-shadow: 10px 10px 10px rgb(152, 152, 152);
+  box-shadow: 10px 10px 10px var(--background-color-1-shadow);
+  color: white;
+  border-radius: 10px 10px 10px 10px;
 }
 
-/*-- contains all page contents--*/
+
+
+
+/*--- classes ----*/
+
+.textarea-div {
+  display: flex;
+  justify-content: center;
+}
+
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1.5rem;
+}
+
+.checkboxes {
+  padding: .5rem;
+}
+
+.checkbox_container {
+  padding: 6px 0px 10px 2px;
+}
+
+.header-box {
+  padding-top: .5rem;
+}
+
+/*--- (close) classes ----*/
+
+
+
+
+/*--- ID's ----*/
+#dropdown {
+  padding: .1rem;
+  margin: 10px 0px 0px 10px;
+}
+
+#description {
+  font-size: 1.2rem;
+  text-align: center;
+}
 
 #title {
-  background-color: white;
   padding: 1rem;
   text-align: center;
   top: -20;
 }
 
+#anything-else {
+  width: 90%;
+  height: 90px;
+  padding-left: 10px;
+}
+
+#below-text-area {
+  padding-top: .7rem;
+}
+
+#name, #email {
+  cursor: text;
+}
+
+#number {
+  cursor: pointer;
+}
+
+/*--- (close) ID's ----*/
+
+
+
+
 
 
 
@@ -77,7 +194,6 @@ label {
 
 
 
-/*--Desktop--*/
 /*--Desktop--*/
 @media only screen and (min-width: 601px) {   
     
@@ -86,19 +202,16 @@ label {
     justify-content: center;
     align-items: center;
   }
-
-/* ------ Classes ------ */
-
-
-
-/* ------ (close) Classes ------ */
 }
+/*--(close) Desktop Media Queries--*/
 
 
 
-/*--Phone and Tablet--*/
+
 /*--Phone and Tablet--*/
 @media only screen and (min-width: 320px) and (max-width: 600px) {
+
+
 
 /* ------ Classes ------ */
 .submit-button {
@@ -108,19 +221,23 @@ label {
 }
 /* ------ (close) Classes ------ */
 }
+/*--(close) Phone and Tablet Media Queries --*/
 
 
 
-/*--Small Screens--*/
+
 /*--Small Screens--*/
 @media only screen and (max-width: 320px) {   
   h1 {
-    font-family: Verdana;
-    font-size: 1.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2rem;
+    font-weight: bolder;
+    text-decoration: underline;
   }
 
+
   button {
-    font-family: Verdana;   
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 1rem 2rem;
     font-weight: bold;
   }
@@ -133,18 +250,26 @@ label {
     width: 100%;
   }
 
-/* ------ Classes ------ */
+/* ------ Small Screens Classes ------ */
 .submit-button {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-/* ------ (close) Classes ------ */
+
+.header-box {
+  padding-top: 1rem;
+}
+/* ------ (close) Small Screens Classes ------ */
+
+/* ------ Small Screens ID's ------ */
+
+#dropdown {
+  padding: .1rem;
+  margin: 10px 0px 0px 0px;
+  max-width: 80%;
 }
 
-
-
-.anim-elements {
-  position: relative;
+/* ------ (close) Small Screens ID's ------ */
 }
-
+/*--(close) Small Screen Media Queries --*/
