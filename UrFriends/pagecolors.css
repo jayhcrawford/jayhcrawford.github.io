@@ -1,0 +1,11 @@
+:root {
+    --standard-page: lightblue;
+    --standard-page2: rgb(68, 68, 150);
+    --button1: rgb(20, 13, 80);
+    --standardFont: white;
+    --standard-shadow: rgb(20, 13, 80);
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+  }
