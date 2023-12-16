@@ -1,19 +1,12 @@
 
 /*--Exclusively Color Related--*/
-:root {
-  --body-color-1: rgb(185, 230, 246);
-  --body-color-2: rgb(226, 238, 242);
-  --darkest-color: rgb(84, 120, 133);
-  --base-color: white;
-  --standard-font-color1: black;
-}
 
 #main-doc {
-  background-color: var(--body-color-2);
+  background-color: var(--base-color);
 }
 
 p, header, h1, code, a, footer, #nav-btn-btn-group, ul, i, li, section, #header-id,
- #top-of-page-header, #navbar, #navbar-div, .nav-button, #Stay_In_Touch, #Know_Friends_More, 
+ #top-of-page-header, #navbar, #navbar-div, .nav-button, #About_The_Project, #Record_New_Insight, 
  #Google_And_Apple_Integration, #Conversation_Ideas, #Customizable-Groups, #Privacy, #footer-div, #bottom-btn, footer 
 {
   background-color: var(--base-color);
@@ -85,7 +78,7 @@ body {
   margin: auto;
   max-width: 90%;
   padding: 1rem;
-  background-color: var(--body-color-2);
+  background-color: var(--base-color);
   box-shadow: 10px 10px 10px var(--darkest-color);
 
 } 
@@ -95,7 +88,7 @@ body {
   box-shadow: 4px 10px 10px var(--darkest-color);
 }
 
-#Stay_In_Touch, #Know_Friends_More, #Google_And_Apple_Integration, #Conversation_Ideas, #Customizable-Groups, #Privacy {
+#About_The_Project, #Record_New_Insight, #Google_And_Apple_Integration, #Conversation_Ideas, #Customizable-Groups, #Privacy {
   /*--each of these section ID's corresponds to each section--*/
   margin: 1rem;
   padding: 1rem;
