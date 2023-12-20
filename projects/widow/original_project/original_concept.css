@@ -20,6 +20,9 @@ p, header, h1, code, a, footer, #nav-btn-btn-group, ul, i, li, section, #header-
 
 body {
   overflow-x: hidden;
+  background-image: url("https://lh3.googleusercontent.com/drive-viewer/AEYmBYRYBg8ihY6hVOWpN3FhtiU4znTGLqD1a_aukNKiJrvqueSk64YC_sFQ0iz2IvUjzhhvS73EXNDzbKeNF9-HIN1IOm0uXA=s1600");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /*--Classes--*/
