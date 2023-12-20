@@ -15,8 +15,6 @@
    
 }
 
-
-
 h2 {
     font-size: 140%;
 }
@@ -38,12 +36,12 @@ a {
     color: var(--standard-font-color);
     text-decoration: none;
 }
+
+input {
+    background-color: white;
+    color: black;
+}
 /* ---------------(close)standard elements ---------------- */  
-
-
-
-
-
 
 
 
@@ -68,16 +66,6 @@ a {
     margin: auto;
 }
 
-
-/* this styles a basic link list in the body text */
-
-.link-box {
-    display: block;
-    justify-content: left;
-    font-size: 1.2rem;
-}
-
-
 /* this styles the large bold text (ex. "Acting) on pages other than index */
 
 .current-page {
@@ -86,9 +74,31 @@ a {
     padding-left: 2rem;
     font-size: 2.2rem;
 }
+
 /* ---------------(close) Classes ---------------- */
 
 /* --------------- ID's ---------------- */
+
+#send-email-form {
+    padding: 1rem;
+    border: 1px solid white;
+    max-width: 400px;
+}
+
+#email-input {
+    margin: 0 0 1rem 0;
+}
+
+#brief-message {
+    resize: none;
+    height: 100px;
+    width: 300px;
+}
+
+#submit-button {
+    margin: 1rem;
+    cursor: pointer;
+}
 
 
 /* ---------------(close) ID's ---------------- */
@@ -123,34 +133,6 @@ a {
     }
 }
 
-/*------ Post Properties (Tablet/Desktop) ---------*/
-@media only screen and (min-width: 601px) {
-    .image-block {
-        display: flex;
-    }
-
-    .image-block div .blog-post-title { 
-        padding: 1rem;
-    }
-
-
-    .blog-image-tab {
-        width: 14rem;
-    }
-
-    .blog-description {
-        padding: 0;
-        margin-left: 1rem;
-        margin-right: 2rem;
-    }
-
-    h1 {
-        padding: 1rem 0rem 0rem 1rem;
-    }
-    
-}
-
-/*------ (close) Post Properties (Tablet/Desktop) ---------*/
 /*------(close) desktop view Media Queries----- */
 
 
@@ -170,36 +152,6 @@ a {
 /*----small phone Media Queries-----*/
 
 
-/*------ Post Properties (Mobile) ---------*/
-@media only screen and (max-width: 600px) {
-    .image-block {
-        display: block;
-    }
-    
-    .blog-image-tab {
-        padding-top: 1rem;
-        display: block;
-        width: 80%;
-        margin-right: auto;
-        margin-left: auto;
-    }
-    
-    .blog-post-title {
-        font-size: 1.5rem;
-        padding-left: 1rem;
-    }
-
-    h1 {
-        text-decoration: underline;
-    }
-    
-    .blog-description {
-        padding: 0;
-        margin-left: 1rem;
-        margin-right: 2rem;
-    }
-}
-/*------ (close) Post Properties (Mobile) ---------*/
 
 @media only screen and (max-width: 600px) {
     hr {
