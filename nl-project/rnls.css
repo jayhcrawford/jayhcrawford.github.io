@@ -54,12 +54,6 @@ a {
   text-decoration: none;
 }
 
-main {
-  display: grid;
-  grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(2rem, 1fr);
-  row-gap: 3rem;
-}
-
 img {
   width: 100%;
   object-fit: cover;
@@ -75,6 +69,11 @@ blockquote {
 }
 
 /*----ID's----*/
+
+
+#firstsec {
+  background-color: red;
+}
 
 #github_link_block {
   text-align: right;
@@ -139,9 +138,7 @@ blockquote {
   box-shadow: 0 0 40px var(--fg-color);
 }
 
-.image-1 {
-  grid-column: 1 / -1;
-}
+
 
 .image-2 {
   border: 2rem solid;
@@ -161,15 +158,12 @@ blockquote {
 }
 
 .text {
-  grid-column: 2 / 3;
   font-size: 1.8rem;
   letter-spacing: 0.6px;
-  column-width: 25rem;
   text-align: justify;
 }
 
 .hero {
-  grid-column: 1 / -1;
   position: relative;
 }
 
@@ -177,15 +171,6 @@ blockquote {
   text-align: center;
   color: var(--hero-color);
   font-size: 8rem;
-}
-
-.social-icons {
-  display: grid;
-  font-size: 3rem;
-  grid-template-columns: repeat(5, 1fr);
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
-  align-items: center;
 }
 
 .first-paragraph::first-letter {
@@ -198,8 +183,6 @@ blockquote {
 
 .text-with-images {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  column-gap: 3rem;
   margin-bottom: 3rem;
 }
 
@@ -217,11 +200,6 @@ blockquote {
 }
 
 .image-wrapper {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: repeat(3, min-content);
-  gap: 2rem;
-  place-items: center;
   padding: 3rem;
 }
 
@@ -229,17 +207,7 @@ blockquote {
 
 /*=======Media Queries=======*/
 
-@media only screen and (max-width: 720px) {
-  .image-wrapper {
-    grid-template-columns: 1fr;
-  }
-}
 
-@media only screen and (max-width: 600px) {
-  .text-with-images {
-    grid-template-columns: 1fr;
-  }
-}
 
 @media only screen and (max-width: 550px) {
   .hero-title {
