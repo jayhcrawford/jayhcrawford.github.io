@@ -251,8 +251,11 @@ a {
 
 /*navbar medium screen media queries*/
 @media only screen and (min-width: 684px) and (max-width: 1200px) {
+    #location-bar {
+        display: flex;
+    }
+    
     .location-bar-bttn {
-
         margin: 0em 1em 0em 1em;
         padding: 1em 1.2em 1em 1.2em;
         outline: solid 3px var(--standard-location-bar-bttn-base);
@@ -262,6 +265,9 @@ a {
 
 /*navbar large screen media queries*/
 @media only screen and (min-width: 1201px) {
+    #location-bar {
+        display: flex;
+    }
     .location-bar-bttn {
         margin: 0em 1em 0em 1em;
         padding: 1em 1.2em 1em 1.2em;
