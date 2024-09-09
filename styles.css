@@ -230,7 +230,11 @@ a {
 
 /*navbar small screen media queries*/
 @media only screen and (max-width: 683px) {
-
+    .dropdown:hover .drop-down-hidden {
+        display: block;
+        margin-top: -60px;
+        left: 200px;
+    }
 }
 
 
@@ -283,9 +287,12 @@ a {
     background-color: var(--dropdown-hover-color);
 }
 
+
 .dropdown:hover .drop-down-hidden {
     display: block
 }
+
+
 
 .dropdown:hover .dropdown-button {
     background-color: var(--dropdown-button-color);
