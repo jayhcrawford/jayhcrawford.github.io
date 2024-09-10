@@ -82,6 +82,12 @@ a {
 
 }
 
+.location-bar-arrow {
+    color: var(--standard-location-bar-bttn-shadow);
+    margin-top: .3em;
+    font-size: 2em;
+}
+
 
 
 /* this styles a basic link list in the body text */

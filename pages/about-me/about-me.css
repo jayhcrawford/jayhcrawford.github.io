@@ -5,6 +5,8 @@
     --dropdown-hover-color: #112254;
     --dropdown-button-color: #112254;
     --standard-page-shadow-color: rgba(0,0,0,0.2);
+    --standard-location-bar-bttn-shadow: white;
+    --standard-location-bar-bttn-base: #9aaefc;
 }
 
 
@@ -73,6 +75,12 @@ input {
     text-align: left;
     padding-left: 2rem;
     font-size: 2.2rem;
+}
+
+.location-bar-arrow {
+    color: var(--standard-location-bar-bttn-shadow);
+    margin-top: .3em;
+    font-size: 2em;
 }
 
 /* ---------------(close) Classes ---------------- */
@@ -186,15 +194,34 @@ input {
 
 
 /*navbar medium screen media queries*/
+/*navbar small screen media queries*/
+@media only screen and (max-width: 683px) {
+    .dropdown:hover .drop-down-hidden {
+        display: block;
+        margin-top: -60px;
+        left: 200px;
+    }
+
+
+    .location-bar-bttn {
+        margin: 1em 1em 0em 1em;
+        padding: .8em .5em .8em .5em;
+        outline: solid 3px var(--standard-location-bar-bttn-base);
+    }
+
+}
+
+
+/*navbar medium screen media queries*/
 @media only screen and (min-width: 684px) and (max-width: 1200px) {
     #location-bar {
         display: flex;
     }
-
+    
     .location-bar-bttn {
-
         margin: 0em 1em 0em 1em;
         padding: 1em 1.2em 1em 1.2em;
+        outline: solid 3px var(--standard-location-bar-bttn-base);
     }
 }
 
@@ -204,34 +231,36 @@ input {
     #location-bar {
         display: flex;
     }
-
     .location-bar-bttn {
         margin: 0em 1em 0em 1em;
         padding: 1em 1.2em 1em 1.2em;
+        outline: solid 3px var(--standard-location-bar-bttn-base);
     }
 }
 
 
 
-
-
 .location-bar-bttn:hover {
-    background-color: rgb(182, 182, 182);
+    background-color: var(--standard-location-bar-bttn-shadow);
     box-shadow: 3px 3px 10px black;
+    border: solid 3px var(--standard-page-color);
+    outline: solid 3px var(--standard-location-bar-bttn-shadow);
 }
 
 .location-bar-bttn:active {
     box-shadow: inset 3px 3px 10px black;
+    border: solid 3px var(--standard-page-color);
+    outline: solid 3px var(--standard-location-bar-bttn-shadow);
 }
 
 .location-bar-bttn {
     color: var(--standard-page-color);
-    background-color: white;
+    background-color: var(--standard-location-bar-bttn-base);
     cursor: pointer;
     font-size: 1rem;
-    border-style: none;
+    border: solid 3px var(--standard-page-color);
+    outline: solid 3px var(--standard-location-bar-bttn-base);
 }
-
 
 
 .dropdown-button {
