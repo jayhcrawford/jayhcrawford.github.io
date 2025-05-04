@@ -1,19 +1,30 @@
 @font-face {
-  font-family: 'CalSans';
-  src: url('../assets/fonts/CalSans-Regular.ttf') format('truetype');
+  font-family: 'Cal Sans';
+  src: url('./assets/fonts/CalSans-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Oswald';
-  src: url('../assets/fonts/Oswald-Bold.ttf') format('truetype'),
-       url('../assets/fonts/Oswald-SemiBold.ttf') format('truetype'),
-       url('../assets/fonts/Oswald-VariableFont_wght.ttf') format('truetype');
-  font-weight: normal;
+  src: url('./assets/fonts/Oswald-Bold.ttf') format('truetype');
+  font-weight: bold;
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Oswald';
+  src: url('./assets/fonts/Oswald-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('./assets/fonts/Oswald-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
 
 /* Box sizing rules */
 *,
