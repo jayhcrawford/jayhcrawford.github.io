@@ -60,7 +60,7 @@ const App = () => {
     <>
       <ThreeBackground />
       <Router>
-        <div ref={backgroundRef} style={{ position: 'relative', width: '100vw', height: '100vh' }}>
+        <div ref={backgroundRef} style={{ position: 'relative', width: '95vw', height: '100vh',  }}>
           <div style={{ textAlign: 'center' }}>
             <header style={{ marginBottom: '70px' }}>
               <h1 style={{ fontFamily: heroFont, fontSize: '6rem', fontWeight: 'bold' }}>Jay Crawford</h1>

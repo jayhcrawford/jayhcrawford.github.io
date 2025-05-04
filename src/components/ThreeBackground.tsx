@@ -1,17 +1,18 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three"
-
+import useWindowSize from '../hooks/useWindowSize';
 
 const ThreeBackground = () => {
+  const { width, height } = useWindowSize();
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ alpha: true }); // Enable transparency
     renderer.setClearColor(0x000000, 0); // Set background to transparent
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(width, height);
     renderer.domElement.style.position = 'absolute';
     renderer.domElement.style.top = '0';
     renderer.domElement.style.left = '0';
@@ -43,9 +44,9 @@ const ThreeBackground = () => {
         mountRef.current.removeChild(renderer.domElement);
       }
     };
-  }, []);
+  }, [width, height]);
 
-  return <div ref={mountRef} />;
+  return <div style={{ position: 'fixed', top: 0, left: 0, width: `${width}px`, height: `${height}px`, overflow: 'hidden' }} ref={mountRef} />;
 };
 
 export default ThreeBackground
