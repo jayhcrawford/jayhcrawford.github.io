@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 const Projects = () => {
-  const mountRef = useRef(null);
+  const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const scene = new THREE.Scene();
@@ -11,7 +11,7 @@ const Projects = () => {
     const renderer = new THREE.WebGLRenderer();
 
     renderer.setSize(window.innerWidth, window.innerHeight);
-    if (mountRef.current && !mountRef.current.hasChildNodes()) {
+    if (mountRef.current instanceof HTMLElement && !mountRef.current.hasChildNodes()) {
       mountRef.current.appendChild(renderer.domElement);
     }
 
