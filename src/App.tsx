@@ -1,35 +1,80 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Art from './pages/Art';
+import Writing from './pages/Writing';
+import Contact from './pages/Contact';
+import { heroFont, mobile_break_point, secondaryFont, tertiaryFont } from './styles';
+import useWindowSize from './hooks/useWindowSize';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const { width, height } = useWindowSize();
+
+  console.log(width, "is the width; and the height is: ", height);
 
   return (
-    <>
+    <Router>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
 
-export default App
+        <div style={{ textAlign: 'center', }}>
+          <header style={{ marginBottom: '70px' }}>
+            <h1 style={{ fontFamily: heroFont, fontSize: '6rem', fontWeight: 'bold' }}>Jay Crawford</h1>
+            <div style={{
+              marginTop: "2em",
+              marginBottom: "2em",
+              fontFamily: "Cal Sans",
+              color: "white",
+              backgroundColor: "red",
+              marginLeft: "-8px",
+              width: "100vw",
+              transform: "rotate(-2deg)",
+              transformOrigin: "center"
+            }}>
+              <style>
+                {`
+          .under_construct_text {
+            padding-left: 2em;
+            padding-right: 2em;
+            white-space: nowrap;
+          }
+          `}
+              </style>
+              {width > mobile_break_point &&
+                <>
+                  <span className="under_construct_text">Under Construction</span>
+                  <span className="under_construct_text">Under Construction</span>
+                  <span className="under_construct_text">Under Construction</span>
+                </>}
+                {width <= mobile_break_point &&
+                <>
+                  <span className="under_construct_text">Under Construction</span>
+                  <span className="under_construct_text">Under Construction</span>
+                </>}
+            </div>
+            <p style={{ fontFamily: secondaryFont, fontSize: '2rem', color: '#555' }}>Interdisciplinary Creative & Programmer</p>
+          </header>
+          <nav style={{ marginBottom: '50px', fontFamily: tertiaryFont }}>
+            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', justifyContent: 'center', gap: '20px' }}>
+              <li><a href="/about" style={{ textDecoration: 'none', color: '#007BFF' }}>About</a></li>
+              <li><a href="/projects" style={{ textDecoration: 'none', color: '#007BFF' }}>Projects</a></li>
+              <li><a href="/art" style={{ textDecoration: 'none', color: '#007BFF' }}>Art</a></li>
+              <li><a href="/writing" style={{ textDecoration: 'none', color: '#007BFF' }}>Writing</a></li>
+              <li><a href="/contact" style={{ textDecoration: 'none', color: '#007BFF' }}>Contact</a></li>
+            </ul>
+          </nav>
+          <main>
+            <Routes>
+              <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/art" element={<Art />} />
+              <Route path="/writing" element={<Writing />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </main>
+        </div>
+      </div>
+    </Router>
+  );
+};
+
+export default App;
