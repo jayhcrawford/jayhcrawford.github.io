@@ -50,8 +50,10 @@ const App = () => {
                   <span className="under_construct_text">Under Construction</span>
                   <span className="under_construct_text">Under Construction</span>
                 </>}
-            </div>
-            <p style={{ fontFamily: secondaryFont, fontSize: '2rem', color: '#555' }}>Interdisciplinary Creative & Programmer</p>
+            </div>            <p style={{ fontFamily: secondaryFont, fontSize: '2rem', color: '#555' }}>
+              Interdisciplinary Creative & Programmer
+            
+            </p>
           </header>
           <nav style={{ marginBottom: '50px', fontFamily: tertiaryFont }}>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', justifyContent: 'center', gap: '20px' }}>
