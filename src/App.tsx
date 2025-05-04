@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Art from './pages/Art';
@@ -55,11 +55,11 @@ const App = () => {
           </header>
           <nav style={{ marginBottom: '50px', fontFamily: tertiaryFont }}>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', justifyContent: 'center', gap: '20px' }}>
-              <li><a href="/about" style={{ textDecoration: 'none', color: '#007BFF' }}>About</a></li>
-              <li><a href="/projects" style={{ textDecoration: 'none', color: '#007BFF' }}>Projects</a></li>
-              <li><a href="/art" style={{ textDecoration: 'none', color: '#007BFF' }}>Art</a></li>
-              <li><a href="/writing" style={{ textDecoration: 'none', color: '#007BFF' }}>Writing</a></li>
-              <li><a href="/contact" style={{ textDecoration: 'none', color: '#007BFF' }}>Contact</a></li>
+              <li><a href="#/about" style={{ textDecoration: 'none', color: '#007BFF' }}>About</a></li>
+              <li><a href="#/projects" style={{ textDecoration: 'none', color: '#007BFF' }}>Projects</a></li>
+              <li><a href="#/art" style={{ textDecoration: 'none', color: '#007BFF' }}>Art</a></li>
+              <li><a href="#/writing" style={{ textDecoration: 'none', color: '#007BFF' }}>Writing</a></li>
+              <li><a href="#/contact" style={{ textDecoration: 'none', color: '#007BFF' }}>Contact</a></li>
             </ul>
           </nav>
           <main>
