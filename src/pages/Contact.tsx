@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <div style={{ fontFamily: tertiaryFont }}>
       <h2>Contact</h2>
-      <p>Get in touch with me!</p>
+      <p><a href="mailto:jayhcrawford@gmail.com">jayhcrawford@gmail.com</a></p>
     </div>
   );
 };

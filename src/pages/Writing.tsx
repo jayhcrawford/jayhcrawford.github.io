@@ -1,10 +1,11 @@
-import { tertiaryFont } from '../styles';
+import { coming_soon_message, tertiaryFont } from '../styles';
 
 const Writing = () => {
   return (
     <div style={{ fontFamily: tertiaryFont }}>
       <h2>Writing</h2>
-      <p>Read my writings and articles!</p>
+      <p>{coming_soon_message}</p>
+
     </div>
   );
 };
