@@ -1,0 +1,141 @@
+body {
+    background-color: var(--body-color-1)
+}
+
+
+header {
+    background-color: var(--body-color-2);
+    text-align: right;
+}
+
+h1 {
+    padding: 1rem 1rem 0rem 0rem;
+    color: var(--standardFont);
+    text-shadow: 5px 5px 10px black;
+    height: 10vh;
+
+}
+
+/*-- Classes -- */
+/*-- Classes -- */
+
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--body-color-1);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 5px 5px 10px rgb(20, 13, 80);
+  }
+  
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--standardFont);
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: var(--body-color-2);
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .openbtn {
+    /*This is the button for opening the sidebar*/
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    background-color: var(--button1);
+    color: var(--button-text1);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 30px;
+  }
+
+  .menuItem:hover {
+    background-color: var(--button1);
+
+  }
+  
+  .openbtn:hover {
+    background-color: var(--body-color-1);
+  }
+
+
+
+/*-- ID's --*/
+/*-- ID's --*/
+
+#main {
+    /*all content within fullContent, apart from the sideBar*/
+    transition: margin-left .5s;
+    padding: 16px;
+    background-color: var(--body-color-2);
+}
+
+#fullContent {
+    /*-- fullContent contains everything below the header --*/
+    background-color: var(--base-color);
+    width: auto;
+    height: 80vh;
+    margin: auto;
+}
+
+#contactScroll {
+  background-color: var(--base-color);
+  height: 80%;
+  overflow-y: auto;
+}
+
+#contactBlock {
+  background-color: var(--body-color-2);
+  height: 60px;
+  width: 95%;
+  margin: 1rem;
+  position: relative;
+}
+
+#groupTier {
+  height: 30px;
+  width: 30px;
+  background-color: var(--base-color);
+  top: 15px;
+  left: 20px;
+  position: absolute;
+}
+
+#contactNameNumber {
+  position: absolute;
+  left: 100px;
+  top: 5px;
+  font-size: 20px;
+}
+
+#lastContact {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 20px;
+}
+
+
+/*-- Media Queries --*/
+/*-- Media Queries --*/
+
+
+

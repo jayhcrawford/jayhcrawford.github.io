@@ -1,0 +1,231 @@
+/* color variables in root */
+/*main content properties first*/
+/*ID content properties second*/
+/*Classes after ID's*/
+/*Media Queries at Bottom*/
+
+:root {
+  --hero-color: #8aff82;
+  --bg-color: #1c1a26;
+  --fg-color: #c8c1f5;
+  --hr-color: #bda595;
+  --nav-current: white;
+  --image-outline: #325afa;
+}
+
+p {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  line-height: 2.55rem;
+}
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: linen;
+  background-color: var(--bg-color);
+  margin-bottom: 20rem;
+}
+
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--hr-color);
+}
+
+h2, h3, h4, h5, h6 {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h3 {
+  padding-top: .8rem;
+  padding-bottom: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+hr {
+  margin: 1.5rem 0;
+  border: 1px solid var(--hr-color);
+}
+
+blockquote {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*----ID's----*/
+
+
+#firstsec {
+  background-color: red;
+}
+
+#github_link_block {
+  text-align: right;
+}
+
+#github_link {
+  color: var(--white);
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  text-decoration: underline;
+
+}
+
+#my_header {
+  padding: 1rem;
+  height: 5rem;
+  text-decoration: underline;
+  color: var(--hr-color);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+#my_header a:visited {
+  color: var(--hr-color);
+}
+
+#location-bar {
+  margin-top: 2rem;
+  color: var(--hr-color);
+  padding-top: 1rem;
+  line-height: 1rem;
+  height: 3rem;
+  font-size: 1.8rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#nav-bar-current-page {
+  color: var(--nav-current);
+}
+
+
+/*----Classes-----*/
+
+.hero-img {
+  opacity: .3;
+  box-shadow: 0 0 40px var(--fg-color);
+}
+
+
+.hero-subtitle {
+  font-size: 2.4rem;
+  color: var(--hero-color);
+  text-align: center;
+  margin-top: 1.8rem;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  line-height: 4rem;
+}
+
+.image-1{
+  opacity: .8;
+  box-shadow: 0 0 40px var(--fg-color);
+}
+
+
+
+.image-2 {
+  border: 2rem solid;
+  border-color: var(--image-outline);
+}
+
+.heading {
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1.5rem;
+}
+
+.nav-go-back-pages {
+  text-decoration: underline;
+  color: var(--hr-color)
+}
+
+.text {
+  font-size: 1.8rem;
+  letter-spacing: 0.6px;
+  text-align: justify;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero-title {
+  text-align: center;
+  color: var(--hero-color);
+  font-size: 8rem;
+}
+
+.first-paragraph::first-letter {
+  font-size: 8rem;
+  color: var(--hero-color);
+  float: left;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.text-with-images {
+  display: grid;
+  margin-bottom: 3rem;
+}
+
+.lists {
+  list-style-type: none;
+  margin-top: 2rem;
+}
+
+.lists li {
+  margin-bottom: 1.5rem;
+}
+
+.list-title, .list-subtitle {
+  color: var(--hr-color);
+}
+
+.image-wrapper {
+  padding: 3rem;
+}
+
+
+
+/*=======Media Queries=======*/
+
+
+
+@media only screen and (max-width: 550px) {
+  .hero-title {
+    font-size: 6rem;
+  }
+  
+  .hero-subtitle,
+  .author,
+  .quote,
+  .list-title {
+    font-size: 1.8rem;
+  }
+  
+  .social-icons {
+    font-size: 2rem;
+  }
+
+  .text {
+    font-size: 1.6rem;
+  } 
+}

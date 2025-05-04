@@ -1,0 +1,266 @@
+/* white border box */
+/* white border box */
+/* white border box */
+
+/* .blogpost, h1, .link-box, p, .current-page, #location-bar, .image-block {
+    border: 2px dotted white;
+} 
+
+/* white border box */
+/* white border box */
+/* white border box */
+
+
+/* standard elements */
+
+
+/* desktop view */
+@media only screen and (min-width: 1200px) {
+    * {
+        max-width: 800px;
+        margin: auto; 
+    }
+
+    .current-page {
+        display: block;
+        text-align: left;
+        padding: 1.5rem;
+        padding-top: 1rem;
+        font-size: 2.2rem;
+    }
+
+    h1 {
+        padding: 2rem;
+    }
+}
+/* (close) desktop view */
+
+
+* {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgba(50, 90, 250, 100);
+    color: white;
+   
+}
+
+p {
+    padding: 1.5rem;
+}
+
+h2 {
+    font-size: 140%;
+}
+
+li {
+    padding: .2rem;
+}
+
+hr {
+    border: 1px solid white;
+    width: 90%;
+    margin: 2rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    background-color: rgba(20, 70, 200, 100);
+}
+
+.video-container {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+  }
+
+.video-div {
+    width: 80%;
+    margin: auto;
+}
+  
+
+/* --------------- classes ---------------- */
+/* classes */
+/* classes */
+
+/* body-style is the div container class within body elements that will style them */
+
+
+/* this styles a basic link list in the body text */
+
+.link-box {
+    display: block;
+    justify-content: left;
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .link-box li {
+        height: 2.2rem; 
+    }
+
+}
+
+
+/* this styles the large bold text (ex. "Acting) on pages other than index */
+
+.current-page {
+    display: block;
+    text-align: left;
+    padding-left: 2rem;
+    font-size: 2.2rem;
+}
+
+/* --------------- ID's ---------------- */
+/* ID's */
+/* ID's */
+
+#location-bar {
+    padding: .5rem;
+}
+
+
+
+/*------ Post Properties ---------*/
+/*------ Post Properties ---------*/
+/*------ Post Properties ---------*/
+
+
+
+/*------ Post Properties (Mobile) ---------*/
+@media only screen and (max-width: 600px) {
+.image-block {
+    display: block;
+}
+    
+.blog-image-tab {
+    padding-top: 1rem;
+    display: block;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+    
+.blog-post-title {
+    font-size: 1.5rem;
+    padding-left: 1rem;
+}
+
+h1 {
+    text-decoration: underline;
+}
+    
+.blog-description {
+    padding: 0;
+    margin-left: 1rem;
+    margin-right: 2rem;
+}
+}
+/*------ (close) Post Properties (Mobile) ---------*/
+
+
+/*------ Post Properties (Tablet/Desktop) ---------*/
+@media only screen and (min-width: 601px) {
+.image-block {
+    display: flex;
+}
+
+.image-block div .blog-post-title { 
+    padding: 1rem;
+}
+
+
+.blog-image-tab {
+    width: 14rem;
+}
+
+.blog-description {
+    padding: 0;
+    margin-left: 1rem;
+    margin-right: 2rem;
+}
+}
+/*------ (close) Post Properties (Tablet/Desktop) ---------*/
+
+/*------ Post Properties ---------*/
+/*------ Post Properties ---------*/
+/*------ Post Properties ---------*/
+
+
+
+/*------ Image Gallery ---------*/
+/*------ Image Gallery ---------*/
+/*------ Image Gallery ---------*/
+
+@media only screen and (min-width: 601px) {
+.big {
+    background-color: rgb(6, 243, 6);
+    width: 100%;
+    height: 100%;
+}
+
+.image-row {
+    display: flex;
+    background-color: pink;
+    height: 150px;
+}
+
+.image-chunk {
+    margin: auto;
+    background-color: red;
+    height: 130px;
+    width: 140px;
+}
+}
+
+
+@media only screen and (max-width: 600px) {
+.big {
+    background-color: rgb(6, 243, 6);
+    width: 100%;
+    height: 100%;
+}
+    
+.image-row {
+    display: flex;
+    background-color: pink;
+    height: 120px;
+}
+    
+.image-chunk {
+    margin: auto;
+    background-color: red;
+    height: 110px;
+    width: 70px;
+}
+}
+
+@media only screen and (max-width: 320px) {
+    .big {
+        background-color: rgb(6, 243, 6);
+        width: 100%;
+        height: 100%;
+    }
+        
+    .image-row {
+        display: flex;
+        background-color: pink;
+        height: 120px;
+    }
+        
+    .image-chunk {
+        margin: auto;
+        background-color: red;
+        height: 90;
+        width: 40px;
+    }
+    }
+
+/*------ (close) Image Gallery ---------*/
+/*------ (close) Image Gallery ---------*/
+/*------ (close) Image Gallery ---------*/

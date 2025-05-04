@@ -1,0 +1,196 @@
+:root {
+  --faint-text: lightgrey;
+  --body-text: black;
+  --box-shadow: rgba(0, 0, 0, 60%);
+  --generate-gradient: linear-gradient(180deg, white, rgb(211, 211, 211));
+  --generate-hover: linear-gradient(180deg, rgb(211, 211, 211), rgb(211, 211, 211));
+  --generate-active: linear-gradient(180deg, rgb(160, 160, 160), rgb(211, 211, 211));
+}
+
+
+* {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+
+
+
+
+/*--ID's--*/
+
+#quote-box-wrapper {
+  /*this wraps #quote-box*/
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+#quote-box {
+  /*this contains the quote machine elements*/
+  box-shadow: 5px 5px 10px var(--box-shadow);
+  min-height: 100px;
+  min-width: 460px;
+  max-width: 461px;
+}
+
+#whole-text {
+  /*this is a div that contains the quote and author elements*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+/*this div contains whole-text*/
+#whole-text-wrapper {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#quote-and-author {
+  /*this styles the div of both the quote and author*/
+  border: 2px solid var(--faint-text);
+  margin: 2rem;
+  box-shadow: 4px 4px 5px var(--faint-text);
+  padding-bottom: 2rem;
+}
+
+
+#text {
+  /*this contains the quote generated*/
+  padding-top: .5rem;
+  line-height: 34px;
+  display: block;
+  text-align: center;
+  padding: 1rem;
+}
+
+#text::before, 
+#text::after  {
+  /*this adds quotation marks before and after #text*/
+  font-size: 30px;
+  line-height: 16px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  color: var(--faint-text);
+}
+
+
+/*these adds quotation marks before and after #text*/
+#text::before {
+  content: "\"";
+}
+
+#text::after {
+  content: "\"";
+}
+
+
+#author {
+  /*this styles the author's name div*/
+  text-align: right;
+  padding-right: 3rem;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--body-text);
+}
+
+#author::before {
+  /*this puts an em-dash before the author's name*/
+  content: "-- ";
+}
+
+#buttons {
+  /*this div contains the Generate Random Quote and Twitter button*/
+  display: flex;
+  justify-content: right;
+  padding: 1rem 2rem 0rem 0rem;
+}
+
+
+#new-quote {
+  /*ID for "Generate New Quote" button*/
+  border-radius: 4px;
+  border-color: lightgrey;
+  background-image: var(--generate-gradient);
+  box-shadow: 2px 2px 5px var(--faint-text);
+}
+
+#new-quote:hover {
+  background-image: var(--generate-hover);
+}
+
+#new-quote:active {
+  background-image: var(--generate-active);
+}
+
+
+
+#button1, #button2 {
+  /*This styles the divs for each individual button*/
+  display: inline;
+  padding: 0 1rem 0 0;
+}
+
+#button1 {
+  /*this adds a pinch of extra padding to make the Generate button aesthetically similar with the Twitter button*/
+  padding-top: .1rem;
+}
+
+#bottom-elements {
+  /*this styles the div containing the #night-mode-button and #jay-line*/
+  border: 1px solid white;
+  position: relative;
+}
+
+#night-mode-button {
+/*This is a div that contains the night-btn button*/
+  position: absolute;
+  left: 25px;
+  top: 7px;
+}
+
+#night-mode-style {
+  /*this styles the night-mode button base*/
+  border: 1px solid var(--faint-text);
+  color: var(--faint-text);
+  background-color: white;
+  border-radius: 20px;
+  font-size: 10px;
+  line-height: 10px;
+  height: 30px;
+  width: 30px;
+}
+
+#night-mode-style:hover {
+/*this styles the night-mode button base when it's hovered on*/
+background-color: var(--faint-text);
+color: white;
+}
+
+#night-mode-style:active {
+/*this styles the night-mode button base when it's clicked*/
+background-color: var(--box-shadow);
+color: white;
+}
+
+
+#jay-line {
+  /*this is the tagline at the bottom of the box that says, "Jay's Random Quote Generator"*/
+  margin: 1rem 2.5rem 1rem 1rem;
+  color: var(--faint-text);
+  text-align: right;
+  font-size: 12px;
+}
+
+
+
+
+/*-- (close) ID's--*/

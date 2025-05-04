@@ -1,0 +1,142 @@
+
+/*--Exclusively Color Related--*/
+
+#main-doc {
+  background-color: var(--base-color);
+}
+
+p, header, h1, code, a, footer, #nav-btn-btn-group, ul, i, li, section, #header-id,
+ #top-of-page-header, #navbar, #navbar-div, .nav-button, #About_The_Project, #Record_New_Insight, 
+ #Google_And_Apple_Integration, #Conversation_Ideas, #Customizable-Groups, #Privacy, #footer-div, #bottom-btn, footer 
+{
+  background-color: var(--base-color);
+}
+/*-- (close) Exclusively Color Related--*/
+
+
+
+* {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: var(--body-color-1);
+}
+
+
+body {
+  overflow-x: hidden;
+}
+
+/*--Classes--*/
+
+.section-title-span {
+  font-weight: bold;  
+  padding: .5rem;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.nav-button {
+  margin: .2rem;
+  box-shadow: 2px 2px 4px var(--body-color-1);
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: .2rem .8rem;
+  
+}
+
+
+/*--ID's--*/
+
+#header-id {
+  box-shadow: 10px 10px 10px var(--darkest-color);
+}
+
+#header-id {
+  padding: .6rem 1rem;
+  z-index: 1;
+}
+
+#top-of-page-header {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem;
+  padding-bottom: 2rem;;
+  text-decoration: underline;
+  text-align: center;
+}
+
+#below-header {
+  /*--This contains the ID body-content--*/
+  margin-top: 20px;
+  background-color: var(--body-color-1);
+}
+
+#body-content {
+  /*--This contains the main body of content, excluding the header--*/
+  margin: auto;
+  max-width: 90%;
+  padding: 1rem;
+  background-color: var(--base-color);
+  box-shadow: 10px 10px 10px var(--darkest-color);
+
+} 
+
+#navbar-div {
+  padding: 1rem;
+  box-shadow: 4px 10px 10px var(--darkest-color);
+}
+
+#About_The_Project, #Record_New_Insight, #Google_And_Apple_Integration, #Conversation_Ideas, #Customizable-Groups, #Privacy {
+  /*--each of these section ID's corresponds to each section--*/
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 5px 5px 5px var(--body-color-1);
+}
+
+#Privacy {
+  margin-bottom: 0;
+}
+
+#footer-div {
+  /*--this div helps to style and position the footer--*/
+  padding: 1rem;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+#bottom-btn {
+  /*--This contains the button at the bottom of the page--*/
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+/*--Media Queries--*/
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .nav-button {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 371px) {
+  #nav-btn-btn-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-button {
+    margin: .3rem .5rem;
+  }
+  
+}
