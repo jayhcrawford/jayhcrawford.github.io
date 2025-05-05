@@ -63,7 +63,7 @@ const App = () => {
         <div ref={backgroundRef} style={{ position: 'relative', width: '95vw', height: '100vh',  }}>
           <div style={{ textAlign: 'center' }}>
             <header style={{ marginBottom: '70px' }}>
-              <h1 style={{ fontFamily: heroFont, fontSize: '6rem', fontWeight: 'bold' }}>Jay Crawford</h1>
+              <h1 style={{ fontFamily: heroFont, fontSize: width < 500 ? "3rem" : '6rem', fontWeight: 'bold' }}>Jay Crawford</h1>
               <div style={{
                 marginTop: "2em",
                 marginBottom: "2em",
