@@ -1,0 +1,16 @@
+{
+  "name": "AI_sketch",
+  "version": "1.0.0",
+  "description": "A website project featuring a gallery section for displaying paintings.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build process can be defined here.'"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
