@@ -1,5 +1,5 @@
 import React, { MouseEventHandler, useState, CSSProperties } from 'react';
-// import './gallery.css';
+import './gallery.css';
 
 const base_url_for_images = "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/painting/";
 
@@ -84,23 +84,18 @@ const LeftRight_Button = (props: LeftRight_Button__Props) => {
   );
 };
 
-const galleryContainerStyle: CSSProperties = {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  gap: '1rem',
-  backgroundColor: 'green',
-};
+
 
 const mainImageRowStyle: CSSProperties = {
   display: 'flex',
   alignItems: 'center',
+  gridArea: ""
 };
 
 const galleryImageStyle: CSSProperties = {
   maxWidth: '400px',
   maxHeight: '400px',
-  border: '2px solid #ccc',
+  border: '2px solid purple',
   borderRadius: '8px',
   display: 'inline',
 };
@@ -127,29 +122,34 @@ const Gallery: React.FC = () => {
   const goLeft = () => setCurrent((prev) => Math.max(prev - 1, 0));
   const goRight = () => setCurrent((prev) => Math.min(prev + 1, galleryImages.length - 1));
 
-  const miniImages = galleryImages.slice(current + 1, current + 5);
+  const miniImages = galleryImages.slice(current + 1, current + 6);
 
   return (
-    <div id="gallery-container" style={galleryContainerStyle}>
-      <div className="gallery_main-image" style={mainImageRowStyle}>
-        <LeftRight_Button direction="left" current={current} onclick_func={goLeft} />
+    <div id="gallery-container">
+      <div className="gallery_main-image" /* style={mainImageRowStyle} */>
+        <div className='div1'>
+          <LeftRight_Button direction="left" current={current} onclick_func={goLeft} />
+        </div>
         <img
           src={galleryImages[current].src}
           alt={galleryImages[current].alt}
           title={galleryImages[current].title}
-          style={galleryImageStyle}
+          // style={galleryImageStyle}
           loading="lazy"
         />
-        <LeftRight_Button direction="right" current={current} onclick_func={goRight} />
+        <div className="div3"><LeftRight_Button direction="right" current={current} onclick_func={goRight} />
+        </div>
       </div>
-      <div className="mini-gallery-row" style={miniGalleryRowStyle}>
+      {/* <div>hello</div> */}
+      <div className="div5">Hello</div>
+      <div className="div4" /* style={miniGalleryRowStyle} */>
         {miniImages.map((img) => (
           <img
             key={img.src}
             src={img.src}
             alt={img.alt}
             title={img.title}
-            style={miniGalleryImageStyle}
+            // style={miniGalleryImageStyle}
             loading="lazy"
           />
         ))}
