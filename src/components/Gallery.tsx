@@ -150,42 +150,125 @@ const galleryImages: GalleryImages = img_names.map(name => ({
 
 
 
-const Gallery = () => {
-  const [current, setCurrent] = useState(0);
+// const Gallery = () => {
+//   const [current, setCurrent] = useState(0);
+
+//   const goLeft = () => setCurrent((prev) => Math.max(prev - 1, 0));
+//   const goRight = () => setCurrent((prev) => Math.min(prev + 1, galleryImages.length - 1));
+
+//   // Get the next 4 images after the current one
+//   const miniImages = galleryImages.slice(current + 1, current + 5);
+
+//   return (
+//     <>
+//       <div id="gallery-container">
+// <div>
+//   <style>
+//     {
+//       `
+//       .cycle_img_bttn {
+//         background-color: blue;
+//         display: inline;
+//       }
+//       `
+//     }
+//   </style>
+//   <button className="cycle_img_bttn" onClick={goLeft} disabled={current === 0}>&lt;</button>
+//   <img
+//     src={galleryImages[current].src}
+//     alt={galleryImages[current].alt}
+//     title={galleryImages[current].title}
+//     className="gallery-image"
+//     style={{ display: "inline" }}
+//   />
+//   <button className="cycle_img_bttn" onClick={goRight} disabled={current === galleryImages.length - 1}>&gt;</button>
+
+// </div>
+
+//       </div>
+//       <div className="mini-gallery-container" style={{
+//         display: "flex",
+//         justifyContent: "center"
+//       }}>
+//         <div className="mini-gallery-row">
+//           {miniImages.map((img, idx) => (
+//             <img
+//               key={idx}
+//               src={img.src}
+//               alt={img.alt}
+//               title={img.title}
+//               className="mini-gallery-image"
+//             />
+//           ))}
+//         </div>
+//       </div>
+//     </>
+//   );
+// };
+
+
+
+const Gallery: React.FC = () => {
+  const [current, setCurrent] = useState<number>(0);
 
   const goLeft = () => setCurrent((prev) => Math.max(prev - 1, 0));
   const goRight = () => setCurrent((prev) => Math.min(prev + 1, galleryImages.length - 1));
 
-  // Get the next 4 images after the current one
   const miniImages = galleryImages.slice(current + 1, current + 5);
 
   return (
-    <>
-      <div id="gallery-container">
-        <div>
-          <button onClick={goLeft} disabled={current === 0}>&lt;</button>
-          <img
-            src={galleryImages[current].src}
-            alt={galleryImages[current].alt}
-            title={galleryImages[current].title}
-            className="gallery-image"
-          />
-          <button onClick={goRight} disabled={current === galleryImages.length - 1}>&gt;</button>
-
-        </div>
-
+    <div id="gallery-container" >
+      <div className="gallery_main-image" style={{ display: "flex", alignItems: "center"}}>
+        <style>
+          {
+            `
+               .cycle_img_bttn {
+                 background-color: blue;
+                 display: inline-block;
+               }
+               `
+          }
+        </style>
+        <button
+          className="cycle_img_bttn"
+          onClick={goLeft}
+          disabled={current === 0}
+          aria-label="Previous painting"
+          type="button"
+        >
+          &lt;
+        </button>
+        <img
+          src={galleryImages[current].src}
+          alt={galleryImages[current].alt}
+          title={galleryImages[current].title}
+          className="gallery-image"
+          style={{ display: "inline" }}
+          loading="lazy"
+        />
+        <button
+          className="cycle_img_bttn"
+          onClick={goRight}
+          disabled={current === galleryImages.length - 1}
+          aria-label="Next painting"
+          type="button"
+        >
+          &gt;
+        </button>
       </div>
       <div className="mini-gallery-row">
-        {miniImages.map((img, idx) => (
+        {miniImages.map((img) => (
           <img
-            key={idx}
+            key={img.src}
             src={img.src}
             alt={img.alt}
             title={img.title}
             className="mini-gallery-image"
+            loading="lazy"
           />
         ))}
-      </div></>
+      </div>
+    </div>
   );
 };
 
