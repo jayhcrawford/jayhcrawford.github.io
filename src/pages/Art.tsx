@@ -1,12 +1,15 @@
-import { coming_soon_message, tertiaryFont } from '../styles';
-import Gallery from '../components/Gallery.tsx'
+import { tertiaryFont } from '../styles';
+import Gallery from '../components/Gallery'
 
 const Art = () => {
   return (
     <div style={{ fontFamily: tertiaryFont }}>
       <h2>Art</h2>
-      <p>{coming_soon_message}</p>
-      <Gallery />
+      <div
+      //  style={{border: "1px solid red", padding: "1em"}}
+       >
+        <Gallery />
+      </div>
     </div>
   );
 };

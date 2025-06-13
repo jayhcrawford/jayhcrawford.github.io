@@ -18,8 +18,9 @@ const ThreeBackground = () => {
     renderer.domElement.style.left = '0';
     renderer.domElement.style.zIndex = '-1'; // Set behind other content
 
-    if (mountRef.current instanceof HTMLElement && !mountRef.current.hasChildNodes()) {
-      mountRef.current.appendChild(renderer.domElement);
+    const mountNode = mountRef.current;
+    if (mountNode instanceof HTMLElement && !mountNode.hasChildNodes()) {
+      mountNode.appendChild(renderer.domElement);
     }
 
     const geometry = new THREE.BoxGeometry();
@@ -38,10 +39,9 @@ const ThreeBackground = () => {
     };
 
     animate();
-
     return () => {
-      if (mountRef.current) {
-        mountRef.current.removeChild(renderer.domElement);
+      if (mountNode) {
+        mountNode.removeChild(renderer.domElement);
       }
     };
   }, [width, height]);
