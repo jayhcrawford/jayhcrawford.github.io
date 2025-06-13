@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { MouseEventHandler, useState } from 'react';
 import './gallery.css';
 
 const base_url_for_images = "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/painting/"
@@ -54,6 +54,66 @@ const img_names = [
 
 ]
 
+
+interface LeftRight_Button__Props {
+  onclick_func: MouseEventHandler<HTMLButtonElement>;
+  current: number;
+  direction: string;
+}
+
+const LeftRight_Button = (props: LeftRight_Button__Props) => {
+
+
+
+
+
+
+  //  .cycle_img_bttn:disabled,
+  //  .cycle_img_bttn[disabled]{
+  //     border: 3px solid rgba(0,0,0,0.2);
+  //     background-color: white;
+  //   }
+  //  `
+
+
+  return (
+    <div>
+    <style>
+      {`
+         .cycle_img_bttn:disabled,
+         .cycle_img_bttn[disabled]{
+            border: 3px solid rgba(0,0,0,0.2);
+            background-color: white;
+        }
+
+        .cycle_img_bttn {
+          display: inline-block,
+          border: 3px solid black,
+          background-color: white,
+          padding: 1rem,
+          border-radius: 50%,
+          height: 4rem,
+          width: 4rem
+        }
+      `}
+    </style>
+      <button
+        className="cycle_img_bttn"
+
+        onClick={props.onclick_func}
+        disabled={props.current === galleryImages.length - 1}
+        aria-label="Next painting"
+        type="button">
+        <div style={{ height: "2rem", display: "flex", backgroundColor: "red", justifyContent: "center" }}>
+          {props.direction === "right" && <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" /></svg>}
+          {props.direction === "left" && <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" /></svg>}
+
+        </div>
+      </button></div>
+  )
+}
+
+
 type GalleryImage = {
   src: string;
   alt?: string;
@@ -77,39 +137,12 @@ const Gallery: React.FC = () => {
   const miniImages = galleryImages.slice(current + 1, current + 5);
 
   return (
-    <div id="gallery-container" >
+    <div id="gallery-container" style={{backgroundColor: "green"}} >
       <div className="gallery_main-image" style={{ display: "flex", alignItems: "center" }}>
-        <style>
-          {
-            `
-               .cycle_img_bttn {
-                 display: inline-block;
-                 border: 3px solid black;
-                 background-color: white
-                 padding: 1rem;
-                 border-radius: 50%;
-                 height: 4rem;
-                 width:  4rem;
 
-               }
+        <LeftRight_Button direction='left' current={current} onclick_func={goLeft} />
 
-               .cycle_img_bttn:disabled,
-               .cycle_img_bttn[disabled]{
-                  border: 3px solid rgba(0,0,0,0.2);
-                  background-color: white;
-                }
-               `
-          }
-        </style>
-        <button
-          className="cycle_img_bttn"
-          onClick={goLeft}
-          disabled={current === 0}
-          aria-label="Previous painting"
-          type="button"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
-        </button>
+        .
         <img
           src={galleryImages[current].src}
           alt={galleryImages[current].alt}
@@ -118,18 +151,13 @@ const Gallery: React.FC = () => {
           style={{ display: "inline" }}
           loading="lazy"
         />
-        <button
-          className="cycle_img_bttn"
-          onClick={goRight}
-          disabled={current === galleryImages.length - 1}
-          aria-label="Next painting"
-          type="button"
-        >
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>        </button>
+        <LeftRight_Button direction='right' current={current} onclick_func={goRight} />
+
       </div>
-      <div className="mini-gallery-row">
+      <div className="mini-gallery-row" style={{backgroundColor: "blue"}}>
         {miniImages.map((img) => (
           <img
+            style={{border: "4px solid white"}}
             key={img.src}
             src={img.src}
             alt={img.alt}
