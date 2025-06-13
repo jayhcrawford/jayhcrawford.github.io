@@ -101,3 +101,46 @@ textarea:not([rows]) {
 :target {
  scroll-margin-block: 5ex;
 }
+
+* {
+  /* background-color: white !important; */
+}
+
+
+
+/* #main_container {
+  background-color: orange;
+}
+.div1 {
+  background-color: purple;
+}
+.div2 {
+  background-color: pink;
+}
+.div3 {
+    background-color: purple;
+}
+.div4 {
+  background-color: orange;
+}
+.div5 {
+  background-color: brown;
+}
+#gallery-container {
+  background-color: green;
+} 
+.big {
+    background-color: rgb(6, 243, 6);
+}
+.image-row {
+    background-color: pink;
+}
+.image-chunk {
+    background-color: red;
+}
+#three_background {
+  background-color: pink;
+}
+.social_brick_icon_container, .arrow_button_arrowContainer  {
+  background-color: red;
+} */

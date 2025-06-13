@@ -5,12 +5,8 @@ const Art = () => {
   return (
     <div style={{ fontFamily: tertiaryFont }}>
       <h2 style={{display: "none"}}>Art</h2>
-      <div
-       style={{border: "1px solid red", padding: "1em", backgroundColor: "blue"}}
-       >
         <Gallery />
       </div>
-    </div>
   );
 };
 

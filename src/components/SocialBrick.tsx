@@ -10,7 +10,7 @@ const Social_SVG = (props: Social_SVG__Props) => {
 
     return (
         // TODO: Move this width away from px
-        <div style={{backgroundColor: "red", width: "150px"}}>
+        <div className="social_brick_icon_container" style={{ width: "150px"}}>
             
             <svg
                 id="Layer_1"

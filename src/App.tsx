@@ -4,11 +4,13 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Art from './pages/Art';
 import Contact from './pages/Contact';
-import { heroFont, mobile_break_point, secondaryFont, tertiaryFont } from './styles';
+import { artist_name, heroFont, mobile_break_point, secondaryFont, tertiaryFont } from './styles';
 import useWindowSize from './hooks/useWindowSize';
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import ThreeBackground from './components/ThreeBackground';
+import Footer from './Footer';
+import SocialBrick from './components/SocialBrick';
 
 const App = () => {
   const { width, height } = useWindowSize();
@@ -57,28 +59,26 @@ const App = () => {
   console.log(width, "is the width; and the height is: ", height);
 
   return (
-    <div style={{ overflow: "hidden" }}>
+    <div>
       <ThreeBackground />
       <Router>
-        <div ref={backgroundRef} style={{ backgroundColor: "orange", position: 'relative', width: '95vw', margin: "auto" }}>
+        <nav style={{ width: '100vw', zIndex: 100, fontFamily: tertiaryFont }}>
+          <ul style={{ listStyle: 'none', display: 'flex', justifyContent: 'center', gap: '20px' }}>
+            <li><a href="#/about">About</a></li>
+            <li><a href="#/projects">Projects</a></li>
+            <li><a href="#/art">Art</a></li>
+            <li><a href="#/contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div id="main_container" ref={backgroundRef} style={{ position: 'relative', width: '95vw', margin: "auto", paddingTop: '80px' }}>
           <div style={{ textAlign: 'center' }}>
             <header style={{ marginBottom: '70px' }}>
-              <h1 style={{ fontFamily: heroFont, fontSize: width < 500 ? "3rem" : '6rem', fontWeight: 'bold' }}>Jay Crawford</h1>
+              <h1 style={{ fontFamily: heroFont, fontSize: width < 500 ? "3rem" : '6rem', fontWeight: 'bold' }}>{artist_name}</h1>
               <p style={{ fontFamily: secondaryFont, fontSize: '2rem', color: '#555' }}>
                 Interdisciplinary Creative & Programmer
-
               </p>
+              <SocialBrick />
             </header>
-
-
-            <nav style={{ marginBottom: '50px', fontFamily: tertiaryFont }}>
-              <ul style={{ listStyle: 'none', padding: 0, display: 'flex', justifyContent: 'center', gap: '20px' }}>
-                <li><a href="#/about" style={{ textDecoration: 'none', color: '#007BFF' }}>About</a></li>
-                <li><a href="#/projects" style={{ textDecoration: 'none', color: '#007BFF' }}>Projects</a></li>
-                <li><a href="#/art" style={{ textDecoration: 'none', color: '#007BFF' }}>Art</a></li>
-                <li><a href="#/contact" style={{ textDecoration: 'none', color: '#007BFF' }}>Contact</a></li>
-              </ul>
-            </nav>
             <main>
               <Routes>
                 <Route path="/about" element={<About />} />
@@ -87,6 +87,7 @@ const App = () => {
                 <Route path="/contact" element={<Contact />} />
               </Routes>
             </main>
+            <Footer />
           </div>
         </div>
       </Router>

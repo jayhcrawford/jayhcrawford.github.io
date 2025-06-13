@@ -1,4 +1,4 @@
-import SocialBrick from "../components/SocialBrick";
+
 import useWindowSize from "../hooks/useWindowSize";
 import { tertiaryFont } from "../styles";
 
@@ -7,7 +7,6 @@ const About = () => {
   return (
     <div style={{ fontFamily: tertiaryFont }}>
       <div style={{height: "8rem"}}>
-        <SocialBrick />
       </div>
 
       <p>

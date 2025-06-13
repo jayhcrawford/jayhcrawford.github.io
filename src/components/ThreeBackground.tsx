@@ -46,7 +46,7 @@ const ThreeBackground = () => {
     };
   }, [width, height]);
 
-  return <div style={{ backgroundColor: "pink", position: 'fixed', top: 0, left: 0, width: `${width}px`, height: `${height}px`, overflow: 'hidden' }} ref={mountRef} />;
+  return <div id="three_background" style={{ position: 'fixed', top: 0, left: 0, width: `${width}px`, height: `${height}px`, overflow: 'hidden' }} ref={mountRef} />;
 };
 
 export default ThreeBackground
