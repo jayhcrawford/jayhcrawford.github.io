@@ -114,49 +114,119 @@ const miniGalleryImageStyle: CSSProperties = {
   borderRadius: '4px',
   opacity: 0.7,
   transition: 'opacity 0.2s',
+  display: "inline"
 };
 
-const Gallery: React.FC = () => {
+// const Gallery: React.FC = () => {
+// const [current, setCurrent] = useState<number>(0);
+// const miniImages = galleryImages.slice(current + 1, current + 6);
+
+
+// const goLeft = () => setCurrent((prev) => Math.max(prev - 1, 0));
+  // const goRight = () => setCurrent((prev) => Math.min(prev + 1, galleryImages.length - 1));
+
+//   return (
+//     <div id="gallery-container">
+//       <div className="gallery_main-image" /* style={mainImageRowStyle} */>
+//         <div className='div1'>
+//           <LeftRight_Button direction="left" current={current} onclick_func={goLeft} />
+//         </div>
+//         <img
+//           src={galleryImages[current].src}
+//           alt={galleryImages[current].alt}
+//           title={galleryImages[current].title}
+//           // style={galleryImageStyle}
+//           loading="lazy"
+//         />
+//         <div className="div3"><LeftRight_Button direction="right" current={current} onclick_func={goRight} />
+//         </div>
+//       </div>
+//       {/* <div>hello</div> */}
+//       <div className="div5">Hello</div>
+//       <div className="div4" /* style={miniGalleryRowStyle} */>
+//         {miniImages.map((img) => (
+//           <img
+//             key={img.src}
+//             src={img.src}
+//             alt={img.alt}
+//             title={img.title}
+//             // style={miniGalleryImageStyle}
+//             loading="lazy"
+//           />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+
+const Gallery = () => {
+
   const [current, setCurrent] = useState<number>(0);
+  const miniImages = galleryImages.slice(current + 1, current + 6);
 
   const goLeft = () => setCurrent((prev) => Math.max(prev - 1, 0));
-  const goRight = () => setCurrent((prev) => Math.min(prev + 1, galleryImages.length - 1));
+    const goRight = () => setCurrent((prev) => Math.min(prev + 1, galleryImages.length - 1));
 
-  const miniImages = galleryImages.slice(current + 1, current + 6);
+
 
   return (
     <div id="gallery-container">
-      <div className="gallery_main-image" /* style={mainImageRowStyle} */>
-        <div className='div1'>
-          <LeftRight_Button direction="left" current={current} onclick_func={goLeft} />
-        </div>
-        <img
+      <div className="div1">
+        <LeftRight_Button direction="left" current={current} onclick_func={goLeft} />
+      </div>
+      <div className="div2">
+
+<img
           src={galleryImages[current].src}
           alt={galleryImages[current].alt}
           title={galleryImages[current].title}
           // style={galleryImageStyle}
           loading="lazy"
         />
-        <div className="div3"><LeftRight_Button direction="right" current={current} onclick_func={goRight} />
+
+      </div>
+
+      <div className="div3">
+        <LeftRight_Button direction="right" current={current} onclick_func={goRight} />
+      </div>
+
+      <div className="div4">
+
+        <div className="div4" /* style={miniGalleryRowStyle} */>
+          {miniImages.map((img) => (
+            <img
+              key={img.src}
+              src={img.src}
+              alt={img.alt}
+              title={img.title}
+              style={miniGalleryImageStyle}
+              loading="lazy"
+            />
+          ))}
         </div>
+
       </div>
-      {/* <div>hello</div> */}
-      <div className="div5">Hello</div>
-      <div className="div4" /* style={miniGalleryRowStyle} */>
-        {miniImages.map((img) => (
-          <img
-            key={img.src}
-            src={img.src}
-            alt={img.alt}
-            title={img.title}
-            // style={miniGalleryImageStyle}
-            loading="lazy"
-          />
-        ))}
-      </div>
+
+      <div className="div5">5</div>
+
     </div>
-  );
-};
+  )
+}
 
 export default Gallery;
 
+
+
+//         <div className='div1'>
+
+//         </div>
+//         <img
+//           src={galleryImages[current].src}
+//           alt={galleryImages[current].alt}
+//           title={galleryImages[current].title}
+//           // style={galleryImageStyle}
+//           loading="lazy"
+//         />
+//         <div className="div3"><LeftRight_Button direction="right" current={current} onclick_func={goRight} />
+//         </div>
