@@ -171,7 +171,7 @@ const Gallery = () => {
 
 
   return (
-    <div id="gallery-container">
+    <div id="gallery-container">  
       <div className="div1">
         <LeftRight_Button direction="left" current={current} onclick_func={goLeft} />
       </div>
@@ -208,25 +208,12 @@ const Gallery = () => {
 
       </div>
 
-      <div className="div5">5</div>
+      <div className="div5"><h3>BEST PAINTING IN THE WORLD</h3><p>
+        It's really good</p>
+        <p>2020</p></div>
 
     </div>
   )
 }
 
 export default Gallery;
-
-
-
-//         <div className='div1'>
-
-//         </div>
-//         <img
-//           src={galleryImages[current].src}
-//           alt={galleryImages[current].alt}
-//           title={galleryImages[current].title}
-//           // style={galleryImageStyle}
-//           loading="lazy"
-//         />
-//         <div className="div3"><LeftRight_Button direction="right" current={current} onclick_func={goRight} />
-//         </div>

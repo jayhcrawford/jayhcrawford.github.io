@@ -60,7 +60,7 @@ const App = () => {
     <>
       <ThreeBackground />
       <Router>
-        <div ref={backgroundRef} style={{ position: 'relative', width: '95vw', height: '100vh',  }}>
+        <div ref={backgroundRef} style={{ backgroundColor: "orange", position: 'relative', width: '95vw', height: '100vh', margin: "auto"  }}>
           <div style={{ textAlign: 'center' }}>
             <header style={{ marginBottom: '70px' }}>
               <h1 style={{ fontFamily: heroFont, fontSize: width < 500 ? "3rem" : '6rem', fontWeight: 'bold' }}>Jay Crawford</h1>
@@ -70,10 +70,10 @@ const App = () => {
                 fontFamily: "Cal Sans",
                 color: "white",
                 backgroundColor: "red",
-                marginLeft: "-8px",
-                width: "100vw",
+                marginLeft: "-40px",
+                width: "103vw",
                 transform: "rotate(-2deg)",
-                transformOrigin: "center"
+                transformOrigin: "center",
               }}>
                 <style>
                   {`

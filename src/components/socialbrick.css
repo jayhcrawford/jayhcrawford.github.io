@@ -1,0 +1,31 @@
+/* SocialBrick styles converted from Tailwind */
+
+.socialbrick-outer {
+  margin-bottom: 2.5rem; /* mb-10 */
+  display: flex;
+  justify-content: center;
+}
+
+.socialbrick-inner {
+  max-width: 1200px;
+  display: flex;
+  gap: 1rem; /* gap-4 */
+  align-items: center;
+}
+
+.socialbrick-link {
+  cursor: pointer;
+  padding: 0.25rem; /* p-1 */
+  height: 3.75rem; /* h-15 (60px) */
+  width: 3.75rem; /* w-15 (60px) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glow-button:hover svg {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, .5)) drop-shadow(0 0 10px rgba(255, 255, 255, .5));
+}
+.glow-button:active svg {
+  filter: none;
+}

@@ -1,11 +1,14 @@
+import SocialBrick from "../components/SocialBrick";
 import useWindowSize from "../hooks/useWindowSize";
-import { coming_soon_message, tertiaryFont } from "../styles";
+import { tertiaryFont } from "../styles";
 
 const About = () => {
   const { width } = useWindowSize();
   return (
     <div style={{ fontFamily: tertiaryFont }}>
-      <p>{coming_soon_message}</p>
+      <div style={{height: "8rem"}}>
+        <SocialBrick />
+      </div>
 
       <p>
         <div style={{ display: "flex", justifyContent: "center" }}>
