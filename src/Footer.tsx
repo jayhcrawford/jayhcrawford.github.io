@@ -12,17 +12,7 @@ const Footer = (props: Footer__Props) => {
   if (props.path == "/") {
     return (
       <footer style={{ fontFamily: heroFont }}  className="">
-        <div id="footer_content" className="mx-auto w-full p-4 py-6 fixed bottom-0">
-          <div className="md:flex md:justify-between">
-            <div className="mb-6 md:mb-0">
-              <div>
-                <p style={{ fontFamily: tertiaryFont }} className={` ${hero_fontStyle} text-3xl`}>Los Angeles, CA - {this_year} </p>
-              </div>
-            </div>
 
-          </div>
-
-        </div>
       </footer>
     )
   } else {
