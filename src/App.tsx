@@ -1,20 +1,27 @@
 import './tailwind.css';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Art from './pages/Art';
 import Contact from './pages/Contact';
-import { artist_name, heroFont, mobile_break_point, secondaryFont, tertiaryFont } from './styles';
 import useWindowSize from './hooks/useWindowSize';
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import ThreeBackground from './components/ThreeBackground';
 import Footer from './Footer';
-import SocialBrick from './components/SocialBrick';
+
+import LinkedInSVG from './LinkedInSVG';
+import HeroHeader from './components/HeroHeader';
+
+
+
 
 const App = () => {
   const { width, height } = useWindowSize();
   const backgroundRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+  const currentPath = location.pathname; 
+
 
   useEffect(() => {
     const scene = new THREE.Scene();
@@ -59,38 +66,51 @@ const App = () => {
   console.log(width, "is the width; and the height is: ", height);
 
   return (
-    <div>
+    <div id="outer_bg">
       <ThreeBackground />
-      <Router>
-        <nav style={{ width: '100vw', zIndex: 100, fontFamily: tertiaryFont }}>
-          <ul style={{ listStyle: 'none', display: 'flex', justifyContent: 'center', gap: '20px' }}>
-            <li><a href="#/about">About</a></li>
-            <li><a href="#/projects">Projects</a></li>
-            <li><a href="#/art">Art</a></li>
-            <li><a href="#/contact">Contact</a></li>
-          </ul>
-        </nav>
-        <div id="main_container" ref={backgroundRef} style={{ position: 'relative', width: '95vw', margin: "auto", paddingTop: '80px' }}>
-          <div style={{ textAlign: 'center' }}>
-            <header style={{ marginBottom: '70px' }}>
-              <h1 style={{ fontFamily: heroFont, fontSize: width < 500 ? "3rem" : '6rem', fontWeight: 'bold' }}>{artist_name}</h1>
-              <p style={{ fontFamily: secondaryFont, fontSize: '2rem', color: '#555' }}>
-                Interdisciplinary Creative & Programmer
-              </p>
-              <SocialBrick />
-            </header>
+      <div id="inner_bg" ref={backgroundRef} style={{ position: 'relative', width: '95vw', margin: "auto" }}>
+
+        <div className='flex justify-end mb-60'>
+          <span className='fixed'>
+            <a href="https://www.linkedin.com/in/jay-crawford-prod/" target="_blank" rel="noopener noreferrer">
+              <button className='border-2'>
+                <LinkedInSVG width={width} />
+              </button>
+            </a>
+          </span>
+        </div>
+
+        <div>
+
+          <HeroHeader width={width} />
+
+        </div>
+
+        <Router>
+
+
+
+          <div id="body_div" style={{ textAlign: 'center' }}>
+
+
             <main>
               <Routes>
-                <Route path="/about" element={<About />} />
+                <Route path="/about" element={<About />} >
+
+                </Route>
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/art" element={<Art />} />
                 <Route path="/contact" element={<Contact />} />
               </Routes>
             </main>
+
             <Footer />
+
           </div>
-        </div>
-      </Router>
+
+        </Router>
+
+      </div>
     </div>
   );
 };
