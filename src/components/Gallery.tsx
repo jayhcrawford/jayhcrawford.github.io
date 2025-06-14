@@ -1,10 +1,11 @@
 import { MouseEventHandler, useState, CSSProperties } from 'react';
 import './gallery.css';
+import { mobile_break_point } from '../styles';
 
 const base_url_for_images = "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/painting/";
 
 const img_names = [
-  "G.webp", "KP.webp", "alien_invasion.webp", "alley.webp", "bad_painting.webp", "bada_bing.webp", "behind.webp", "blinker.webp", "blue_girl_1.webp", "blue_girl_2.webp", "bouquet.webp", "bright_lights_big_city.webp", "business_card.webp", "california_onlookers.webp", "connection.webp", "dips.webp", "eyes.webp", "following.webp", "funny_mustache_guy.webp", "hilltop_city.webp", "hollywood_hills.webp", "house.webp", "in_the_city.webp", "jacks.webp", "jacks_2.webp", "james.webp", "locked_away.webp", "network.webp", "night.webp", "one_way.webp", "online.webp", "outlooker.webp", "perspective.webp", "pictures_of_then.webp", "portrait_copy.webp", "rainy_sun.webp", "researchers.webp", "street_corner.webp", "sunday.webp", "time.webp", "tornado.webp", "transfer.webp", "victorian.webp", "what_do_you.webp", "woah_dude.webp", "worm.webp", "x.webp"
+  "KP.webp", "G.webp", "alien_invasion.webp", "alley.webp", "bad_painting.webp", "bada_bing.webp", "behind.webp", "blinker.webp", "blue_girl_1.webp", "blue_girl_2.webp", "bouquet.webp", "bright_lights_big_city.webp", "business_card.webp", "california_onlookers.webp", "connection.webp", "dips.webp", "eyes.webp", "following.webp", "funny_mustache_guy.webp", "hilltop_city.webp", "hollywood_hills.webp", "house.webp", "in_the_city.webp", "jacks.webp", "jacks_2.webp", "james.webp", "locked_away.webp", "network.webp", "night.webp", "one_way.webp", "online.webp", "outlooker.webp", "perspective.webp", "pictures_of_then.webp", "portrait_copy.webp", "rainy_sun.webp", "researchers.webp", "street_corner.webp", "sunday.webp", "time.webp", "tornado.webp", "transfer.webp", "victorian.webp", "what_do_you.webp", "woah_dude.webp", "worm.webp", "x.webp"
 ];
 
 type GalleryImage = {
@@ -27,28 +28,30 @@ interface LeftRight_Button__Props {
   direction: string;
 }
 
-const buttonBaseStyle: CSSProperties = {
-  display: 'inline-block',
-  border: '3px solid black',
-  backgroundColor: 'white',
-  padding: '1rem',
-  borderRadius: '50%',
-  height: '4rem',
-  width: '4rem',
-  cursor: 'pointer',
-};
 
-const buttonDisabledStyle: CSSProperties = {
-  border: '3px solid rgba(0,0,0,0.2)',
-  backgroundColor: 'white',
-  cursor: 'not-allowed',
-};
 
 const svgContainerStyle: CSSProperties = {
   height: "2rem",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+};
+
+const miniGalleryImageStyle: CSSProperties = {
+  maxWidth: '100px',
+  maxHeight: '100px',
+  border: '4px solid white',
+  borderRadius: '4px',
+  opacity: 0.7,
+  transition: 'opacity 0.2s',
+  display: "inline"
+};
+
+
+const buttonDisabledStyle: CSSProperties = {
+  border: '3px solid rgba(0,0,0,0.2)',
+  backgroundColor: 'white',
+  cursor: 'not-allowed',
 };
 
 const LeftRight_Button = (props: LeftRight_Button__Props) => {
@@ -58,10 +61,8 @@ const LeftRight_Button = (props: LeftRight_Button__Props) => {
 
   return (
     <button
-      style={{
-        ...buttonBaseStyle,
-        ...(isDisabled ? buttonDisabledStyle : {}),
-      }}
+      style={{ ...(isDisabled ? buttonDisabledStyle : {}) }}
+      className='inline-block border-3 border-black cursor-pointer p-1 h-20 w-20 bg-white rounded-[50%]'
       onClick={props.onclick_func}
       disabled={isDisabled}
       aria-label={props.direction === "right" ? "Next painting" : "Previous painting"}
@@ -83,37 +84,114 @@ const LeftRight_Button = (props: LeftRight_Button__Props) => {
   );
 };
 
+interface Gallery__Props {
+  width: number;
+}
+
+const Gallery = (props: Gallery__Props) => {
+
+  const [current, setCurrent] = useState<number>(0);
+  const miniImages = galleryImages.slice(current + 1, current + 6);
+
+  const goLeft = () => setCurrent((prev) => Math.max(prev - 1, 0));
+  const goRight = () => setCurrent((prev) => Math.min(prev + 1, galleryImages.length - 1));
+
+  if (props.width > mobile_break_point) {
+    return (
+      <div id="gallery-container">
+        <div className="div1">
+          <LeftRight_Button direction="left" current={current} onclick_func={goLeft} />
+        </div>
+        <div className="div2">
+
+          <img
+            src={galleryImages[current].src}
+            alt={galleryImages[current].alt}
+            title={galleryImages[current].title}
+            // style={galleryImageStyle}
+            loading="lazy"
+          />
+
+        </div>
+
+        <div className="div3">
+          <LeftRight_Button direction="right" current={current} onclick_func={goRight} />
+        </div>
+
+        <div className="div4">
+
+          <div className="div4" /* style={miniGalleryRowStyle} */>
+            {miniImages.map((img) => (
+              <img
+                key={img.src}
+                src={img.src}
+                alt={img.alt}
+                title={img.title}
+                style={miniGalleryImageStyle}
+                loading="lazy"
+              />
+            ))}
+          </div>
+
+        </div>
+
+        <div className="div5 text-left p-10"><h3>BEST PAINTING IN THE WORLD</h3><p>
+          It's really good</p>
+          <p>2020</p></div>
+
+      </div>
+    )
+  } else {
+    return (
+      <div id="gallery-container">
+        <div className="div1">
+          <LeftRight_Button direction="left" current={current} onclick_func={goLeft} />
+        </div>
+        <div className="div2">
+
+          <img
+            src={galleryImages[current].src}
+            alt={galleryImages[current].alt}
+            title={galleryImages[current].title}
+            // style={galleryImageStyle}
+            loading="lazy"
+          />
+
+        </div>
+
+        <div className="div3">
+          <LeftRight_Button direction="right" current={current} onclick_func={goRight} />
+        </div>
+
+        <div className="div4">
+
+          <div className="div4" /* style={miniGalleryRowStyle} */>
+            {miniImages.map((img) => (
+              <img
+                key={img.src}
+                src={img.src}
+                alt={img.alt}
+                title={img.title}
+                style={miniGalleryImageStyle}
+                loading="lazy"
+              />
+            ))}
+          </div>
+
+        </div>
+
+        <div className="div5 text-left p-10"><h3>BEST PAINTING IN THE WORLD</h3><p>
+          It's really good</p>
+          <p>2020</p></div>
+
+      </div>
+    )
+  }
+}
+
+export default Gallery;
 
 
-// const mainImageRowStyle: CSSProperties = {
-//   display: 'flex',
-//   alignItems: 'center',
-//   gridArea: ""
-// };
-
-// const galleryImageStyle: CSSProperties = {
-//   maxWidth: '400px',
-//   maxHeight: '400px',
-//   border: '2px solid purple',
-//   borderRadius: '8px',
-//   display: 'inline',
-// };
-
-// const miniGalleryRowStyle: CSSProperties = {
-//   display: 'flex',
-//   gap: '0.5rem',
-//   marginTop: '1rem',
-// };
-
-const miniGalleryImageStyle: CSSProperties = {
-  maxWidth: '100px',
-  maxHeight: '100px',
-  border: '4px solid white',
-  borderRadius: '4px',
-  opacity: 0.7,
-  transition: 'opacity 0.2s',
-  display: "inline"
-};
 
 // const Gallery: React.FC = () => {
 // const [current, setCurrent] = useState<number>(0);
@@ -121,7 +199,7 @@ const miniGalleryImageStyle: CSSProperties = {
 
 
 // const goLeft = () => setCurrent((prev) => Math.max(prev - 1, 0));
-  // const goRight = () => setCurrent((prev) => Math.min(prev + 1, galleryImages.length - 1));
+// const goRight = () => setCurrent((prev) => Math.min(prev + 1, galleryImages.length - 1));
 
 //   return (
 //     <div id="gallery-container">
@@ -158,60 +236,25 @@ const miniGalleryImageStyle: CSSProperties = {
 // };
 
 
-const Gallery = () => {
-
-  const [current, setCurrent] = useState<number>(0);
-  const miniImages = galleryImages.slice(current + 1, current + 6);
-
-  const goLeft = () => setCurrent((prev) => Math.max(prev - 1, 0));
-    const goRight = () => setCurrent((prev) => Math.min(prev + 1, galleryImages.length - 1));
 
 
 
-  return (
-    <div id="gallery-container">  
-      <div className="div1">
-        <LeftRight_Button direction="left" current={current} onclick_func={goLeft} />
-      </div>
-      <div className="div2">
+// const mainImageRowStyle: CSSProperties = {
+//   display: 'flex',
+//   alignItems: 'center',
+//   gridArea: ""
+// };
 
-<img
-          src={galleryImages[current].src}
-          alt={galleryImages[current].alt}
-          title={galleryImages[current].title}
-          // style={galleryImageStyle}
-          loading="lazy"
-        />
+// const galleryImageStyle: CSSProperties = {
+//   maxWidth: '400px',
+//   maxHeight: '400px',
+//   border: '2px solid purple',
+//   borderRadius: '8px',
+//   display: 'inline',
+// };
 
-      </div>
-
-      <div className="div3">
-        <LeftRight_Button direction="right" current={current} onclick_func={goRight} />
-      </div>
-
-      <div className="div4">
-
-        <div className="div4" /* style={miniGalleryRowStyle} */>
-          {miniImages.map((img) => (
-            <img
-              key={img.src}
-              src={img.src}
-              alt={img.alt}
-              title={img.title}
-              style={miniGalleryImageStyle}
-              loading="lazy"
-            />
-          ))}
-        </div>
-
-      </div>
-
-      <div className="div5 text-left p-10"><h3>BEST PAINTING IN THE WORLD</h3><p>
-        It's really good</p>
-        <p>2020</p></div>
-
-    </div>
-  )
-}
-
-export default Gallery;
+// const miniGalleryRowStyle: CSSProperties = {
+//   display: 'flex',
+//   gap: '0.5rem',
+//   marginTop: '1rem',
+// };

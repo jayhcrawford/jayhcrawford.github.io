@@ -101,12 +101,12 @@ const App = () => {
 
                 </Route>
                 <Route path="/projects" element={<Projects />} />
-                <Route path="/art" element={<Art />} />
+                <Route path="/art" element={<Art width={width} />} />
                 <Route path="/contact" element={<Contact />} />
               </Routes>
             </main>
 
-            <Footer />
+            <Footer path={currentPath} />
 
           </div>
 

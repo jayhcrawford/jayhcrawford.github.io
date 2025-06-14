@@ -143,4 +143,7 @@ textarea:not([rows]) {
 }
 .social_brick_icon_container, .arrow_button_arrowContainer  {
   background-color: red;
+}
+#footer_content {
+  background-color: pink;
 } */
