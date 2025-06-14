@@ -72,7 +72,7 @@ const App = () => {
       <ThreeBackground />
       <div id="inner_bg" ref={backgroundRef} style={{ position: 'relative', width: '95vw', margin: "auto" }}>
 
-        <div className='flex justify-end mb-60'>
+        <div className={`flex justify-end ${currentPath == "/" ? "mb-60" : "mb-30"}`}>
           <span className='fixed'>
             <a href="https://www.linkedin.com/in/jay-crawford-prod/" target="_blank" rel="noopener noreferrer">
               <button className='border-2 bg-white p-3 rounded-lg cursor-pointer'>
@@ -83,34 +83,20 @@ const App = () => {
         </div>
 
         <div>
-
           {<HeroHeader width={width} path={currentPath} />}
-
         </div>
 
-       
-
-
-
           <div id="body_div">
-
-
             <main>
               <Routes>
-                <Route path="/about" element={<About />} >
-
-                </Route>
+                <Route path="/about" element={<About />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/art" element={<Art width={width} />} />
                 <Route path="/contact" element={<Contact />} />
               </Routes>
             </main>
-
             <Footer path={currentPath} />
-
           </div>
-
-        
 
       </div>
     </div>
