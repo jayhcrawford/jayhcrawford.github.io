@@ -12,6 +12,7 @@ import Footer from './Footer';
 
 import LinkedInSVG from './LinkedInSVG';
 import HeroHeader from './components/HeroHeader';
+import { linkedin } from '../linkbase';
 
 
 
@@ -74,7 +75,7 @@ const App = () => {
 
         <div className={`flex justify-end ${currentPath == "/" ? "mb-60" : "mb-30"}`}>
           <span className='fixed'>
-            <a href="https://www.linkedin.com/in/jay-crawford-prod/" target="_blank" rel="noopener noreferrer">
+            <a href={linkedin} target="_blank" rel="noopener noreferrer">
               <button className='border-2 bg-white p-3 rounded-lg cursor-pointer'>
                 <LinkedInSVG width={width} />
               </button>

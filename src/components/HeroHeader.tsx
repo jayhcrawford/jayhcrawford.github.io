@@ -42,7 +42,7 @@ const HeroHeader = (props: HeroHeader__Props) => {
   } else {
     return (<>
       <nav className="z-10 w-full">
-        <ul style={{ fontFamily: secondaryFont }} className={`list-none p-0 m-0 flex text-3xl ${hero_fontStyle}`}>
+        <ul style={{ fontFamily: secondaryFont }} className={`list-none p-0 m-0 flex sm:text-lg md:text-5xl ${hero_fontStyle}`}>
           <li className=''><Link to="/about">About</Link></li>
           <NavDivider />
           <li ><Link to="/projects">Projects</Link></li>

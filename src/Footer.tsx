@@ -1,4 +1,4 @@
-import { github, instagram, tiktok } from "../linkbase";
+import { github, instagram, linkedin, tiktok } from "../linkbase";
 import { artist_name, tertiaryFont } from "./styles";
 
 interface Footer__Props {
@@ -69,11 +69,17 @@ const Footer = (props: Footer__Props) => {
               <div>
                 <h2 className="text-sm font-bold uppercase text-black">Social</h2>
                 <ul className="text-black  font-medium mt-3 mb-10">
+                  <li>
+                    <a href={linkedin} target="new" className="hover:underline">LinkedIn</a>
+                  </li>
                   <li className="">
                     <a href={instagram} target="new" className="hover:underline">Instagram</a>
                   </li>
                   <li>
                     <a href={tiktok} target="new" className="hover:underline">TikTok</a>
+                  </li>
+                  <li>
+                    <a href={github} target="new" className="hover:underline">Github</a>
                   </li>
                 </ul>
               </div>
