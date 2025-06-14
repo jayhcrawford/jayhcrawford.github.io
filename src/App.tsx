@@ -74,9 +74,9 @@ const App = () => {
       <div id="inner_bg" ref={backgroundRef} style={{ position: 'relative', width: '95vw', margin: "auto" }}>
 
         <div className={`flex justify-end ${currentPath == "/" ? "mb-60" : "mb-30"}`}>
-          <span className='fixed'>
+          <span className='fixed z-100'>
             <a href={linkedin} target="_blank" rel="noopener noreferrer">
-              <button className='border-2 bg-white p-3 rounded-lg cursor-pointer'>
+              <button className=' border-2 bg-white p-3 rounded-lg cursor-pointer'>
                 <LinkedInSVG width={width} />
               </button>
             </a>
