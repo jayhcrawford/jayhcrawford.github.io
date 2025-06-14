@@ -8,14 +8,10 @@ const Footer = () => {
   return (
 
 
-    <footer >
-      <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+    <footer className="">
+      <div className="mx-auto w-full p-4 py-6 bg-red-300">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <a target="new" className="flex items-center">
-              {/* <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 me-3" alt="FlowBite Logo" /> */}
-
-            </a>
             <style>
             {`
             #footer-contact-ul {
@@ -40,7 +36,7 @@ const Footer = () => {
               </li>
 
             </ul>
-          </div>
+          </div>    
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2 text-left">
             {/* <div>
               <h2 className="mb-6 text-sm font-semibold uppercase text-black">Conduct</h2>
@@ -67,7 +63,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-black sm:text-center">{this_year} - <a  target="new" className="hover:underline">{artist_name}</a> 
           </span>

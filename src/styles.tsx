@@ -10,4 +10,3 @@ export const career_tagline = "Interdisciplinary Creative & Programmer";
 
 export const artist_name = "Jay H. Crawford"
 
-export const secondary_hero_elem_style = "text-[50px] font-bold opacity-50"

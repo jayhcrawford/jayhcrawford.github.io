@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, useState, CSSProperties } from 'react';
+import { MouseEventHandler, useState, CSSProperties } from 'react';
 import './gallery.css';
 
 const base_url_for_images = "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/painting/";
@@ -85,25 +85,25 @@ const LeftRight_Button = (props: LeftRight_Button__Props) => {
 
 
 
-const mainImageRowStyle: CSSProperties = {
-  display: 'flex',
-  alignItems: 'center',
-  gridArea: ""
-};
+// const mainImageRowStyle: CSSProperties = {
+//   display: 'flex',
+//   alignItems: 'center',
+//   gridArea: ""
+// };
 
-const galleryImageStyle: CSSProperties = {
-  maxWidth: '400px',
-  maxHeight: '400px',
-  border: '2px solid purple',
-  borderRadius: '8px',
-  display: 'inline',
-};
+// const galleryImageStyle: CSSProperties = {
+//   maxWidth: '400px',
+//   maxHeight: '400px',
+//   border: '2px solid purple',
+//   borderRadius: '8px',
+//   display: 'inline',
+// };
 
-const miniGalleryRowStyle: CSSProperties = {
-  display: 'flex',
-  gap: '0.5rem',
-  marginTop: '1rem',
-};
+// const miniGalleryRowStyle: CSSProperties = {
+//   display: 'flex',
+//   gap: '0.5rem',
+//   marginTop: '1rem',
+// };
 
 const miniGalleryImageStyle: CSSProperties = {
   maxWidth: '100px',
@@ -206,7 +206,7 @@ const Gallery = () => {
 
       </div>
 
-      <div className="div5"><h3>BEST PAINTING IN THE WORLD</h3><p>
+      <div className="div5 text-left p-10"><h3>BEST PAINTING IN THE WORLD</h3><p>
         It's really good</p>
         <p>2020</p></div>
 

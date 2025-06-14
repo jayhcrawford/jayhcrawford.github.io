@@ -1,5 +1,5 @@
 import './tailwind.css';
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Art from './pages/Art';
@@ -20,7 +20,9 @@ const App = () => {
   const { width, height } = useWindowSize();
   const backgroundRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
-  const currentPath = location.pathname; 
+  const currentPath = location.pathname;
+  
+  console.log(currentPath, "is curernt")
 
 
   useEffect(() => {
@@ -82,15 +84,15 @@ const App = () => {
 
         <div>
 
-          <HeroHeader width={width} />
+          {<HeroHeader width={width} path={currentPath} />}
 
         </div>
 
-        <Router>
+       
 
 
 
-          <div id="body_div" style={{ textAlign: 'center' }}>
+          <div id="body_div">
 
 
             <main>
@@ -108,7 +110,7 @@ const App = () => {
 
           </div>
 
-        </Router>
+        
 
       </div>
     </div>
