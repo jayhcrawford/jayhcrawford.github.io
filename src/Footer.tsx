@@ -12,7 +12,7 @@ const Footer = (props: Footer__Props) => {
   if (props.path == "/") {
     return (
       <footer className="">
-        <div id="footer_content" className="mx-auto w-full p-4 py-6 ">
+        <div id="footer_content" className="mx-auto w-full p-4 py-6 fixed bottom-0">
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
               <div>
@@ -27,10 +27,10 @@ const Footer = (props: Footer__Props) => {
     )
   } else {
     return (
-      <footer className="">
-        <div id="footer_content" className="mx-auto w-full p-4 py-6 ">
+      <footer className="mx-auto w-full p-4 py-6 ">
+        <div id="footer_content">
           <div className="md:flex md:justify-between">
-            <div className="mb-6 md:mb-0">
+            <div className="">
               <style>
                 {`
             #footer-contact-ul {
