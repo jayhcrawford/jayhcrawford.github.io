@@ -34,7 +34,7 @@ const Footer = (props: Footer__Props) => {
               <style>
                 {`
             #footer-contact-ul {
-              padding: 1em;
+              margin-bottom: 2em;
             }
             #footer-contact-ul li {
               margin-bottom: 1em;
@@ -48,7 +48,7 @@ const Footer = (props: Footer__Props) => {
 
                 <li>
                   <a href="mailto:jayhcrawford@gmail.com">
-                    <p className="font-bold ">{artist_name}</p>
+                    <p className="font-bold">{artist_name}</p>
                     <p>Los Angeles, CA</p>
                     <p>jayhcrawford@gmail.com</p>
                   </a>
@@ -67,9 +67,9 @@ const Footer = (props: Footer__Props) => {
             </div> */}
 
               <div>
-                <h2 className="mb-6 text-sm font-semibold uppercase text-black">Social</h2>
-                <ul className="text-black  font-medium">
-                  <li className="mb-4">
+                <h2 className="text-sm font-bold uppercase text-black">Social</h2>
+                <ul className="text-black  font-medium mt-3 mb-10">
+                  <li className="">
                     <a href={instagram} target="new" className="hover:underline">Instagram</a>
                   </li>
                   <li>
