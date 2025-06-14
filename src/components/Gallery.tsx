@@ -96,13 +96,15 @@ const Gallery = (props: Gallery__Props) => {
   const goLeft = () => setCurrent((prev) => Math.max(prev - 1, 0));
   const goRight = () => setCurrent((prev) => Math.min(prev + 1, galleryImages.length - 1));
 
+  console.log(props.width)
+
   if (props.width > mobile_break_point) {
     return (
       <div id="gallery-container">
-        <div className="div1">
+        <div className="gallery_leftButton">
           <LeftRight_Button direction="left" current={current} onclick_func={goLeft} />
         </div>
-        <div className="div2">
+        <div className="gallery_mainImage">
 
           <img
             src={galleryImages[current].src}
@@ -114,13 +116,13 @@ const Gallery = (props: Gallery__Props) => {
 
         </div>
 
-        <div className="div3">
+        <div className="gallery_rightButton">
           <LeftRight_Button direction="right" current={current} onclick_func={goRight} />
         </div>
 
-        <div className="div4">
+        <div className="gallery_subImages">
 
-          <div className="div4" /* style={miniGalleryRowStyle} */>
+          <div className="gallery_subImages" /* style={miniGalleryRowStyle} */>
             {miniImages.map((img) => (
               <img
                 key={img.src}
@@ -135,7 +137,7 @@ const Gallery = (props: Gallery__Props) => {
 
         </div>
 
-        <div className="div5 text-left p-10"><h3>BEST PAINTING IN THE WORLD</h3><p>
+        <div className="gallery_textDetails text-left p-10"><h3>BEST PAINTING IN THE WORLD</h3><p>
           It's really good</p>
           <p>2020</p></div>
 
@@ -143,46 +145,59 @@ const Gallery = (props: Gallery__Props) => {
     )
   } else {
     return (
-      <div id="gallery-container">
-        <div className="div1">
-          <LeftRight_Button direction="left" current={current} onclick_func={goLeft} />
-        </div>
-        <div className="div2">
+      <div>
 
+        <div id="mobile__gallery_mainImage" className='flex flex-row justify-center'>
+
+          <style>
+            {`
+            .gallery_leftRightButton_cols {
+              display: flex;
+              align-items: center;
+            }`}
+          </style>
+
+          <span className='gallery_leftRightButton_cols'>
+            <LeftRight_Button direction="left" current={current} onclick_func={goLeft} />
+
+          </span>
           <img
+            style={{ width: "70%" }}
             src={galleryImages[current].src}
             alt={galleryImages[current].alt}
             title={galleryImages[current].title}
             // style={galleryImageStyle}
             loading="lazy"
           />
-
+          <span className='gallery_leftRightButton_cols'>
+            <LeftRight_Button direction="right" current={current} onclick_func={goRight} />
+          </span>
         </div>
 
-        <div className="div3">
-          <LeftRight_Button direction="right" current={current} onclick_func={goRight} />
-        </div>
 
-        <div className="div4">
 
-          <div className="div4" /* style={miniGalleryRowStyle} */>
-            {miniImages.map((img) => (
-              <img
-                key={img.src}
-                src={img.src}
-                alt={img.alt}
-                title={img.title}
-                style={miniGalleryImageStyle}
-                loading="lazy"
-              />
-            ))}
-          </div>
 
-        </div>
-
-        <div className="div5 text-left p-10"><h3>BEST PAINTING IN THE WORLD</h3><p>
+        <div className="mobile__gallery_textDetails text-left p-10"><h3>BEST PAINTING IN THE WORLD</h3><p>
           It's really good</p>
           <p>2020</p></div>
+
+
+
+        <div className="mobile__gallery_subImages" /* style={miniGalleryRowStyle} */>
+          {miniImages.map((img) => (
+            <img
+              key={img.src}
+              src={img.src}
+              alt={img.alt}
+              title={img.title}
+              style={miniGalleryImageStyle}
+              loading="lazy"
+            />
+          ))}
+        </div>
+
+
+
 
       </div>
     )
@@ -204,7 +219,7 @@ export default Gallery;
 //   return (
 //     <div id="gallery-container">
 //       <div className="gallery_main-image" /* style={mainImageRowStyle} */>
-//         <div className='div1'>
+//         <div className='gallery_leftButton'>
 //           <LeftRight_Button direction="left" current={current} onclick_func={goLeft} />
 //         </div>
 //         <img
@@ -214,12 +229,12 @@ export default Gallery;
 //           // style={galleryImageStyle}
 //           loading="lazy"
 //         />
-//         <div className="div3"><LeftRight_Button direction="right" current={current} onclick_func={goRight} />
+//         <div className="gallery_rightButton"><LeftRight_Button direction="right" current={current} onclick_func={goRight} />
 //         </div>
 //       </div>
 //       {/* <div>hello</div> */}
-//       <div className="div5">Hello</div>
-//       <div className="div4" /* style={miniGalleryRowStyle} */>
+//       <div className="gallery_textDetails">Hello</div>
+//       <div className="gallery_subImages" /* style={miniGalleryRowStyle} */>
 //         {miniImages.map((img) => (
 //           <img
 //             key={img.src}
