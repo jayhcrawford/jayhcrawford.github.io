@@ -1,5 +1,5 @@
 import { github, instagram, linkedin, tiktok } from "../linkbase";
-import { artist_name, tertiaryFont } from "./styles";
+import { artist_name, hero_fontStyle, heroFont, tertiaryFont } from "./styles";
 
 interface Footer__Props {
   path: string;
@@ -11,12 +11,12 @@ const Footer = (props: Footer__Props) => {
 
   if (props.path == "/") {
     return (
-      <footer className="">
+      <footer style={{ fontFamily: heroFont }}  className="">
         <div id="footer_content" className="mx-auto w-full p-4 py-6 fixed bottom-0">
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
               <div>
-                <p style={{ fontFamily: tertiaryFont }} className="text-3xl font-black opacity-50">Los Angeles, CA - {this_year} </p>
+                <p style={{ fontFamily: tertiaryFont }} className={` ${hero_fontStyle} text-3xl`}>Los Angeles, CA - {this_year} </p>
               </div>
             </div>
 
@@ -27,7 +27,7 @@ const Footer = (props: Footer__Props) => {
     )
   } else {
     return (
-      <footer className="mx-auto w-full p-4 py-6 ">
+      <footer  style={{ fontFamily: heroFont }}  className={` ${hero_fontStyle} mx-auto w-full p-4 py-6`}>
         <div id="footer_content">
           <div className="md:flex md:justify-between">
             <div className="">
@@ -49,8 +49,10 @@ const Footer = (props: Footer__Props) => {
                 <li>
                   <a href="mailto:jayhcrawford@gmail.com">
                     <p className="font-bold">{artist_name}</p>
-                    <p>Los Angeles, CA</p>
+                    <span style={{fontFamily: tertiaryFont}}>
+                      <p>Los Angeles, CA</p>
                     <p>jayhcrawford@gmail.com</p>
+                    </span>
                   </a>
                 </li>
 
@@ -68,7 +70,7 @@ const Footer = (props: Footer__Props) => {
 
               <div>
                 <h2 className="text-sm font-bold uppercase text-black">Social</h2>
-                <ul className="text-black  font-medium mt-3 mb-10">
+                <ul style={{fontFamily: tertiaryFont}} className="text-black  font-medium mt-3 mb-10">
                   <li>
                     <a href={linkedin} target="new" className="hover:underline">LinkedIn</a>
                   </li>
@@ -89,7 +91,7 @@ const Footer = (props: Footer__Props) => {
             </div>
           </div>
           <div className="sm:flex sm:items-center sm:justify-between">
-            <span className="text-sm text-black sm:text-center">{this_year} - <a target="new" className="hover:underline">{artist_name}</a>
+            <span style={{fontFamily: tertiaryFont}} className="text-sm text-black sm:text-center">{this_year} - {artist_name}
             </span>
             <div className="flex mt-4 sm:justify-center sm:mt-0">
 

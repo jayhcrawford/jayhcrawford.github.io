@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
-import { artist_name, heroFont, secondaryFont } from "../styles"
+import { artist_name, hero_fontStyle, heroFont, secondaryFont } from "../styles"
 import NavDivider from "./NavDivider"
 import SocialBrick from "./SocialBrick"
 
-export const hero_fontStyle = "font-bold opacity-50"
+
 
 interface HeroHeader__Props {
   width: number;
