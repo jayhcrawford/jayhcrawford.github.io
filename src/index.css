@@ -102,10 +102,6 @@ textarea:not([rows]) {
  scroll-margin-block: 5ex;
 }
 
-* {
-  /* background-color: white !important; */
-}
-
 
 
 /* #inner_bg {
@@ -146,4 +142,13 @@ textarea:not([rows]) {
 }
 #footer_content {
   background-color: pink;
+}
+#mobile__gallery_mainImage {
+  background-color: blue;
+}
+#mobile__gallery_textDetails {
+  background-color: orange;
+}
+#mobile__gallery_subImages {
+  background-color: green;
 } */

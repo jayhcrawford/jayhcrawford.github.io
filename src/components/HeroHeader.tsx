@@ -3,8 +3,7 @@ import { artist_name, heroFont, secondaryFont } from "../styles"
 import NavDivider from "./NavDivider"
 import SocialBrick from "./SocialBrick"
 
-export const secondary_hero_elem_center_style = "text-[50px] font-bold opacity-50"
-export const secondary_her_elem_side_style = "text-[30px] font-bold opacity-50"
+export const hero_fontStyle = "font-bold opacity-50"
 
 interface HeroHeader__Props {
   width: number;
@@ -18,7 +17,7 @@ const HeroHeader = (props: HeroHeader__Props) => {
   if (props.path == "/") {
     return (<>
       <nav className="z-10 w-full">
-        <ul style={{ fontFamily: secondaryFont }} className={`list-none p-0 m-0 flex justify-center ${secondary_hero_elem_center_style}`}>
+        <ul style={{ fontFamily: secondaryFont }} className={`list-none p-0 m-0 flex justify-center sm:text-lg md:text-5xl ${hero_fontStyle}`}>
           <li className=''><Link to="/about">About</Link></li>
           <NavDivider />
           <li ><Link to="/projects">Projects</Link></li>
@@ -34,7 +33,7 @@ const HeroHeader = (props: HeroHeader__Props) => {
 
         <SocialBrick />
 
-        <p className={`${secondary_hero_elem_center_style} text-center`} style={{ fontFamily: secondaryFont }}>
+        <p className={`${hero_fontStyle} text-5xl text-center`} style={{ fontFamily: secondaryFont }}>
           Interdisciplinary Creative & Programmer
         </p>
 
@@ -43,7 +42,7 @@ const HeroHeader = (props: HeroHeader__Props) => {
   } else {
     return (<>
       <nav className="z-10 w-full">
-        <ul style={{ fontFamily: secondaryFont }} className={`list-none p-0 m-0 flex ${secondary_her_elem_side_style}`}>
+        <ul style={{ fontFamily: secondaryFont }} className={`list-none p-0 m-0 flex text-3xl ${hero_fontStyle}`}>
           <li className=''><Link to="/about">About</Link></li>
           <NavDivider />
           <li ><Link to="/projects">Projects</Link></li>
@@ -60,7 +59,7 @@ const HeroHeader = (props: HeroHeader__Props) => {
         </Link>
 
 
-        <p className={`${secondary_her_elem_side_style} text-left`} style={{ fontFamily: secondaryFont }}>
+        <p className={`${hero_fontStyle} text-3xl text-left`} style={{ fontFamily: secondaryFont }}>
           Interdisciplinary Creative & Programmer
         </p>
 

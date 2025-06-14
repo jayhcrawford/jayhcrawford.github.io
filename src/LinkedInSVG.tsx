@@ -7,16 +7,14 @@ interface LinkedInSVG__Props {
 const LinkedInSVG = (props: LinkedInSVG__Props) => {
 
   return (
-    <div style={{ fontFamily: tertiaryFont }}>
-        <p>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <div style={{ width: props.width > 500 ? "20vw" : "25vw" }}>
 
-                <img style={{ marginLeft: '10px' }}src="./LinkedIn_Logo.svg"></img>
-            </div>
-          </div>
-        </p>
+    <div style={{ fontFamily: tertiaryFont, display: "flex", justifyContent: "center" }}>
+      <div style={{ width: props.width > 500 ? "20vw" : "25vw" }}>
+
+        <img style={{ marginLeft: '10px' }} src="./LinkedIn_Logo.svg"></img>
       </div>
+    </div>
+
   )
 }
 

@@ -50,14 +50,3 @@
   align-items: center;
   gap: 1rem;
 }
-
-
-#mobile__gallery_mainImage {
-  background-color: blue;
-}
-.mobile__gallery_textDetails {
-  background-color: orange;
-}
-.mobile__gallery_subImages {
-  background-color: green;
-}

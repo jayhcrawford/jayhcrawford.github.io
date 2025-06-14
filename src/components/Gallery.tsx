@@ -177,13 +177,13 @@ const Gallery = (props: Gallery__Props) => {
 
 
 
-        <div className="mobile__gallery_textDetails text-left p-10"><h3>BEST PAINTING IN THE WORLD</h3><p>
+        <div id="mobile__gallery_textDetails" className="text-left p-10"><h3>BEST PAINTING IN THE WORLD</h3><p>
           It's really good</p>
           <p>2020</p></div>
 
 
 
-        <div className="mobile__gallery_subImages" /* style={miniGalleryRowStyle} */>
+        <div id="mobile__gallery_subImages" /* style={miniGalleryRowStyle} */>
           {miniImages.map((img) => (
             <img
               key={img.src}

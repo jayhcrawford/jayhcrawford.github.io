@@ -16,18 +16,12 @@ const Footer = (props: Footer__Props) => {
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
               <div>
-                <p style={{ fontFamily: tertiaryFont }} className="text-3xl font-black opacity-50">Los Angeles, CA</p>
+                <p style={{ fontFamily: tertiaryFont }} className="text-3xl font-black opacity-50">Los Angeles, CA - {this_year} </p>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2 text-left">
-            </div>
+
           </div>
-          <div className="sm:flex sm:items-center sm:justify-between">
-            <span className="text-sm text-black sm:text-center">{this_year} - <a target="new" className="hover:underline">{artist_name}</a>
-            </span>
-            <div className="flex mt-4 sm:justify-center sm:mt-0">
-            </div>
-          </div>
+
         </div>
       </footer>
     )
