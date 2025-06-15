@@ -4,20 +4,26 @@ import { Category } from '../pages/Projects/Projects';
 
 
 interface GridPhoto_Image__Props {
-  img: string
+  img: string;
+
 }
 
 const GridPhoto_Image = (props: GridPhoto_Image__Props) => {
   return (
-    <div style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 1)" }} className='gridPhoto_Image_container w-80 h-60'>
-      <img className='rounded-lg w-80 h-60' style={{ objectFit: "cover" }} src={props.img}></img>
-    </div>
+    <>
+<div id="this_one" className='h-30 w-30 absolute'>
+        <img src="./under_construction.svg" />
+      </div>
+      <div style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 1)" }} className='gridPhoto_Image_container w-80 h-60'>
+        <img className='rounded-lg w-80 h-60' style={{ objectFit: "cover" }} src={props.img}></img>
+      </div></>
   )
 }
 
 interface GridPhotoItem__Props {
   title: string,
   img: string,
+
 }
 
 
@@ -32,7 +38,7 @@ const GridPhotoItem = (props: GridPhotoItem__Props) => {
 
           <div className='gridPhoto_item_container m-2 inline'>
             <div className=''>
-              <GridPhoto_Image img={props.img} />
+              <GridPhoto_Image img={props.img}  />
             </div>
 
             <div>

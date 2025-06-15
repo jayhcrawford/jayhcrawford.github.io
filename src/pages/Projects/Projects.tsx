@@ -1,8 +1,10 @@
 import GridPhotoPage from "../../components/GridPhotoPage"
 
+
 export interface Category {
   category: string;
   img: string;
+  url?: string;
 }
 
 interface Projects__Props {
