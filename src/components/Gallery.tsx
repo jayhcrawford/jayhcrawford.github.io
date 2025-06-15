@@ -55,17 +55,17 @@ const LeftRight_Button = (props: LeftRight_Button__Props) => {
     switch (props.graphic) {
       case "caret-right":
         return (
-          < button className='h-10 w-10'>
+          < div className='h-10 w-10'>
             <svg fill={`${isDisabled ? disabled_hue : "white"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" /></svg>
 
-          </ button>
+          </ div>
         )
       case "caret-left":
         return (
-          < button className='h-10 w-10'>
+          < div className='h-10 w-10'>
             <svg fill={`${isDisabled ? disabled_hue : "white"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" /></svg>
 
-          </ button>
+          </ div>
         )
       case "arrow-right":
         return (
@@ -107,6 +107,7 @@ const Gallery = (props: Gallery__Props) => {
   const [current, setCurrent] = useState<number>(0);
   const miniImages = galleryImages.slice(current + 1, current + 6);
 
+  console.log(current, "is current")
   const goLeft = () => setCurrent((prev) => Math.max(prev - 1, 0));
   const goRight = () => setCurrent((prev) => Math.min(prev + 1, galleryImages.length - 1));
 
@@ -122,7 +123,6 @@ const Gallery = (props: Gallery__Props) => {
             src={galleryImages[current].src}
             alt={galleryImages[current].alt}
             title={galleryImages[current].title}
-            // style={galleryImageStyle}
             loading="lazy"
           />
 
@@ -132,7 +132,6 @@ const Gallery = (props: Gallery__Props) => {
           <LeftRight_Button graphic="arrow-right" direction="right" current={current} onclick_func={goRight} />
         </div>
 
-        <div className="gallery_subImages">
 
           <div className="gallery_subImages" /* style={miniGalleryRowStyle} */>
             {miniImages.map((img) => (
@@ -147,7 +146,6 @@ const Gallery = (props: Gallery__Props) => {
             ))}
           </div>
 
-        </div>
 
         <div className="gallery_textDetails text-white text-left p-10"><h3>{webp_suffix_remove(galleryImages[current].title)}</h3><p>
           acrylic on canvas</p>
@@ -158,15 +156,15 @@ const Gallery = (props: Gallery__Props) => {
   } else {
     return (
       <div>
-        <div id="mobile__gallery_mainImage" className='flex flex-row justify-center'>
+        <div id="" className='flex flex-row justify-center'>
 
           <style>
             {`
             .gallery_leftRightButton_cols {
               display: flex;
               align-items: center;
-
-            }`}
+            }
+            `}
           </style>
 
           <div className='gallery_leftRightButton_cols'>
