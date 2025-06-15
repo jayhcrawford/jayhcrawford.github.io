@@ -12,10 +12,3 @@ const Projects3D = (props: Projects3D__Props) => {
 }
 
 export default Projects3D;
-
-const thing =     {
-        title: "Widow Bags",
-        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/product-design-icons/widow-icon.jpg",
-        about_txt: "High visibility, high durability apparel for urban commuters."
-    }
-console.log(thing)

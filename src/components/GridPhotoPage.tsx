@@ -5,15 +5,15 @@ import { Category } from '../pages/Projects/Projects';
 
 interface GridPhoto_Image__Props {
   img: string;
-
+  url?: string;
 }
 
 const GridPhoto_Image = (props: GridPhoto_Image__Props) => {
   return (
     <>
-<div id="this_one" className='h-30 w-30 absolute'>
+      {props.url == "" && <div id="this_one" className='h-30 w-30 absolute'>
         <img src="./under_construction.svg" />
-      </div>
+      </div>}
       <div style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 1)" }} className='gridPhoto_Image_container w-80 h-60'>
         <img className='rounded-lg w-80 h-60' style={{ objectFit: "cover" }} src={props.img}></img>
       </div></>
@@ -23,7 +23,7 @@ const GridPhoto_Image = (props: GridPhoto_Image__Props) => {
 interface GridPhotoItem__Props {
   title: string,
   img: string,
-
+  url?: string
 }
 
 
@@ -33,12 +33,12 @@ const GridPhotoItem = (props: GridPhotoItem__Props) => {
 
   return (
     <>
-      <Link to="/projects/3d">
+      <Link to={props.url ? props.url : ""}>
         <div className='gridPhoto_container p-1 m-2 flex justify-center' >
 
           <div className='gridPhoto_item_container m-2 inline'>
             <div className=''>
-              <GridPhoto_Image img={props.img}  />
+              <GridPhoto_Image img={props.img} url={props.url} />
             </div>
 
             <div>
@@ -84,7 +84,7 @@ const GridPhotoPage = (props: GridPhotoPage__Props) => {
       {props.categories.map((category, idx) => {
         return (
           <span key={`${idx}-${category.category}`} >
-            <GridPhotoItem title={category.category} img={category.img} />
+            <GridPhotoItem title={category.category} img={category.img} url={category.url ? category.url : ""} />
           </span>
         )
       })

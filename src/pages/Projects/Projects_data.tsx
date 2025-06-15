@@ -2,7 +2,7 @@ export const projects_array = [
     {
         category: "3D Projects",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/orthographic-icon.jpg",
-        url: ""
+        url: "3d"
 
     },
     {

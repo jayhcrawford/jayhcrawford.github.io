@@ -6,7 +6,8 @@ interface BlogList_Item__Props {
   width: number,
   title: string,
   img: string,
-  about_txt: string
+  about_txt: string,
+  url?: string;
 }
 
 const BlogList_Item = (props: BlogList_Item__Props) => {
@@ -23,7 +24,7 @@ const BlogList_Item = (props: BlogList_Item__Props) => {
       }`}
       </style>
 
-      <Link to="/projects/gridphotopage">
+      <Link to={props.url ? props.url : ""}>
         <div className={` text-white m-6 justify-center ${props.width < 750 ? "flex flex-col" : "flex"}`}>
 
           <div className={` ${props.width < 750 ? "flex flex-col items-center" : "flex w-[70%]"}`}>
@@ -64,6 +65,7 @@ export interface BlogItem {
   title: string;
   img: string;
   about_txt: string;
+  url?: string;
 }
 
 export interface BlogList__Props {
@@ -78,7 +80,7 @@ const BlogList = (props: BlogList__Props) => {
       {
         props.blog_array.map((project, idx) => {
           return (
-            <BlogList_Item key={idx} title={project.title} about_txt={project.about_txt} img={project.img} width={props.width} />
+            <BlogList_Item key={idx} url={project.url ? project.url : ""} title={project.title} about_txt={project.about_txt} img={project.img} width={props.width} />
           )
         })
       }

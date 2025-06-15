@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { secondaryFont } from "../styles";
 
 interface Location {
@@ -11,6 +12,9 @@ interface LocationBar__Props {
 }
 
 const LocationBar = (props: LocationBar__Props) => {
+
+  let url_string = "";
+
   return (
     <>
       <style>{`
@@ -53,9 +57,10 @@ const LocationBar = (props: LocationBar__Props) => {
       <div id="location-bar">
         {
           props.split().map((location, idx) => {
+            url_string += "/" + location;
             return (
               <span key={`${idx}-location`}>
-                <button onClick={() => console.log("click")} className="location-bar-bttn">{location}</button>
+                <Link to={url_string}><button className="location-bar-bttn">{location}</button></Link>
                 {idx < props.split().length - 1 && <span className="location-bar-arrow">{">"}</span>}
               </span>
             )

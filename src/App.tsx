@@ -26,7 +26,7 @@ import { projects_array } from './pages/Projects/Projects_data';
 const locationTest = [
   {
     title: "Projects",
-    url: "hi"
+    url: "/projects"
   },
   {
     title: "3D Projects",
