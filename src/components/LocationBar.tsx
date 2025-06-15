@@ -6,7 +6,8 @@ interface Location {
 }
 
 interface LocationBar__Props {
-  locationData: Location[]
+  locationData: Location[];
+  split: () => string[];
 }
 
 const LocationBar = (props: LocationBar__Props) => {
@@ -51,11 +52,11 @@ const LocationBar = (props: LocationBar__Props) => {
     `}</style>
       <div id="location-bar">
         {
-          props.locationData.map((location, idx) => {
+          props.split().map((location, idx) => {
             return (
               <span key={`${idx}-location`}>
-                <button onClick={() => console.log("click")} className="location-bar-bttn">{location.title}</button>
-                {idx < props.locationData.length - 1 && <span className="location-bar-arrow">{">"}</span>}
+                <button onClick={() => console.log("click")} className="location-bar-bttn">{location}</button>
+                {idx < props.split().length - 1 && <span className="location-bar-arrow">{">"}</span>}
               </span>
             )
           })

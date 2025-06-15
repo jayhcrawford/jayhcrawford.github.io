@@ -38,7 +38,7 @@ const App = () => {
   const currentPath = location.pathname;
 
   function splitCurrentPath() {
-  return currentPath.split('/').filter((segment, index) => index !== 0);
+  return currentPath.split('/').filter((_segment, index) => index !== 0);
   }
 
 
@@ -108,7 +108,7 @@ const App = () => {
         <div>
           {<HeroHeader width={width} path={currentPath} />}
 
-          {splitCurrentPath().length > 1 && <LocationBar locationData={locationTest} />
+          {splitCurrentPath().length > 1 && <LocationBar split={splitCurrentPath} locationData={locationTest} />
           }
 
         </div>
