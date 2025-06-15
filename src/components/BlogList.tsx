@@ -55,13 +55,13 @@ const BlogList_Item_Photo = (props: BlogList_Item_Photo__Props) => {
   )
 }
 
-interface BlogItem {
+export interface BlogItem {
   title: string;
   img: string;
   about_txt: string;
 }
 
-interface BlogList__Props {
+export interface BlogList__Props {
   width: number,
   blog_array: BlogItem[];
 }

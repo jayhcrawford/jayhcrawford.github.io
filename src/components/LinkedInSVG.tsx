@@ -1,4 +1,4 @@
-import { tertiaryFont } from "./styles"
+import { tertiaryFont } from "../styles"
 
 
 const LinkedInSVG = () => {

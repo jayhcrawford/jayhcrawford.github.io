@@ -1,7 +1,4 @@
-import BlogList from "../components/BlogList";
-
-
-const list_of_projects = [
+export const projects_3d_array = [
     {
         title: "My Place",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/orthographic-icon.jpg",
@@ -18,25 +15,3 @@ const list_of_projects = [
         about_txt: "Fully rigged, simple 3D character modeled after me. This helped me to better understand topology, weight-painting, and rigging."
     },
 ]
-
-
-
-interface Projects3D__Props {
-    width: number;
-    blog_array: string;
-}
-
-const Projects3D = (props: Projects3D__Props) => {
-    return (
-        <BlogList width={props.width} blog_array={list_of_projects} />
-    )
-}
-
-export default Projects3D;
-
-const thing =     {
-        title: "Widow Bags",
-        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/product-design-icons/widow-icon.jpg",
-        about_txt: "High visibility, high durability apparel for urban commuters."
-    }
-console.log(thing)

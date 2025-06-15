@@ -1,5 +1,5 @@
-import { github, instagram, linkedin, tiktok } from "../linkbase";
-import { artist_name, hero_fontStyle, heroFont, tertiaryFont } from "./styles";
+import { github, instagram, linkedin, tiktok } from "../../linkbase";
+import { artist_name, hero_fontStyle, heroFont, tertiaryFont } from "../styles";
 
 interface Footer__Props {
   path: string;

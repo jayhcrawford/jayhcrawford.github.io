@@ -8,15 +8,16 @@ import useWindowSize from './hooks/useWindowSize';
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-import Footer from './Footer';
+import Footer from './components/Footer';
 
-import LinkedInSVG from './LinkedInSVG';
+import LinkedInSVG from './components/LinkedInSVG';
 import HeroHeader from './components/HeroHeader';
 import { linkedin } from '../linkbase';
 import LocationBar from './components/LocationBar';
 
 import SpaceBG from './components/SpaceBG';
-import Projects3D from './pages/Projects3D';
+import Projects3D from './pages/Projects3D/Projects3D';
+import { projects_3d_array } from './pages/Projects3D/Projects3D_data';
 
 
 
@@ -110,8 +111,7 @@ const App = () => {
         <div>
           {<HeroHeader width={width} path={currentPath} />}
 
-          {splitCurrentPath().length > 1 && <LocationBar split={splitCurrentPath} locationData={locationTest} />
-          }
+          {splitCurrentPath().length > 1 && <LocationBar split={splitCurrentPath} locationData={locationTest} />}
 
         </div>
 
@@ -119,7 +119,7 @@ const App = () => {
           <main>
             <Routes>
               <Route path="/about" element={<About />} />
-              <Route path="/projects/3d" element={<Projects3D width={width} />} />
+              <Route path="/projects/3d" element={<Projects3D width={width} blog_array={projects_3d_array} />} />
               <Route path="/projects" element={<Projects width={width} />} />
               <Route path="/art" element={<Art width={width} />} />
               <Route path="/contact" element={<Contact />} />
