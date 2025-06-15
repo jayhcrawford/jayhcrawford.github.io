@@ -17,7 +17,7 @@ function capitalizeEveryWord(str: string) {
 
 const NavDivider = () => {
   return (
-    <span className="ml-5 mr-5">|</span>
+    <span className={`${hero_fontStyle} ml-5 mr-5`}>|</span>
   )
 }
 
@@ -29,10 +29,8 @@ interface NavListElem__Props {
 
 const NavListElem = (props: NavListElem__Props) => {
   return (
-    <li className="hover:underline"><Link to={`${props.name}`}>
-
+    <li className={`${hero_fontStyle} hover:underline hover:opacity-100`}><Link to={`${props.name}`}>
       {capitalizeEveryWord(props.name)}
-
     </Link></li>
   )
 }
@@ -48,7 +46,7 @@ const HeroHeader = (props: HeroHeader__Props) => {
   if (props.path == "/") {
     return (<>
       <nav className="z-10 w-ful">
-        <ul style={{ fontFamily: secondaryFont }} className={`list-none p-0 pb-4 m-0 flex justify-center text-xl sm:text-3xl md:text-5xl ${hero_fontStyle}`}>
+        <ul style={{ fontFamily: secondaryFont }} className={`list-none p-0 pb-4 m-0 flex justify-center text-xl sm:text-3xl md:text-5xl`}>
           <NavListElem name="about" />
           <NavDivider />
           <NavListElem name="art" />
@@ -72,10 +70,7 @@ const HeroHeader = (props: HeroHeader__Props) => {
   } else {
     return (<>
       <nav className="z-10 w-full mb-5">
-        <ul style={{ fontFamily: secondaryFont }} className={`list-none p-0 m-0 flex sm:text-2xl md:text-5xl ${hero_fontStyle}`}>
-
-
-
+        <ul style={{ fontFamily: secondaryFont }} className={`list-none p-0 m-0 flex sm:text-2xl md:text-5xl`}>
           <NavListElem name="about" />
           <NavDivider />
           <NavListElem name="art" />
@@ -90,7 +85,6 @@ const HeroHeader = (props: HeroHeader__Props) => {
         <Link to="/">
           <h1 className="text-white" style={{ fontFamily: heroFont, fontSize: props.width < 500 ? "1rem" : '2rem', fontWeight: 'bold' }}>{artist_name}</h1>
         </Link>
-
 
         <p className={`${hero_fontStyle} text-3xl text-left`} style={{ fontFamily: secondaryFont }}>
           Interdisciplinary Creative & Programmer

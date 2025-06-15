@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import { heroFont, opacity_var, tertiaryFont } from '../styles';
 
 
@@ -71,6 +72,7 @@ const ReactProject = (props: ReactProject__Props) => {
       }`}
       </style>
 
+      <Link to="/projects/test">
       <div className={` text-white m-6 justify-center ${props.width < 750 ? "flex flex-col" : "flex"}`}>
 
         <div className={` ${props.width < 750 ? "flex flex-col items-center" : "flex w-[70%]"}`}>
@@ -84,7 +86,7 @@ const ReactProject = (props: ReactProject__Props) => {
           </div>
 
         </div>
-      </div >
+      </div ></Link>
       <hr />
     </>
   )
