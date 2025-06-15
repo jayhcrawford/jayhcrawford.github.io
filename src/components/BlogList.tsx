@@ -49,9 +49,14 @@ interface BlogList_Item_Photo__Props {
 
 const BlogList_Item_Photo = (props: BlogList_Item_Photo__Props) => {
   return (
-    <div style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 1)" }} className='w-80 h-60'>
-      <img className='rounded-lg w-80 h-60' style={{ objectFit: "cover" }} src={props.img}></img>
+    <>
+  <div className='h-30 w-30 absolute'>
+      <img src="./under_construction.svg" />
     </div>
+      <div style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 1)" }} className='w-80 h-60'>
+        <img className='rounded-lg w-80 h-60' style={{ objectFit: "cover" }} src={props.img}></img>
+      </div>
+    </>
   )
 }
 

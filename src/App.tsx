@@ -18,7 +18,7 @@ import LocationBar from './components/LocationBar';
 import SpaceBG from './components/SpaceBG';
 import Projects3D from './pages/Projects3D/Projects3D';
 import { projects_3d_array } from './pages/Projects3D/Projects3D_data';
-import { projects_array } from './pages/Projects/Projects_Data';
+import { projects_array } from './pages/Projects/Projects_data';
 
 
 
@@ -93,6 +93,7 @@ const App = () => {
 
   return (
     <div id="outer_bg">
+        
       <div style={{ position: 'fixed', top: 0, left: 0, width: `${width}px`, height: `${height}px`, overflow: 'hidden' }}  >
         <SpaceBG />
       </div>
