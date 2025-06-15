@@ -1,4 +1,4 @@
-import { MouseEventHandler, useState, CSSProperties } from 'react';
+import { MouseEventHandler, useState, CSSProperties, Dispatch, SetStateAction } from 'react';
 import './gallery.css';
 import { mobile_break_point } from '../styles';
 
@@ -53,21 +53,21 @@ const LeftRight_Button = (props: LeftRight_Button__Props) => {
     (props.direction === "left" && props.current === 0) ||
     (props.direction === "right" && props.current === galleryImages.length - 1);
 
-console.log(props.current, props.direction)
+  console.log(props.current, props.direction)
 
   const graphic_picker = () => {
     switch (props.graphic) {
       case "caret-right":
         return (
           < div className='h-10 w-10'>
-            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" /></svg>
 
           </ div>
         )
       case "caret-left":
         return (
           < div className='h-10 w-10'>
-            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" /></svg>
 
           </ div>
         )
@@ -75,13 +75,13 @@ console.log(props.current, props.direction)
         return (
           <div className=' h-8 w-8'>
 
-            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" /></svg>
           </div>
         )
       case "arrow-left":
         return (
           <div className=' h-8 w-8'>
-            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" /></svg>
           </div>
         )
     }
@@ -96,7 +96,7 @@ console.log(props.current, props.direction)
       aria-label={props.direction === "right" ? "Next painting" : "Previous painting"}
       type="button"
     >
-      <div style={{fill: isDisabled ? disabled_hue : "white"}} className='flex justify-center items-center' >
+      <div style={{ fill: isDisabled ? disabled_hue : "white" }} className='flex justify-center items-center' >
         {graphic_picker()}
       </div>
     </button>
@@ -110,7 +110,6 @@ interface Gallery__Props {
 const Gallery = (props: Gallery__Props) => {
 
   const [current, setCurrent] = useState<number>(0);
-  const miniImages = galleryImages.slice(current + 1, current + 6);
 
   console.log(current, "is current")
   const goLeft = () => setCurrent((prev) => Math.max(prev - 1, 0));
@@ -139,18 +138,8 @@ const Gallery = (props: Gallery__Props) => {
         </div>
 
 
-          <div className="gallery_subImages" /* style={miniGalleryRowStyle} */>
-            {miniImages.map((img) => (
-              <img
-                key={img.src}
-                src={img.src}
-                alt={img.alt}
-                title={img.title}
-                className="inline max-w-25 max-h-25 m-1 rounded-sm"
-                loading="lazy"
-              />
-            ))}
-          </div>
+        <MiniGallery images_array={img_names} current={current} setCurrent={setCurrent} />
+
 
 
         <div className="gallery_textDetails text-white text-left p-10"><h3>{webp_suffix_remove(galleryImages[current].title)}</h3><p>
@@ -173,7 +162,7 @@ const Gallery = (props: Gallery__Props) => {
             `}
           </style>
 
-          <button onClick={()=> goLeft()} className='gallery_leftRightButton_cols'>
+          <button onClick={() => goLeft()} className='gallery_leftRightButton_cols'>
             <LeftRight_Button graphic="caret-left" direction="left" current={current} />
           </button>
 
@@ -184,7 +173,7 @@ const Gallery = (props: Gallery__Props) => {
             title={galleryImages[current].title}
             loading="lazy"
           />
-          <button onClick={()=> goRight()} className='gallery_leftRightButton_cols'>
+          <button onClick={() => goRight()} className='gallery_leftRightButton_cols'>
             <LeftRight_Button graphic="caret-right" direction="right" current={current} />
           </button>
         </div>
@@ -193,21 +182,38 @@ const Gallery = (props: Gallery__Props) => {
           acrylic on canvas</p>
           <p>2021-2025</p></div>
 
-        <div>
-          {miniImages.map((img) => (
-            <img
-              key={img.src}
-              src={img.src}
-              alt={img.alt}
-              title={img.title}
-              className="inline max-w-25 max-h-25 m-1 rounded-sm"
-              loading="lazy"
-            />
-          ))}
-        </div>
+        <MiniGallery images_array={img_names} setCurrent={setCurrent} current={current} />
       </div>
     )
   }
 }
 
 export default Gallery;
+
+interface MiniGallery__Props {
+  current: number;
+  setCurrent: Dispatch<SetStateAction<number>>;
+  images_array: string[];
+}
+
+const MiniGallery = (props: MiniGallery__Props) => {
+  const miniImages = galleryImages.slice(props.current + 1, props.current + 6);
+
+  return (
+
+    <div className="gallery_subImages" /* style={miniGalleryRowStyle} */>
+      {miniImages.map((img) => (
+        <button onClick={()=> props.setCurrent(props.images_array.indexOf(img.title ? img.title : ""))}>
+          <img
+            key={img.src}
+            src={img.src}
+            alt={img.alt}
+            title={img.title}
+            className="inline max-w-25 max-h-25 m-1 rounded-sm"
+            loading="lazy"
+          />
+        </button>
+      ))}
+    </div>
+  )
+}
