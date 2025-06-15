@@ -1,5 +1,5 @@
 
-import { heroFont, tertiaryFont } from '../styles';
+import { heroFont, opacity_var, tertiaryFont } from '../styles';
 
 
 
@@ -37,16 +37,13 @@ const Projects = (props: Project__Props) => {
   return (
     <div style={{ fontFamily: tertiaryFont }}>
       <hr />
-
       {
         list_of_projects.map((project) => {
           return (
             <ReactProject title={project.title} about_txt={project.about_txt} img={project.img} width={props.width} />
-
           )
         })
       }
-
     </div>
   )
 };
@@ -68,26 +65,42 @@ const ReactProject = (props: ReactProject__Props) => {
         {`
       hr {
       color: white;
+      border-width: 2px;
+      opacity: ${opacity_var}%
+
       }`}
       </style>
-      <div style={{ fontFamily: heroFont }} className={`text-white m-6 justify-center ${props.width < 750 ? "flex flex-col" : "flex"}`}>
 
-        <div className=''>
-          <img style={{ boxShadow: "5px 5px 5px rgb(35, 31, 31, .5)" }}
-            className="rounded-md  md:max-h-[300px]"
-            src={props.img} />
+      <div className={` text-white m-6 justify-center ${props.width < 750 ? "flex flex-col" : "flex"}`}>
+
+        <div className={` ${props.width < 750 ? "flex flex-col items-center" : "flex w-[70%]"}`}>
+          <div className='p-1 m-1'>
+            <Project_Image img={props.img} />
+          </div>
+
+          <div className={`ml-10 ${props.width < 750 ? "mt-8 w-full pr-20" : "flex flex-col justify-center mb-10"}`}>
+            <h4 style={{ fontFamily: heroFont }} className='text-2xl'>{props.title}</h4>
+            <p style={{ fontFamily: tertiaryFont }}>{props.about_txt}</p>
+          </div>
 
         </div>
-        <div className={`ml-10 ${props.width < 750 ? "mt-8" : "flex flex-col justify-center mb-10"}`}>
-          <h4 className='text-2xl'>{props.title}</h4>
-          <p style={{ fontFamily: tertiaryFont }}>{props.about_txt}</p>
-        </div>
-
-      </div>
-
+      </div >
       <hr />
     </>
   )
 }
 
 
+interface Project_Image__Props {
+  img: string
+}
+
+
+const Project_Image = (props: Project_Image__Props) => {
+  return (
+    <div style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 1)" }} className='w-80 h-60'>
+      <img className='rounded-lg w-80 h-60' style={{ objectFit: "cover" }} src={props.img}></img>
+    </div>
+
+  )
+}

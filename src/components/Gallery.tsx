@@ -170,8 +170,8 @@ const Gallery = (props: Gallery__Props) => {
         </div>
 
         <div className="gallery_textDetails text-white text-left p-10"><h3>{webp_suffix_remove(galleryImages[current].title)}</h3><p>
-          It's really good</p>
-          <p>2020</p></div>
+          acrylic on canvas</p>
+          <p>2021-2025</p></div>
 
       </div>
     )
@@ -207,8 +207,8 @@ const Gallery = (props: Gallery__Props) => {
         </div>
 
         <div id="mobile__gallery_textDetails" className="text-left p-10"><h3>{webp_suffix_remove(galleryImages[current].title)}</h3><p>
-          It's really good</p>
-          <p>2020</p></div>
+          acrylic on canvas</p>
+          <p>2021-2025</p></div>
 
         <div id="mobile__gallery_subImages" /* style={miniGalleryRowStyle} */>
           {miniImages.map((img) => (

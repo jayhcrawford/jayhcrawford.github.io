@@ -29,7 +29,7 @@ interface NavListElem__Props {
 
 const NavListElem = (props: NavListElem__Props) => {
   return (
-    <li ><Link to={`${props.name}`}>
+    <li className="hover:underline"><Link to={`${props.name}`}>
 
       {capitalizeEveryWord(props.name)}
 
@@ -48,7 +48,7 @@ const HeroHeader = (props: HeroHeader__Props) => {
   if (props.path == "/") {
     return (<>
       <nav className="z-10 w-ful">
-        <ul style={{ fontFamily: secondaryFont }} className={`list-none p-0 m-0 flex justify-center sm:text-lg md:text-5xl ${hero_fontStyle}`}>
+        <ul style={{ fontFamily: secondaryFont }} className={`list-none p-0 pb-4 m-0 flex justify-center text-xl sm:text-3xl md:text-5xl ${hero_fontStyle}`}>
           <NavListElem name="about" />
           <NavDivider />
           <NavListElem name="art" />
