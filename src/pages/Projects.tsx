@@ -38,9 +38,9 @@ const Projects = (props: Project__Props) => {
     <div style={{ fontFamily: tertiaryFont }}>
       <hr />
       {
-        list_of_projects.map((project) => {
+        list_of_projects.map((project, idx) => {
           return (
-            <ReactProject title={project.title} about_txt={project.about_txt} img={project.img} width={props.width} />
+            <ReactProject key={idx} title={project.title} about_txt={project.about_txt} img={project.img} width={props.width} />
           )
         })
       }
