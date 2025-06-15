@@ -14,7 +14,7 @@ const About = () => {
           }
         `}
       </style>
-      <div id="about_me_txt" className="w-[80%] ml-10 mb-10">
+      <div id="about_me_txt" className="w-[80%] ml-10 mb-10 text-white">
         
         <p>I’m a painter and engineering student based in Los Angeles. I grew up in Kentucky and earned my BFA from the School of the Art Institute of Chicago before moving to LA in 2017.</p>
 

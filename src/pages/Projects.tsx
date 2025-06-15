@@ -64,7 +64,13 @@ const ReactProject = (props: ReactProject__Props) => {
 
   return (
     <>
-      <div style={{ fontFamily: heroFont }} className={`m-6 justify-center ${props.width < 750 ? "flex flex-col" : "flex"}`}>
+      <style>
+        {`
+      hr {
+      color: white;
+      }`}
+      </style>
+      <div style={{ fontFamily: heroFont }} className={`text-white m-6 justify-center ${props.width < 750 ? "flex flex-col" : "flex"}`}>
 
         <div className=''>
           <img style={{ boxShadow: "5px 5px 5px rgb(35, 31, 31, .5)" }}

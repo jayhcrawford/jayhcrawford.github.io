@@ -102,6 +102,10 @@ textarea:not([rows]) {
  scroll-margin-block: 5ex;
 }
 
+body {
+  background-color: #0b0f17;
+}
+
 
 
 /* #inner_bg {

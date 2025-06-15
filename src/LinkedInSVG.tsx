@@ -1,10 +1,7 @@
 import { tertiaryFont } from "./styles"
 
-interface LinkedInSVG__Props {
-  width: number
-}
 
-const LinkedInSVG = (props: LinkedInSVG__Props) => {
+const LinkedInSVG = () => {
 
   return (
 

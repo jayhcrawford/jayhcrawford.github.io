@@ -7,7 +7,7 @@ interface Art__Props {
 
 const Art = (props: Art__Props) => {
   return (
-    <div style={{ fontFamily: tertiaryFont, textAlign: "center" }}>
+    <div className='text-white' style={{ fontFamily: tertiaryFont, textAlign: "center" }}>
       <h2 style={{display: "none"}}>Art</h2>
         <Gallery width={props.width} />
       </div>

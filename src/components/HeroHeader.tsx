@@ -47,7 +47,7 @@ const HeroHeader = (props: HeroHeader__Props) => {
 
   if (props.path == "/") {
     return (<>
-      <nav className="z-10 w-full ">
+      <nav className="z-10 w-ful">
         <ul style={{ fontFamily: secondaryFont }} className={`list-none p-0 m-0 flex justify-center sm:text-lg md:text-5xl ${hero_fontStyle}`}>
           <NavListElem name="about" />
           <NavDivider />
@@ -60,7 +60,7 @@ const HeroHeader = (props: HeroHeader__Props) => {
       </nav>
       <header style={{ marginBottom: '70px' }}>
 
-        <h1 className="text-center" style={{ fontFamily: heroFont, fontSize: props.width < 500 ? "3rem" : '6rem', fontWeight: 'bold' }}>{artist_name}</h1>
+        <h1 className="text-center text-white" style={{ fontFamily: heroFont, fontSize: props.width < 500 ? "3rem" : '6rem', fontWeight: 'bold' }}>{artist_name}</h1>
         <p className={`${hero_fontStyle} text-5xl text-center`} style={{ fontFamily: secondaryFont }}>
           Interdisciplinary Creative & Programmer
         </p>
@@ -88,7 +88,7 @@ const HeroHeader = (props: HeroHeader__Props) => {
       <header style={{ marginBottom: '70px' }}>
 
         <Link to="/">
-          <h1 className="" style={{ fontFamily: heroFont, fontSize: props.width < 500 ? "1rem" : '2rem', fontWeight: 'bold' }}>{artist_name}</h1>
+          <h1 className="text-white" style={{ fontFamily: heroFont, fontSize: props.width < 500 ? "1rem" : '2rem', fontWeight: 'bold' }}>{artist_name}</h1>
         </Link>
 
 

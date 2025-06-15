@@ -23,7 +23,7 @@ const Social_SVG = (props: Social_SVG__Props) => {
                     <style>
                         {`
                     .social-svg {
-                        fill: black;
+                        fill: white;
                         transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
                     }
                     .social-svg:hover {
