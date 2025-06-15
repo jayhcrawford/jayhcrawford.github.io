@@ -35,7 +35,7 @@ const galleryImages: GalleryImages = img_names.map(name => ({
 }));
 
 interface LeftRight_Button__Props {
-  onclick_func: MouseEventHandler<HTMLButtonElement>;
+  onclick_func?: MouseEventHandler<HTMLButtonElement>;
   current: number;
   direction: string;
   graphic: string;
@@ -120,7 +120,6 @@ const Gallery = (props: Gallery__Props) => {
     return (
       <div id="gallery-container">
 
-        
         <div className="gallery_leftButton">
           <LeftRight_Button graphic="arrow-left" direction="left" current={current} onclick_func={goLeft} />
         </div>
@@ -174,9 +173,9 @@ const Gallery = (props: Gallery__Props) => {
             `}
           </style>
 
-          <div className='gallery_leftRightButton_cols'>
-            <LeftRight_Button graphic="caret-left" direction="left" current={current} onclick_func={goLeft} />
-          </div>
+          <button onClick={()=> goLeft()} className='gallery_leftRightButton_cols'>
+            <LeftRight_Button graphic="caret-left" direction="left" current={current} />
+          </button>
 
           <img
             style={{ width: "70%" }}
@@ -185,9 +184,9 @@ const Gallery = (props: Gallery__Props) => {
             title={galleryImages[current].title}
             loading="lazy"
           />
-          <div className='gallery_leftRightButton_cols'>
-            <LeftRight_Button graphic="caret-right" direction="right" current={current} onclick_func={goRight} />
-          </div>
+          <button onClick={()=> goRight()} className='gallery_leftRightButton_cols'>
+            <LeftRight_Button graphic="caret-right" direction="right" current={current} />
+          </button>
         </div>
 
         <div className="text-left p-10"><h3>{webp_suffix_remove(galleryImages[current].title)}</h3><p>
