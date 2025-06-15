@@ -76,7 +76,7 @@ const App = () => {
         <div className={`flex justify-end ${currentPath == "/" ? "mb-60" : "mb-30"}`}>
           <span className='fixed z-100'>
             <a href={linkedin} target="_blank" rel="noopener noreferrer">
-              <button className=' border-2 bg-white p-3 rounded-lg cursor-pointer'>
+              <button className='mt-4 border-2 bg-white p-3 rounded-lg cursor-pointer'>
                 <LinkedInSVG width={width} />
               </button>
             </a>

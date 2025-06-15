@@ -39,7 +39,7 @@ const Footer = (props: Footer__Props) => {
                 <li>
                   <a href="mailto:jayhcrawford@gmail.com">
                     <p className="font-bold">{artist_name}</p>
-                    <span style={{fontFamily: tertiaryFont}}>
+                    <span className="font-normal" style={{fontFamily: tertiaryFont}}>
                       <p>Los Angeles, CA</p>
                     <p>jayhcrawford@gmail.com</p>
                     </span>
@@ -81,7 +81,7 @@ const Footer = (props: Footer__Props) => {
             </div>
           </div>
           <div className="sm:flex sm:items-center sm:justify-between">
-            <span style={{fontFamily: tertiaryFont}} className="text-sm text-black sm:text-center">{this_year} - {artist_name}
+            <span style={{fontFamily: tertiaryFont}} className="font-normal text-sm text-black sm:text-center">{this_year} - {artist_name}
             </span>
             <div className="flex mt-4 sm:justify-center sm:mt-0">
 

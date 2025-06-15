@@ -1,8 +1,41 @@
 import { Link } from "react-router-dom"
 import { artist_name, hero_fontStyle, heroFont, secondaryFont, tertiaryFont } from "../styles"
-import NavDivider from "./NavDivider"
+
 import SocialBrick from "./SocialBrick"
 
+
+function capitalizeEveryWord(str: string) {
+  if (!str) {
+    return "";
+  }
+  return str
+    .toLowerCase()
+    .split(" ")
+    .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+const NavDivider = () => {
+  return (
+    <span className="ml-5 mr-5">|</span>
+  )
+}
+
+
+
+interface NavListElem__Props {
+  name: string
+}
+
+const NavListElem = (props: NavListElem__Props) => {
+  return (
+    <li ><Link to={`${props.name}`}>
+
+      {capitalizeEveryWord(props.name)}
+
+    </Link></li>
+  )
+}
 
 
 interface HeroHeader__Props {
@@ -12,21 +45,17 @@ interface HeroHeader__Props {
 
 const HeroHeader = (props: HeroHeader__Props) => {
 
-
-
-  console.log(props)
-
   if (props.path == "/") {
     return (<>
-      <nav className="z-10 w-full">
+      <nav className="z-10 w-full ">
         <ul style={{ fontFamily: secondaryFont }} className={`list-none p-0 m-0 flex justify-center sm:text-lg md:text-5xl ${hero_fontStyle}`}>
-          <li className=''><Link to="/about">About</Link></li>
+          <NavListElem name="about" />
           <NavDivider />
-          <li ><Link to="/projects">Projects</Link></li>
+          <NavListElem name="art" />
           <NavDivider />
-          <li ><Link to="/art">Art</Link></li>
+          <NavListElem name="projects" />
           <NavDivider />
-          <li ><Link to="/contact">Contact</Link></li>
+          <NavListElem name="contact" />
         </ul>
       </nav>
       <header style={{ marginBottom: '70px' }}>
@@ -36,29 +65,24 @@ const HeroHeader = (props: HeroHeader__Props) => {
           Interdisciplinary Creative & Programmer
         </p>
         <p style={{ fontFamily: tertiaryFont }} className={`text-center p-4 ${hero_fontStyle} text-3xl`}>Los Angeles, CA</p>
-
-
         <SocialBrick />
-
-
-
-
-
-
 
       </header></>
     )
   } else {
     return (<>
-      <nav className="z-10 w-full">
-        <ul style={{ fontFamily: secondaryFont }} className={`list-none p-0 m-0 flex sm:text-lg md:text-5xl ${hero_fontStyle}`}>
-          <li className=''><Link to="/about">About</Link></li>
+      <nav className="z-10 w-full mb-5">
+        <ul style={{ fontFamily: secondaryFont }} className={`list-none p-0 m-0 flex sm:text-2xl md:text-5xl ${hero_fontStyle}`}>
+
+
+
+          <NavListElem name="about" />
           <NavDivider />
-          <li ><Link to="/projects">Projects</Link></li>
+          <NavListElem name="art" />
           <NavDivider />
-          <li ><Link to="/art">Art</Link></li>
+          <NavListElem name="projects" />
           <NavDivider />
-          <li ><Link to="/contact">Contact</Link></li>
+          <NavListElem name="contact" />
         </ul>
       </nav>
       <header style={{ marginBottom: '70px' }}>
@@ -78,3 +102,6 @@ const HeroHeader = (props: HeroHeader__Props) => {
   }
 }
 export default HeroHeader
+
+
+
