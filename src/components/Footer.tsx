@@ -27,7 +27,7 @@ const Footer = (props: Footer__Props) => {
               margin-bottom: 2em;
             }
             .footer_links li {
-              margin-bottom: 1em;
+              margin-bottom: .2em;
               opacity: ${opacity_var}%;
             }
             .footer_links li:hover {
@@ -53,7 +53,14 @@ const Footer = (props: Footer__Props) => {
 
               <div>
                 <h2 className="text-sm font-bold uppercase">Social</h2>
-                <ul style={{ fontFamily: tertiaryFont }} className="footer_links font-medium mt-3 mb-10">
+                <ul id="footer_social" style={{ fontFamily: tertiaryFont }} className="footer_links font-medium mt-3 mb-10">
+                  <style>
+                    {`
+                      #footer_social li {
+                        
+                      }
+                    `}
+                  </style>
                   <li>
                     <a href={linkedin} target="new" className="hover:underline">LinkedIn</a>
                   </li>

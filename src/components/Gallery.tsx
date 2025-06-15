@@ -18,7 +18,52 @@ const webp_suffix_remove = (filename: string | undefined): string => {
   }
 }
 
+interface MiniGallery__Props {
+  current: number;
+  setCurrent: Dispatch<SetStateAction<number>>;
+  images_array: string[];
+}
 
+const MiniGallery = (props: MiniGallery__Props) => {
+  const miniImages = () => {
+    if (props.current >= galleryImages.length - 5) {
+       return galleryImages.slice(galleryImages.length - 5, galleryImages.length)
+    } else {
+       return galleryImages.slice(props.current + 1, props.current + 6);
+    }
+
+  };
+
+  return (
+    <div className="gallery_subImages">
+      {miniImages().map((img) => (
+        <button className="mini_gallery_image" onClick={()=> props.setCurrent(props.images_array.indexOf(img.title ? img.title : ""))}>
+          <style>
+            {`
+              .mini_gallery_image:hover {
+                outline: 2px solid rgba(255, 255, 255, 1);
+                transition: outline .2s;
+                opacity: 100%;
+
+              .mini_gallery_image {
+                opacity: 80%;
+              }
+              }
+            `}
+          </style>
+          <img
+            key={img.src}
+            src={img.src}
+            alt={img.alt}
+            title={img.title}
+            className="inline max-w-25 max-h-25 m-1 rounded-sm"
+            loading="lazy"
+          />
+        </button>
+      ))}
+    </div>
+  )
+}
 
 type GalleryImage = {
   src: string;
@@ -40,7 +85,6 @@ interface LeftRight_Button__Props {
   direction: string;
   graphic: string;
 }
-
 
 const disabled_hue = 'rgba(255,255,255,0.2)';
 const buttonDisabledStyle: CSSProperties = {
@@ -74,7 +118,7 @@ const LeftRight_Button = (props: LeftRight_Button__Props) => {
       case "arrow-right":
         return (
           <div className=' h-8 w-8'>
-            <svg className='glow-button' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" /></svg>
+            <svg className='' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" /></svg>
           </div>
         )
       case "arrow-left":
@@ -89,7 +133,7 @@ const LeftRight_Button = (props: LeftRight_Button__Props) => {
   return (
     <button
       style={{ ...(((props.graphic == "arrow-left" || props.graphic == "arrow-right") && isDisabled) ? buttonDisabledStyle : {}) }}
-      className={`LR_bttn inline-block ${props.graphic == "caret-left" || props.graphic == "caret-right" ? "" : "border-3 border-white"} cursor-pointer p-1 h-20 w-20 bg-none rounded-[50%]`}
+      className={`inline-block ${(props.graphic == "caret-left" || props.graphic == "caret-right") ? "LR_bttn" : "border-3 border-white LR_bttn"} cursor-pointer p-1 h-20 w-20 bg-none rounded-[50%]`}
       onClick={props.onclick_func}
       disabled={isDisabled}
       aria-label={props.direction === "right" ? "Next painting" : "Previous painting"}
@@ -98,7 +142,6 @@ const LeftRight_Button = (props: LeftRight_Button__Props) => {
       <style>
       {`
         .LR_bttn:hover {
-          border: 5px solid white;
           filter: drop-shadow(0 0 10px rgba(255, 255, 255, .5)) drop-shadow(0 0 10px rgba(255, 255, 255, .5));
         }
         .LR_bttn:active {
@@ -137,24 +180,19 @@ const Gallery = (props: Gallery__Props) => {
           <LeftRight_Button graphic="arrow-left" direction="left" current={current} onclick_func={goLeft} />
         </div>
         <div className="gallery_mainImage">
-
           <img
             src={galleryImages[current].src}
             alt={galleryImages[current].alt}
             title={galleryImages[current].title}
             loading="lazy"
           />
-
         </div>
 
         <div className="gallery_rightButton">
           <LeftRight_Button graphic="arrow-right" direction="right" current={current} onclick_func={goRight} />
         </div>
 
-
         <MiniGallery images_array={img_names} current={current} setCurrent={setCurrent} />
-
-
 
         <div className="gallery_textDetails text-white text-left p-10"><h3>{webp_suffix_remove(galleryImages[current].title)}</h3><p>
           acrylic on canvas</p>
@@ -203,56 +241,3 @@ const Gallery = (props: Gallery__Props) => {
 }
 
 export default Gallery;
-
-interface MiniGallery__Props {
-  current: number;
-  setCurrent: Dispatch<SetStateAction<number>>;
-  images_array: string[];
-}
-
-const MiniGallery = (props: MiniGallery__Props) => {
-  const miniImages = () => {
-    if (props.current >= galleryImages.length - 5) {
-        console.log(props.current, "is props.current", galleryImages.length, "is length")
-       return galleryImages.slice(galleryImages.length - 5, galleryImages.length)
-
-    } else {
-       return galleryImages.slice(props.current + 1, props.current + 6);
-    }
-
-  };
-
-  return (
-
-    <div className="gallery_subImages">
-      {miniImages().map((img) => (
-        <button className="mini_gallery_image" onClick={()=> props.setCurrent(props.images_array.indexOf(img.title ? img.title : ""))}>
-          <style>
-            {`
-              .mini_gallery_image:hover {
-                outline: 2px solid rgba(255, 255, 255, 1);
-                transition: outline .2s;
-                opacity: 100%;
-
-
-              .mini_gallery_image {
-                opacity: 80%;
-                
-
-              }
-              }
-            `}
-          </style>
-          <img
-            key={img.src}
-            src={img.src}
-            alt={img.alt}
-            title={img.title}
-            className="inline max-w-25 max-h-25 m-1 rounded-sm"
-            loading="lazy"
-          />
-        </button>
-      ))}
-    </div>
-  )
-}
