@@ -53,53 +53,35 @@ const LeftRight_Button = (props: LeftRight_Button__Props) => {
     (props.direction === "left" && props.current === 0) ||
     (props.direction === "right" && props.current === galleryImages.length - 1);
 
+console.log(props.current, props.direction)
+
   const graphic_picker = () => {
     switch (props.graphic) {
       case "caret-right":
         return (
           < div className='h-10 w-10'>
-            <svg fill={`${isDisabled ? disabled_hue : "white"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" /></svg>
+            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" /></svg>
 
           </ div>
         )
       case "caret-left":
         return (
           < div className='h-10 w-10'>
-            <svg fill={`${isDisabled ? disabled_hue : "white"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" /></svg>
+            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" /></svg>
 
           </ div>
         )
       case "arrow-right":
         return (
-          <div className=' h-8 border-white w-8'>
-            <style>
-              {
-                `
-                .item {
-                  -webkit-box-shadow:0px 0px 13px 11px rgba(255,255,255,0.6);
-                  -moz-box-shadow: 0px 0px 13px 11px rgba(255,255,255,0.6);
-                  box-shadow: 0px 0px 13px 11px rgba(255,255,255,0.6);}
-                `
-              }
-            </style>
-            <svg fill={`${isDisabled ? disabled_hue : "white"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" /></svg>
+          <div className=' h-8 w-8'>
+
+            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" /></svg>
           </div>
         )
       case "arrow-left":
         return (
-          <div className=' h-8 border-white w-8'>
-            <style>
-              {
-                `
-                .hover:hover {
-                  -webkit-box-shadow:0px 0px 13px 11px rgba(255,255,255,0.6);
-                  -moz-box-shadow: 0px 0px 13px 11px rgba(255,255,255,0.6);
-                  box-shadow: 0px 0px 13px 11px rgba(255,255,255,0.6);
-                }
-                `
-              }
-            </style>
-            <svg fill={`${isDisabled ? disabled_hue : "white"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" /></svg>
+          <div className=' h-8 w-8'>
+            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" /></svg>
           </div>
         )
     }
@@ -107,14 +89,14 @@ const LeftRight_Button = (props: LeftRight_Button__Props) => {
 
   return (
     <button
-      style={{ ...((props.graphic == "arrow-left" || props.graphic == "arrow-right" && isDisabled) ? buttonDisabledStyle : {}) }}
+      style={{ ...(((props.graphic == "arrow-left" || props.graphic == "arrow-right") && isDisabled) ? buttonDisabledStyle : {}) }}
       className={`inline-block ${props.graphic == "caret-left" || props.graphic == "caret-right" ? "" : "border-3 border-white"} cursor-pointer p-1 h-20 w-20 bg-none rounded-[50%]`}
       onClick={props.onclick_func}
       disabled={isDisabled}
       aria-label={props.direction === "right" ? "Next painting" : "Previous painting"}
       type="button"
     >
-      <div className='flex justify-center items-center' >
+      <div style={{fill: isDisabled ? disabled_hue : "white"}} className='flex justify-center items-center' >
         {graphic_picker()}
       </div>
     </button>
