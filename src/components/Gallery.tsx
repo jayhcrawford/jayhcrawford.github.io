@@ -74,8 +74,7 @@ const LeftRight_Button = (props: LeftRight_Button__Props) => {
       case "arrow-right":
         return (
           <div className=' h-8 w-8'>
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" /></svg>
+            <svg className='glow-button' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" /></svg>
           </div>
         )
       case "arrow-left":
@@ -90,12 +89,27 @@ const LeftRight_Button = (props: LeftRight_Button__Props) => {
   return (
     <button
       style={{ ...(((props.graphic == "arrow-left" || props.graphic == "arrow-right") && isDisabled) ? buttonDisabledStyle : {}) }}
-      className={`inline-block ${props.graphic == "caret-left" || props.graphic == "caret-right" ? "" : "border-3 border-white"} cursor-pointer p-1 h-20 w-20 bg-none rounded-[50%]`}
+      className={`LR_bttn inline-block ${props.graphic == "caret-left" || props.graphic == "caret-right" ? "" : "border-3 border-white"} cursor-pointer p-1 h-20 w-20 bg-none rounded-[50%]`}
       onClick={props.onclick_func}
       disabled={isDisabled}
       aria-label={props.direction === "right" ? "Next painting" : "Previous painting"}
       type="button"
     >
+      <style>
+      {`
+        .LR_bttn:hover {
+          border: 5px solid white;
+          filter: drop-shadow(0 0 10px rgba(255, 255, 255, .5)) drop-shadow(0 0 10px rgba(255, 255, 255, .5));
+        }
+        .LR_bttn:active {
+          filter: none;
+        }
+        .LR_bttn {
+          transition: filter .2s;
+        }
+      `}
+      </style>
+
       <div style={{ fill: isDisabled ? disabled_hue : "white" }} className='flex justify-center items-center' >
         {graphic_picker()}
       </div>
@@ -197,13 +211,38 @@ interface MiniGallery__Props {
 }
 
 const MiniGallery = (props: MiniGallery__Props) => {
-  const miniImages = galleryImages.slice(props.current + 1, props.current + 6);
+  const miniImages = () => {
+    if (props.current >= galleryImages.length - 5) {
+        console.log(props.current, "is props.current", galleryImages.length, "is length")
+       return galleryImages.slice(galleryImages.length - 5, galleryImages.length)
+
+    } else {
+       return galleryImages.slice(props.current + 1, props.current + 6);
+    }
+
+  };
 
   return (
 
-    <div className="gallery_subImages" /* style={miniGalleryRowStyle} */>
-      {miniImages.map((img) => (
-        <button onClick={()=> props.setCurrent(props.images_array.indexOf(img.title ? img.title : ""))}>
+    <div className="gallery_subImages">
+      {miniImages().map((img) => (
+        <button className="mini_gallery_image" onClick={()=> props.setCurrent(props.images_array.indexOf(img.title ? img.title : ""))}>
+          <style>
+            {`
+              .mini_gallery_image:hover {
+                outline: 2px solid rgba(255, 255, 255, 1);
+                transition: outline .2s;
+                opacity: 100%;
+
+
+              .mini_gallery_image {
+                opacity: 80%;
+                
+
+              }
+              }
+            `}
+          </style>
           <img
             key={img.src}
             src={img.src}

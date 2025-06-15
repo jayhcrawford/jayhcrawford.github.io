@@ -10,13 +10,13 @@ interface GridPhoto_Image__Props {
 
 const GridPhoto_Image = (props: GridPhoto_Image__Props) => {
   return (
-    <>
-      {props.url == "" && <div id="this_one" className='h-30 w-30 absolute'>
-        <img src="./under_construction.svg" />
-      </div>}
+    <>      {props.url == "" && <div id="this_one" className='h-30 w-30 absolute'>
+      <img src="./under_construction.svg" />
+    </div>}
       <div style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 1)" }} className='gridPhoto_Image_container w-80 h-60'>
         <img className='rounded-lg w-80 h-60' style={{ objectFit: "cover" }} src={props.img}></img>
-      </div></>
+      </div>
+    </>
   )
 }
 
@@ -36,13 +36,23 @@ const GridPhotoItem = (props: GridPhotoItem__Props) => {
       <Link to={props.url ? props.url : ""}>
         <div className='gridPhoto_container p-1 m-2 flex justify-center' >
 
-          <div className='gridPhoto_item_container m-2 inline'>
+          <div className={`gridPhoto_item_container m-2 inline ${props.url == "" && "cursor-not-allowed"}`}>
+            <style>
+              {`
+                .gridPhoto_item_container:hover {
+                  text-decoration: dotted;
+                }
+                .gridPhoto_item_container {
+                  text-decoration: dotted;
+                }
+              `}
+            </style>
             <div className=''>
               <GridPhoto_Image img={props.img} url={props.url} />
             </div>
 
             <div>
-              <h4 style={{ fontFamily: heroFont }} className='text-2xl text-white p-4'>{props.title}</h4>
+              <h4  style={{ fontFamily: heroFont }} className='text-2xl text-white p-4 abt_gridPhotoItem'>{props.title}</h4>
             </div>
 
           </div>
