@@ -16,6 +16,8 @@ import { linkedin } from '../linkbase';
 import LocationBar from './components/LocationBar';
 
 import SpaceBG from './components/SpaceBG';
+import Projects3D from './pages/Projects3D';
+
 
 
 
@@ -38,7 +40,7 @@ const App = () => {
   const currentPath = location.pathname;
 
   function splitCurrentPath() {
-  return currentPath.split('/').filter((_segment, index) => index !== 0);
+    return currentPath.split('/').filter((_segment, index) => index !== 0);
   }
 
 
@@ -117,9 +119,12 @@ const App = () => {
           <main>
             <Routes>
               <Route path="/about" element={<About />} />
+              <Route path="/projects/3d" element={<Projects3D width={width} />} />
               <Route path="/projects" element={<Projects width={width} />} />
               <Route path="/art" element={<Art width={width} />} />
               <Route path="/contact" element={<Contact />} />
+
+
             </Routes>
           </main>
           <Footer path={currentPath} />
