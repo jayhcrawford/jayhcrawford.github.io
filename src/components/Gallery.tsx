@@ -18,7 +18,6 @@ const webp_suffix_remove = (filename: string | undefined): string => {
   }
 }
 
-
 type GalleryImage = {
   src: string;
   alt?: string;
@@ -41,25 +40,6 @@ interface LeftRight_Button__Props {
 }
 
 
-
-const svgContainerStyle: CSSProperties = {
-  height: "2rem",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-};
-
-const miniGalleryImageStyle: CSSProperties = {
-  maxWidth: '100px',
-  maxHeight: '100px',
-  border: '4px solid white',
-  borderRadius: '4px',
-  opacity: 0.7,
-  transition: 'opacity 0.2s',
-  display: "inline"
-};
-
-
 const disabled_hue = 'rgba(255,255,255,0.2)';
 const buttonDisabledStyle: CSSProperties = {
   border: `3px solid ${disabled_hue}`,
@@ -75,15 +55,17 @@ const LeftRight_Button = (props: LeftRight_Button__Props) => {
     switch (props.graphic) {
       case "caret-right":
         return (
-          < button className='border-2 border-white p-5'>{">"}
+          < button className='h-10 w-10'>
+            <svg fill={`${isDisabled ? disabled_hue : "white"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" /></svg>
+
           </ button>
-          // <svg fill={`${isDisabled ? disabled_hue : "black"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" /></svg>
         )
       case "caret-left":
         return (
-          < button className='border-2 border-white  p-5'>{"<"}
+          < button className='h-10 w-10'>
+            <svg fill={`${isDisabled ? disabled_hue : "white"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" /></svg>
+
           </ button>
-          // <svg fill={`${isDisabled ? disabled_hue : "black"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" /></svg>
         )
       case "arrow-right":
         return (
@@ -109,7 +91,7 @@ const LeftRight_Button = (props: LeftRight_Button__Props) => {
       aria-label={props.direction === "right" ? "Next painting" : "Previous painting"}
       type="button"
     >
-      <div className='arrow_button_arrowContainer' style={svgContainerStyle}>
+      <div className='flex justify-center items-center' >
         {graphic_picker()}
       </div>
     </button>
@@ -128,11 +110,9 @@ const Gallery = (props: Gallery__Props) => {
   const goLeft = () => setCurrent((prev) => Math.max(prev - 1, 0));
   const goRight = () => setCurrent((prev) => Math.min(prev + 1, galleryImages.length - 1));
 
-  console.log(props.width)
-
   if (props.width > mobile_break_point) {
     return (
-      <div  id="gallery-container">
+      <div id="gallery-container">
         <div className="gallery_leftButton">
           <LeftRight_Button graphic="arrow-left" direction="left" current={current} onclick_func={goLeft} />
         </div>
@@ -161,7 +141,7 @@ const Gallery = (props: Gallery__Props) => {
                 src={img.src}
                 alt={img.alt}
                 title={img.title}
-                style={miniGalleryImageStyle}
+                className="inline max-w-25 max-h-25 m-1 rounded-sm"
                 loading="lazy"
               />
             ))}
@@ -178,7 +158,6 @@ const Gallery = (props: Gallery__Props) => {
   } else {
     return (
       <div>
-
         <div id="mobile__gallery_mainImage" className='flex flex-row justify-center'>
 
           <style>
@@ -186,38 +165,38 @@ const Gallery = (props: Gallery__Props) => {
             .gallery_leftRightButton_cols {
               display: flex;
               align-items: center;
+
             }`}
           </style>
 
-          <span className='gallery_leftRightButton_cols'>
+          <div className='gallery_leftRightButton_cols'>
             <LeftRight_Button graphic="caret-left" direction="left" current={current} onclick_func={goLeft} />
-          </span>
+          </div>
+
           <img
             style={{ width: "70%" }}
             src={galleryImages[current].src}
             alt={galleryImages[current].alt}
             title={galleryImages[current].title}
-            // style={galleryImageStyle}
             loading="lazy"
           />
-          <span className='gallery_leftRightButton_cols'>
+          <div className='gallery_leftRightButton_cols'>
             <LeftRight_Button graphic="caret-right" direction="right" current={current} onclick_func={goRight} />
-
-          </span>
+          </div>
         </div>
 
-        <div id="mobile__gallery_textDetails" className="text-left p-10"><h3>{webp_suffix_remove(galleryImages[current].title)}</h3><p>
+        <div className="text-left p-10"><h3>{webp_suffix_remove(galleryImages[current].title)}</h3><p>
           acrylic on canvas</p>
           <p>2021-2025</p></div>
 
-        <div id="mobile__gallery_subImages" /* style={miniGalleryRowStyle} */>
+        <div>
           {miniImages.map((img) => (
             <img
               key={img.src}
               src={img.src}
               alt={img.alt}
               title={img.title}
-              style={miniGalleryImageStyle}
+              className="inline max-w-25 max-h-25 m-1 rounded-sm"
               loading="lazy"
             />
           ))}
@@ -228,71 +207,3 @@ const Gallery = (props: Gallery__Props) => {
 }
 
 export default Gallery;
-
-
-
-// const Gallery: React.FC = () => {
-// const [current, setCurrent] = useState<number>(0);
-// const miniImages = galleryImages.slice(current + 1, current + 6);
-
-
-// const goLeft = () => setCurrent((prev) => Math.max(prev - 1, 0));
-// const goRight = () => setCurrent((prev) => Math.min(prev + 1, galleryImages.length - 1));
-
-//   return (
-//     <div id="gallery-container">
-//       <div className="gallery_main-image" /* style={mainImageRowStyle} */>
-//         <div className='gallery_leftButton'>
-//           <LeftRight_Button direction="left" current={current} onclick_func={goLeft} />
-//         </div>
-//         <img
-//           src={galleryImages[current].src}
-//           alt={galleryImages[current].alt}
-//           title={galleryImages[current].title}
-//           // style={galleryImageStyle}
-//           loading="lazy"
-//         />
-//         <div className="gallery_rightButton"><LeftRight_Button direction="right" current={current} onclick_func={goRight} />
-//         </div>
-//       </div>
-//       {/* <div>hello</div> */}
-//       <div className="gallery_textDetails">Hello</div>
-//       <div className="gallery_subImages" /* style={miniGalleryRowStyle} */>
-//         {miniImages.map((img) => (
-//           <img
-//             key={img.src}
-//             src={img.src}
-//             alt={img.alt}
-//             title={img.title}
-//             // style={miniGalleryImageStyle}
-//             loading="lazy"
-//           />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-
-
-
-
-// const mainImageRowStyle: CSSProperties = {
-//   display: 'flex',
-//   alignItems: 'center',
-//   gridArea: ""
-// };
-
-// const galleryImageStyle: CSSProperties = {
-//   maxWidth: '400px',
-//   maxHeight: '400px',
-//   border: '2px solid purple',
-//   borderRadius: '8px',
-//   display: 'inline',
-// };
-
-// const miniGalleryRowStyle: CSSProperties = {
-//   display: 'flex',
-//   gap: '0.5rem',
-//   marginTop: '1rem',
-// };
