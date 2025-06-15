@@ -11,7 +11,7 @@ interface HeroHeader__Props {
 }
 
 const HeroHeader = (props: HeroHeader__Props) => {
-    const this_year = new Date().getFullYear();
+
 
 
   console.log(props)
@@ -32,14 +32,15 @@ const HeroHeader = (props: HeroHeader__Props) => {
       <header style={{ marginBottom: '70px' }}>
 
         <h1 className="text-center" style={{ fontFamily: heroFont, fontSize: props.width < 500 ? "3rem" : '6rem', fontWeight: 'bold' }}>{artist_name}</h1>
-                <p style={{ fontFamily: tertiaryFont }} className={`text-center pb-4 ${hero_fontStyle} text-3xl`}>Los Angeles, CA</p>
+        <p className={`${hero_fontStyle} text-5xl text-center`} style={{ fontFamily: secondaryFont }}>
+          Interdisciplinary Creative & Programmer
+        </p>
+        <p style={{ fontFamily: tertiaryFont }} className={`text-center p-4 ${hero_fontStyle} text-3xl`}>Los Angeles, CA</p>
 
 
         <SocialBrick />
 
-        <p className={`${hero_fontStyle} text-5xl text-center`} style={{ fontFamily: secondaryFont }}>
-          Interdisciplinary Creative & Programmer
-        </p>
+
 
 
 
