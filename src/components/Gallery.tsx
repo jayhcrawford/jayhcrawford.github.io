@@ -71,13 +71,34 @@ const LeftRight_Button = (props: LeftRight_Button__Props) => {
         )
       case "arrow-right":
         return (
-          <div className='h-8 border-white  w-8'>
+          <div className=' h-8 border-white w-8'>
+            <style>
+              {
+                `
+                .item {
+                  -webkit-box-shadow:0px 0px 13px 11px rgba(255,255,255,0.6);
+                  -moz-box-shadow: 0px 0px 13px 11px rgba(255,255,255,0.6);
+                  box-shadow: 0px 0px 13px 11px rgba(255,255,255,0.6);}
+                `
+              }
+            </style>
             <svg fill={`${isDisabled ? disabled_hue : "white"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" /></svg>
           </div>
         )
       case "arrow-left":
         return (
-          <div className='h-8 border-white  w-8'>
+          <div className=' h-8 border-white w-8'>
+            <style>
+              {
+                `
+                .hover:hover {
+                  -webkit-box-shadow:0px 0px 13px 11px rgba(255,255,255,0.6);
+                  -moz-box-shadow: 0px 0px 13px 11px rgba(255,255,255,0.6);
+                  box-shadow: 0px 0px 13px 11px rgba(255,255,255,0.6);
+                }
+                `
+              }
+            </style>
             <svg fill={`${isDisabled ? disabled_hue : "white"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" /></svg>
           </div>
         )
@@ -116,6 +137,8 @@ const Gallery = (props: Gallery__Props) => {
   if (props.width > mobile_break_point) {
     return (
       <div id="gallery-container">
+
+        
         <div className="gallery_leftButton">
           <LeftRight_Button graphic="arrow-left" direction="left" current={current} onclick_func={goLeft} />
         </div>

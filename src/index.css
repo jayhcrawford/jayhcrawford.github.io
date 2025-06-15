@@ -1,29 +1,29 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Cal Sans';
-  src: url('./assets/fonts/CalSans-Regular.ttf') format('truetype');
+  font-family: "Cal Sans";
+  src: url("./assets/fonts/CalSans-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Oswald';
-  src: url('./assets/fonts/Oswald-Bold.ttf') format('truetype');
+  font-family: "Oswald";
+  src: url("./assets/fonts/Oswald-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Oswald';
-  src: url('./assets/fonts/Oswald-SemiBold.ttf') format('truetype');
+  font-family: "Oswald";
+  src: url("./assets/fonts/Oswald-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Oswald';
-  src: url('./assets/fonts/Oswald-VariableFont_wght.ttf') format('truetype');
+  font-family: "Oswald";
+  src: url("./assets/fonts/Oswald-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
 }
@@ -32,79 +32,99 @@
 *,
 *::before,
 *::after {
- box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Prevent font size inflation */
 html {
- -moz-text-size-adjust: none;
- -webkit-text-size-adjust: none;
- text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 /* Remove default margin in favour of better control in authored CSS */
-body, h1, h2, h3, h4, p,
-figure, blockquote, dl, dd {
- margin-block-end: 0;
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
- list-style: none;
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
 }
 
 /* Set core body defaults */
 body {
- min-height: 100vh;
- line-height: 1.5;
+  min-height: 100vh;
+  line-height: 1.5;
 }
 
 /* Set shorter line heights on headings and interactive elements */
-h1, h2, h3, h4,
-button, input, label {
- line-height: 1.1;
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
 }
 
 /* Balance text wrapping on headings */
-h1, h2,
-h3, h4 {
- text-wrap: balance;
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
- text-decoration-skip-ink: auto;
- color: currentColor;
+  text-decoration-skip-ink: auto;
+  color: currentColor;
 }
 
 /* Make images easier to work with */
 img,
 picture {
- max-width: 100%;
- display: block;
+  max-width: 100%;
+  display: block;
 }
 
 /* Inherit fonts for inputs and buttons */
-input, button,
-textarea, select {
- font-family: inherit;
- font-size: inherit;
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
 }
 
 /* Make sure textareas without a rows attribute are not tiny */
 textarea:not([rows]) {
- min-height: 10em;
+  min-height: 10em;
 }
 
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
- scroll-margin-block: 5ex;
+  scroll-margin-block: 5ex;
 }
 
 body {
   background-color: #0b0f17;
 }
+
+
+
 
 
 
@@ -118,7 +138,7 @@ body {
   background-color: pink;
 }
 .div3 {
-    background-color: purple;
+  background-color: purple;
 }
 .div4 {
   background-color: orange;
@@ -128,20 +148,21 @@ body {
 }
 #gallery-container {
   background-color: green;
-} 
+}
 .big {
-    background-color: rgb(6, 243, 6);
+  background-color: rgb(6, 243, 6);
 }
 .image-row {
-    background-color: pink;
+  background-color: pink;
 }
 .image-chunk {
-    background-color: red;
+  background-color: red;
 }
 #three_background {
   background-color: pink;
 }
-.social_brick_icon_container, .arrow_button_arrowContainer  {
+.social_brick_icon_container,
+.arrow_button_arrowContainer {
   background-color: red;
 }
 #footer_content {
@@ -155,4 +176,20 @@ body {
 }
 #mobile__gallery_subImages {
   background-color: green;
+}
+.gridPhoto_container {
+  background-color: limegreen;
+}
+.gridPhoto_item_container {
+  background-color: pink;
+}
+#grid_container p {
+  background-color: red;
+  color: green;
+}
+#grid_container {
+  background: blue;
+}
+.gridPhoto_Image_container {
+  background-color: red;
 } */

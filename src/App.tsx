@@ -1,7 +1,7 @@
 import './tailwind.css';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import About from './pages/About';
-import Projects from './pages/Projects';
+import Projects from './pages/Projects/Projects';
 import Art from './pages/Art';
 import Contact from './pages/Contact';
 import useWindowSize from './hooks/useWindowSize';
@@ -18,6 +18,7 @@ import LocationBar from './components/LocationBar';
 import SpaceBG from './components/SpaceBG';
 import Projects3D from './pages/Projects3D/Projects3D';
 import { projects_3d_array } from './pages/Projects3D/Projects3D_data';
+import { projects_array } from './pages/Projects/Projects_Data';
 
 
 
@@ -120,7 +121,7 @@ const App = () => {
             <Routes>
               <Route path="/about" element={<About />} />
               <Route path="/projects/3d" element={<Projects3D width={width} blog_array={projects_3d_array} />} />
-              <Route path="/projects" element={<Projects width={width} />} />
+              <Route path="/projects" element={<Projects width={width} category_array={projects_array} />} />
               <Route path="/art" element={<Art width={width} />} />
               <Route path="/contact" element={<Contact />} />
 

@@ -21,17 +21,17 @@ const NavDivider = () => {
   )
 }
 
-
-
 interface NavListElem__Props {
   name: string
 }
 
 const NavListElem = (props: NavListElem__Props) => {
   return (
-    <li className={`${hero_fontStyle} hover:underline hover:opacity-100`}><Link to={`${props.name}`}>
-      {capitalizeEveryWord(props.name)}
-    </Link></li>
+    <li style={{
+      transition: "opacity .1s .1s"
+    }} className={`${hero_fontStyle} hover:underline hover:opacity-100`}><Link to={`${props.name}`}>
+        {capitalizeEveryWord(props.name)}
+      </Link></li>
   )
 }
 
