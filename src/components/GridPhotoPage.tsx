@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { heroFont } from '../styles';
 import { Category } from '../pages/Projects/Projects';
+import { useState } from 'react';
 
 
 interface GridPhoto_Image__Props {
@@ -30,10 +31,13 @@ interface GridPhotoItem__Props {
 
 
 const GridPhotoItem = (props: GridPhotoItem__Props) => {
+  const [hovering, setHovering] = useState(false);
 
   return (
-    <>
-      <Link to={props.url ? props.url : ""}>
+    <div onMouseEnter={() => setHovering(true)}
+      onMouseLeave={() => setHovering(false)}
+    >
+      <Link id="" to={props.url ? props.url : ""}>
         <div className='gridPhoto_container p-1 m-2 flex justify-center' >
 
           <div className={`gridPhoto_item_container m-2 inline ${props.url == "" && "cursor-not-allowed"}`}>
@@ -47,18 +51,36 @@ const GridPhotoItem = (props: GridPhotoItem__Props) => {
                 }
               `}
             </style>
-            <div className=''>
+
+            <div className='relative'>
+
+              <div className=' h-full w-full relative z-100'>
+                {/* {props.url == "" && <div style={{display: hovering ? "absolute" : "none" }} className='p-6  w-full top-[130px] left-[50%] bg-green-500 z-50'>
+                      THis wil hover
+                    </div> */}
+
+                <div className={`${props.url == "" && hovering ? "absolute" : "hidden"} w-full absolute text-white font-black bg-red-600 top-[120px] p-4 text-center`}>
+                  Under Construction
+                </div>
               <GridPhoto_Image img={props.img} url={props.url} />
+
+
+              </div>
+
+
             </div>
 
+
+
+
             <div>
-              <h4  style={{ fontFamily: heroFont }} className='text-2xl text-white p-4 abt_gridPhotoItem'>{props.title}</h4>
+              <h4 style={{ fontFamily: heroFont }} className='text-2xl text-white p-4 abt_gridPhotoItem'>{props.title}</h4>
             </div>
 
           </div>
         </div ></Link>
 
-    </>
+    </div>
   )
 }
 

@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { heroFont, opacity_var, tertiaryFont } from '../styles';
+import { useState } from 'react';
 
 interface BlogList_Item__Props {
   width: number,
@@ -11,6 +12,8 @@ interface BlogList_Item__Props {
 }
 
 const BlogList_Item = (props: BlogList_Item__Props) => {
+  const [hovering, setHovering] = useState(false);
+  
 
   return (
     <>
@@ -23,13 +26,35 @@ const BlogList_Item = (props: BlogList_Item__Props) => {
 
       }`}
       </style>
-
-      <Link to={props.url ? props.url : ""}>
-        <div className={` text-white m-6 justify-center ${props.width < 750 ? "flex flex-col" : "flex"}`}>
+        
+      <Link onMouseEnter={() => setHovering(true)}
+      onMouseLeave={() => setHovering(false)} to={props.url ? props.url : ""}>
+        <div className={`${props.url == "" ? "cursor-not-allowed" : "cursor-pointer"} text-white m-6 justify-center ${props.width < 750 ? "flex flex-col" : "flex"}`}>
 
           <div className={` ${props.width < 750 ? "flex flex-col items-center" : "flex w-[70%]"}`}>
             <div className='p-1 m-1'>
+
+
+
+
+
+              <div className='relative'>
+
+              <div className=' h-full w-full relative z-100'>
+                {/* {props.url == "" && <div style={{display: hovering ? "absolute" : "none" }} className='p-6  w-full top-[130px] left-[50%] bg-green-500 z-50'>
+                      THis wil hover
+                    </div> */}
+
+                <div className={`${props.url == "" && hovering ? "absolute" : "hidden"} w-full text-white font-black absolute bg-red-600 top-[120px] p-4 text-center`}>
+                  Under Construction
+                </div>
               <BlogList_Item_Photo img={props.img} />
+
+
+              </div>
+
+
+            </div>
             </div>
 
             <div className={`ml-10 ${props.width < 750 ? "mt-8 w-full pr-20" : "flex flex-col justify-center mb-10"}`}>
@@ -51,7 +76,7 @@ interface BlogList_Item_Photo__Props {
 const BlogList_Item_Photo = (props: BlogList_Item_Photo__Props) => {
   return (
     <>
-  <div className='h-30 w-30 absolute'>
+    <div className='h-30 w-30 absolute'>
       <img src="./under_construction.svg" />
     </div>
       <div style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 1)" }} className='w-80 h-60'>
