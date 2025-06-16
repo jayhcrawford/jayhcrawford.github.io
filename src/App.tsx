@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 
 import LinkedInSVG from './components/LinkedInSVG';
 import HeroHeader from './components/HeroHeader';
-import { linkedin } from '../linkbase';
+// import { linkedin } from '../linkbase';
 import LocationBar from './components/LocationBar';
 
 import SpaceBG from './components/SpaceBG';
@@ -92,48 +92,56 @@ const App = () => {
   console.log(width, "is the width; and the height is: ", height);
 
   return (
-    <div id="outer_bg">
-        
-      <div style={{ position: 'fixed', top: 0, left: 0, width: `${width}px`, height: `${height}px`, overflow: 'hidden' }}  >
-        <SpaceBG />
-      </div>
-      {/* <ThreeBackground /> */}
-      <div id="inner_bg" ref={backgroundRef} style={{ position: 'relative', width: '95vw', margin: "auto" }}>
+    <>
 
-        <div className={`flex justify-end ${currentPath == "/" ? "mb-60" : "mb-30"}`}>
-          <span className='fixed z-100'>
-            <a href={linkedin} target="_blank" rel="noopener noreferrer">
-              <button className='mt-4 border-2 bg-white p-3 rounded-lg cursor-pointer'>
-                <LinkedInSVG />
-              </button>
-            </a>
-          </span>
+
+
+      <div id="outer_bg">
+
+
+
+        <div style={{ position: 'fixed', top: 0, left: 0, width: `${width}px`, height: `${height}px`, overflow: 'hidden' }}  >
+          <SpaceBG />
+        </div>
+        {/* <ThreeBackground /> */}
+
+        <div className="pt-20" id="inner_bg" ref={backgroundRef} style={{ position: 'relative', width: '95vw', margin: "auto" }}>
+
+
+
+
+
+          <div>
+            {<HeroHeader width={width} path={currentPath} />}
+
+            {splitCurrentPath().length > 1 && <LocationBar split={splitCurrentPath} locationData={locationTest} />}
+
+          </div>
+
+          <div id="body_div">
+            <main>
+              <Routes>
+                <Route path="/about" element={<About />} />
+                <Route path="/projects/3d" element={<Projects3D width={width} blog_array={projects_3d_array} />} />
+                <Route path="/projects" element={<Projects width={width} category_array={projects_array} />} />
+                <Route path="/art" element={<Art width={width} />} />
+                <Route path="/contact" element={<Contact />} />
+
+
+              </Routes>
+            </main>
+            <Footer path={currentPath} />
+          </div>
+
         </div>
 
-        <div>
-          {<HeroHeader width={width} path={currentPath} />}
+        <div className="flex justify-end  fixed top-0 w-full z-100">
 
-          {splitCurrentPath().length > 1 && <LocationBar split={splitCurrentPath} locationData={locationTest} />}
-
+          <button className='p-3 bg-white'>
+            <LinkedInSVG />
+          </button>
         </div>
-
-        <div id="body_div">
-          <main>
-            <Routes>
-              <Route path="/about" element={<About />} />
-              <Route path="/projects/3d" element={<Projects3D width={width} blog_array={projects_3d_array} />} />
-              <Route path="/projects" element={<Projects width={width} category_array={projects_array} />} />
-              <Route path="/art" element={<Art width={width} />} />
-              <Route path="/contact" element={<Contact />} />
-
-
-            </Routes>
-          </main>
-          <Footer path={currentPath} />
-        </div>
-
-      </div>
-    </div>
+      </div></>
   );
 };
 

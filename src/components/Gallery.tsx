@@ -174,7 +174,7 @@ const Gallery = (props: Gallery__Props) => {
 
   if (props.width > mobile_break_point) {
     return (
-      <div id="gallery-container">
+      <div id="gallery-container" className=''>
 
         <div className="gallery_leftButton">
           <LeftRight_Button graphic="arrow-left" direction="left" current={current} onclick_func={goLeft} />
