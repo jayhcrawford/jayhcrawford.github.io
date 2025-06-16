@@ -19,6 +19,7 @@ import SpaceBG from './components/SpaceBG';
 import Projects3D from './pages/Projects3D/Projects3D';
 import { projects_3d_array } from './pages/Projects3D/Projects3D_data';
 import { projects_array } from './pages/Projects/Projects_data';
+import { linkedin } from '../linkbase';
 
 
 
@@ -98,8 +99,6 @@ const App = () => {
 
       <div id="outer_bg">
 
-
-
         <div style={{ position: 'fixed', top: 0, left: 0, width: `${width}px`, height: `${height}px`, overflow: 'hidden' }}  >
           <SpaceBG />
         </div>
@@ -135,12 +134,12 @@ const App = () => {
 
         </div>
 
-        <div className="flex justify-end  fixed top-0 w-full z-100">
-
-          <button className='p-3 bg-white'>
+        <div className="flex justify-end fixed top-0 w-full z-100">
+          <a href={linkedin} target='new'><button className='p-2 rounded-lg m-2 bg-white cursor-pointer'>
             <LinkedInSVG />
-          </button>
+          </button></a>
         </div>
+
       </div></>
   );
 };
