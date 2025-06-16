@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { EffectComposer, RenderPass, EffectPass, SelectiveBloomEffect, BloomEffect } from 'postprocessing';
+import { EffectComposer, RenderPass, EffectPass, BloomEffect } from 'postprocessing';
 import useWindowSize from '../hooks/useWindowSize';
 
 const ThreeBackground = () => {
@@ -29,21 +29,17 @@ const ThreeBackground = () => {
     const starGroup = new THREE.Group();
 
     for (let i = 0; i < 50; i++) {
-      const geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1); // Small cubes
-      // const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
-      const star = new THREE.Mesh(geometry, new THREE.MeshStandardMaterial({
-        toneMapped: false,
-        emissive: "white",
-        emissiveIntensity: 1
-      }));
+      // Random scale between 0.03 and 0.1
+      const scale = 0.03 + Math.random() * (0.1 - 0.03);
+      const geometry = new THREE.BoxGeometry(scale, scale, scale);
+      const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+      const cube = new THREE.Mesh(geometry, material);
 
-      // Randomly position cubes within a certain range
-      star.position.x = (Math.random() - 0.5) * 10;
-      star.position.y = (Math.random() - 0.5) * 10;
-      star.position.z = (Math.random() - 0.5) * 10;
-      star.material.color.set(0, 0, 0)
+      cube.position.x = (Math.random() - 0.5) * 10;
+      cube.position.y = (Math.random() - 0.5) * 10;
+      cube.position.z = (Math.random() - 0.5) * 10;
 
-      starGroup.add(star);
+      starGroup.add(cube);
     }
 
     scene.add(starGroup);
@@ -63,24 +59,24 @@ const ThreeBackground = () => {
     // Set up SelectiveBloomEffect
     const selectiveBloomEffect = new BloomEffect({
 
-      intensity: 100,
-      luminanceThreshold: 0.1,
+      intensity: .15,
+      luminanceThreshold: .007,
       luminanceSmoothing: .2,
-      radius: 9,
+      radius: 15,
     });
     const effectPass = new EffectPass(camera, selectiveBloomEffect);
     effectPass.renderToScreen = true;
     composer.addPass(effectPass);
 
     const animate = () => {
-      // Rotate the whole group of stars
-      starGroup.rotation.x += 0.002;
-      starGroup.rotation.y += 0.003;
+      requestAnimationFrame(animate);
+
+      // Slow down the rotation
+      starGroup.rotation.x += 0.000089;
+      starGroup.rotation.y += 0.000099;
 
       composer.render();
-      requestAnimationFrame(animate);
     };
-
     animate();
     return () => {
       if (mountNode) {
