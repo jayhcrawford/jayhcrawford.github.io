@@ -6,11 +6,15 @@ const ThreeBackground = () => {
   const { width, height } = useWindowSize();
   const mountRef = useRef<HTMLDivElement>(null);
 
+
+
+
   useEffect(() => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ alpha: true }); // Enable transparency
     renderer.setClearColor(0x000000, 0); // Set background to transparent
+
 
     renderer.setSize(width, height);
     renderer.domElement.style.position = 'absolute';
@@ -23,16 +27,36 @@ const ThreeBackground = () => {
       mountNode.appendChild(renderer.domElement);
     }
 
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
+    // Create a group to hold all the cubes
+    const starGroup = new THREE.Group();
+
+    for (let i = 0; i < 50; i++) {
+      const geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1); // Small cubes
+      // const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+      const star = new THREE.Mesh(geometry, new THREE.MeshStandardMaterial({
+    toneMapped: false,
+    emissive: "red",
+    emissiveIntensity: 10
+  }));
+
+      // Randomly position cubes within a certain range
+      star.position.x = (Math.random() - 0.5) * 10;
+      star.position.y = (Math.random() - 0.5) * 10;
+      star.position.z = (Math.random() - 0.5) * 10;
+      star.material.color.set(0, 0, 0)
+
+      starGroup.add(star);
+    }
+
+    scene.add(starGroup);
 
     camera.position.z = 5;
 
+
     const animate = () => {
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
+      // Rotate the whole group of stars
+      starGroup.rotation.x += 0.002;
+      starGroup.rotation.y += 0.003;
 
       renderer.render(scene, camera);
       requestAnimationFrame(animate);

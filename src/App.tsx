@@ -20,6 +20,7 @@ import Projects3D from './pages/Projects3D/Projects3D';
 import { projects_3d_array } from './pages/Projects3D/Projects3D_data';
 import { projects_array } from './pages/Projects/Projects_data';
 import { linkedin } from '../linkbase';
+import ThreeBackground from './components/ThreeBackground';
 
 
 
@@ -102,7 +103,7 @@ const App = () => {
         <div style={{ position: 'fixed', top: 0, left: 0, width: `${width}px`, height: `${height}px`, overflow: 'hidden' }}  >
           <SpaceBG />
         </div>
-        {/* <ThreeBackground /> */}
+        <ThreeBackground />
 
         <div className="pt-20" id="inner_bg" ref={backgroundRef} style={{ position: 'relative', width: '95vw', margin: "auto" }}>
 
