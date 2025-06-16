@@ -18,29 +18,33 @@ const Footer = (props: Footer__Props) => {
   } else {
     return (
       <footer style={{ fontFamily: heroFont }} className={` text-white mx-auto w-full p-4 py-6`}>
-        <div id="footer_content">
-          <div className="md:flex md:justify-between">
-            <div className="">
-              <style>
+        <style>
                 {`
             .footer_links {
               margin-bottom: 2em;
             }
             .footer_links li {
               margin-bottom: .2em;
-              opacity: ${opacity_var}%;
             }
+            .footer_linkes_transp {
+            opacity: ${opacity_var}%;
+            }
+            
             .footer_links li:hover {
             text-decoration: underline;
             opacity: 100%;
             }`}
               </style>
+        <div id="footer_content">
+          <div className="md:flex md:justify-between">
+            <div className="">
+              
               <ul className="footer_links text-md text-left">
 
                 <li>
                   <a href="mailto:jayhcrawford@gmail.com">
                     <p className="font-bold">{artist_name}</p>
-                    <span className="font-normal" style={{ fontFamily: tertiaryFont }}>
+                    <span className="footer_linkes_transp font-normal" style={{ fontFamily: tertiaryFont }}>
                       <p>Los Angeles, CA</p>
                       <p>jayhcrawford@gmail.com</p>
                     </span>
@@ -53,7 +57,7 @@ const Footer = (props: Footer__Props) => {
 
               <div>
                 <h2 className="text-sm font-bold uppercase">Social</h2>
-                <ul id="footer_social" style={{ fontFamily: tertiaryFont }} className="footer_links font-medium mt-3 mb-10">
+                <ul id="footer_social" style={{ fontFamily: tertiaryFont }} className="footer_links footer_linkes_transp font-medium mt-3 mb-10">
                   <style>
                     {`
                       #footer_social li {
