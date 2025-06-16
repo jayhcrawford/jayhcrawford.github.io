@@ -123,11 +123,6 @@ body {
   background-color: #0b0f17;
 }
 
-
-
-
-
-
 /* #inner_bg {
   background-color: orange;
 }
@@ -193,3 +188,9 @@ body {
 .gridPhoto_Image_container {
   background-color: red;
 } */
+
+@media only screen and (orientation: landscape) {
+  #outer_bg {
+    width: 100%;
+  }
+}
