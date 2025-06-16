@@ -1,13 +1,11 @@
 import { useEffect, useRef } from "react";
-import * as THREE from "three"
+import * as THREE from "three";
+import { EffectComposer, RenderPass, EffectPass, SelectiveBloomEffect, BloomEffect } from 'postprocessing';
 import useWindowSize from '../hooks/useWindowSize';
 
 const ThreeBackground = () => {
   const { width, height } = useWindowSize();
   const mountRef = useRef<HTMLDivElement>(null);
-
-
-
 
   useEffect(() => {
     const scene = new THREE.Scene();
@@ -34,10 +32,10 @@ const ThreeBackground = () => {
       const geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1); // Small cubes
       // const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
       const star = new THREE.Mesh(geometry, new THREE.MeshStandardMaterial({
-    toneMapped: false,
-    emissive: "red",
-    emissiveIntensity: 10
-  }));
+        toneMapped: false,
+        emissive: "white",
+        emissiveIntensity: 1
+      }));
 
       // Randomly position cubes within a certain range
       star.position.x = (Math.random() - 0.5) * 10;
@@ -52,13 +50,34 @@ const ThreeBackground = () => {
 
     camera.position.z = 5;
 
+    // Create bloom selection array
+    const bloomSelection: THREE.Object3D<THREE.Object3DEventMap>[] = [];
+    starGroup.children.forEach((child) => {
+      bloomSelection.push(child);
+    });
+
+    // Set up postprocessing composer and passes
+    const composer = new EffectComposer(renderer);
+    composer.addPass(new RenderPass(scene, camera));
+
+    // Set up SelectiveBloomEffect
+    const selectiveBloomEffect = new BloomEffect({
+
+      intensity: 100,
+      luminanceThreshold: 0.1,
+      luminanceSmoothing: .2,
+      radius: 9,
+    });
+    const effectPass = new EffectPass(camera, selectiveBloomEffect);
+    effectPass.renderToScreen = true;
+    composer.addPass(effectPass);
 
     const animate = () => {
       // Rotate the whole group of stars
       starGroup.rotation.x += 0.002;
       starGroup.rotation.y += 0.003;
 
-      renderer.render(scene, camera);
+      composer.render();
       requestAnimationFrame(animate);
     };
 
