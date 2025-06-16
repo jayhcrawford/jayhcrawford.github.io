@@ -190,7 +190,7 @@ body {
 } */
 
 @media only screen and (orientation: landscape) {
-  #outer_bg {
+  body {
     width: 100%;
   }
 }
