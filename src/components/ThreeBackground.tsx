@@ -31,7 +31,7 @@ const ThreeBackground = () => {
     for (let i = 0; i < 50; i++) {
       // Random scale between 0.03 and 0.1
       const scale = 0.03 + Math.random() * (0.1 - 0.03);
-      const geometry = new THREE.BoxGeometry(scale, scale, scale);
+      const geometry = new THREE.SphereGeometry(scale, scale, scale);
       const material = new THREE.MeshBasicMaterial({ color: "white" });
       const cube = new THREE.Mesh(geometry, material);
 

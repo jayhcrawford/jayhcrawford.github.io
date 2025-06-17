@@ -187,7 +187,17 @@ body {
 }
 .gridPhoto_Image_container {
   background-color: red;
+}
+#blog_heroVideo {
+  background-color: red;
+}
+#blog_heroVideo_innerContainer {
+  background-color: lightblue;
+}
+#blog_heroVideo_outerContainer {
+  background-color: salmon;
 } */
+
 
 @media only screen and (orientation: landscape) {
   html {

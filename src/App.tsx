@@ -7,6 +7,7 @@ import Contact from './pages/Contact';
 import useWindowSize from './hooks/useWindowSize';
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import Blog from './pages/Blog/Blog'
 
 import Footer from './components/Footer';
 
@@ -93,6 +94,8 @@ const App = () => {
 
   console.log(width, "is the width; and the height is: ", height);
 
+  
+
   return (
     <>
 
@@ -126,6 +129,8 @@ const App = () => {
                 <Route path="/projects" element={<Projects width={width} category_array={projects_array} />} />
                 <Route path="/art" element={<Art width={width} />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/blog" element={<Blog />} />
+
 
 
               </Routes>
@@ -135,7 +140,7 @@ const App = () => {
 
         </div>
 
-        <div className="flex justify-end fixed top-0 w-full z-100">
+        <div className="pointer-events-none flex justify-end fixed top-0 w-full z-100 ">
           <a href={linkedin} target='new'><button className='p-2 rounded-lg m-2 bg-white cursor-pointer'>
             <LinkedInSVG />
           </button></a>
