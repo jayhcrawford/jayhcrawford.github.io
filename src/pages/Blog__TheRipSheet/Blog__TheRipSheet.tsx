@@ -1,14 +1,16 @@
 import { Blog, } from "../../components/Blog/Blog"
-import { Blog_Paragraph } from "../../components/Blog/Blog_Pieces"
+import { Blog_HeroQuote, Blog_Paragraph } from "../../components/Blog/Blog_Pieces"
 
 const Blog__TheRipSheet = () => {
     return (
         <div>
             <Blog construction={true} title="The Rip Sheet">
-                <Blog_Paragraph text="In 2020, I decided that I wanted to learn how to weightlift. Over the past five years, through various iterations, I've developed a system that I call the RIP sheet." />
+                <Blog_Paragraph text="In 2020, I decided that I wanted to learn how to weightlift. Over the past five years, through various iterations, I've developed a system that I call the RIP sheet. The first iterations did not work for developing habits at all, but I worked really hard on them. The name is a double entendre—a memento mori that calls us to get 'ripped'. Today is the day you make that life change—this very rep." />
+                <Blog_HeroQuote quote="Today is the day you make that life change—this very rep" />
                 <Blog_Paragraph text="After a few years of iterating, I landed on a simple, spreadsheet-based system. It's allowed me to track every rep that I've made since 2022." />
-                <Blog_Paragraph text="Recently, I took a linear algebra for data analysis course, and used Python to create least square regression analyses of each one of my exercises over the past 2.5 years." />
-                <Blog_Paragraph text="My hope is to create a fitness app that allows people to develop realistic and healthy physical fitness routines and give useful visualizations that will let users know for sure how to generate real physical progress." />
+                <Blog_Paragraph text="Recently, I took a linear algebra for data analysis course, and used Python to create least square regression analyses of each one of my exercises over the past 2.5 years. Seeing a visualization was highly motivational and validating for my stronger routines, but it also showed me clearly where I've been slacking recently." />
+                <Blog_Paragraph text="My hope is to create a fitness app that allows people to develop realistic and healthy physical fitness routines and give useful visualizations that will let users know for sure how to generate real physical progress. The gym habit can be challenging to adopt, and I want to help people to realize that learning that habit is counter-intuitive to initial first impressions. By dispelling the myth that you have to work really hard to get gains, I believe I can help people to adopt a habit that they love." />
+                <Blog_HeroQuote quote="I believe I can help people to adopt a habit that they love"/>
             </Blog>
         </div>
     )

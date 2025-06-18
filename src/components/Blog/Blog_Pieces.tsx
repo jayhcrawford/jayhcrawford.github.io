@@ -53,7 +53,7 @@ export const Blog_HeroVideo = (props: Blog_HeroVideo__Props) => {
 
 
 interface Blog_HeroQuote__Props {
-    quoter_padding: number;
+    quoter_padding?: number;
     quoter?: string;
     quote: string;
 }
@@ -61,16 +61,16 @@ interface Blog_HeroQuote__Props {
 export const Blog_HeroQuote = (props: Blog_HeroQuote__Props) => {
 
     return (
-        <section id="Blog_heroQuote" className="text-6xl font-light text-center" style={{ fontFamily: secondaryFont }}>
+        <section id="Blog_heroQuote" className="text-6xl font-light text-center p-8 pb-14" style={{ fontFamily: secondaryFont }}>
             <style>{`
                         #Blog_heroQuoteQuoter::before {
                             content: "- "; /* or content: "&copy;"; */
                         }
                 `}</style>
             <p>{"\"" + props.quote + ".\""}
-                <span id="Blog_heroQuoteQuoter" className={`block text-center pt-4 ml-${props.quoter_padding}`}>
+                {props.quoter ? <span id="Blog_heroQuoteQuoter" className={`block text-center pt-4 ml-${props.quoter_padding}`}>
                     {props.quoter}
-                </span>
+                </span> : null}
             </p>
         </section>)
 }
