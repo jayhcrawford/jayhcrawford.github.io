@@ -7,7 +7,6 @@ import Contact from './pages/Contact';
 import useWindowSize from './hooks/useWindowSize';
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import Blog from './pages/Blog/Blog'
 
 import Footer from './components/Footer';
 
@@ -22,6 +21,7 @@ import { projects_3d_array } from './pages/Projects3D/Projects3D_data';
 import { projects_array } from './pages/Projects/Projects_data';
 import { linkedin } from '../linkbase';
 import ThreeBackground from './components/ThreeBackground';
+import Blog__UrFriends from './pages/Blog__UrFriends/Blog__UrFriends';
 
 
 
@@ -129,7 +129,7 @@ const App = () => {
                 <Route path="/projects" element={<Projects width={width} category_array={projects_array} />} />
                 <Route path="/art" element={<Art width={width} />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/blog" element={<Blog />} />
+                <Route path="/projects/urfriends" element={<Blog__UrFriends />} />
 
 
 

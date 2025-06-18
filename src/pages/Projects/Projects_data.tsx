@@ -8,7 +8,7 @@ export const projects_array = [
     {
         category: "UrFriends - SASS",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/blog-images/UR_Friends.webp",
-
+        url: "urfriends"
 
     },
     {

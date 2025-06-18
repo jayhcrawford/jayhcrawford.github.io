@@ -11,7 +11,8 @@ interface GridPhoto_Image__Props {
 
 const GridPhoto_Image = (props: GridPhoto_Image__Props) => {
   return (
-    <>      {props.url == "" && <div id="this_one" className='h-30 w-30 absolute'>
+    <>      
+    {props.url == "" && <div id="this_one" className='h-30 w-30 absolute'>
       <img src="./under_construction.svg" />
     </div>}
       <div style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 1)" }} className='gridPhoto_Image_container w-80 h-60'>
