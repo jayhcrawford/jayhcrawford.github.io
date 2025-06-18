@@ -1,4 +1,5 @@
-import { Blog, Blog_Paragraph } from "../../components/Blog/Blog"
+import { Blog } from "../../components/Blog/Blog"
+import { Blog_Paragraph } from "../../components/Blog/Blog_Pieces"
 
 const Blog__WidowBags = () => {
     return (

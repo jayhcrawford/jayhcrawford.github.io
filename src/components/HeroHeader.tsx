@@ -29,7 +29,13 @@ const NavListElem = (props: NavListElem__Props) => {
   return (
     <li style={{
       transition: "opacity .1s .1s"
-    }} className={`${hero_fontStyle} hover:underline hover:opacity-100`}><Link to={`${props.name}`}>
+    }} className={`outline_nav_elem_text ${hero_fontStyle} hover:underline hover:opacity-100`}><Link to={`${props.name}`}>
+        <style>
+          {`
+ 
+        
+        `}
+        </style>
         {capitalizeEveryWord(props.name)}
       </Link></li>
   )

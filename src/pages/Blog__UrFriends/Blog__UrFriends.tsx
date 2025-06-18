@@ -1,4 +1,5 @@
-import { Blog, Blog_Paragraph } from "../../components/Blog/Blog"
+import { Blog } from "../../components/Blog/Blog"
+import { Blog_Paragraph } from "../../components/Blog/Blog_Pieces"
 
 const Blog__UrFriends = () => {
     return (
@@ -6,8 +7,8 @@ const Blog__UrFriends = () => {
             <Blog construction={true} title="UrFriends">
                 <Blog_Paragraph text="UrFriends is designed to help you build real, lasting relationships using your device. " />
                 <Blog_Paragraph text={`
-                Inspired by the documented habits of world-movers Benjamin Franklin and my endlessly social Grandmother Faye, it’s about staying connected with intention—not just collecting contacts. 
-                You can organize your relationships into tiers and set reminders to reach out—daily, weekly, or even yearly. Each person has a private journal, so you can take notes after conversations and remember the things that matter.
+                Inspired by the documented habits of highly influential thinkers like Benjamin Franklin and Charles Darwin, and by the routines of my endlessly social Grandmother Faye, UrFriends is about staying connected with intention—not just collecting contacts. 
+                Organize your relationships into tiers and set unique reminder timeframes for each. A tier could be set for a daily reach-out, weekly, or even yearly. Each contact has a conversations journal, so you can take notes after reaching out and remember the things that matter.
                 There is a functional beta on my Github. The beta is React.js, Node, and MongoDB based. 
                 `} />
                 <Blog_Paragraph text={`
