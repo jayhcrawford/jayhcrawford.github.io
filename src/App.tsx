@@ -141,7 +141,7 @@ const App = () => {
         </div>
 
         <div className="pointer-events-none flex justify-end fixed top-0 w-full z-100 ">
-          <a href={linkedin} target='new'><button className='p-2 rounded-lg m-2 bg-white cursor-pointer'>
+          <a href={linkedin} target='new'><button className='pointer-events-auto p-2 rounded-lg m-2 bg-white cursor-pointer'>
             <LinkedInSVG />
           </button></a>
         </div>
