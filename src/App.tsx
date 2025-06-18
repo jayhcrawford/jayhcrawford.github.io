@@ -23,6 +23,8 @@ import { linkedin } from '../linkbase';
 import ThreeBackground from './components/ThreeBackground';
 import Blog__UrFriends from './pages/Blog__UrFriends/Blog__UrFriends';
 import Blog__TheBook from './pages/Blog__TheBook/Blog__TheBook';
+import Blog__WidowBags from './pages/Blog__WidowBags/Blog__WidowBags';
+import Blog__TheRipSheet from './pages/Blog__TheRipSheet/Blog__TheRipSheet';
 
 
 
@@ -95,7 +97,7 @@ const App = () => {
 
   console.log(width, "is the width; and the height is: ", height);
 
-  
+
 
   return (
     <>
@@ -132,6 +134,9 @@ const App = () => {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/projects/urfriends" element={<Blog__UrFriends />} />
                 <Route path="/projects/thebook" element={<Blog__TheBook />} />
+                <Route path="/projects/ripsheet" element={<Blog__TheRipSheet />} />
+                <Route path="/projects/widowbags" element={<Blog__WidowBags />} />
+
 
 
 

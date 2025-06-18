@@ -20,13 +20,13 @@ export const projects_array = [
     {
         category: "The RIP Sheet",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/blog-images/RIP.webp",
-
+        url: "ripsheet"
 
     },
     {
         category: "Widow Bags",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/product-design-icons/widow-icon.jpg",
-
+        url: "widowbags"
 
     },
 ]
