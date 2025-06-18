@@ -22,6 +22,7 @@ import { projects_array } from './pages/Projects/Projects_data';
 import { linkedin } from '../linkbase';
 import ThreeBackground from './components/ThreeBackground';
 import Blog__UrFriends from './pages/Blog__UrFriends/Blog__UrFriends';
+import Blog__TheBook from './pages/Blog__TheBook/Blog__TheBook';
 
 
 
@@ -130,6 +131,7 @@ const App = () => {
                 <Route path="/art" element={<Art width={width} />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/projects/urfriends" element={<Blog__UrFriends />} />
+                <Route path="/projects/thebook" element={<Blog__TheBook />} />
 
 
 
