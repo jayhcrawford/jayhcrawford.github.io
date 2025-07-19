@@ -66,7 +66,8 @@ const HeroHeader = (props: HeroHeader__Props) => {
 
         <h1 className="text-center text-white" style={{ fontFamily: heroFont, fontSize: props.width < 500 ? "3rem" : '6rem', fontWeight: 'bold' }}>{artist_name}</h1>
         <p className={`${hero_fontStyle} text-5xl text-center`} style={{ fontFamily: secondaryFont }}>
-          Interdisciplinary Creative & Programmer
+          <span className="block">Engineering Student,</span>
+          <span>Interdisciplinary Creative & Programmer</span>
         </p>
         <p style={{ fontFamily: tertiaryFont }} className={`text-center p-4 ${hero_fontStyle} text-3xl`}>Los Angeles, CA</p>
         <SocialBrick />

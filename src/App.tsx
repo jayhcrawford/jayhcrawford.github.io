@@ -127,6 +127,7 @@ const App = () => {
           <div id="body_div">
             <main>
               <Routes>
+                <Route path="/" element={<></>}/>
                 <Route path="/about" element={<About />} />
                 <Route path="/projects/3d" element={<Projects3D width={width} blog_array={projects_3d_array} />} />
                 <Route path="/projects" element={<Projects width={width} category_array={projects_array} />} />

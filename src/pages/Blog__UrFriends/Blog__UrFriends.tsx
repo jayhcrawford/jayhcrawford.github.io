@@ -9,10 +9,10 @@ const Blog__UrFriends = () => {
                 <Blog_Paragraph text={`
                 Inspired by the documented habits of highly influential thinkers like Benjamin Franklin and Charles Darwin, and by the routines of my endlessly social Grandmother Faye, UrFriends is about staying connected with intention—not just collecting contacts. 
                 Organize your relationships into tiers and set unique reminder timeframes for each. A tier could be set for a daily reach-out, weekly, or even yearly. Each contact has a conversations journal, so you can take notes after reaching out and remember the things that matter.
-                There is a functional beta on my Github. The beta is React.js, Node, and MongoDB based. 
+                There is a functional beta for a single user on my Github. The beta is React.js, Node, and MongoDB based. 
                 `} />
                 <Blog_Paragraph text={`
-                I’m currently migrating functionality to AWS to support real users. Google and Apple Calendar integration is on the way.
+                I’m currently migrating functionality to AWS to support real users. Google and Apple integration is on the way.
                 UrFriends is for people who believe technology should bring us together—not make us busier.`} />
             </Blog>
         </div>
