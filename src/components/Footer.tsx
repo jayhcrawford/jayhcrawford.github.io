@@ -71,9 +71,9 @@ const Footer = (props: Footer__Props) => {
                   <li className="">
                     <a href={instagram} target="new" className="hover:underline">Instagram</a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a href={tiktok} target="new" className="hover:underline">TikTok</a>
-                  </li>
+                  </li> */}
                   <li>
                     <a href={github} target="new" className="hover:underline">Github</a>
                   </li>

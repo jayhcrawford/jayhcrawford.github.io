@@ -1,4 +1,4 @@
-import {tiktok, github, instagram} from "../../linkbase.tsx"
+import { github, instagram} from "../../linkbase.tsx"
 import './socialbrick.css'
 
 interface Social_SVG__Props {
@@ -50,7 +50,7 @@ const SocialBrick = () => {
     const socials = [
         // { name: "Discord", url: discord },
         { name: "Instagram", url: instagram },
-        { name: "Tiktok", url: tiktok },
+        // { name: "Tiktok", url: tiktok },
         { name: "Github", url: github }
     ]
 
