@@ -1,30 +1,37 @@
-import './tailwind.css';
-import { Routes, Route, useLocation } from 'react-router-dom';
-import About from './pages/About';
-import Projects from './pages/Projects/Projects';
-import Art from './pages/Art';
-import Contact from './pages/Contact';
-import useWindowSize from './hooks/useWindowSize';
+// TODO: Confirm all links on all pages
+// TODO: Confirm all description text
+
 import { useEffect, useRef } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import * as THREE from 'three';
+import useWindowSize from './hooks/useWindowSize';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Projects from './pages/Projects/Projects';
+import './tailwind.css';
 
 import Footer from './components/Footer';
 
-import LinkedInSVG from './components/LinkedInSVG';
 import HeroHeader from './components/HeroHeader';
+import LinkedInSVG from './components/LinkedInSVG';
 // import { linkedin } from '../linkbase';
 import LocationBar from './components/LocationBar';
 
+import { linkedin } from '../linkbase';
 import SpaceBG from './components/SpaceBG';
+import ThreeBackground from './components/ThreeBackground';
+import Art from './pages/Art';
+import Blog__TheBook from './pages/Blog__TheBook/Blog__TheBook';
+import Blog__TheRipSheet from './pages/Blog__TheRipSheet/Blog__TheRipSheet';
+import Blog__UrFriends from './pages/Blog__UrFriends/Blog__UrFriends';
+import Blog__WidowBags from './pages/Blog__WidowBags/Blog__WidowBags';
+import { art_array } from './pages/Projects/Art_data';
+import { design_array } from './pages/Projects/Design_data';
+import { drawing_array } from './pages/Projects/Drawing_data';
+import { painting_array } from './pages/Projects/Painting_data';
+import { projects_array } from './pages/Projects/Projects_data';
 import Projects3D from './pages/Projects3D/Projects3D';
 import { projects_3d_array } from './pages/Projects3D/Projects3D_data';
-import { projects_array } from './pages/Projects/Projects_data';
-import { linkedin } from '../linkbase';
-import ThreeBackground from './components/ThreeBackground';
-import Blog__UrFriends from './pages/Blog__UrFriends/Blog__UrFriends';
-import Blog__TheBook from './pages/Blog__TheBook/Blog__TheBook';
-import Blog__WidowBags from './pages/Blog__WidowBags/Blog__WidowBags';
-import Blog__TheRipSheet from './pages/Blog__TheRipSheet/Blog__TheRipSheet';
 
 
 
@@ -127,11 +134,14 @@ const App = () => {
           <div id="body_div">
             <main>
               <Routes>
-                <Route path="/" element={<></>}/>
+                <Route path="/" element={<></>} />
                 <Route path="/about" element={<About />} />
                 <Route path="/projects/3d" element={<Projects3D width={width} blog_array={projects_3d_array} />} />
                 <Route path="/projects" element={<Projects width={width} category_array={projects_array} />} />
-                <Route path="/art" element={<Art width={width} />} />
+                <Route path="/art" element={<Art width={width} category_array={art_array} />} />
+                <Route path="/art/painting" element={<Art width={width} category_array={painting_array} />} />
+                <Route path="/art/drawing" element={<Art width={width} category_array={drawing_array} />} />
+                <Route path="/art/design" element={<Art width={width} category_array={design_array} />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/projects/urfriends" element={<Blog__UrFriends />} />
                 <Route path="/projects/thebook" element={<Blog__TheBook />} />

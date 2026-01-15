@@ -1,3 +1,6 @@
+// TODO: Create new img icons for the relevant 3D Projects categories
+// TODO: integrate string substitutions for url names into LocationBar
+
 export const projects_3d_array = [
     {
         title: "My Place",
@@ -13,6 +16,24 @@ export const projects_3d_array = [
     },
     {
         title: "3D Me :-)",
+        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/3d-jay-icon.jpg",
+        about_txt: "Fully rigged, simple 3D character modeled after me. This helped me to better understand topology, weight-painting, and rigging.",
+
+    },
+    {
+        title: "Fusion360 Tripod",
+        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/3d-jay-icon.jpg",
+        about_txt: "Fully rigged, simple 3D character modeled after me. This helped me to better understand topology, weight-painting, and rigging.",
+
+    },
+    {
+        title: "Fusion360 Tripod",
+        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/3d-jay-icon.jpg",
+        about_txt: "Fully rigged, simple 3D character modeled after me. This helped me to better understand topology, weight-painting, and rigging.",
+
+    },
+    {
+        title: "Solidworks Japanese Lantern",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/3d-jay-icon.jpg",
         about_txt: "Fully rigged, simple 3D character modeled after me. This helped me to better understand topology, weight-painting, and rigging.",
 

@@ -1,7 +1,7 @@
 // TODO: Create new img icons for the relevant projects categories
 // TODO: integrate string substitutions for url names into LocationBar
 
-export const projects_array = [
+export const design_array = [
     {
         category: "Web Development",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/orthographic-icon.jpg",
@@ -9,27 +9,21 @@ export const projects_array = [
 
     },
     {
-        category: "3D Projects",
+        category: "Product Design",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/orthographic-icon.jpg",
         url: "3d"
 
     },
     {
-        category: "UrFriends - SaaS",
+        category: "This Website!",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/blog-images/UR_Friends.webp",
         url: "urfriends"
 
     },
     {
-        category: "The Book",
+        category: "UrFriends SaaS",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/blog-images/TheBook.webp",
         url: "thebook"
-
-    },
-    {
-        category: "The RIP Sheet",
-        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/blog-images/RIP.webp",
-        url: "ripsheet"
 
     },
     {
