@@ -19,14 +19,11 @@ const About = () => {
       <Blog title="About" construction={false}>
 
 
-        <Blog_Paragraph text={`I’m an artist and engineering student based in Los Angeles. I grew up in Kentucky and earned my BFA from the School of the Art Institute of Chicago before moving to LA in 2017. In moving to LA, my goal was to study alongside great acting teachers and I did that twice weekly, for four years. (Performance and emotion other fascinations of mine) `}/>
+        <Blog_Paragraph text={`I’m an engineering student based in Los Angeles, originally from Kentucky. I earned my BFA from the School of the Art Institute of Chicago and moved to LA in 2017. Apart from tons of different odd jobs, I've worked mainly in specialty construction, food and beverage, and the entertainment industry in various capacities.`} />
 
-        <Blog_Paragraph text={`My paintings explore the tension between painting as image and painting as object, where flatness meets surface. Something about the line in between object and image draws me into experimenting with what I consider to be "wrong-ness" in the work. I’m drawn to that moment when something feels just slightly off, when a move on a painting initially strikes me with revolting inadequacy—I'll often stop there.`}/>
+        <Blog_Paragraph text={`Outside of work, I get into fitness and the outdoors. I’m a longtime runner and cyclist, and I train consistently with weights. Learning drives me, and I’ve been creatively inclined for as long as I can remember. Creativity might mean painting, drawing, or to my parent's chagrin, taking things apart and putting them back together—but it may also mean building an app/cli utility, making short films, or a flourishing a garden in my apartment.`} />
 
-        <Blog_Paragraph text={`Alongside my art practice, my studies as an engineering student have a focus on product design, app interfaces, and data analysis. I’m interested in how systems break down and reassemble—whether in a canvas or a codebase. My work moves between those worlds, and they feed each other in unexpected ways.`}/>
-
-        <Blog_Paragraph text={`As an artist, I like breaking things. As an engineer, creating things.`}/>
-
+        <Blog_Paragraph text={`My enneagram is type 8: the challenger, which I absolutely identify with across multiple domains of my life—I love to take on challenges. My MBTI is ENFP-A. Connecting with people, working together, and pushing limits are how I find joy.`} />
       </Blog>
 
     </>
@@ -34,5 +31,10 @@ const About = () => {
 };
 
 export default About;
+
+
+
+
+
 
 
