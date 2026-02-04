@@ -1,6 +1,8 @@
 import { Blog } from "../components/Blog/Blog";
 import { Blog_Paragraph } from "../components/Blog/Blog_Pieces";
 
+// TODO: I need a snazzy image of myself and some flourish that makes this page a good introduction to me
+
 
 const About = () => {
   return (
