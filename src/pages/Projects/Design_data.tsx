@@ -9,7 +9,7 @@ export const design_array = [
 
     },
     {
-        category: "Product Design",
+        category: "3D Projects",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/orthographic-icon.jpg",
         url: "3d"
 
@@ -17,13 +17,19 @@ export const design_array = [
     {
         category: "This Website!",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/blog-images/UR_Friends.webp",
-        url: "urfriends"
+        url: "this_website"
 
     },
     {
-        category: "UrFriends SaaS",
+        category: "The Book",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/blog-images/TheBook.webp",
         url: "thebook"
+
+    },
+    {
+        category: "UrFriends - SaaS",
+        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/blog-images/UR_Friends.webp",
+        url: "urfriends"
 
     },
     {

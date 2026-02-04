@@ -18,7 +18,6 @@ This repo is a Vite + React + TypeScript site for GitHub Pages. The CI/CD publis
 
 ## Current TODOs (from code)
 - About page needs a strong intro image/flourish: `src/pages/About.tsx`.
-- Contact page needs a more focused hero-like layout: `src/pages/Contact.tsx`.
 - SocialBrick uses a fixed px width that should become responsive: `src/components/SocialBrick.tsx`.
 - Confirm links + description text in app shell: `src/App.tsx`.
 - Create/replace icon images for categories in:
@@ -29,16 +28,30 @@ This repo is a Vite + React + TypeScript site for GitHub Pages. The CI/CD publis
   - `src/pages/Projects/Design_data.tsx`
   - `src/pages/Projects3D/Projects3D_data.tsx`
 - LocationBar URL string substitutions needed in the same data files as above.
-- Fill in project lists/content for programming + web dev: `src/pages/Projects/Projects_data.tsx`.
+- Replace stub project entries with real content + images for Web Dev + Programming pages:
+  - `src/pages/Projects/WebDev_data.tsx`
+  - `src/pages/Projects/Programming_data.tsx`
 - Provide images/resources for project entries and fix the painting image carousel: `src/pages/Projects/Painting_data.tsx`.
 - Reverse order of drawing objects array: `src/pages/Projects/Drawing_data.tsx`.
-
+- Fill in painting period galleries with correct image sets per year:
+  - `src/pages/Projects/Painting_periods_data.tsx`
+  - `src/pages/PaintingPeriod.tsx`
 ## Content Notes
 - Most TODOs are content/layout placeholders. Ask the user for assets and copy before filling lists or updating images.
 - Keep art/project metadata consistent with existing data object shapes in the data files.
+
+## Recent Changes
+- Built a focused Contact hero layout: `src/pages/Contact.tsx`.
+- Added Web Dev + Programming project list pages, data stubs, and routes:
+  - `src/pages/Projects/WebDev.tsx`, `src/pages/Projects/WebDev_data.tsx`
+  - `src/pages/Projects/Programming.tsx`, `src/pages/Projects/Programming_data.tsx`
+  - routes in `src/App.tsx`
+- Stubbed painting period galleries with per-period image arrays and a period route:
+  - `src/pages/Projects/Painting_periods_data.tsx`
+  - `src/pages/PaintingPeriod.tsx`
+  - `/art/painting/:periodSlug` route in `src/App.tsx`
 
 ## Suggested First Steps For Future Work
 1. Ask the user which TODOs to prioritize (content, layout, or data cleanup).
 2. Gather assets (images/icons) and confirm naming conventions.
 3. Make small, page-by-page changes and verify with `npm run dev`.
-

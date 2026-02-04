@@ -18,18 +18,35 @@ const webp_suffix_remove = (filename: string | undefined): string => {
   }
 }
 
+type GalleryImage = {
+  src: string;
+  alt?: string;
+  title?: string;
+};
+
+type GalleryImages = GalleryImage[];
+
+const build_gallery_images = (images: string[], base_url: string): GalleryImages => {
+  return images.map((name) => ({
+    src: `${base_url}${name}`,
+    alt: name,
+    title: name,
+  }));
+};
+
 interface MiniGallery__Props {
   current: number;
   setCurrent: Dispatch<SetStateAction<number>>;
   images_array: string[];
+  gallery_images: GalleryImages;
 }
 
 const MiniGallery = (props: MiniGallery__Props) => {
   const miniImages = () => {
-    if (props.current >= galleryImages.length - 5) {
-       return galleryImages.slice(galleryImages.length - 5, galleryImages.length)
+    if (props.current >= props.gallery_images.length - 5) {
+       return props.gallery_images.slice(props.gallery_images.length - 5, props.gallery_images.length)
     } else {
-       return galleryImages.slice(props.current + 1, props.current + 6);
+       return props.gallery_images.slice(props.current + 1, props.current + 6);
     }
 
   };
@@ -65,25 +82,12 @@ const MiniGallery = (props: MiniGallery__Props) => {
   )
 }
 
-type GalleryImage = {
-  src: string;
-  alt?: string;
-  title?: string;
-};
-
-type GalleryImages = GalleryImage[];
-
-const galleryImages: GalleryImages = img_names.map(name => ({
-  src: `${base_url_for_images}${name}`,
-  alt: name,
-  title: name,
-}));
-
 interface LeftRight_Button__Props {
   onclick_func?: MouseEventHandler<HTMLButtonElement>;
   current: number;
   direction: string;
   graphic: string;
+  total: number;
 }
 
 const disabled_hue = 'rgba(255,255,255,0.2)';
@@ -95,7 +99,7 @@ const buttonDisabledStyle: CSSProperties = {
 const LeftRight_Button = (props: LeftRight_Button__Props) => {
   const isDisabled =
     (props.direction === "left" && props.current === 0) ||
-    (props.direction === "right" && props.current === galleryImages.length - 1);
+    (props.direction === "right" && props.current === props.total - 1);
 
   console.log(props.current, props.direction)
 
@@ -162,41 +166,55 @@ const LeftRight_Button = (props: LeftRight_Button__Props) => {
 
 interface Gallery__Props {
   width: number;
+  images?: string[];
+  base_url?: string;
+  detail_medium?: string;
+  detail_years?: string;
 }
 
 const Gallery = (props: Gallery__Props) => {
 
   const [current, setCurrent] = useState<number>(0);
+  const images = props.images && props.images.length > 0 ? props.images : img_names;
+  const base_url = props.base_url ? props.base_url : base_url_for_images;
+  const gallery_images = build_gallery_images(images, base_url);
+  const max_index = gallery_images.length - 1;
+  const detail_medium = props.detail_medium ? props.detail_medium : "acrylic on canvas";
+  const detail_years = props.detail_years ? props.detail_years : "2021-2025";
+  const active_image = gallery_images[current];
+  const active_title = webp_suffix_remove(active_image.title);
 
   console.log(current, "is current")
   const goLeft = () => setCurrent((prev) => Math.max(prev - 1, 0));
-  const goRight = () => setCurrent((prev) => Math.min(prev + 1, galleryImages.length - 1));
+  const goRight = () => setCurrent((prev) => Math.min(prev + 1, max_index));
 
   if (props.width > mobile_break_point) {
     return (
       <div id="gallery-container" className=''>
 
         <div className="gallery_leftButton">
-          <LeftRight_Button graphic="arrow-left" direction="left" current={current} onclick_func={goLeft} />
+          <LeftRight_Button graphic="arrow-left" direction="left" current={current} total={gallery_images.length} onclick_func={goLeft} />
         </div>
         <div className="gallery_mainImage">
           <img
-            src={galleryImages[current].src}
-            alt={galleryImages[current].alt}
-            title={galleryImages[current].title}
+            src={active_image.src}
+            alt={active_image.alt}
+            title={active_image.title}
             loading="lazy"
           />
         </div>
 
         <div className="gallery_rightButton">
-          <LeftRight_Button graphic="arrow-right" direction="right" current={current} onclick_func={goRight} />
+          <LeftRight_Button graphic="arrow-right" direction="right" current={current} total={gallery_images.length} onclick_func={goRight} />
         </div>
 
-        <MiniGallery images_array={img_names} current={current} setCurrent={setCurrent} />
+        <MiniGallery images_array={images} gallery_images={gallery_images} current={current} setCurrent={setCurrent} />
 
-        <div className="gallery_textDetails text-white text-left p-10"><h3>{webp_suffix_remove(galleryImages[current].title)}</h3><p>
-          acrylic on canvas</p>
-          <p>2021-2025</p></div>
+        <div className="gallery_textDetails text-white text-left p-10">
+          <h3>{active_title}</h3>
+          <p>{detail_medium}</p>
+          <p>{detail_years}</p>
+        </div>
 
       </div>
     )
@@ -215,26 +233,28 @@ const Gallery = (props: Gallery__Props) => {
           </style>
 
           <button onClick={() => goLeft()} className='gallery_leftRightButton_cols'>
-            <LeftRight_Button graphic="caret-left" direction="left" current={current} />
+            <LeftRight_Button graphic="caret-left" direction="left" current={current} total={gallery_images.length} />
           </button>
 
           <img
             style={{ width: "70%" }}
-            src={galleryImages[current].src}
-            alt={galleryImages[current].alt}
-            title={galleryImages[current].title}
+            src={active_image.src}
+            alt={active_image.alt}
+            title={active_image.title}
             loading="lazy"
           />
           <button onClick={() => goRight()} className='gallery_leftRightButton_cols'>
-            <LeftRight_Button graphic="caret-right" direction="right" current={current} />
+            <LeftRight_Button graphic="caret-right" direction="right" current={current} total={gallery_images.length} />
           </button>
         </div>
 
-        <div className="text-left p-10"><h3>{webp_suffix_remove(galleryImages[current].title)}</h3><p>
-          acrylic on canvas</p>
-          <p>2021-2025</p></div>
+        <div className="text-left p-10">
+          <h3>{active_title}</h3>
+          <p>{detail_medium}</p>
+          <p>{detail_years}</p>
+        </div>
 
-        <MiniGallery images_array={img_names} setCurrent={setCurrent} current={current} />
+        <MiniGallery images_array={images} gallery_images={gallery_images} setCurrent={setCurrent} current={current} />
       </div>
     )
   }
