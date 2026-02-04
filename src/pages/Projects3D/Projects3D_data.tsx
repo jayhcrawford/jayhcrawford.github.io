@@ -20,11 +20,11 @@ export const projects_3d_array = [
     {
         title: "Fusion360 Tripod",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/3d-jay-icon.jpg",
-        about_txt: "Fully rigged, simple 3D character modeled after me. This helped me to better understand topology, weight-painting, and rigging.",
+        about_txt: "In my first engineering drawing course, we used Fusion360. I made this there as my final.",
     },
     {
         title: "Solidworks Japanese Lantern",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/3d-jay-icon.jpg",
-        about_txt: "Fully rigged, simple 3D character modeled after me. This helped me to better understand topology, weight-painting, and rigging.",
+        about_txt: "In my second engineering drawing course, my groupmates and I collaborated together to make a Japanese-inspired lamp.",
     },
 ]
