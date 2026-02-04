@@ -14,6 +14,18 @@ interface LocationBar__Props {
 const LocationBar = (props: LocationBar__Props) => {
 
   let url_string = "";
+  const locationByUrl = new Map(
+    props.locationData.map((item) => [item.url.replace(/^\//, ""), item.title])
+  );
+
+  const formatFallbackTitle = (segment: string) => {
+    const cleaned = segment.replace(/[_-]/g, " ").trim();
+    return cleaned
+      .split(" ")
+      .filter(Boolean)
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
 
   return (
     <>
@@ -39,7 +51,7 @@ const LocationBar = (props: LocationBar__Props) => {
           background-color: rgba(255,255,255,1);
           outline: solid 3px  rgba(255,255,255,.8);
         }
-        
+
         .location-bar-bttn:active {
           background-color: rgba(255,255,255,.5);
           outline: solid 3px  rgba(255,255,255,.8);
@@ -52,15 +64,17 @@ const LocationBar = (props: LocationBar__Props) => {
             color: rgba(255,255,255,.65);
 
         }
-    
+
     `}</style>
       <div id="location-bar">
         {
           props.split().map((location, idx) => {
             url_string += "/" + location;
+            const locationTitle =
+              locationByUrl.get(location) ?? formatFallbackTitle(location);
             return (
               <span key={`${idx}-location`}>
-                <Link to={url_string}><button className="location-bar-bttn">{location}</button></Link>
+                <Link to={url_string}><button className="location-bar-bttn">{locationTitle}</button></Link>
                 {idx < props.split().length - 1 && <span className="location-bar-arrow">{">"}</span>}
               </span>
             )

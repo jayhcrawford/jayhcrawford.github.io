@@ -7,16 +7,21 @@ export const drawing_array = [
     {
         category: "Design",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/orthographic-icon.jpg",
-        url: "2020p"
+        url: "drawing_design"
+    },
+    {
+        category: "Engineering",
+        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/orthographic-icon.jpg",
+        url: "drawing_engineering"
     },
     {
         category: "Fine Art",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/orthographic-icon.jpg",
-        url: "2021p"
+        url: "drawing_fa"
     },
     {
         category: "Doodling",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/blog-images/UR_Friends.webp",
-        url: "2022p"
+        url: "drawing_doodle"
     },
 ]

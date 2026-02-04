@@ -36,16 +36,18 @@ import { projects_3d_array } from './pages/Projects3D/Projects3D_data';
 
 
 
-const locationTest = [
-  {
-    title: "Projects",
-    url: "/projects"
-  },
-  {
-    title: "3D Projects",
-    url: "hi"
-  },
-]
+const locationData = [
+  { title: "Projects", url: "projects" },
+  { title: "Art", url: "art" },
+  { title: "About", url: "about" },
+  { title: "Contact", url: "contact" },
+  { title: "3D Projects", url: "3d" },
+  ...projects_array.map((item) => ({ title: item.category, url: item.url })),
+  ...art_array.map((item) => ({ title: item.category, url: item.url })),
+  ...painting_array.map((item) => ({ title: item.category, url: item.url })),
+  ...drawing_array.map((item) => ({ title: item.category, url: item.url })),
+  ...design_array.map((item) => ({ title: item.category, url: item.url })),
+];
 
 
 const App = () => {
@@ -127,7 +129,7 @@ const App = () => {
           <div>
             {<HeroHeader width={width} path={currentPath} />}
 
-            {splitCurrentPath().length > 1 && <LocationBar split={splitCurrentPath} locationData={locationTest} />}
+            {splitCurrentPath().length > 1 && <LocationBar split={splitCurrentPath} locationData={locationData} />}
 
           </div>
 
@@ -169,7 +171,6 @@ const App = () => {
 };
 
 export default App;
-
 
 
 
