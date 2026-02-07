@@ -10,14 +10,14 @@ export const projects_array = [
     {
         category: "Web Development",
         /* TODO: update the img so this has it's own icon */
-        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/orthographic-icon.jpg",
+        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/web-design-web-icons/DM.webp",
         url: "web_dev"
 
     },
     {
         category: "Programming",
         /* TODO: update the img so this has it's own icon */
-        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/orthographic-icon.jpg",
+        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/programming-icons/Programming.webp",
         url: "programming"
     },
     {

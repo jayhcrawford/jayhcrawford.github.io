@@ -4,8 +4,8 @@
 export const design_array = [
     {
         category: "Web Development",
-        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/orthographic-icon.jpg",
-        url: "web_dev"
+        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/web-design-web-icons/DM.webp",
+        url: "../projects/web_dev"
 
     },
     {
@@ -16,7 +16,7 @@ export const design_array = [
     },
     {
         category: "This Website!",
-        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/blog-images/UR_Friends.webp",
+        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/product-design-icons/jayhcrawford-domain.webp",
         url: "this_website"
 
     },
