@@ -4,6 +4,13 @@ import { BlogItem } from "../../components/BlogList";
 
 export const web_dev_array: BlogItem[] = [
   {
+    title: "This Website!",
+    img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/product-design-icons/jayhcrawford-domain.webp",
+    about_txt: "This resposnive website uses CSS, SVG, React, GitHub. I made the components.",
+    url: "this_website"
+
+  },
+  {
     title: "Calculator",
     img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/web-design-web-icons/Calc.webp",
     about_txt: "CSS by me; Originally written with React class components while I did freeCodeCamp in 2023; rewritten into React 19 with an LLM.",

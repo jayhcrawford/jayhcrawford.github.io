@@ -12,9 +12,4 @@ export const art_array = [
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/painting_dir/drawing-web-icons/drawing-web-icon.jpg",
         url: "drawing"
     },
-    {
-        category: "Design",
-        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/orthographic-icon.jpg",
-        url: "design"
-    },
 ]

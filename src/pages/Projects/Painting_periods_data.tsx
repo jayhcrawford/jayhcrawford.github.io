@@ -8,14 +8,60 @@ export interface PaintingPeriod {
 }
 
 const placeholder_images = [
-  "KP.webp",
-  "G.webp",
-  // "alien_invasion.webp",
+  "alien_invasion.webp",
   "alley.webp",
   "bad_painting.webp",
   "bada_bing.webp",
-  // "behind.webp",
+  "behind.webp",
   "blinker.webp",
+  "blue_girl_1.webp",
+  "blue_girl_2.webp",
+  "bouquet.webp",
+  "bright_lights_big_city.webp",
+  "business_card.webp",
+  "california_onlookers.webp",
+  "connection.webp",
+  "dips.webp",
+  "eyes.webp",
+  "following.webp",
+  "funny_mustache_guy.webp",
+  "G.webp",
+  "hilltop_city.webp",
+  "hollywood_hills.webp",
+  "house.webp",
+  "in_the_city.webp",
+  "jacks_2.webp",
+  "jacks.webp",
+  "james.webp",
+  "KP.webp",
+  "locked_away.webp",
+  "network.webp",
+  "night.webp",
+  "one_way.webp",
+  "online.webp",
+  "outlooker.webp",
+  "perspective.webp",
+  "pictures_of_then.webp",
+  "portrait_copy.webp",
+  "rainy_sun.webp",
+  "researchers.webp",
+  "street_corner.webp",
+  "sunday.webp",
+  "time.webp",
+  "tornado.webp",
+  "transfer.webp",
+  "victorian.webp",
+  "what_do_you.webp",
+  "woah_dude.webp",
+  "worm.webp",
+  "x.webp"
+];
+
+const paintings_2025 = [
+  "what_do_you.webp",
+  "woah_dude.webp",
+  "worm.webp",
+  "x.webp"
 ];
 
 export const painting_periods: PaintingPeriod[] = [
@@ -23,7 +69,7 @@ export const painting_periods: PaintingPeriod[] = [
     slug: "2025p",
     title: "2025",
     year_label: "2025",
-    images: placeholder_images.slice(0, 6),
+    images: paintings_2025,
   },
   {
     slug: "2024p",

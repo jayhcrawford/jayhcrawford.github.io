@@ -8,12 +8,7 @@ export const design_array = [
         url: "../projects/web_dev"
 
     },
-    {
-        category: "This Website!",
-        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/product-design-icons/jayhcrawford-domain.webp",
-        url: "this_website"
 
-    },
     {
         category: "UrFriends - SaaS",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/blog-images/UR_Friends.webp",

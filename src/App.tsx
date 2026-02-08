@@ -30,11 +30,11 @@ import { art_array } from './pages/Projects/Art_data';
 import { design_array } from './pages/Projects/Design_data';
 import { drawing_array } from './pages/Projects/Drawing_data';
 import { painting_array } from './pages/Projects/Painting_data';
+import Programming from './pages/Projects/Programming';
+import { programming_array } from './pages/Projects/Programming_data';
 import { projects_array } from './pages/Projects/Projects_data';
 import WebDev from './pages/Projects/WebDev';
-import Programming from './pages/Projects/Programming';
 import { web_dev_array } from './pages/Projects/WebDev_data';
-import { programming_array } from './pages/Projects/Programming_data';
 import Projects3D from './pages/Projects3D/Projects3D';
 import { projects_3d_array } from './pages/Projects3D/Projects3D_data';
 
@@ -151,7 +151,6 @@ const App = () => {
                 <Route path="/art/painting" element={<Art width={width} category_array={painting_array} />} />
                 <Route path="/art/painting/:periodSlug" element={<PaintingPeriod width={width} />} />
                 <Route path="/art/drawing" element={<Art width={width} category_array={drawing_array} />} />
-                <Route path="/art/design" element={<Art width={width} category_array={design_array} />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/projects/urfriends" element={<Blog__UrFriends />} />
                 <Route path="/projects/thebook" element={<Blog__TheBook />} />
