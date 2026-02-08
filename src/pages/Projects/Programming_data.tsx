@@ -5,7 +5,7 @@ import { BlogItem } from "../../components/BlogList";
 export const programming_array: BlogItem[] = [
   {
     title: "Red X CLI Utility",
-    img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/orthographic-icon.jpg",
+    img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/programming-icons/redX-CLI-icon.webp",
     about_txt: "Stub entry for the Red X CLI utility.",
     url: "https://github.com/jayhcrawford/3-month-habit-tracker"
   },

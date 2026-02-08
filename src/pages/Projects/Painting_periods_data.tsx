@@ -10,11 +10,11 @@ export interface PaintingPeriod {
 const placeholder_images = [
   "KP.webp",
   "G.webp",
-  "alien_invasion.webp",
+  // "alien_invasion.webp",
   "alley.webp",
   "bad_painting.webp",
   "bada_bing.webp",
-  "behind.webp",
+  // "behind.webp",
   "blinker.webp",
 ];
 

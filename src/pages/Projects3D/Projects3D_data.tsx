@@ -19,12 +19,12 @@ export const projects_3d_array = [
     },
     {
         title: "Fusion360 Tripod",
-        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/3d-jay-icon.jpg",
+        img: "https://jayhcrawford-webdocs.s3.us-east-2.amazonaws.com/webdocs-icons/tripod-drawing-icon.webp",
         about_txt: "In my first engineering drawing course, we used Fusion360. I made this there as my final.",
     },
     {
         title: "Solidworks Japanese Lantern",
-        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/3d-jay-icon.jpg",
+        img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/product-design-icons/j-lantern-icon.webp",
         about_txt: "In my second engineering drawing course, my groupmates and I collaborated together to make a Japanese-inspired lamp.",
     },
 ]

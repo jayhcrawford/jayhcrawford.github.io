@@ -1,6 +1,6 @@
-import { MouseEventHandler, useState, CSSProperties, Dispatch, SetStateAction } from 'react';
-import './gallery.css';
+import { CSSProperties, Dispatch, MouseEventHandler, SetStateAction, useState } from 'react';
 import { mobile_break_point } from '../styles';
+import './gallery.css';
 
 const base_url_for_images = "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/painting/";
 
@@ -44,9 +44,9 @@ interface MiniGallery__Props {
 const MiniGallery = (props: MiniGallery__Props) => {
   const miniImages = () => {
     if (props.current >= props.gallery_images.length - 5) {
-       return props.gallery_images.slice(props.gallery_images.length - 5, props.gallery_images.length)
+      return props.gallery_images.slice(props.gallery_images.length - 5, props.gallery_images.length)
     } else {
-       return props.gallery_images.slice(props.current + 1, props.current + 6);
+      return props.gallery_images.slice(props.current + 1, props.current + 6);
     }
 
   };
@@ -54,7 +54,7 @@ const MiniGallery = (props: MiniGallery__Props) => {
   return (
     <div className="gallery_subImages">
       {miniImages().map((img) => (
-        <button className="mini_gallery_image" onClick={()=> props.setCurrent(props.images_array.indexOf(img.title ? img.title : ""))}>
+        <button className="mini_gallery_image" onClick={() => props.setCurrent(props.images_array.indexOf(img.title ? img.title : ""))}>
           <style>
             {`
               .mini_gallery_image:hover {
@@ -144,7 +144,7 @@ const LeftRight_Button = (props: LeftRight_Button__Props) => {
       type="button"
     >
       <style>
-      {`
+        {`
         .LR_bttn:hover {
           filter: drop-shadow(0 0 10px rgba(255, 255, 255, .5)) drop-shadow(0 0 10px rgba(255, 255, 255, .5));
         }
@@ -190,9 +190,9 @@ const Gallery = (props: Gallery__Props) => {
 
   if (props.width > mobile_break_point) {
     return (
-      <div id="gallery-container" className=''>
+      <div id="gallery-container" className='flex items-center justify-center h-screen'>
 
-        <div className="gallery_leftButton">
+        <div className="gallery_leftButton ml-auto">
           <LeftRight_Button graphic="arrow-left" direction="left" current={current} total={gallery_images.length} onclick_func={goLeft} />
         </div>
         <div className="gallery_mainImage">
