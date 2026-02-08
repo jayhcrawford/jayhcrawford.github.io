@@ -17,27 +17,25 @@ const paintings_2020 = [
   "blue_girl_1.webp",
   "connection.webp",
   "dips.webp",
-  "street_corner.webp",
+
 ];
 
 const paintings_2021 = [
   "alley.webp",
+  "eyes.webp",
   "blue_girl_2.webp",
   "KP.webp",
-  "hilltop_city.webp",
   "house.webp",
   "in_the_city.webp",
   "jacks.webp",
   "locked_away.webp",
   "one_way.webp",
   "time.webp",
-
 ];
 
 const paintings_2022 = [
   "bada_bing.webp",
   "california_onlookers.webp",
-  "eyes.webp",
   "following.webp",
   "hollywood_hills.webp",
   "rainy_sun.webp",
@@ -45,6 +43,7 @@ const paintings_2022 = [
   "tornado.webp",
   "victorian.webp",
   "woah_dude.webp",
+  "street_corner.webp",
 ];
 
 
@@ -61,6 +60,7 @@ const paintings_2023 = [
 
 const paintings_2024 = [
   "alien_invasion.webp",
+  "hilltop_city.webp",
   "funny_mustache_guy.webp",
   "jacks_2.webp",
   "online.webp",
