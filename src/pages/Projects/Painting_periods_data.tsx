@@ -8,10 +8,10 @@ export interface PaintingPeriod {
 }
 
 const placeholder_images = [
-  "alien_invasion.webp",
-  "alley.webp",
-  "bad_painting.webp",
-  "bada_bing.webp",
+
+
+
+
   "behind.webp",
   "blinker.webp",
   "blue_girl_1.webp",
@@ -55,6 +55,25 @@ const placeholder_images = [
   "woah_dude.webp",
   "worm.webp",
   "x.webp"
+];
+
+
+
+const paintings_2021 = [
+      "alley.webp",
+];
+
+const paintings_2022 = [
+      "bada_bing.webp",
+];
+
+
+const paintings_2023 = [
+      "bad_painting.webp",
+];
+
+const paintings_2024 = [
+    "alien_invasion.webp",
 ];
 
 const paintings_2025 = [
