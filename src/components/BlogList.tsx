@@ -70,7 +70,8 @@ const BlogList_Item = (props: BlogList_Item__Props) => {
 }
 
 interface BlogList_Item_Photo__Props {
-  img: string
+  img: string;
+  under_construction?: boolean;
 }
 
 const BlogList_Item_Photo = (props: BlogList_Item_Photo__Props) => {
@@ -91,6 +92,7 @@ export interface BlogItem {
   img: string;
   about_txt: string;
   url?: string;
+  under_construction?: boolean;
 }
 
 export interface BlogList__Props {
