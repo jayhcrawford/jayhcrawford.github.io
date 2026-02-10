@@ -9,6 +9,7 @@ interface BlogList_Item__Props {
   img: string,
   about_txt: string,
   url?: string;
+  under_construction?: boolean;
 }
 
 const BlogList_Item = (props: BlogList_Item__Props) => {
@@ -48,7 +49,7 @@ const BlogList_Item = (props: BlogList_Item__Props) => {
                   <div className={`${props.url == "" && hovering ? "absolute" : "hidden"} w-full text-white font-black absolute bg-red-600 top-[120px] p-4 text-center`}>
                     Under Construction
                   </div>
-                  <BlogList_Item_Photo img={props.img} />
+                  <BlogList_Item_Photo img={props.img} under_construction={props.under_construction} />
 
 
                 </div>
@@ -77,9 +78,9 @@ interface BlogList_Item_Photo__Props {
 const BlogList_Item_Photo = (props: BlogList_Item_Photo__Props) => {
   return (
     <>
-      <div className='h-30 w-30 absolute'>
+      {props.under_construction && props.under_construction === true && <div className='h-30 w-30 absolute'>
         <img src="./under_construction.svg" />
-      </div>
+      </div>}
       <div style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 1)" }} className='w-80 h-60'>
         <img className='rounded-lg w-80 h-60' style={{ objectFit: "cover" }} src={props.img}></img>
       </div>
