@@ -37,6 +37,7 @@ import WebDev from './pages/Projects/WebDev';
 import { web_dev_array } from './pages/Projects/WebDev_data';
 import Projects3D from './pages/Projects3D/Projects3D';
 import { projects_3d_array } from './pages/Projects3D/Projects3D_data';
+import D3Visualizations from './pages/Projects/D3Visualizations';
 
 
 
@@ -147,6 +148,9 @@ const App = () => {
                 <Route path="/projects" element={<Projects width={width} category_array={projects_array} />} />
                 <Route path="/projects/web_dev" element={<WebDev width={width} blog_array={web_dev_array} />} />
                 <Route path="/projects/programming" element={<Programming width={width} blog_array={programming_array} />} />
+                
+                <Route path="/projects/web_dev/d3-visualizations" element={<D3Visualizations width={width} blog_array={web_dev_array} />} />
+                
                 <Route path="/art" element={<Art width={width} category_array={art_array} />} />
                 <Route path="/art/painting" element={<Art width={width} category_array={painting_array} />} />
                 <Route path="/art/painting/:periodSlug" element={<PaintingPeriod width={width} />} />

@@ -116,5 +116,25 @@ const BlogList = (props: BlogList__Props) => {
   )
 };
 
+export interface BlogListBonus__Props {
+  width: number,
+  blog_array: BlogItem[];
+}
+
+
+export const BlogListBonus = (props: BlogListBonus__Props) => {
+  return (
+    <div style={{ fontFamily: tertiaryFont }}>
+      <hr />
+      {
+        props.blog_array.map((project, idx) => {
+          return (
+            <BlogList_Item key={idx} url={project.url ? project.url : ""} title={project.title} about_txt={project.about_txt} img={project.img} width={props.width} />
+          )
+        })
+      }
+    </div>
+  )};
+
 export default BlogList;
 
