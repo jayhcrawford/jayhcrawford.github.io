@@ -59,7 +59,6 @@ const paintings_2023 = [
 ];
 
 const paintings_2024 = [
-  "alien_invasion.webp",
   "hilltop_city.webp",
   "funny_mustache_guy.webp",
   "jacks_2.webp",
@@ -68,6 +67,7 @@ const paintings_2024 = [
   "portrait_copy.webp",
   "researchers.webp",
   "x.webp",
+  // "alien_invasion.webp"
 
 ];
 
