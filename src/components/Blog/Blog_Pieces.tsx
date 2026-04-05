@@ -1,5 +1,33 @@
 import { secondaryFont, tertiaryFont } from "../../styles";
 
+type BlogImageProps = {
+    src: string;
+    alt: string;
+    variant?: "full" | "half" | "centered" | "quarter";
+};
+
+export const Blog_Image: React.FC<BlogImageProps> = ({ src , alt, variant = "full" }) => {
+    const base = " ";
+
+    const variants = {
+        full: "w-full",
+        half: "w-1/2",
+        centered: "mx-auto w-2/3",
+        quarter: "mx-auto w-1/4"
+    };
+
+    return (
+        <div className={`flex justify-center align-center bg-red-500 ${variant === "half" ? "justify-start" : "justify-center"}`}>
+    
+            <img
+                src={src}
+                alt={alt}
+                className={`${base} ${variants[variant]}`}
+            />
+        </div>
+    );
+};
+
 interface Blog_LinkElement__Props {
     url: string,
     linkText: string,
