@@ -116,14 +116,14 @@ const Blog__TheRipSheet = () => {
                     />
                 </div>
                 <Blog_Paragraph text="Recently, I took a linear algebra for data analysis course, and used Python to create least square regression analyses of each one of my exercises over the past 2.5 years. Seeing a visualization was highly motivational and validating for my stronger routines, but it also showed me clearly where I've been slacking recently." />
-
+<Blog_HeroQuote quote='You can see below that I am trying to make my arms bigger 🤣😅' /> 
                 <div className={`${string}`}>
                     <Blog_Image
                         variant="centered"
                         src={ripSheetImageUrls[3]}
                         alt="Progress chart visualizing workout performance changes"
                         figureLabel="Figure 7"
-                        figureCaption="Trend visualization for recent performance changes."
+                        figureCaption="Bar chart showing exercise type counts for the data captured."
                     />
                 </div>
                 <Blog_Paragraph text="My hope is to create a fitness app that allows people to develop realistic and healthy physical fitness routines and give useful visualizations that will let users know for sure how to generate real physical progress. The gym habit can be challenging to adopt, and I want to help people to realize that learning that habit is counter-intuitive to initial first impressions. By dispelling the myth that you have to work really hard to get gains, I believe I can help people to adopt a habit that they love." />
