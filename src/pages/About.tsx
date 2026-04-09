@@ -21,6 +21,9 @@ const softwareShowcasePlaceholder = [
   { name: "Bluebeam", logo: "/path/to/logo" },
 ];
 
+// TODO: Build out qualities list
+
+
 const About = () => {
   return (
     <Blog title="About" construction={false}>
@@ -42,7 +45,7 @@ const About = () => {
             <p className="text-lg leading-relaxed text-slate-200 mt-5">
               I grew up in Kentucky, cut my teeth in art school at SAIC, and moved to Los Angeles to work across
               specialty construction, hospitality, and entertainment. Today I split my time between <strong>BuildLACCD
-                project management</strong>, <strong>UrFriends full-stack development</strong>, and anything that requires sharp systems thinking.
+                project management</strong>, <strong>UrFriends full-stack development</strong>, my passion for the fitness & the outdoors, and anything that requires sharp systems thinking.
             </p>
             <div className="space-y-3 rounded-2xl border border-white/5 bg-white/5/20 p-4">
               <p className="text-xs uppercase tracking-[0.4em] text-slate-200 p-5">Qualities</p>
@@ -87,7 +90,7 @@ const About = () => {
           </p>
         </section>
 
-        {/* Software showcase placeholder */}
+        {/* // TODO: Build out software list */}
         <section className="space-y-4 rounded-2xl border border-white/10 bg-slate-900/40 p-6">
           <div className="flex items-baseline justify-between">
             <h2 className="text-2xl font-semibold text-white">Software Skills</h2>
