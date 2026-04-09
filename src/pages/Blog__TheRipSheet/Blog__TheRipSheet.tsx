@@ -21,7 +21,7 @@ const Blog__TheRipSheet = () => {
             <Blog construction={true} title="The Rip Sheet">
                 <Blog_HeroQuote quote='In 2018, I decided that I wanted to learn how to weightlift.' /> 
                 <Blog_HeroQuote quote="Since then, I've been developing tools and systems." />        
-                <Blog_Paragraph text="In 2018, I decided that I wanted to learn how to weightlift. Over the past five years, through various iterations, I've developed a system that I call the RIP sheet. The first iterations did not work for tracking and facilitating consistency, but I stuck with them, and developed and tested them. The name is a double entendre—a memento mori that simultaneously calls us to get 'ripped'. Today is the day you make that life change—this very rep." />
+                <Blog_Paragraph text="In 2018, I decided that I wanted to learn how to weightlift. Since then, through various iterations, I've developed a system that I call the RIP sheet. The first iterations did not work for tracking and facilitating consistency, but I stuck with them, and developed and tested them. The name is a double entendre—a memento mori that simultaneously calls us to get 'ripped'. Today is the day you make that life change—this very rep." />
                 {/* <div className="flex flex-col gap-8 my-8">
                     {ripSheetImageUrls.map((imgUrl, idx) => (
                         <img
