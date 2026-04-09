@@ -38,7 +38,7 @@ const Blog__TheRipSheet = () => {
                             alt="Origin version of the RIP sheet layout"
                             figureLabel="Figure 1"
                             figureCaption="Early RIP sheet concept and structure."
-                            imgClassName="w-32 md:w-40"
+                            imgClassName="max-w-xs sm:max-w-sm lg:max-w-md"
                         />
                     </div>
                 </section>
@@ -58,7 +58,7 @@ const Blog__TheRipSheet = () => {
                             alt="Original workbook used for tracking workouts in the initial prototyping phase"
                             figureLabel="Figure 2"
                             figureCaption="The workbook taken to the gym in the initial prototyping phase."
-                            imgClassName="w-32 md:w-40"
+                            imgClassName="max-w-xs sm:max-w-sm lg:max-w-md"
                         />
                     </div>
                     <Blog_Paragraph text="This workbook was the version I brought with me to the gym during early prototyping—an attempt to turn structure into habit. I found keeping track of the physical worksheets and transferring them into a digital format was very inconvenient." />
@@ -87,7 +87,7 @@ const Blog__TheRipSheet = () => {
                             alt="Origin version of the RIP sheet layout"
                             figureLabel="Figure 3"
                             figureCaption="The data is stored in a way that makes it easy to analyze."
-                            imgClassName="w-32 md:w-40"
+                            imgClassName="max-w-xs sm:max-w-sm lg:max-w-md"
                         />
                         <Blog_Image
                             variant="half"
@@ -95,7 +95,7 @@ const Blog__TheRipSheet = () => {
                             alt="Origin version of the RIP sheet layout"
                             figureLabel="Figure 4"
                             figureCaption="Although it looks basic, this is the system I've found supports consistency."
-                            imgClassName="w-32 md:w-40"
+                            imgClassName="max-w-xs sm:max-w-sm lg:max-w-md"
                         />
                         <Blog_Image
                             variant="half"
@@ -109,7 +109,7 @@ const Blog__TheRipSheet = () => {
 
                 {/* SECTION 5 — Insights & analysis */}
                 <section className="rip-section rip-section--insights">
-                    <Blog_HeroQuote quote='Today is the day you make that life change—this very rep.' />
+                    <Blog_HeroQuote quote='Today is the day you make that life change—this very rep.' sizePreset="balanced" />
                     <div className="rip-figure rip-figure--wide">
                         <Blog_Image
                             variant="centered"
@@ -119,7 +119,7 @@ const Blog__TheRipSheet = () => {
                             figureCaption="Data board used to monitor progress over time."
                         />
                     </div>
-                    <Blog_HeroQuote quote="Fitting a linear regression to the data shows interesting trends." />
+                    <Blog_HeroQuote quote="Fitting a linear regression to the data shows interesting trends." sizePreset="balanced" />
                     <Blog_Paragraph text="You can see the linear regression on the data sets that could be fit, and it shows trends which illuminate my habits." />
                     <div className="rip-gallery rip-gallery--dual">
                         <Blog_Image
@@ -138,13 +138,13 @@ const Blog__TheRipSheet = () => {
                         />
                     </div>
                     <Blog_Paragraph text="Recently, I took a linear algebra for data analysis course, and used Python to create least square regression analyses of each one of my exercises over the past 2.5 years. Seeing a visualization was highly motivational and validating for my stronger routines, but it also showed me clearly where I've been slacking recently." />
-                    <Blog_HeroQuote quote='You can see below that I am trying to make my arms bigger 🤣😅' />
+                    <Blog_HeroQuote quote='You can see below that I am trying to make my arms bigger 🤣😅' sizePreset="balanced" />
                 </section>
 
                 {/* SECTION 6 — What's next */}
                 <section className="rip-section rip-section--future">
                     <Blog_Paragraph text="My hope is to create a fitness app that allows people to develop realistic and healthy physical fitness routines and give useful visualizations that will let users know for sure how to generate real physical progress. The gym habit can be challenging to adopt, and I want to help people to realize that learning that habit is counter-intuitive to initial first impressions. By dispelling the myth that you have to work really hard to get gains, I believe I can help people to adopt a habit that they love." />
-                    <Blog_HeroQuote quote='I believe I can help people to adopt a habit that they love.' />
+                    <Blog_HeroQuote quote='I believe I can help people to adopt a habit that they love.' sizePreset="balanced" />
                 </section>
             </Blog>
         </div>

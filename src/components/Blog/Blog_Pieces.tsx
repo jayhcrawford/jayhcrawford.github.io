@@ -129,14 +129,20 @@ interface Blog_HeroQuote__Props {
     quoter_padding?: number;
     quoter?: string;
     quote: string;
+    sizePreset?: "compact" | "balanced" | "hero";
 }
 
 // Large typographic pull-quote component used to break up long-form narratives.
 export const Blog_HeroQuote = (props: Blog_HeroQuote__Props) => {
+    const quoteSizing: Record<NonNullable<Blog_HeroQuote__Props["sizePreset"]>, string> = {
+        compact: "text-2xl sm:text-4xl lg:text-5xl font-light text-center p-4 sm:p-6 pb-8 leading-snug",
+        balanced: "text-3xl sm:text-5xl lg:text-6xl font-light text-center p-6 sm:p-8 pb-10 sm:pb-14 leading-tight",
+        hero: "text-4xl sm:text-6xl xl:text-7xl font-light text-center p-6 sm:p-10 pb-12 leading-tight",
+    };
 
     return (
-        {/* Responsive sizing so quotes don't overflow on phones but still feel bold on desktop */}
-        <section id="Blog_heroQuote" className="text-3xl sm:text-5xl lg:text-6xl font-light text-center p-6 sm:p-8 pb-10 sm:pb-14 leading-tight" style={{ fontFamily: secondaryFont }}>
+        <section id="Blog_heroQuote" className={`${quoteSizing[props.sizePreset ?? "hero"]}`} style={{ fontFamily: secondaryFont }}>
+            {/* Responsive sizing so quotes don't overflow on phones but still feel bold on desktop */}
             <style>{`
                         #Blog_heroQuoteQuoter::before {
                             content: "- "; /* or content: "&copy;"; */
