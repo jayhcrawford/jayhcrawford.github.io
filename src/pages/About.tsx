@@ -12,6 +12,15 @@ const curiosityList = [
   "Making data feel human (fitness, fabrication, finance)",
 ];
 
+const softwareShowcasePlaceholder = [
+  { name: "Figma", logo: "/path/to/logo" },
+  { name: "Fusion 360", logo: "/path/to/logo" },
+  { name: "SOLIDWORKS", logo: "/path/to/logo" },
+  { name: "Next.js", logo: "/path/to/logo" },
+  { name: "Firebase", logo: "/path/to/logo" },
+  { name: "Bluebeam", logo: "/path/to/logo" },
+];
+
 const About = () => {
   return (
     <Blog title="About" construction={false}>
@@ -21,19 +30,22 @@ const About = () => {
           <div className="space-y-6">
             <p className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Designer · Builder · Storyteller</p>
             <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
-              Context-switching between construction sites, code editors, and sketchbooks is my normal.
+              Context-switching between <strong>construction sites</strong>, <strong>code editors</strong>, and <strong>sketchbooks</strong> is my normal.
             </h1>
             <p className="text-lg leading-relaxed text-slate-200">
               I grew up in Kentucky, cut my teeth in art school at SAIC, and moved to Los Angeles to work across
-              specialty construction, hospitality, and entertainment. Today I split my time between BuildLACCD
-              project management, UrFriends full-stack development, and anything that requires sharp systems thinking.
+              specialty construction, hospitality, and entertainment. Today I split my time between <strong>BuildLACCD
+              project management</strong>, <strong>UrFriends full-stack development</strong>, and anything that requires sharp systems thinking.
             </p>
-            <div className="flex flex-wrap gap-3">
-              {curiosityList.map((item) => (
-                <span key={item} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm">
-                  {item}
-                </span>
-              ))}
+            <div className="space-y-3 rounded-2xl border border-white/5 bg-white/5/20 p-4">
+              <p className="text-xs uppercase tracking-[0.4em] text-slate-200">Qualities</p>
+              <div className="flex flex-wrap gap-3">
+                {curiosityList.map((item) => (
+                  <span key={item} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm">
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
           <div className="relative flex items-center justify-center rounded-2xl border border-dashed border-white/20 bg-slate-800/40 p-6 text-center">
@@ -50,7 +62,7 @@ const About = () => {
           {aboutHighlights.map((card) => (
             <article key={card.label} className="rounded-2xl border border-white/10 bg-slate-900/40 p-6 shadow-lg shadow-black/20">
               <p className="text-xs uppercase tracking-[0.4em] text-cyan-200">{card.label}</p>
-              <p className="mt-3 text-lg font-medium text-white">{card.text}</p>
+              <p className="mt-3 text-lg font-semibold text-white">{card.text}</p>
             </article>
           ))}
         </section>
@@ -58,22 +70,38 @@ const About = () => {
         {/* Narrative */}
         <section className="space-y-6 text-lg leading-relaxed text-slate-200">
           <p>
-            I thrive where hands-on execution meets polished storytelling. I have managed multimillion-dollar campus
+            I thrive where <strong>hands-on execution</strong> meets <strong>polished storytelling</strong>. I have managed multimillion-dollar campus
             upgrades, shipped SaaS products, led hospitality teams, fabricated sets, and still carve out time to paint,
             sketch, and cycle the Los Angeles river paths. Each lane teaches me to stay calm, design deliberately, and
             communicate with clarity.
           </p>
           <p>
             Engineering school sharpened my math and systems thinking; art school wired me to experiment without fear;
-            years in hospitality taught me to keep people seen and projects moving. Whether I am refining data pipelines
-            for the RIP Sheet fitness system or mentoring volunteers at HackMESA, the through-line is meticulous prep
-            and a bias for momentum.
+            years in hospitality taught me to keep people seen and projects moving. Whether I am refining <strong>RIP Sheet data pipelines</strong>
+            or mentoring volunteers at <strong>HackMESA</strong>, the through-line is meticulous prep and a bias for momentum.
           </p>
           <p>
             When I am off laptop duty, you will find me studying new fabrication techniques, trail running, roasting
             coffee, or restoring gear I picked up at a flea market. I still say yes to the weird gigs—they keep me humble
             and curious.
           </p>
+        </section>
+
+        {/* Software showcase placeholder */}
+        <section className="space-y-4 rounded-2xl border border-white/10 bg-slate-900/40 p-6">
+          <div className="flex items-baseline justify-between">
+            <h2 className="text-2xl font-semibold text-white">Software familiarity</h2>
+            <span className="text-xs uppercase tracking-[0.4em] text-slate-300">Coming soon</span>
+          </div>
+          <p className="text-sm text-slate-300">Drop logo assets + names below once ready. Structured grid already in place.</p>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {softwareShowcasePlaceholder.map((tool) => (
+              <div key={tool.name} className="flex flex-col items-center justify-center rounded-xl border border-white/10 bg-white/5 p-4 text-center">
+                <div className="h-16 w-16 rounded-full border border-white/10 bg-slate-800/60" />
+                <p className="mt-3 text-sm font-medium">{tool.name}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* Contact hint */}
