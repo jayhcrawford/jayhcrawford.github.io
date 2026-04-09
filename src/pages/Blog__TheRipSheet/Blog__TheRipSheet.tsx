@@ -1,6 +1,8 @@
 import { Blog, } from "../../components/Blog/Blog";
 import { Blog_ButtonCTA, Blog_HeroQuote, Blog_Image, Blog_Paragraph } from "../../components/Blog/Blog_Pieces";
 
+// TODO: This page needs a literary structural edit
+
 /**
  * Long-form case study detailing the RIP Sheet fitness-tracking system.
  * Uses the shared <Blog> layout plus Blog_* subcomponents to keep typography,
@@ -141,10 +143,10 @@ const Blog__TheRipSheet = () => {
                             figcaptionClassName={accentText}
                         />
                     </div>
-                    <div className={accentText}>
-                        <Blog_HeroQuote quote="Fitting a linear regression to the data shows interesting trends." sizePreset="compact" />
-                    </div>
                     <Blog_Paragraph text="You can see the linear regression on the data sets that could be fit, and it shows trends which illuminate my habits." />
+                    <div className={accentText}>
+                        <Blog_HeroQuote quote="Fitting a least-squares regression to the data shows interesting trends:" sizePreset="compact" />
+                    </div>
                     <div className="rip-gallery rip-gallery--dual">
                         <Blog_Image
                             variant="centered"
@@ -163,10 +165,11 @@ const Blog__TheRipSheet = () => {
                             figcaptionClassName={accentText}
                         />
                     </div>
-                    <Blog_Paragraph text="Recently, I took a linear algebra for data analysis course, and used Python to create least square regression analyses of each one of my exercises over the past 2.5 years. Seeing a visualization was highly motivational and validating for my stronger routines, but it also showed me clearly where I've been slacking recently." />
                     <div className={accentText}>
-                        <Blog_HeroQuote quote='You can see below that I am trying to make my arms bigger 🤣😅' sizePreset="compact" />
+                        <Blog_HeroQuote quote="The bar chart above illustrates that I've been trying to make my arms bigger 🤣😅" sizePreset="compact" />
                     </div>
+                    <Blog_Paragraph text="Recently, I took a linear algebra for data analysis course, and used Python to create least square regression analyses of each one of my exercises over the past 2.5 years. Seeing a visualization was highly motivational and validating for my stronger routines, but it also showed me clearly where I've been slacking recently." />
+
                 </section>
 
                 {/* SECTION 6 — What's next */}
