@@ -35,11 +35,13 @@ export const Blog_Image: React.FC<BlogImageProps> = ({
 
     return (
         <figure className={`flex flex-col justify-center ${figureMarginClassName}`}>
-            <img
-                src={src}
-                alt={alt}
-                className={`${variants[variant]} ${imgClassName ?? ""}`.trim()}
-            />
+            <a href={src} target="_blank" rel="noopener noreferrer">
+                <img
+                    src={src}
+                    alt={alt}
+                    className={`${variants[variant]} ${imgClassName ?? ""}`.trim()}
+                />
+            </a>
             {hasFigureText && (
                 <figcaption className="mt-2 text-center text-sm text-gray-300">
                     {figureLabel && <span className="font-semibold">{figureLabel}</span>}
