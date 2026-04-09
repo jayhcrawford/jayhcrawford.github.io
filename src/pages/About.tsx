@@ -13,7 +13,11 @@ const curiosityList = [
 ];
 
 const softwareShowcasePlaceholder = [
-  { name: "Figma", logo: "/path/to/logo" },
+  { name: "Photoshop", logo: "/path/to/logo" },
+  { name: "Illustrator", logo: "/path/to/logo" },
+  { name: "Autodesk Maya", logo: "/path/to/logo" },
+  { name: "AWS", logo: "/path/to/logo" },
+  { name: "Blender", logo: "/path/to/logo" },
   { name: "Fusion 360", logo: "/path/to/logo" },
   { name: "SOLIDWORKS", logo: "/path/to/logo" },
   { name: "Next.js", logo: "/path/to/logo" },
