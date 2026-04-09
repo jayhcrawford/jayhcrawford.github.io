@@ -27,10 +27,11 @@ export const Blog_Image: React.FC<BlogImageProps> = ({
     const hasFigureText = Boolean(figureLabel || figureCaption);
 
     const variants = {
-        full: "w-full",
-        half: "mx-auto w-1/2",
-        centered: "mx-auto w-2/3",
-        quarter: "mx-auto w-1/4",
+        // Mobile-first widths so images expand to full width, then clamp down on larger breakpoints
+        full: "w-full max-w-4xl",
+        half: "mx-auto w-full sm:w-3/4 lg:w-1/2",
+        centered: "mx-auto w-full sm:w-3/4 lg:w-2/3",
+        quarter: "mx-auto w-full sm:w-1/2 lg:w-1/4",
     };
 
     return (
@@ -134,7 +135,8 @@ interface Blog_HeroQuote__Props {
 export const Blog_HeroQuote = (props: Blog_HeroQuote__Props) => {
 
     return (
-        <section id="Blog_heroQuote" className="text-6xl font-light text-center p-8 pb-14" style={{ fontFamily: secondaryFont }}>
+        {/* Responsive sizing so quotes don't overflow on phones but still feel bold on desktop */}
+        <section id="Blog_heroQuote" className="text-3xl sm:text-5xl lg:text-6xl font-light text-center p-6 sm:p-8 pb-10 sm:pb-14 leading-tight" style={{ fontFamily: secondaryFont }}>
             <style>{`
                         #Blog_heroQuoteQuoter::before {
                             content: "- "; /* or content: "&copy;"; */
