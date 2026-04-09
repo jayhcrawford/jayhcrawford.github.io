@@ -1,5 +1,5 @@
-import { Blog, } from "../../components/Blog/Blog"
-import { Blog_HeroQuote, Blog_Image, Blog_Paragraph } from "../../components/Blog/Blog_Pieces"
+import { Blog, } from "../../components/Blog/Blog";
+import { Blog_HeroQuote, Blog_Image, Blog_Paragraph } from "../../components/Blog/Blog_Pieces";
 
 const ripSheetImageUrls = [
     "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/rip_sheet_python_images/RIP_ALL_WORKOUTS.png",
@@ -21,9 +21,9 @@ const Blog__TheRipSheet = () => {
     return (
         <div>
             <Blog construction={true} title="The Rip Sheet">
-                <Blog_HeroQuote quote='In 2018, I decided that I wanted to learn how to weightlift.' /> 
-                <Blog_HeroQuote quote="Since then, I've been developing tools and systems." />        
-                <Blog_Paragraph text="In 2018, I decided that I wanted to learn how to weightlift. Since then, through various iterations, I've developed a system that I call the RIP sheet. The first iterations did not work for tracking and facilitating consistency, but I stuck with them, and developed and tested them. The name is a double entendre—a memento mori that simultaneously calls us to get 'ripped'. Today is the day you make that life change—this very rep." />
+                <Blog_HeroQuote quote='In 2018, I decided to learn weightlifting.' />
+                <Blog_HeroQuote quote="Since then, I’ve been developing tools and systems to stay consistent." />
+                <Blog_Paragraph text="In 2018, I set out to learn weightlifting. Over time, through repeated iteration, I built a system I call the RIP Sheet. Early versions failed to track progress and enforce consistency—but I kept refining, testing, and improving. The name is a double entendre: a memento mori and a call to get ripped. Today is the day you make that change—this very rep." />
                 {/* <div className="flex flex-col gap-8 my-8">
                     {ripSheetImageUrls.map((imgUrl, idx) => (
                         <img
@@ -44,12 +44,12 @@ const Blog__TheRipSheet = () => {
                         figureCaption="Early RIP sheet concept and structure."
                         imgClassName="w-32 md:w-40"
                     />
-                    
+
                 </div>
 
 
-                    <Blog_Paragraph text="Initially the system that I used took the form of a physical worksheet. I thought that disconnecting from electronics at the gym and concentrating on a physical object might prove to be especially productive. This was the first iteration, and I've since discovered that tracking the progress 'written down' across multiple pieces of paper can become difficult, and paper gets sweaty at the gym." />
-                    <Blog_Paragraph text="This sheet had a supporting packet of information, related to stretching, and I took it to the gym." />
+                <Blog_Paragraph text="The first version of the RIP Sheet was a physical worksheet—a structured attempt to bring discipline into the gym without relying on screens. The layout was clear, but the medium wasn’t. Tracking progress across loose pages quickly became impractical, and paper doesn’t hold up well in a gym environment." />
+                <Blog_Paragraph text="Alongside the sheet, I created a small reference packet for stretching and brought both with me to train." />
 
                 <div className={`${string}`}>
                     <Blog_Image
@@ -60,12 +60,14 @@ const Blog__TheRipSheet = () => {
                         figureCaption="The workbook taken to the gym in the initial prototyping phase."
                         imgClassName="w-32 md:w-40"
                     />
-                    
+
                 </div>
 
-                    <Blog_Paragraph text="Eventually, I started working with Google Sheets, because it allowed me to track my progress more efficiently." />
-                    <Blog_Paragraph text="Because of this choice to track the data, when I took a Linear Algebra for Data Science with Python/R in 2025, I was able to do an interesting analysis of my workout data because I already had it. This windfall produced visualizations that I thought were very interesting and potentially powerful for helping people to visualize their progress. Some of the resulting graphics are shown below, and there is a link to the Colab where I prompted for the relevant Python. For actually processing the data, because it was somewhat amorphous initially, I used JavaScript and C++ at different times. Ultimately I settled on storing the processed data in a certain way in order to make creating the visualizations as low effort as is necessary. That format is simple JSON, storing each SET of a workout based upon name, weight, rep count, and date. Workouts that happen on the same day happen to correlate on the visualizations incidentally." />
-                                    <div className="flex justify-center my-8">
+                <Blog_Paragraph text="This workbook was the version I brought with me to the gym during early prototyping—an attempt to turn structure into habit. I found keeping track of the physical worksheets and transferring them into a digital format was very inconvenient." />
+                <Blog_Paragraph text="Eventually, I moved to Google Sheets, which made tracking progress far more efficient and reliable allowing me to track every rep I've made since 2022." />
+                <Blog_Paragraph text="Because I had already been collecting this data, I was able to analyze it later in a Linear Algebra for Data Science course in 2025. That work produced visualizations that made progress—both strong and weak—immediately visible." />
+                <Blog_Paragraph text="Early on, processing the data was inconsistent, and I experimented with both JavaScript and C++. Over time, I simplified the system: each set is stored as JSON, defined by exercise name, weight, reps, and date. This structure makes generating visualizations straightforward, with same-day workouts naturally aligning in the data." />
+                <div className="flex justify-center my-8">
                     <a
                         href="https://colab.research.google.com/drive/1ENZlQbCl78q4ilT7lTgQ9YkcPgvTLV9d?usp=sharing"
                         target="_blank"
@@ -75,7 +77,7 @@ const Blog__TheRipSheet = () => {
                         View The Python Analysis In Google Colab
                     </a>
                 </div>
-                
+
                 <div className={`${string}`}>
                     <Blog_Image
                         variant="half"
@@ -85,9 +87,9 @@ const Blog__TheRipSheet = () => {
                         figureCaption="The data is stored in a way that makes it easy to analyze."
                         imgClassName="w-32 md:w-40"
                     />
-                    
+
                 </div>
-                
+
                 <div className={`${string}`}>
                     <Blog_Image
                         variant="half"
@@ -97,7 +99,7 @@ const Blog__TheRipSheet = () => {
                         figureCaption="Although it looks basic, this is the system I've found supports consistency."
                         imgClassName="w-32 md:w-40"
                     />
-                    
+
                 </div>
 
                 <div className={`${string}`}>
@@ -109,7 +111,7 @@ const Blog__TheRipSheet = () => {
                         figureCaption="Consolidated workout history view."
                     />
                 </div>
-                <Blog_HeroQuote quote='"Today is the day you make that life change—this very rep."' />
+                <Blog_HeroQuote quote='Today is the day you make that life change—this very rep.' />
                 <div className={`${string}`}>
                     <Blog_Image
                         variant="centered"
@@ -119,7 +121,8 @@ const Blog__TheRipSheet = () => {
                         figureCaption="Data board used to monitor progress over time."
                     />
                 </div>
-                <Blog_Paragraph text="After a few years of iterating, I landed on a simple, spreadsheet-based system. It's allowed me to track every rep that I've made since 2022." />
+                <Blog_HeroQuote quote="Fitting a linear regression to the data shows interesting trends." />
+                <Blog_Paragraph text="You can see the linear regression on the data sets that could be fit, and it shows trends which illuminate my habits." />
                 <div className={`${string}`}>
                     <Blog_Image
                         variant="centered"
@@ -130,7 +133,7 @@ const Blog__TheRipSheet = () => {
                     />
                 </div>
                 <Blog_Paragraph text="Recently, I took a linear algebra for data analysis course, and used Python to create least square regression analyses of each one of my exercises over the past 2.5 years. Seeing a visualization was highly motivational and validating for my stronger routines, but it also showed me clearly where I've been slacking recently." />
-<Blog_HeroQuote quote='You can see below that I am trying to make my arms bigger 🤣😅' /> 
+                <Blog_HeroQuote quote='You can see below that I am trying to make my arms bigger 🤣😅' />
                 <div className={`${string}`}>
                     <Blog_Image
                         variant="centered"
@@ -144,7 +147,7 @@ const Blog__TheRipSheet = () => {
 
 
 
-                <Blog_HeroQuote quote='"I believe I can help people to adopt a habit that they love."'/>
+                <Blog_HeroQuote quote='I believe I can help people to adopt a habit that they love.' />
             </Blog>
         </div>
     )

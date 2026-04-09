@@ -1,5 +1,5 @@
 import { JSX } from "react";
-import { secondaryFont } from "../../styles"
+import { secondaryFont } from "../../styles";
 
 interface Blog__Props {
     children: JSX.Element[] | JSX.Element;
