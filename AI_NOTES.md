@@ -1,6 +1,8 @@
 # Instructions For Next AI Pass
 
-This repo is a Vite + React + TypeScript site for GitHub Pages. The CI/CD publishes when pushed to GitHub. The README is published on GitHub and is currently empty; avoid editing it unless explicitly requested. Avoid deploying unless explicitly requested.
+⚠️ **Branch Policy:** Do *all* work on the `main` branch. The `gh-pages` branch is generated automatically by the GitHub Pages deploy script—never commit to it directly because changes there will be overwritten.
+
+This repo is a Vite + React + TypeScript site for GitHub Pages. The CI/CD publishes when pushed to GitHub. Avoid deploying unless explicitly requested.
 
 ## Quick Orientation
 - Entry points: `src/main.tsx`, `src/App.tsx`.
