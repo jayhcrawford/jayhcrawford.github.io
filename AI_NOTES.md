@@ -1,6 +1,6 @@
 # Instructions For Next AI Pass
 
-This repo is a Vite + React + TypeScript site for GitHub Pages. The CI/CD publishes when pushed to GitHub. The README is published on GitHub and is currently empty; avoid editing it unless explicitly requested.
+This repo is a Vite + React + TypeScript site for GitHub Pages. The CI/CD publishes when pushed to GitHub. The README is published on GitHub and is currently empty; avoid editing it unless explicitly requested. Avoid deploying unless explicitly requested.
 
 ## Quick Orientation
 - Entry points: `src/main.tsx`, `src/App.tsx`.
@@ -15,6 +15,7 @@ This repo is a Vite + React + TypeScript site for GitHub Pages. The CI/CD publis
 - Build: `npm run build`
 - Preview: `npm run preview`
 - Lint: `npm run lint`
+- Deploy to GitHub Pages: `npm run deploy`
 
 ## Current TODOs (from code)
 - About page needs a strong intro image/flourish: `src/pages/About.tsx`.
