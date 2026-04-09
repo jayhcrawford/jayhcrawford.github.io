@@ -20,7 +20,6 @@ const ripSheetImageUrls = [
 
 // TODO: Change alt text
 
-
 // Page component consumed by the router in src/App.tsx.
 const Blog__TheRipSheet = () => {
     // Utility class string reused on the figure wrappers to keep spacing uniform.
@@ -32,17 +31,6 @@ const Blog__TheRipSheet = () => {
                 <Blog_HeroQuote quote='In 2018, I decided to learn weightlifting.' />
                 <Blog_HeroQuote quote="Since then, I’ve been developing tools and systems to stay consistent." />
                 <Blog_Paragraph text="In 2018, I set out to learn weightlifting. Over time, through repeated iteration, I built a system I call the RIP Sheet. Early versions failed to track progress and enforce consistency—but I kept refining, testing, and improving. The name is a double entendre: a memento mori and a call to get ripped. Today is the day you make that change—this very rep." />
-                {/* <div className="flex flex-col gap-8 my-8">
-                    {ripSheetImageUrls.map((imgUrl, idx) => (
-                        <img
-                            key={imgUrl}
-                            src={imgUrl}
-                            alt={`RIP sheet analysis chart ${idx + 1}`}
-                            className="w-full rounded-lg"
-                            style={{ maxWidth: "500px" }}
-                        />
-                    ))}
-                </div> */}
                 <div className={`${string}`}>
                     <Blog_Image
                         variant="quarter"
@@ -52,9 +40,7 @@ const Blog__TheRipSheet = () => {
                         figureCaption="Early RIP sheet concept and structure."
                         imgClassName="w-32 md:w-40"
                     />
-
                 </div>
-
 
                 <Blog_Paragraph text="The first version of the RIP Sheet was a physical worksheet—a structured attempt to bring discipline into the gym without relying on screens. The layout was clear, but the medium wasn’t. Tracking progress across loose pages quickly became impractical, and paper doesn’t hold up well in a gym environment." />
                 <Blog_Paragraph text="Alongside the sheet, I created a small reference packet for stretching and brought both with me to train." />
