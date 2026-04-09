@@ -15,8 +15,8 @@ interface Blog__Props {
 export const Blog = (props: Blog__Props) => {
     return (
         <>
-            {/* Outer wrapper: consistent margin/padding + optional construction alert */}
-            <div className="text-white m-10" >
+            {/* Outer wrapper: responsive max-width so pages don’t feel cramped on mobile/desktop */}
+            <div className="text-white mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-10 py-8" >
                 {props.construction == true &&
                     <div className="flex justify-center mb-10">
                         <div className="flex flex-col">
@@ -32,7 +32,7 @@ export const Blog = (props: Blog__Props) => {
                     {props.title}
                 </h1>
                 {/* Content slot where Blog_* building blocks are rendered */}
-                <div className="p-5" style={{ backgroundColor: "#0b0f17", borderRadius: "20px" }}>
+                <div className="p-4 sm:p-6 lg:p-8" style={{ backgroundColor: "#0b0f17", borderRadius: "20px" }}>
                     {props.children}
                 </div>
             </div >
