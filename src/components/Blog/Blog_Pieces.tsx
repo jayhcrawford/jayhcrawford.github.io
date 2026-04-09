@@ -4,27 +4,44 @@ type BlogImageProps = {
     src: string;
     alt: string;
     variant?: "full" | "half" | "centered" | "quarter";
+    figureLabel?: string;
+    figureCaption?: string;
+    imgClassName?: string;
+    figureMarginClassName?: string;
 };
 
-export const Blog_Image: React.FC<BlogImageProps> = ({ src , alt, variant = "full" }) => {
-    const base = " ";
+export const Blog_Image: React.FC<BlogImageProps> = ({
+    src,
+    alt,
+    variant = "full",
+    figureLabel,
+    figureCaption,
+    imgClassName,
+    figureMarginClassName = "my-8",
+}) => {
+    const hasFigureText = Boolean(figureLabel || figureCaption);
 
     const variants = {
         full: "w-full",
-        half: "w-1/2",
+        half: "mx-auto w-1/2",
         centered: "mx-auto w-2/3",
-        quarter: "mx-auto w-1/4"
+        quarter: "mx-auto w-1/4",
     };
 
     return (
-        <div className={`flex justify-center align-center bg-red-500 ${variant === "half" ? "justify-start" : "justify-center"}`}>
-    
+        <figure className={`flex flex-col justify-center ${figureMarginClassName}`}>
             <img
                 src={src}
                 alt={alt}
-                className={`${base} ${variants[variant]}`}
+                className={`${variants[variant]} ${imgClassName ?? ""}`.trim()}
             />
-        </div>
+            {hasFigureText && (
+                <figcaption className="mt-2 text-center text-sm text-gray-300">
+                    {figureLabel && <span className="font-semibold">{figureLabel}</span>}
+                    {figureCaption && <span className={figureLabel ? "ml-2" : ""}>{figureCaption}</span>}
+                </figcaption>
+            )}
+        </figure>
     );
 };
 
@@ -111,7 +128,7 @@ export const Blog_HeroQuote = (props: Blog_HeroQuote__Props) => {
                             content: "- "; /* or content: "&copy;"; */
                         }
                 `}</style>
-            <p>{"\"" + props.quote + ".\""}
+            <p>{props.quote}
                 {props.quoter ? <span id="Blog_heroQuoteQuoter" className={`block text-center pt-4 ml-${props.quoter_padding}`}>
                     {props.quoter}
                 </span> : null}
