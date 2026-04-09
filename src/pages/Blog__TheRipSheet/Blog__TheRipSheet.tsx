@@ -1,6 +1,12 @@
 import { Blog, } from "../../components/Blog/Blog";
 import { Blog_HeroQuote, Blog_Image, Blog_Paragraph } from "../../components/Blog/Blog_Pieces";
 
+/**
+ * Long-form case study detailing the RIP Sheet fitness-tracking system.
+ * Uses the shared <Blog> layout plus Blog_* subcomponents to keep typography,
+ * figure callouts, and hero quotes consistent with the rest of the writing section.
+ */
+// Centralized list of hosted assets so Blog_Image instances stay declarative.
 const ripSheetImageUrls = [
     "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/rip_sheet_python_images/RIP_ALL_WORKOUTS.png",
     "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/rip_sheet_python_images/RIP_DATA_BOARD.png",
@@ -15,7 +21,9 @@ const ripSheetImageUrls = [
 // TODO: Change alt text
 
 
+// Page component consumed by the router in src/App.tsx.
 const Blog__TheRipSheet = () => {
+    // Utility class string reused on the figure wrappers to keep spacing uniform.
     const string = "flex align-center justify-center";
 
     return (

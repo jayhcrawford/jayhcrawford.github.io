@@ -1,5 +1,9 @@
 import { secondaryFont, tertiaryFont } from "../../styles";
 
+/**
+ * Responsive figure wrapper used by blog pages to keep
+ * captions + sizing variants consistent.
+ */
 type BlogImageProps = {
     src: string;
     alt: string;
@@ -10,6 +14,7 @@ type BlogImageProps = {
     figureMarginClassName?: string;
 };
 
+// Renders an image + optional figure text with layout variants.
 export const Blog_Image: React.FC<BlogImageProps> = ({
     src,
     alt,
@@ -50,6 +55,7 @@ interface Blog_LinkElement__Props {
     linkText: string,
 }
 
+// Simple centered link treatment for call-to-action moments inside posts.
 export const Blog_LinkElement = (props: Blog_LinkElement__Props) => {
     return (
         <div className=" flex justify-center">
@@ -65,6 +71,7 @@ interface Blog_Paragraph__Props {
     text: string;
 }
 
+// Standardized paragraph block so typography stays consistent across posts.
 export const Blog_Paragraph = (props: Blog_Paragraph__Props) => {
     return (
         <section id="blog_standardParagraph" className="mt-0" style={{ fontFamily: tertiaryFont }}>
@@ -79,6 +86,7 @@ interface Blog_HeroVideo__Props {
     url: string;
 }
 
+// Responsive 16:9 iframe wrapper for embedding hero videos in blog posts.
 export const Blog_HeroVideo = (props: Blog_HeroVideo__Props) => {
     return (
         <section id="blog_heroVideo" className="flex justify-center">
@@ -119,6 +127,7 @@ interface Blog_HeroQuote__Props {
     quote: string;
 }
 
+// Large typographic pull-quote component used to break up long-form narratives.
 export const Blog_HeroQuote = (props: Blog_HeroQuote__Props) => {
 
     return (
