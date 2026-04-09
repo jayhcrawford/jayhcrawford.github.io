@@ -1,4 +1,5 @@
 import { Blog } from "../components/Blog/Blog";
+import { Blog_ButtonCTA } from "../components/Blog/Blog_Pieces";
 
 const aboutHighlights = [
   { label: "Now", text: "Engineering student at LACC, BuildLACCD intern, UrFriends dev" },
@@ -111,10 +112,10 @@ const About = () => {
         {/* Contact hint */}
         <section className="flex flex-wrap items-center gap-4 rounded-2xl border border-cyan-400/20 bg-cyan-500/5 px-6 py-5 text-sm text-cyan-100">
           <span className="text-xs uppercase tracking-[0.4em]">Next steps</span>
-          <p className="text-base text-slate-100">
-            Want the deeper story? Ping me via the <a href="/contact" className="underline decoration-dotted decoration-cyan-200 hover:text-white">contact page</a> or LinkedIn—I'm always down to compare build notes, swap
-            training ideas, or co-design something ambitious.
-          </p>
+          <div className="flex flex-col gap-3 text-base text-slate-100">
+            <p>Want the deeper story? Reach out and I'll send the long-form version.</p>
+            <Blog_ButtonCTA href="/contact" label="Open contact page" newTab={false} />
+          </div>
         </section>
       </div>
     </Blog>

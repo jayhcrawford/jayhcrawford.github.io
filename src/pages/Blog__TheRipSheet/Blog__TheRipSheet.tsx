@@ -1,5 +1,5 @@
 import { Blog, } from "../../components/Blog/Blog";
-import { Blog_HeroQuote, Blog_Image, Blog_Paragraph } from "../../components/Blog/Blog_Pieces";
+import { Blog_ButtonCTA, Blog_HeroQuote, Blog_Image, Blog_Paragraph } from "../../components/Blog/Blog_Pieces";
 
 /**
  * Long-form case study detailing the RIP Sheet fitness-tracking system.
@@ -71,14 +71,10 @@ const Blog__TheRipSheet = () => {
                     <Blog_Paragraph text="Early on, processing the data was inconsistent, and I experimented with both JavaScript and C++. Over time, I simplified the system: each set is stored as JSON, defined by exercise name, weight, reps, and date. This structure makes generating visualizations straightforward, with same-day workouts naturally aligning in the data." />
                     <div className="rip-cta">
                         <p className="rip-cta__label">Explore the notebooks + regression overlays</p>
-                        <a
+                        <Blog_ButtonCTA
                             href="https://colab.research.google.com/drive/1ENZlQbCl78q4ilT7lTgQ9YkcPgvTLV9d?usp=sharing"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 rounded-full border border-cyan-300/60 bg-cyan-500/10 px-6 py-3 text-sm font-semibold tracking-wide text-cyan-200 transition hover:bg-cyan-400/20 hover:text-cyan-100"
-                        >
-                            View The Python Analysis In Google Colab
-                        </a>
+                            label="View the Python analysis in Google Colab"
+                        />
                     </div>
                     <div className="rip-gallery rip-gallery--grid">
                         <Blog_Image

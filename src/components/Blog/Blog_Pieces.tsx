@@ -53,6 +53,26 @@ export const Blog_Image: React.FC<BlogImageProps> = ({
     );
 };
 
+interface BlogButtonProps {
+    href: string;
+    label: string;
+    newTab?: boolean;
+}
+
+// Shared CTA pill used across blog pages (Rip Sheet Colab link, About page contact CTA, etc.).
+export const Blog_ButtonCTA = ({ href, label, newTab = true }: BlogButtonProps) => {
+    return (
+        <a
+            href={href}
+            target={newTab ? "_blank" : undefined}
+            rel={newTab ? "noopener noreferrer" : undefined}
+            className="inline-flex items-center gap-2 rounded-full border border-cyan-300/60 bg-cyan-500/10 px-6 py-3 text-sm font-semibold tracking-wide text-cyan-200 transition hover:bg-cyan-400/20 hover:text-cyan-100"
+        >
+            {label}
+        </a>
+    );
+};
+
 interface Blog_LinkElement__Props {
     url: string,
     linkText: string,
