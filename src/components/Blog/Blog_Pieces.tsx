@@ -77,7 +77,8 @@ interface Blog_Paragraph__Props {
 export const Blog_Paragraph = (props: Blog_Paragraph__Props) => {
     return (
         <section id="blog_standardParagraph" className="mt-0" style={{ fontFamily: tertiaryFont }}>
-            <p className="pb-5 text-lg leading-8 text-slate-100/90 max-w-3xl mx-auto">
+            {/* sm:text-center kicks in at 640px so phones stay left-aligned while tablets/desktops keep the centered look */}
+            <p className="pb-5 text-lg leading-8 text-slate-100/90 max-w-3xl mx-auto sm:text-center">
                 {props.text}
             </p>
         </section>

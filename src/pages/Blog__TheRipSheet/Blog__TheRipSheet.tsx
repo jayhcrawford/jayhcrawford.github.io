@@ -27,6 +27,7 @@ const Blog__TheRipSheet = () => {
             <Blog construction={true} title="The Rip Sheet">
                 {/* SECTION 1 — Hook & premise */}
                 <section className="rip-section rip-section--intro">
+                    {/* Note: section padding is handled globally in index.css to prevent mobile crowding. */}
                     <Blog_HeroQuote quote='In 2018, I decided to learn weightlifting.' />
                     <Blog_HeroQuote quote="Since then, I’ve been developing tools and systems to stay consistent." />
                     <Blog_Paragraph text="In 2018, I set out to learn weightlifting. Over time, through repeated iteration, I built a system I call the RIP Sheet. Early versions failed to track progress and enforce consistency—but I kept refining, testing, and improving. The name is a double entendre: a memento mori and a call to get ripped. Today is the day you make that change—this very rep." />
