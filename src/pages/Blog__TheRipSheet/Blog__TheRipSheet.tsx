@@ -9,6 +9,7 @@ const ripSheetImageUrls = [
     "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/rip_sheet_python_images/RIP_ORIGIN_SHEET.png",
     "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/rip_sheet_python_images/RIP_G_SHEET.png",
     "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/rip_sheet_python_images/RIP_RAW_JSON.png",
+    "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/rip_sheet_python_images/RIP_FILE.jpg"
 ]
 
 // TODO: Change alt text
@@ -49,6 +50,19 @@ const Blog__TheRipSheet = () => {
 
                     <Blog_Paragraph text="Initially the system that I used took the form of a physical worksheet. I thought that disconnecting from electronics at the gym and concentrating on a physical object might prove to be especially productive. This was the first iteration, and I've since discovered that tracking the progress 'written down' across multiple pieces of paper can become difficult, and paper gets sweaty at the gym." />
                     <Blog_Paragraph text="This sheet had a supporting packet of information, related to stretching, and I took it to the gym." />
+
+                <div className={`${string}`}>
+                    <Blog_Image
+                        variant="half"
+                        src={ripSheetImageUrls[7]}
+                        alt="Original workbook used for tracking workouts in the initial prototyping phase"
+                        figureLabel="Figure 2"
+                        figureCaption="The workbook taken to the gym in the initial prototyping phase."
+                        imgClassName="w-32 md:w-40"
+                    />
+                    
+                </div>
+
                     <Blog_Paragraph text="Eventually, I started working with Google Sheets, because it allowed me to track my progress more efficiently." />
                     <Blog_Paragraph text="Because of this choice to track the data, when I took a Linear Algebra for Data Science with Python/R in 2025, I was able to do an interesting analysis of my workout data because I already had it. This windfall produced visualizations that I thought were very interesting and potentially powerful for helping people to visualize their progress. Some of the resulting graphics are shown below, and there is a link to the Colab where I prompted for the relevant Python. For actually processing the data, because it was somewhat amorphous initially, I used JavaScript and C++ at different times. Ultimately I settled on storing the processed data in a certain way in order to make creating the visualizations as low effort as is necessary. That format is simple JSON, storing each SET of a workout based upon name, weight, rep count, and date. Workouts that happen on the same day happen to correlate on the visualizations incidentally." />
                                     <div className="flex justify-center my-8">
@@ -67,7 +81,7 @@ const Blog__TheRipSheet = () => {
                         variant="half"
                         src={ripSheetImageUrls[6]}
                         alt="Origin version of the RIP sheet layout"
-                        figureLabel="Figure 2"
+                        figureLabel="Figure 3"
                         figureCaption="The data is stored in a way that makes it easy to analyze."
                         imgClassName="w-32 md:w-40"
                     />
@@ -79,7 +93,7 @@ const Blog__TheRipSheet = () => {
                         variant="half"
                         src={ripSheetImageUrls[5]}
                         alt="Origin version of the RIP sheet layout"
-                        figureLabel="Figure 3"
+                        figureLabel="Figure 4"
                         figureCaption="Although it looks basic, this is the system I've found supports consistency."
                         imgClassName="w-32 md:w-40"
                     />
@@ -91,7 +105,7 @@ const Blog__TheRipSheet = () => {
                         variant="half"
                         src={ripSheetImageUrls[0]}
                         alt="Collection of all workouts tracked in the RIP sheet"
-                        figureLabel="Figure 4"
+                        figureLabel="Figure 5"
                         figureCaption="Consolidated workout history view."
                     />
                 </div>
@@ -101,7 +115,7 @@ const Blog__TheRipSheet = () => {
                         variant="centered"
                         src={ripSheetImageUrls[1]}
                         alt="RIP sheet data board showing tracked exercise metrics"
-                        figureLabel="Figure 5"
+                        figureLabel="Figure 6"
                         figureCaption="Data board used to monitor progress over time."
                     />
                 </div>
@@ -111,7 +125,7 @@ const Blog__TheRipSheet = () => {
                         variant="centered"
                         src={ripSheetImageUrls[2]}
                         alt="Regression analysis chart generated from RIP sheet data"
-                        figureLabel="Figure 6"
+                        figureLabel="Figure 7"
                         figureCaption="Least-squares regression snapshot for exercise trends."
                     />
                 </div>
@@ -122,7 +136,7 @@ const Blog__TheRipSheet = () => {
                         variant="centered"
                         src={ripSheetImageUrls[3]}
                         alt="Progress chart visualizing workout performance changes"
-                        figureLabel="Figure 7"
+                        figureLabel="Figure 8"
                         figureCaption="Bar chart showing exercise type counts for the data captured."
                     />
                 </div>
