@@ -66,7 +66,7 @@ export const Blog_ButtonCTA = ({ href, label, newTab = true }: BlogButtonProps) 
             href={href}
             target={newTab ? "_blank" : undefined}
             rel={newTab ? "noopener noreferrer" : undefined}
-            className="inline-flex items-center gap-2 rounded-full border border-cyan-300/60 bg-cyan-500/10 px-6 py-3 text-sm font-semibold tracking-wide text-cyan-200 transition hover:bg-cyan-400/20 hover:text-cyan-100"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-cyan-300/60 bg-cyan-500/10 px-6 py-3 text-sm font-semibold tracking-wide text-cyan-200 transition hover:bg-cyan-400/20 hover:text-cyan-100 text-center"
         >
             {label}
         </a>
