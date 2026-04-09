@@ -90,7 +90,7 @@ const About = () => {
           <p>
             I thrive where <strong>hands-on execution</strong> meets <strong>polished storytelling</strong>. I have managed multimillion-dollar campus
             upgrades, shipped SaaS products, led hospitality teams, fabricated sets, and still carve out time to paint,
-            sketch, and cycle the Los Angeles river paths. Fitness is a huge passion of mine, especially running and cycling. As a runner, I love the distance and solitude, and as a cyclist I love the freedom. Each lane teaches me to stay calm, design deliberately, and
+            sketch, and cycle the Los Angeles river paths. Fitness is a huge passion of mine, especially running and cycling. As a runner, I love the distance and concentration, and as a cyclist I love the freedom. Each lane teaches me to stay calm, design deliberately, and
             communicate with clarity — I am always looking for cross-pollination.
           </p>
           <p>
