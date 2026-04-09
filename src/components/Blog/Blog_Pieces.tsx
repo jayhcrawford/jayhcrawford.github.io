@@ -12,6 +12,7 @@ type BlogImageProps = {
     figureCaption?: string;
     imgClassName?: string;
     figureMarginClassName?: string;
+    figcaptionClassName?: string;
 };
 
 // Renders an image + optional figure text with layout variants.
@@ -23,6 +24,7 @@ export const Blog_Image: React.FC<BlogImageProps> = ({
     figureCaption,
     imgClassName,
     figureMarginClassName = "my-8",
+    figcaptionClassName,
 }) => {
     const hasFigureText = Boolean(figureLabel || figureCaption);
 
@@ -44,7 +46,9 @@ export const Blog_Image: React.FC<BlogImageProps> = ({
                 />
             </a>
             {hasFigureText && (
-                <figcaption className="mt-2 text-center text-sm text-gray-300">
+                <figcaption
+                    className={`mt-2 text-center text-sm ${figcaptionClassName ?? "text-gray-300"}`.trim()}
+                >
                     {figureLabel && <span className="font-semibold">{figureLabel}</span>}
                     {figureCaption && <span className={figureLabel ? "ml-2" : ""}>{figureCaption}</span>}
                 </figcaption>
