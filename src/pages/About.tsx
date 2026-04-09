@@ -24,21 +24,28 @@ const softwareShowcasePlaceholder = [
 const About = () => {
   return (
     <Blog title="About" construction={false}>
+      <div className="relative flex items-center justify-center rounded-2xl border border-dashed border-white/20 bg-slate-800/40 p-6 text-center">
+        <div>
+          <p className="text-sm uppercase tracking-[0.3em] text-cyan-200">Portrait Placeholder</p>
+          <p className="mt-3 text-xl font-semibold text-white">Drop a high-contrast photo here</p>
+          <p className="mt-2 text-sm text-slate-300">Suggested: clean lighting, subtle gradient background, confident but relaxed posture.</p>
+        </div>
+      </div>
       <div className="space-y-16 text-slate-100">
         {/* Hero */}
         <section className="grid gap-10 rounded-2xl bg-slate-900/50 p-8 lg:grid-cols-[3fr,2fr]">
           <div className="space-y-6">
             <p className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Designer · Builder · Storyteller</p>
-            <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
+            <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl mt-10 mb-10">
               Context-switching between <strong>construction sites</strong>, <strong>code editors</strong>, and <strong>sketchbooks</strong> is my normal.
             </h1>
-            <p className="text-lg leading-relaxed text-slate-200">
+            <p className="text-lg leading-relaxed text-slate-200 mt-5">
               I grew up in Kentucky, cut my teeth in art school at SAIC, and moved to Los Angeles to work across
               specialty construction, hospitality, and entertainment. Today I split my time between <strong>BuildLACCD
-              project management</strong>, <strong>UrFriends full-stack development</strong>, and anything that requires sharp systems thinking.
+                project management</strong>, <strong>UrFriends full-stack development</strong>, and anything that requires sharp systems thinking.
             </p>
             <div className="space-y-3 rounded-2xl border border-white/5 bg-white/5/20 p-4">
-              <p className="text-xs uppercase tracking-[0.4em] text-slate-200">Qualities</p>
+              <p className="text-xs uppercase tracking-[0.4em] text-slate-200 p-5">Qualities</p>
               <div className="flex flex-wrap gap-3">
                 {curiosityList.map((item) => (
                   <span key={item} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm">
@@ -46,13 +53,6 @@ const About = () => {
                   </span>
                 ))}
               </div>
-            </div>
-          </div>
-          <div className="relative flex items-center justify-center rounded-2xl border border-dashed border-white/20 bg-slate-800/40 p-6 text-center">
-            <div>
-              <p className="text-sm uppercase tracking-[0.3em] text-cyan-200">Portrait Placeholder</p>
-              <p className="mt-3 text-xl font-semibold text-white">Drop a high-contrast photo here</p>
-              <p className="mt-2 text-sm text-slate-300">Suggested: clean lighting, subtle gradient background, confident but relaxed posture.</p>
             </div>
           </div>
         </section>
@@ -90,10 +90,9 @@ const About = () => {
         {/* Software showcase placeholder */}
         <section className="space-y-4 rounded-2xl border border-white/10 bg-slate-900/40 p-6">
           <div className="flex items-baseline justify-between">
-            <h2 className="text-2xl font-semibold text-white">Software familiarity</h2>
-            <span className="text-xs uppercase tracking-[0.4em] text-slate-300">Logo set pending</span>
+            <h2 className="text-2xl font-semibold text-white">Software Skills</h2>
           </div>
-          <p className="text-sm text-slate-300">Once assets are ready, drop the real icon inside the circle and update the name—layout already handles spacing.</p>
+          <p className="text-sm text-slate-300"></p>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
             {softwareShowcasePlaceholder.map((tool) => (
               <div key={tool.name} className="flex flex-col items-center gap-2 text-center">
