@@ -13,17 +13,19 @@ const curiosityList = [
   "Making data feel human (fitness, fabrication, finance)",
 ];
 
-const softwareShowcasePlaceholder = [
-  { name: "Photoshop", logo: "/path/to/logo" },
-  { name: "Illustrator", logo: "/path/to/logo" },
-  { name: "Autodesk Maya", logo: "/path/to/logo" },
-  { name: "AWS", logo: "/path/to/logo" },
-  { name: "Blender", logo: "/path/to/logo" },
-  { name: "Fusion 360", logo: "/path/to/logo" },
-  { name: "SOLIDWORKS", logo: "/path/to/logo" },
-  { name: "Next.js", logo: "/path/to/logo" },
-  { name: "Firebase", logo: "/path/to/logo" },
-  { name: "Bluebeam", logo: "/path/to/logo" },
+const softwareStacks = [
+  {
+    title: "Creative Tools",
+    tools: ["Photoshop", "Illustrator", "Maya", "Blender", "Fusion 360", "SOLIDWORKS"],
+  },
+  {
+    title: "Coding / Languages",
+    tools: ["TypeScript", "JavaScript", "Python", "C++", "SQL"],
+  },
+  {
+    title: "Web Dev & Platforms",
+    tools: ["Next.js", "Firebase", "Stripe", "Vercel", "Render", "Tailwind"],
+  },
 ];
 
 // TODO: Build out qualities list
@@ -95,19 +97,27 @@ const About = () => {
           </p>
         </section>
 
-        {/* // TODO: Build out software list */}
-        <section className="space-y-4 rounded-2xl border border-white/10 bg-slate-900/40 p-6">
+        {/* Software showcase placeholder */}
+        <section className="space-y-8 rounded-2xl border border-white/10 bg-slate-900/40 p-6">
           <div className="flex items-baseline justify-between">
-            <h2 className="text-2xl font-semibold text-white">Software Skills</h2>
+            <h2 className="text-2xl font-semibold text-white">Software skills</h2>
+            <span className="text-xs uppercase tracking-[0.4em] text-slate-300">Logos pending</span>
           </div>
-          <p className="text-sm text-slate-300"></p>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
-            {softwareShowcasePlaceholder.map((tool) => (
-              <div key={tool.name} className="flex flex-col items-center gap-2 text-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/15 bg-slate-800/60 text-xs uppercase tracking-wide text-slate-400">
-                  Logo
+          <p className="text-sm text-slate-300">Chunked for clarity—replace the circles with real icons once the set is ready.</p>
+          <div className="space-y-6">
+            {softwareStacks.map((stack) => (
+              <div key={stack.title} className="space-y-3">
+                <p className="text-xs uppercase tracking-[0.4em] text-slate-300">{stack.title}</p>
+                <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
+                  {stack.tools.map((tool) => (
+                    <div key={tool} className="flex flex-col items-center gap-2 text-center">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/15 bg-slate-800/60 text-xs uppercase tracking-wide text-slate-400">
+                        Logo
+                      </div>
+                      <p className="text-sm font-medium text-white">{tool}</p>
+                    </div>
+                  ))}
                 </div>
-                <p className="text-sm font-medium text-white">{tool.name}</p>
               </div>
             ))}
           </div>
