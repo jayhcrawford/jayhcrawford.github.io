@@ -91,14 +91,16 @@ const About = () => {
         <section className="space-y-4 rounded-2xl border border-white/10 bg-slate-900/40 p-6">
           <div className="flex items-baseline justify-between">
             <h2 className="text-2xl font-semibold text-white">Software familiarity</h2>
-            <span className="text-xs uppercase tracking-[0.4em] text-slate-300">Coming soon</span>
+            <span className="text-xs uppercase tracking-[0.4em] text-slate-300">Logo set pending</span>
           </div>
-          <p className="text-sm text-slate-300">Drop logo assets + names below once ready. Structured grid already in place.</p>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <p className="text-sm text-slate-300">Once assets are ready, drop the real icon inside the circle and update the name—layout already handles spacing.</p>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
             {softwareShowcasePlaceholder.map((tool) => (
-              <div key={tool.name} className="flex flex-col items-center justify-center rounded-xl border border-white/10 bg-white/5 p-4 text-center">
-                <div className="h-16 w-16 rounded-full border border-white/10 bg-slate-800/60" />
-                <p className="mt-3 text-sm font-medium">{tool.name}</p>
+              <div key={tool.name} className="flex flex-col items-center gap-2 text-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/15 bg-slate-800/60 text-xs uppercase tracking-wide text-slate-400">
+                  Logo
+                </div>
+                <p className="text-sm font-medium text-white">{tool.name}</p>
               </div>
             ))}
           </div>
