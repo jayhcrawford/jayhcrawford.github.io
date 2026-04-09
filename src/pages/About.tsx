@@ -87,6 +87,7 @@ const About = () => {
 
         {/* Narrative */}
         <section className="space-y-6 text-lg leading-relaxed text-slate-200">
+          {/* TODO: spin up a dedicated fitness/brag section that frames consistent training as a leadership habit. */}
           <p>
             I thrive where <strong>hands-on execution</strong> meets <strong>polished storytelling</strong>. I have managed multimillion-dollar campus
             upgrades, shipped SaaS products, led hospitality teams, fabricated sets, and still carve out time to paint,
