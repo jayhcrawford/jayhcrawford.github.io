@@ -112,7 +112,7 @@ const About = () => {
         <section className="flex flex-wrap items-center gap-4 rounded-2xl border border-cyan-400/20 bg-cyan-500/5 px-6 py-5 text-sm text-cyan-100">
           <span className="text-xs uppercase tracking-[0.4em]">Next steps</span>
           <p className="text-base text-slate-100">
-            Want the deeper story? Ping me via the contact page or LinkedIn—I'm always down to compare build notes, swap
+            Want the deeper story? Ping me via the <a href="/contact" className="underline decoration-dotted decoration-cyan-200 hover:text-white">contact page</a> or LinkedIn—I'm always down to compare build notes, swap
             training ideas, or co-design something ambitious.
           </p>
         </section>
