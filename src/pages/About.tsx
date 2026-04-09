@@ -100,14 +100,13 @@ const About = () => {
         {/* Software showcase placeholder */}
         <section className="space-y-8 rounded-2xl border border-white/10 bg-slate-900/40 p-6">
           <div className="flex items-baseline justify-between">
-            <h2 className="text-2xl font-semibold text-white">Software skills</h2>
-            <span className="text-xs uppercase tracking-[0.4em] text-slate-300">Logos pending</span>
+            <h2 className="text-2xl font-semibold text-white">Digital skills</h2>
+            <span className="text-xs uppercase tracking-[0.4em] text-slate-300">TODO: ADD GRAPHIC</span>
           </div>
-          <p className="text-sm text-slate-300">Chunked for clarity—replace the circles with real icons once the set is ready.</p>
           <div className="space-y-6">
             {softwareStacks.map((stack) => (
               <div key={stack.title} className="space-y-3">
-                <p className="text-xs uppercase tracking-[0.4em] text-slate-300">{stack.title}</p>
+                <p className="text-s uppercase tracking-[0.4em] text-slate-300 p-5 text-center font-bold">{stack.title}</p>
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
                   {stack.tools.map((tool) => (
                     <div key={tool} className="flex flex-col items-center gap-2 text-center">
