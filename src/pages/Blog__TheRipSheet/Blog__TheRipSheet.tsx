@@ -18,6 +18,8 @@ const ripSheetImageUrls = [
     "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/rip_sheet_python_images/RIP_FILE.jpg"
 ]
 
+const accentText = "text-[#CCCFD9]";
+
 // TODO: Change alt text
 
 // Page component consumed by the router in src/App.tsx.
@@ -28,6 +30,15 @@ const Blog__TheRipSheet = () => {
                 {/* SECTION 1 — Hook & premise */}
                 <section className="rip-section rip-section--intro">
                     {/* Note: section padding is handled globally in index.css to prevent mobile crowding. */}
+                    <div className="relative flex items-center justify-center rounded-2xl border border-dashed border-white/20 bg-slate-800/40 p-6 text-center mb-8">
+                        <div>
+                            <p className={`text-sm uppercase tracking-[0.3em] ${accentText}`}>
+                                Portrait Placeholder
+                            </p>
+                            <p className="mt-3 text-xl font-semibold text-white">Drop a strong bicep portrait here</p>
+                            <p className="mt-2 text-sm text-slate-300">Suggested: gym setting, clear lighting, confident flex.</p>
+                        </div>
+                    </div>
                     <Blog_HeroQuote quote='In 2018, I decided to learn weightlifting.' />
                     <Blog_HeroQuote
                         quote="Since then, I’ve been developing tools and systems to become stronger and to consistently learn."
