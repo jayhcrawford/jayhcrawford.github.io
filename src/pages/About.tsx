@@ -49,7 +49,7 @@ const About = () => {
         {/* Hero */}
         <section className="grid gap-10 rounded-2xl bg-slate-900/50 p-8 lg:grid-cols-[3fr,2fr]">
           <div className="space-y-6">
-            <p className={`text-sm uppercase tracking-[0.3em] ${accentText}`}>
+            <p className={`text-center text-sm uppercase tracking-[0.3em] ${accentText}`}>
               Designer · Builder · Storyteller
             </p>
             <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl mt-10 mb-10">
@@ -96,13 +96,16 @@ const About = () => {
           </p>
           <p>
             Engineering school sharpened my math and systems thinking; art school wired me to experiment without fear;
-            years in hospitality taught me to keep people seen and projects moving. Whether I am refining <strong>RIP Sheet data pipelines </strong>
+            years in hospitality taught me to keep people seen and projects moving. Whether I am refining
+            <strong><a href="#/projects/ripsheet" className="hover:text-white/80 transition-colors"> <u>RIP Sheet data pipelines</u> </a></strong>
+
             or tutoring fellow students at <strong>MESA</strong>, the through-line is meticulous prep and a bias for momentum.
           </p>
           <p>
-            When I am off laptop duty, you will find me studying new fabrication techniques, trail running, homecanning beans (they're SO good), riding my bike around LA, or going to an art museum for inspo. I still say yes to the weird gigs — they keep me humble
-            and curious.
+            When I am off laptop duty, you will find me studying new fabrication techniques, trail running, homecanning beans (they're SO good), riding my bike around LA, or going to an art museum for (or something from a mountain of other creative things).
           </p>
+          <p className="mt-8">I still say yes to the weird gigs — they keep me humble
+            and curious.</p>
         </section>
 
         {/* Software showcase placeholder */}
@@ -132,11 +135,11 @@ const About = () => {
 
         {/* Contact hint */}
         <section
-          className={`flex flex-wrap items-center gap-4 rounded-2xl border border-cyan-400/20 bg-cyan-500/5 px-6 py-5 text-sm ${accentText}`}
+          className={`flex flex-col items-center gap-4 rounded-2xl border border-white/20 bg-slate-800/40 px-6 py-5 text-sm ${accentText}`}
         >
-          <span className="text-xs uppercase tracking-[0.4em]">Next steps</span>
+          <p className="text-xs uppercase tracking-[0.4em]">Next steps</p>
           <div className="flex flex-col gap-3 text-base text-slate-100">
-            <p>Want the deeper story? Reach out and I'll send the long-form version.</p>
+            <p className="text-center">I love <strong>building</strong> and <strong>creating</strong>, and if you can use my help, <strong>please reach out!</strong></p>
             <Blog_ButtonCTA href="/contact" label="Open Contact Page" newTab={false} />
           </div>
         </section>
