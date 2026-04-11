@@ -9,6 +9,7 @@ This repo is a Vite + React + TypeScript site for GitHub Pages. The CI/CD publis
 - Pages live under `src/pages/`.
 - Project/category data lives in `src/pages/Projects/*_data.tsx` and `src/pages/Projects3D/Projects3D_data.tsx`.
 - Shared components live in `src/components/`.
+- Shared blog typography components (`Blog_Card`, `Blog_Label`, etc.) now live in `src/components/Blog/Blog_Pieces.tsx`; use them instead of ad-hoc Tailwind for future articles.
 - Styling is a mix of Tailwind (`src/tailwind.css`, `src/index.css`) and component CSS in `src/components/*.css`.
 - Fonts are in `src/assets/fonts/`.
 
