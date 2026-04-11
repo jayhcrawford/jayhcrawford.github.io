@@ -56,9 +56,9 @@ const About = () => {
               Context-switching between <strong>construction sites</strong>, <strong>code editors</strong>, and <strong>sketchbooks</strong> is my normal.
             </h1>
             <p className="text-lg leading-relaxed text-slate-200 mt-5">
-              I grew up in Kentucky, cut my teeth in art school at SAIC, and moved to Los Angeles to work across
+              I grew up in Kentucky, cut my teeth in art school at SAIC, and moved to Los Angeles in 2017 to pursue dreams; LA is home now — here I've worked across
               specialty construction, hospitality, and entertainment. Today I split my time between <strong>BuildLACCD
-                project management</strong>, <strong>UrFriends full-stack development</strong>, my passion for the fitness & the outdoors, and anything that requires sharp systems thinking.
+                project management</strong>, <strong>UrFriends full-stack development</strong>, engineering school, my passion for the fitness & the outdoors, and anything that requires sharp systems thinking.
             </p>
             <div className="space-y-3 rounded-2xl border border-white/5 bg-white/5/20 p-4">
               <p className={`text-xs uppercase tracking-[0.4em] p-5 ${accentText}`}>Qualities</p>
@@ -96,13 +96,11 @@ const About = () => {
           </p>
           <p>
             Engineering school sharpened my math and systems thinking; art school wired me to experiment without fear;
-            years in hospitality taught me to keep people seen and projects moving. Whether I am refining
-            <strong><a href="#/projects/ripsheet" className="hover:text-white/80 transition-colors"> <u>RIP Sheet data pipelines</u> </a></strong>
-
-            or tutoring fellow students at <strong>MESA</strong>, the through-line is meticulous prep and a bias for momentum.
+            years in hospitality taught me to keep people seen and projects moving. School in STEM has been extremely rewarding — it has exposed me to tools that I've used for refining and analyzing
+            <strong><a href="#/projects/ripsheet" className="hover:text-white/80 transition-colors"> <u>personal fitness systems</u></a></strong>, allowed me to tutor fellow students at MESA; I've celebrated and philosophized in the Human Computer Interaction Club, helped organize a hackathon, I've gone from 'self-taught' programmer to someone who understands computer science paradigms and become actually kind of fascinated by math.
           </p>
           <p>
-            When I am off laptop duty, you will find me studying new fabrication techniques, trail running, homecanning beans (they're SO good), riding my bike around LA, or going to an art museum for (or something from a mountain of other creative things).
+            When I am not laboring (with love ofc), you will find me studying new fabrication techniques, spelunking the wiki of my latest fascination, long-distnace or trail running, homecanning beans (they're SO good), riding my bike around LA, or going to an art museum for (or something from a mountain of other creative things).
           </p>
           <p className="mt-8">I still say yes to the weird gigs — they keep me humble
             and curious.</p>
