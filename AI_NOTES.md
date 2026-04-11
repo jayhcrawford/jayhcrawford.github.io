@@ -25,7 +25,6 @@ This repo is a Vite + React + TypeScript site for GitHub Pages. The CI/CD publis
 - Add the brag-worthy fitness/discipline section requested in About (see TODO in `src/pages/About.tsx`).
 - SocialBrick uses a fixed px width that should become responsive: `src/components/SocialBrick.tsx`.
 - Confirm links + description text in app shell: `src/App.tsx`.
-- Routing currently uses `HashRouter` in `src/main.tsx`, so URLs intentionally include `#` unless the router and hosting setup are changed together.
 - Create/replace icon images for categories in:
   - `src/pages/Projects/Art_data.tsx`
   - `src/pages/Projects/Projects_data.tsx`
@@ -47,6 +46,7 @@ This repo is a Vite + React + TypeScript site for GitHub Pages. The CI/CD publis
 - Keep art/project metadata consistent with existing data object shapes in the data files.
 
 ## Recent Changes
+- Switched from `HashRouter` to `BrowserRouter` in `src/main.tsx` for clean URLs without `#` symbols. Updated internal links in `src/pages/About.tsx` from hash paths to regular paths (`/projects/urfriends`, `/projects/ripsheet`).
 - Built a focused Contact hero layout: `src/pages/Contact.tsx`.
 - Added Web Dev + Programming project list pages, data stubs, and routes:
   - `src/pages/Projects/WebDev.tsx`, `src/pages/Projects/WebDev_data.tsx`

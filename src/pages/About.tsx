@@ -37,6 +37,13 @@ const accentText = "text-[#CCCFD9]";
 const About = () => {
   return (
     <Blog title="About" construction={false}>
+      <style>
+        {`/* Custom scrollbar styles */
+         p {
+         margin-bottom: 1.5em;
+        }
+        `}
+      </style>
       <div className="relative flex items-center justify-center rounded-2xl border border-dashed border-white/20 bg-slate-800/40 p-6 text-center">
         <div>
           <p className={`text-sm uppercase tracking-[0.3em] ${accentText}`}>
@@ -61,8 +68,8 @@ const About = () => {
               specialty construction, hospitality, and entertainment. Today I split my time between BuildLACCD <strong>
                 project management</strong>, UrFriends<strong> full-stack development</strong>, <strong>engineering school</strong>, my passion for the fitness & creativity.
             </p>
-            <div className="space-y-3 rounded-2xl border border-white/5 bg-white/5/20 p-4">
-              <p className={`text-xs uppercase tracking-[0.4em] p-5 ${accentText}`}>What Drives Me</p>
+            <div className="space-y-3 rounded-2xl border border-white/5 bg-white/5/20 mt-5 pt-1 p-6">
+              <p className={`text-xs uppercase tracking-[0.4em] pb-5 pt-5 ${accentText}`}>What Drives Me</p>
               <div className="flex flex-wrap gap-3">
                 {curiosityList.map((item) => (
                   <span key={item} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm">
@@ -97,17 +104,17 @@ const About = () => {
         <section className="space-y-6 text-lg leading-relaxed text-slate-200">
           {/* TODO: spin up a dedicated fitness/brag section that frames consistent training as a leadership habit. */}
           <p>
-            I thrive where <strong>hands-on execution</strong> meets <strong>polished storytelling</strong>. I have <strong><a href={linkedin} target='_blank' className="hover:text-white/80 transition-colors"><u>managed multimillion-dollar campus upgrades</u></a></strong>, <strong><a href="#/projects/urfriends" className="hover:text-white/80 transition-colors"><u>shipped SaaS products</u></a></strong>, led hospitality teams, fabricated sets, and still carve out time to paint,
+            I thrive where <strong>hands-on execution</strong> meets <strong>polished storytelling</strong>. I have <strong><a href={linkedin} target='_blank' className="hover:text-white/80 transition-colors"><u>managed multimillion-dollar campus upgrades</u></a></strong>, <strong><a href="/projects/urfriends" className="hover:text-white/80 transition-colors"><u>shipped SaaS products</u></a></strong>, led hospitality teams, fabricated sets, and still carve out time to paint,
             sketch, and cycle the Los Angeles river paths. Fitness is a huge passion of mine, especially running and cycling. As a runner, I love the distance and concentration, and as a cyclist I love the freedom. Each lane teaches me to stay calm, design deliberately, and
             communicate with clarity — and in every world thoughts of finding cross-pollination drive my imagination wild! I'm always looking for new ways to learn.
           </p>
           <p>
             Engineering school sharpened my math and systems thinking; art school wired me to experiment without fear;
             years in hospitality taught me to keep people seen and to communicate <i>thoroughly</i>. School in STEM has been extremely rewarding — it has exposed me to tools that I've used for refining and analyzing
-            <strong><a href="#/projects/ripsheet" className="hover:text-white/80 transition-colors"> <u>personal fitness systems</u></a></strong>, allowed me to tutor fellow students at MESA; I've celebrated and philosophized in the Human Computer Interaction Club, helped organize a hackathon, I've gone from 'self-taught' programmer to someone who understands computer science paradigms, and become <i>actually</i> kind of fascinated by math.
+            <strong><a href="/projects/ripsheet" className="hover:text-white/80 transition-colors"> <u>personal fitness systems</u></a></strong>, allowed me to tutor fellow students at MESA; I've celebrated and philosophized in the Human Computer Interaction Club, helped organize a hackathon, I've gone from 'self-taught' programmer to someone who understands computer science paradigms, and become <i>actually</i> kind of fascinated by math.
           </p>
           <p>
-            When I am not laboring (with love ofc), you will find me studying new fabrication techniques, spelunking the wiki of my latest fascination, long-distnace or trail running, homecanning beans (they're SO good), riding my bike around LA, going to an art museum, or tinkering creatively. I'm big on "hippie" type stuff, get way into reading about future green-tech — you can absolutely find me using a bicycle and public transit.
+            When I am not laboring (with love ofc), you will find me studying new fabrication techniques, spelunking the wiki of my latest fascination, long-distnace or trail running, homecanning beans (they're SO good), riding my bike around LA, going to an art museum, or tinkering creatively. I'm big on "hippie" type stuff, get way into reading about future green-tech, and resonate with preserving the environment — you can absolutely find me using a bicycle and public transit.
           </p>
           <p className="mt-8">I still say yes to the weird gigs — they keep me humble
             and curious.</p>
