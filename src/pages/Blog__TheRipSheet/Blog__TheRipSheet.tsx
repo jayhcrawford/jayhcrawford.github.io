@@ -143,7 +143,7 @@ const Blog__TheRipSheet = () => {
                             figcaptionClassName={accentText}
                         />
                     </div>
-                    <Blog_Paragraph text="You can see the linear regression on the data sets that could be fit, and it shows trends which illuminate my habits." />
+                    
                     <div className={accentText}>
                         <Blog_HeroQuote quote="Fitting a least-squares regression to the data shows interesting trends:" sizePreset="compact" />
                     </div>
@@ -165,6 +165,7 @@ const Blog__TheRipSheet = () => {
                             figcaptionClassName={accentText}
                         />
                     </div>
+                    <Blog_Paragraph text="You can see the least-squares regression on the data sets that could be fit. What's interesting about this to me is how the slope of the regression very quickly indicates my performance in a particular workout over some window of time." />
                     <div className={accentText}>
                         <Blog_HeroQuote quote="The bar chart above illustrates that I've been trying to make my arms bigger 🤣😅" sizePreset="compact" />
                     </div>
