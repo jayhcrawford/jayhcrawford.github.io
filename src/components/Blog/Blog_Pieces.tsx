@@ -1,4 +1,46 @@
+import { ReactNode } from "react";
 import { secondaryFont, tertiaryFont } from "../../styles";
+
+
+export const BLOG_ACCENT_TEXT = "text-[#CCCFD9]";
+
+interface BlogLabelProps {
+    children: ReactNode;
+    align?: "left" | "center" | "right";
+    className?: string;
+}
+
+export const Blog_Label = ({ children, align = "center", className }: BlogLabelProps) => {
+    const alignments = {
+        left: "text-left",
+        center: "text-center",
+        right: "text-right",
+    } as const;
+
+    return (
+        <p className={`${alignments[align]} text-xs uppercase tracking-[0.4em] ${BLOG_ACCENT_TEXT} ${className ?? ""}`.trim()}>
+            {children}
+        </p>
+    );
+};
+
+interface BlogCardProps {
+    children: ReactNode;
+    tone?: "solid" | "glass";
+    className?: string;
+}
+
+export const Blog_Card = ({ children, tone = "solid", className }: BlogCardProps) => {
+    const toneClass = tone === "glass"
+        ? "border border-white/20 bg-slate-800/40 backdrop-blur"
+        : "border border-white/10 bg-slate-900/40";
+
+    return (
+        <div className={`rounded-2xl p-6 ${toneClass} ${className ?? ""}`.trim()}>
+            {children}
+        </div>
+    );
+};
 
 /**
  * Responsive figure wrapper used by blog pages to keep
