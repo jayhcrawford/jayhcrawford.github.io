@@ -55,6 +55,8 @@ type BlogImageProps = {
     imgClassName?: string;
     figureMarginClassName?: string;
     figcaptionClassName?: string;
+    withMatte?: boolean;
+    matteClassName?: string;
 };
 
 // Renders an image + optional figure text with layout variants.
@@ -67,6 +69,8 @@ export const Blog_Image: React.FC<BlogImageProps> = ({
     imgClassName,
     figureMarginClassName = "my-8",
     figcaptionClassName,
+    withMatte = false,
+    matteClassName,
 }) => {
     const hasFigureText = Boolean(figureLabel || figureCaption);
 
@@ -78,15 +82,25 @@ export const Blog_Image: React.FC<BlogImageProps> = ({
         quarter: "mx-auto w-full sm:w-1/2 lg:w-1/4",
     };
 
+    const imageNode = (
+        <a href={src} target="_blank" rel="noopener noreferrer">
+            <img
+                src={src}
+                alt={alt}
+                className={`${variants[variant]} ${imgClassName ?? ""}`.trim()}
+            />
+        </a>
+    );
+
     return (
         <figure className={`flex flex-col justify-center ${figureMarginClassName}`}>
-            <a href={src} target="_blank" rel="noopener noreferrer">
-                <img
-                    src={src}
-                    alt={alt}
-                    className={`${variants[variant]} ${imgClassName ?? ""}`.trim()}
-                />
-            </a>
+            {withMatte ? (
+                <div className={`rounded-2xl border border-white/20 bg-white/5 p-4 ${matteClassName ?? ""}`.trim()}>
+                    {imageNode}
+                </div>
+            ) : (
+                imageNode
+            )}
             {hasFigureText && (
                 <figcaption
                     className={`mt-2 text-center text-sm ${figcaptionClassName ?? "text-gray-300"}`.trim()}
@@ -138,18 +152,20 @@ export const Blog_LinkElement = (props: Blog_LinkElement__Props) => {
 
 interface Blog_Paragraph__Props {
     text: string;
+    className?: string;
 }
 
 // Standardized paragraph block so typography stays consistent across posts.
-export const Blog_Paragraph = (props: Blog_Paragraph__Props) => {
+export const Blog_Paragraph = ({ text, className }: Blog_Paragraph__Props) => {
+    const base = "text-lg leading-relaxed text-slate-200 text-left max-w-3xl mx-auto";
+
     return (
         <section id="blog_standardParagraph" className="mt-0" style={{ fontFamily: tertiaryFont }}>
-            {/* sm:text-center kicks in at 640px so phones stay left-aligned while tablets/desktops keep the centered look */}
-            <p className="pb-5 text-lg leading-8 text-slate-100/90 max-w-3xl mx-auto sm:text-center">
-                {props.text}
+            <p className={`${base} ${className ?? ""}`.trim()}>
+                {text}
             </p>
         </section>
-    )
+    );
 }
 
 interface Blog_HeroVideo__Props {
