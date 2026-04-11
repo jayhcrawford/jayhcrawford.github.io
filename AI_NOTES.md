@@ -23,6 +23,7 @@ This repo is a Vite + React + TypeScript site for GitHub Pages. The CI/CD publis
 - About page needs a strong intro image/flourish: `src/pages/About.tsx`.
 - SocialBrick uses a fixed px width that should become responsive: `src/components/SocialBrick.tsx`.
 - Confirm links + description text in app shell: `src/App.tsx`.
+- Routing currently uses `HashRouter` in `src/main.tsx`, so URLs intentionally include `#` unless the router and hosting setup are changed together.
 - Create/replace icon images for categories in:
   - `src/pages/Projects/Art_data.tsx`
   - `src/pages/Projects/Projects_data.tsx`
