@@ -21,6 +21,7 @@ This repo is a Vite + React + TypeScript site for GitHub Pages. The CI/CD publis
 
 ## Current TODOs (from code)
 - About page needs a strong intro image/flourish: `src/pages/About.tsx`.
+- Add the brag-worthy fitness/discipline section requested in About (see TODO in `src/pages/About.tsx`).
 - SocialBrick uses a fixed px width that should become responsive: `src/components/SocialBrick.tsx`.
 - Confirm links + description text in app shell: `src/App.tsx`.
 - Routing currently uses `HashRouter` in `src/main.tsx`, so URLs intentionally include `#` unless the router and hosting setup are changed together.
