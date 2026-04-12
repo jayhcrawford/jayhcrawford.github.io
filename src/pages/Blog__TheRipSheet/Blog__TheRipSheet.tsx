@@ -22,7 +22,8 @@ const ripSheetImageUrls = [
     "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/rip_sheet_python_images/RIP_G_SHEET.png",
     "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/rip_sheet_python_images/RIP_RAW_JSON.png",
     "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/rip_sheet_python_images/RIP_FILE.jpg",
-    "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/rip_sheet_python_images/RIP_AP_TIME.png"
+    "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/rip_sheet_python_images/RIP_AP_TIME.png",
+    "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/rip_sheet_python_images/RIP_HERO_PIC.webp"
 ];
 
 const Blog__TheRipSheet = () => {
@@ -30,17 +31,20 @@ const Blog__TheRipSheet = () => {
     const borderBase = "border border-1 border-white/20 p-5 rounded-2xl";
 
     return (
-        <Blog construction={false} title="The Rip Sheet">
+        <Blog construction={false} title="The RIP Sheet">
             <div className="space-y-8 text-slate-100">
                 {/* Hero & framing */}
                 <section className="rip-section rip-section--intro">
                     <Blog_Label>RIP Sheet case study</Blog_Label>
-                    <div className={`relative flex items-center justify-center rounded-2xl ${borderBase} bg-slate-800/40 p-6 text-center`}>
-                        <div>
-                            <p className={`text-sm uppercase tracking-[0.3em] ${accentText}`}>
-                                Portrait Placeholder
-                            </p>
-                            
+                    <div className={`relative flex items-center justify-center p-6 text-center`}>
+                        <div className="flex justify-center">
+                            <div className="rounded-full">
+                                <img 
+                                    src={ripSheetImageUrls[9]} 
+                                    alt="Hero image for the RIP Sheet case study" 
+                                    className="rounded-full w-48 h-48 object-cover"
+                                />
+                            </div>
                         </div>
                     </div>
                     <Blog_HeroQuote quote="In 2018, I decided to learn weightlifting." />
