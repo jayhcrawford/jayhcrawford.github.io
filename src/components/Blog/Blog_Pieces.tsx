@@ -157,10 +157,11 @@ interface Blog_Paragraph__Props {
 
 // Standardized paragraph block so typography stays consistent across posts.
 export const Blog_Paragraph = ({ text, className }: Blog_Paragraph__Props) => {
-    const base = "text-lg leading-relaxed text-slate-200 text-left max-w-3xl mx-auto";
+    // const base = "text-lg leading-relaxed text-slate-200 text-left max-w-3xl mx-auto";
+    const base = "text-lg leading-relaxed text-slate-200 mt-5";
 
     return (
-        <section id="blog_standardParagraph" className="mt-0" style={{ fontFamily: tertiaryFont }}>
+        <section className="mt-0" style={{ fontFamily: tertiaryFont }}>
             <p className={`${base} ${className ?? ""}`.trim()}>
                 {text}
             </p>

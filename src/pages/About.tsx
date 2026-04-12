@@ -38,11 +38,14 @@ const About = () => {
   return (
     <Blog title="About" construction={false}>
       <style>
-        {`/* Custom scrollbar styles */
-         p {
-         margin-bottom: 1.5em;
-        }
+
+        {`
+        /* Custom scrollbar styles */
         `}
+        {/* p {
+         margin-bottom: 1.5em;
+        } */}
+        `
       </style>
       <div className="relative flex items-center justify-center rounded-2xl border border-dashed border-white/20 bg-slate-800/40 p-6 text-center">
         <div>
