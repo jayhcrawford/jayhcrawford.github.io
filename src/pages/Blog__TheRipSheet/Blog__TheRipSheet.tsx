@@ -26,6 +26,7 @@ const ripSheetImageUrls = [
 
 const Blog__TheRipSheet = () => {
     const accentText = BLOG_ACCENT_TEXT;
+    const borderBase = "border border-dashed border-white/20 p-5 rounded-2xl";
 
     return (
         <Blog construction={true} title="The Rip Sheet">
@@ -33,7 +34,7 @@ const Blog__TheRipSheet = () => {
                 {/* Hero & framing */}
                 <section className="rip-section rip-section--intro">
                     <Blog_Label>RIP Sheet case study</Blog_Label>
-                    <div className="relative flex items-center justify-center rounded-2xl border border-dashed border-white/20 bg-slate-800/40 p-6 text-center">
+                    <div className={`relative flex items-center justify-center rounded-2xl ${borderBase} bg-slate-800/40 p-6 text-center`}>
                         <div>
                             <p className={`text-sm uppercase tracking-[0.3em] ${accentText}`}>
                                 Portrait Placeholder
@@ -66,9 +67,9 @@ const Blog__TheRipSheet = () => {
                 </section>
 
                 {/* Analog prototyping */}
-                <section className="rip-section rip-section--analog">
+                <section className={`rip-section rip-section--analog ${borderBase}`}>
                     <Blog_Label align="left">Analog beginnings</Blog_Label>
-                    <Blog_Paragraph text="The first version of the RIP Sheet was a physical worksheet — a structured attempt to bring discipline into the gym without relying on screens. The layout was clear, but the medium wasn’t. Tracking progress across loose pages quickly became impractical, and paper doesn’t hold up well in a gym environment where gains are a factor." />
+                    <Blog_Paragraph text="At first, there were multiple different supporting checklists based upon what I wanted to achieve in the gym any given 'day' — a 'back day' for example. I found that to be overly restrictive and not in line with life's unpredictability. I thought to put it together into a single document, one worksheet, and came up with a sassy name: the RIP Sheet. Getting 'stronger' has resonated with me all of my life, and that's what weightlifting is about. The worksheet was a structured attempt to bring discipline into the gym without relying on screens. The layout was clear, but the medium wasn’t. Tracking progress across loose pages quickly became impractical, and paper doesn’t hold up well in a gym environment where gains are a factor." />
                     <Blog_Paragraph text="Alongside the sheet, I created a small reference packet for stretching and brought both with me to train." />
                     <div className="rip-figure rip-figure--single">
                         <Blog_Image
@@ -85,7 +86,7 @@ const Blog__TheRipSheet = () => {
                 </section>
 
                 {/* Digital system */}
-                <section className="rip-section rip-section--digital">
+                <section className={`rip-section rip-section--digital ${borderBase}`}>
                     <Blog_Label align="left">From paper to data</Blog_Label>
                     <Blog_Paragraph text="Eventually, I moved to Google Sheets, which made tracking progress far more efficient and reliable, allowing me to easily track every rep I've made since 2022. Because I had already been collecting this data, I was able to analyze it later in a Linear Algebra for Data Science course in 2025." />
                     <Blog_Paragraph text="Processing the data was inconsistent at first, and I experimented with both JavaScript and C++. Over time, I simplified the system: each set is stored as JSON, defined by exercise name, weight, reps, and date. This structure makes generating visualizations straightforward, with same-day workouts naturally aligning in the data." />
@@ -131,7 +132,8 @@ const Blog__TheRipSheet = () => {
                 </section>
 
                 {/* Insights */}
-                <section className="rip-section rip-section--insights">
+                <section className={`rip-section rip-section--insights ${borderBase}`}>
+                     <Blog_Label align="left">Insights</Blog_Label>
                     <div className={accentText}>
                         <Blog_HeroQuote quote="Today is the day you make that life change — this very rep." sizePreset="balanced" />
                     </div>
@@ -174,7 +176,7 @@ const Blog__TheRipSheet = () => {
                 </section>
 
                 {/* Future */}
-                <section className="rip-section rip-section--future">
+                <section className={`rip-section rip-section--future ${borderBase}`}>
                     <Blog_Label align="left">What’s next</Blog_Label>
                     <Blog_Paragraph text="My hope is to create a fitness app that allows people to develop realistic and healthy physical fitness routines and give useful visualizations that will let users know for sure how to generate real physical progress. The gym habit can be challenging to adopt, and I want to help people realize that learning that habit is counter-intuitive to first impressions." />
                     <div className={accentText}>
