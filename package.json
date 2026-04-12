@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "postbuild": "node scripts/copy-404.mjs"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.10",

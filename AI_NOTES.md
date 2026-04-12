@@ -10,6 +10,8 @@ This repo is a Vite + React + TypeScript site for GitHub Pages. The CI/CD publis
 - Project/category data lives in `src/pages/Projects/*_data.tsx` and `src/pages/Projects3D/Projects3D_data.tsx`.
 - Shared components live in `src/components/`.
 - Shared blog typography components (`Blog_Card`, `Blog_Label`, etc.) now live in `src/components/Blog/Blog_Pieces.tsx`; use them instead of ad-hoc Tailwind for future articles.
+- GitHub Pages fallback: `npm run build` now copies `dist/index.html` to `dist/404.html` so BrowserRouter routes survive refreshes; keep this script (`scripts/copy-404.mjs`) if you change the build pipeline.
+- BrowserRouter runs with `basename={import.meta.env.BASE_URL}`; if you change the deployment path update this accordingly.
 - Styling is a mix of Tailwind (`src/tailwind.css`, `src/index.css`) and component CSS in `src/components/*.css`.
 - Fonts are in `src/assets/fonts/`.
 
