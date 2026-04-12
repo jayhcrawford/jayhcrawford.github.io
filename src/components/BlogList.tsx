@@ -134,7 +134,8 @@ export const BlogListBonus = (props: BlogListBonus__Props) => {
         })
       }
     </div>
-  )};
+  )
+};
 
 export default BlogList;
 

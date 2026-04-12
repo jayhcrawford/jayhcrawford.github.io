@@ -1,6 +1,6 @@
+import { BloomEffect, EffectComposer, EffectPass, RenderPass } from 'postprocessing';
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { EffectComposer, RenderPass, EffectPass, BloomEffect } from 'postprocessing';
 import useWindowSize from '../hooks/useWindowSize';
 
 const ThreeBackground = () => {
@@ -10,15 +10,22 @@ const ThreeBackground = () => {
   useEffect(() => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true }); // Enable transparency
-    renderer.setClearColor(0x000000, 0); // Set background to transparent
-
+    const renderer = new THREE.WebGLRenderer({
+      alpha: true,
+      antialias: true,
+      powerPreference: 'high-performance',
+    });
+    renderer.setClearColor(0x000000, 0);
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.NoToneMapping;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
     renderer.setSize(width, height);
     renderer.domElement.style.position = 'absolute';
-    renderer.domElement.style.top = '0';
-    renderer.domElement.style.left = '0';
-    renderer.domElement.style.zIndex = '-1'; // Set behind other content
+    renderer.domElement.style.inset = '0';
+    renderer.domElement.style.zIndex = '0';
+    renderer.domElement.style.pointerEvents = 'none';
+    renderer.domElement.style.background = 'transparent';
 
     const mountNode = mountRef.current;
     if (mountNode instanceof HTMLElement && !mountNode.hasChildNodes()) {
@@ -46,30 +53,24 @@ const ThreeBackground = () => {
 
     camera.position.z = 5;
 
-    // Create bloom selection array
-    const bloomSelection: THREE.Object3D<THREE.Object3DEventMap>[] = [];
-    starGroup.children.forEach((child) => {
-      bloomSelection.push(child);
-    });
-
     // Set up postprocessing composer and passes
     const composer = new EffectComposer(renderer);
     composer.addPass(new RenderPass(scene, camera));
 
     // Set up SelectiveBloomEffect
     const selectiveBloomEffect = new BloomEffect({
-
-      intensity: .15,
-      luminanceThreshold: .007,
-      luminanceSmoothing: .2,
-      radius: 15,
+      intensity: 0.03,
+      luminanceThreshold: 0.25,
+      luminanceSmoothing: 0.35,
+      radius: 0.5,
     });
     const effectPass = new EffectPass(camera, selectiveBloomEffect);
     effectPass.renderToScreen = true;
     composer.addPass(effectPass);
 
+    let frameId = 0;
     const animate = () => {
-      requestAnimationFrame(animate);
+      frameId = window.requestAnimationFrame(animate);
 
       // Slow down the rotation
       starGroup.rotation.x += 0.000089;
@@ -79,13 +80,29 @@ const ThreeBackground = () => {
     };
     animate();
     return () => {
+      window.cancelAnimationFrame(frameId);
+
+      starGroup.traverse((object) => {
+        if (object instanceof THREE.Mesh) {
+          object.geometry.dispose();
+          if (Array.isArray(object.material)) {
+            object.material.forEach((material) => material.dispose());
+          } else {
+            object.material.dispose();
+          }
+        }
+      });
+
+      composer.dispose();
+      renderer.dispose();
+
       if (mountNode) {
         mountNode.removeChild(renderer.domElement);
       }
     };
   }, [width, height]);
 
-  return <div id="three_background" style={{ position: 'fixed', top: 0, left: 0, width: `${width}px`, height: `${height}px`, overflow: 'hidden' }} ref={mountRef} />;
+  return <div id="three_background" style={{ position: 'fixed', top: 0, left: 0, width: `${width}px`, height: `${height}px`, overflow: 'hidden', pointerEvents: 'none' }} ref={mountRef} />;
 };
 
 export default ThreeBackground
