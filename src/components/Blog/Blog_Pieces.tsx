@@ -95,7 +95,7 @@ export const Blog_Image: React.FC<BlogImageProps> = ({
     return (
         <figure className={`flex flex-col justify-center ${figureMarginClassName}`}>
             {withMatte ? (
-                <div className={`rounded-2xl border border-white/20 bg-white/5 p-4 ${matteClassName ?? ""}`.trim()}>
+                <div className={`rounded-2xl border border-3 border-white/20 bg-white/5 p-10 ${matteClassName ?? ""}`.trim()}>
                     {imageNode}
                 </div>
             ) : (

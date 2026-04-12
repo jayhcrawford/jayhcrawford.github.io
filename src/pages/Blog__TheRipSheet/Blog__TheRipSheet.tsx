@@ -27,7 +27,7 @@ const ripSheetImageUrls = [
 
 const Blog__TheRipSheet = () => {
     const accentText = BLOG_ACCENT_TEXT;
-    const borderBase = "border border-dashed border-white/20 p-5 rounded-2xl";
+    const borderBase = "border border-1 border-white/20 p-5 rounded-2xl";
 
     return (
         <Blog construction={false} title="The Rip Sheet">
@@ -180,7 +180,7 @@ const Blog__TheRipSheet = () => {
                             variant="centered"
                             src={ripSheetImageUrls[2]}
                             alt="RIP sheet data board showing tracked exercise metrics"
-                            figureLabel="Figure 6"
+                            figureLabel="Figure 9"
                             figureCaption="Least-squares regression snapshot for exercise trends."
                             withMatte
                             figcaptionClassName={accentText}
@@ -193,7 +193,7 @@ const Blog__TheRipSheet = () => {
                 <section className={`rip-section rip-section--future ${borderBase}`}>
                     <Blog_Label align="left">What’s next</Blog_Label>
                     <Blog_Paragraph text="My hope is to create a fitness app that allows people to develop realistic and healthy physical fitness routines and give useful visualizations that will let users know for sure how to generate real physical progress. The gym habit can be challenging to adopt, and I want to help people realize that learning that habit is counter-intuitive to first impressions." />
-                    <Blog_Paragraph text="A major aspect of my routine has been settling on a system that is sustainable, repeatable, and useful. Google Sheets might be a tool that supports the system as it stands, but there is a way to streamline the fitness tracking." />
+                    <Blog_Paragraph text="A major aspect of my routine has been settling on a system that is sustainable, repeatable, and useful. Google Sheets has allowed me to find the *steps* for a system that is sustainable, flexible, and accurate — migrating those steps into a tailor made UI will make a powerful tool for progress." />
                     <div className={accentText}>
                         <Blog_HeroQuote quote="I believe I can help people to adopt a habit that they love." sizePreset="balanced" />
                     </div>
