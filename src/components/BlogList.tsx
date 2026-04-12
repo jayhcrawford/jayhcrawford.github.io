@@ -79,7 +79,7 @@ const BlogList_Item_Photo = (props: BlogList_Item_Photo__Props) => {
   return (
     <>
       {props.under_construction && props.under_construction === true && <div className='h-30 w-30 absolute'>
-        <img src="./under_construction.svg" />
+        <img src={`${import.meta.env.BASE_URL}under_construction.svg`} />
       </div>}
       <div style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 1)" }} className='w-80 h-60'>
         <img className='rounded-lg w-80 h-60' style={{ objectFit: "cover" }} src={props.img}></img>

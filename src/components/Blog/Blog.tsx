@@ -22,7 +22,7 @@ export const Blog = (props: Blog__Props) => {
                         <div className="flex flex-col">
                             <div className='flex justify-center'>
                                 <div className="h-40 w-40">
-                                    <img src="./under_construction.svg" />
+                                    <img src={`${import.meta.env.BASE_URL}under_construction.svg`} />
                                 </div>
                             </div>
                             <p className="inline-block bg-red-500 rounded-xl text-center font-extrabold text-4xl" >This section is under construction</p>
