@@ -51,14 +51,14 @@ const Blog__TheRipSheet = () => {
                             sizePreset="compact"
                         />
                     </div>
-                    <Blog_Paragraph text="In 2018, I set out to learn weightlifting. Over time, through repeated iteration, I built a system I call the RIP Sheet. Early versions failed to track progress and enforce consistency—but I kept refining, testing, and improving. The name is a double entendre: a memento mori and a call to get ripped. Today is the day you make that change—this very rep." />
+                    <Blog_Paragraph text="In 2018, I set out to learn weightlifting. Over time, through repeated iteration, I built a system I call the RIP Sheet. Early versions failed to track progress and enforce consistency — but I kept refining, testing, and improving. The name is a double entendre: a memento mori and a call to get ripped. Today is the day you make that change — this very rep." />
                     <div className="rip-figure rip-figure--single">
                         <Blog_Image
                             variant="quarter"
                             src={ripSheetImageUrls[4]}
                             alt="Origin version of the RIP sheet layout"
                             figureLabel="Figure 1"
-                            figureCaption="Early RIP sheet concept and structure."
+                            figureCaption="Early (circa 2018) RIP sheet worksheet."
                             withMatte
                             figcaptionClassName={accentText}
                         />
@@ -68,7 +68,7 @@ const Blog__TheRipSheet = () => {
                 {/* Analog prototyping */}
                 <section className="rip-section rip-section--analog">
                     <Blog_Label align="left">Analog beginnings</Blog_Label>
-                    <Blog_Paragraph text="The first version of the RIP Sheet was a physical worksheet—a structured attempt to bring discipline into the gym without relying on screens. The layout was clear, but the medium wasn’t. Tracking progress across loose pages quickly became impractical, and paper doesn’t hold up well in a gym environment." />
+                    <Blog_Paragraph text="The first version of the RIP Sheet was a physical worksheet — a structured attempt to bring discipline into the gym without relying on screens. The layout was clear, but the medium wasn’t. Tracking progress across loose pages quickly became impractical, and paper doesn’t hold up well in a gym environment where gains are a factor." />
                     <Blog_Paragraph text="Alongside the sheet, I created a small reference packet for stretching and brought both with me to train." />
                     <div className="rip-figure rip-figure--single">
                         <Blog_Image
@@ -81,13 +81,13 @@ const Blog__TheRipSheet = () => {
                             figcaptionClassName={accentText}
                         />
                     </div>
-                    <Blog_Paragraph text="This workbook was the version I brought with me to the gym during early prototyping—an attempt to turn structure into habit. I found keeping track of the physical worksheets and transferring them into a digital format was very inconvenient." />
+                    <Blog_Paragraph text="This workbook was the version I brought with me to the gym during early prototyping — an attempt to turn structure into habit. I found keeping track of the physical worksheets and transferring them into a digital format was very inconvenient." />
                 </section>
 
                 {/* Digital system */}
                 <section className="rip-section rip-section--digital">
                     <Blog_Label align="left">From paper to data</Blog_Label>
-                    <Blog_Paragraph text="Eventually, I moved to Google Sheets, which made tracking progress far more efficient and reliable allowing me to track every rep I've made since 2022. Because I had already been collecting this data, I was able to analyze it later in a Linear Algebra for Data Science course in 2025." />
+                    <Blog_Paragraph text="Eventually, I moved to Google Sheets, which made tracking progress far more efficient and reliable, allowing me to easily track every rep I've made since 2022. Because I had already been collecting this data, I was able to analyze it later in a Linear Algebra for Data Science course in 2025." />
                     <Blog_Paragraph text="Processing the data was inconsistent at first, and I experimented with both JavaScript and C++. Over time, I simplified the system: each set is stored as JSON, defined by exercise name, weight, reps, and date. This structure makes generating visualizations straightforward, with same-day workouts naturally aligning in the data." />
                     <div className="rip-cta">
                         <p className={`rip-cta__label ${accentText}`}>Explore the notebooks + regression overlays</p>
@@ -133,7 +133,7 @@ const Blog__TheRipSheet = () => {
                 {/* Insights */}
                 <section className="rip-section rip-section--insights">
                     <div className={accentText}>
-                        <Blog_HeroQuote quote="Today is the day you make that life change—this very rep." sizePreset="balanced" />
+                        <Blog_HeroQuote quote="Today is the day you make that life change — this very rep." sizePreset="balanced" />
                     </div>
                     <div className="rip-figure rip-figure--wide">
                         <Blog_Image
@@ -146,7 +146,7 @@ const Blog__TheRipSheet = () => {
                             figcaptionClassName={accentText}
                         />
                     </div>
-                    <Blog_Paragraph text="Visualizations expose my habits instantly—what’s strong, what’s falling off, and where volume spikes. When I fit least-squares regressions to each lift, I could literally see plateaus forming." />
+                    <Blog_Paragraph text="Visualizations expose my habits instantly — what’s strong, what’s falling off, and where volume spikes. When I fit least-squares regressions to each lift, I could literally see plateaus forming." />
                     <div className={accentText}>
                         <Blog_HeroQuote quote="Fitting a least-squares regression to the data shows interesting trends:" sizePreset="compact" />
                     </div>
