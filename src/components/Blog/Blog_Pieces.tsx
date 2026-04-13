@@ -150,20 +150,22 @@ export const Blog_LinkElement = (props: Blog_LinkElement__Props) => {
     )
 }
 
+
+// Standardized paragraph block so typography stays consistent across posts.
 interface Blog_Paragraph__Props {
-    text: string;
+    children: ReactNode;
     className?: string;
 }
 
 // Standardized paragraph block so typography stays consistent across posts.
-export const Blog_Paragraph = ({ text, className }: Blog_Paragraph__Props) => {
+export const Blog_Paragraph = ({ children, className }: Blog_Paragraph__Props) => {
     // const base = "text-lg leading-relaxed text-slate-200 text-left max-w-3xl mx-auto";
     const base = "text-lg leading-relaxed text-slate-200 mt-5";
 
     return (
         <section className="mt-0" style={{ fontFamily: tertiaryFont }}>
             <p className={`${base} ${className ?? ""}`.trim()}>
-                {text}
+                {children}
             </p>
         </section>
     );
