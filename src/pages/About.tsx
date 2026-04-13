@@ -135,17 +135,32 @@ const About = () => {
             {softwareStacks.map((stack) => (
               <div key={stack.title} className="space-y-3">
                 <p className={`text-s uppercase tracking-[0.4em]  p-5 text-center font-bold ${accentText}`}>{stack.title}</p>
-                {/* <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-4 lg:grid-cols-5 xl:grid-cols-6">
-                 */}
-                 <div className="grid grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-                  {stack.tools.map((tool) => (
-                    <div key={tool} className="flex flex-col items-center gap-2 text-center">
-                      <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/15 bg-slate-800/60 text-xs uppercase tracking-wide text-slate-400">
-                        Logo
+                <div className="grid grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+                  {stack.tools.map((tool) => {
+                    const logoMap: Record<string, string> = {
+                      Firebase: "firebase_logo_40pt.svg",
+                      "Next.js": "next_logo_40pt.svg",
+                      Stripe: "stripe_logo_40pt.svg",
+                      Tailwind: "tailwind_logo_40pt.svg",
+                      Vercel: "vercel_logo_40pt.svg",
+                      Render: "render_logo_40pt.svg"
+
+                    };
+                    const logoSrc = logoMap[tool];
+
+                    return (
+                      <div key={tool} className="flex flex-col items-center gap-2 text-center">
+                        <div className={`flex h-16 w-16 items-center justify-center rounded-full text-xs uppercase tracking-wide text-slate-400 ${!logoSrc ? 'border border-white/15 bg-slate-800/60' : ''}`}>
+                          {logoSrc ? (
+                            <img src={`/${logoSrc}`} alt={`${tool} logo`} className="h-16 w-16" />
+                          ) : (
+                            "Logo"
+                          )}
+                        </div>
+                        <p className="text-sm font-medium text-white">{tool}</p>
                       </div>
-                      <p className="text-sm font-medium text-white">{tool}</p>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             ))}

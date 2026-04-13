@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 40 40">
+  <!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+
+      .st1 {
+        fill: none;
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+
+      .st2 {
+        display: none;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1">
+    <polygon class="st0" points="39.37 36.84 20 3.16 .63 36.84 39.37 36.84"/>
+  </g>
+  <g id="Grid_Base" class="st2">
+    <line class="st1" x1="20" x2="20" y2="40"/>
+  </g>
+</svg>

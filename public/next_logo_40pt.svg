@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 40 40">
+  <!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill-rule: evenodd;
+      }
+
+      .st0, .st1 {
+        fill: #fff;
+      }
+
+      .st2 {
+        fill: none;
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+
+      .st3 {
+        display: none;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1">
+    <path class="st1" d="M31.01,15.26h8.1v1.49h-3.21v7.86h-1.61v-7.86h-3.28v-1.49Z"/>
+    <path class="st1" d="M17.69,15.26v1.49h-6.49v2.4h5.22v1.49h-5.22v2.47h6.49v1.49h-8.1v-7.86h0v-1.49h8.1Z"/>
+    <path class="st1" d="M21.74,15.27h-2.1l7.53,9.36h2.11l-3.76-4.68,3.76-4.67h-2.1s-2.71,3.37-2.71,3.37l-2.72-3.37Z"/>
+    <path class="st1" d="M23.89,21.95l-1.05-1.31-3.21,3.99h2.11l2.16-2.68Z"/>
+    <path class="st0" d="M9.65,24.62L2.12,15.26H.11v9.36h1.61v-7.36l5.92,7.36h2.02Z"/>
+    <path class="st1" d="M39.47,24.56c-.12,0-.22-.04-.3-.12-.08-.08-.13-.18-.12-.3,0-.11.04-.21.12-.29s.18-.12.3-.12.21.04.3.12c.08.08.13.18.13.29,0,.08-.02.15-.06.21-.04.06-.09.11-.16.15-.06.04-.13.06-.21.06Z"/>
+  </g>
+  <g id="Grid_Base" class="st3">
+    <line class="st2" x1="20" x2="20" y2="40"/>
+  </g>
+</svg>
