@@ -27,7 +27,7 @@ const softwareStacks = [
     title: "Web Dev & Platforms",
     tools: ["Next.js", "Firebase", "Stripe", "Vercel", "Render", "Tailwind"],
   },
-    {
+  {
     title: "AI Tools",
     tools: ["Gemini", "Copilot", "ChatGPT", "Codex", "OpenClaw", "OpenAI API", "Claude"],
   },
@@ -151,13 +151,21 @@ const About = () => {
                       JavaScript: "javascript_logo_40pt.svg",
                       Python: "python_logo_40pt.svg",
                       "C++": "cpp_logo_40pt.svg",
+                      Powershell: "powershell_logo_40pt.svg",
+                      SQL: "sql_logo_40pt.svg",
                       Firebase: "firebase_logo_40pt.svg",
                       "Next.js": "next_logo_40pt.svg",
                       Stripe: "stripe_logo_40pt.svg",
                       Tailwind: "tailwind_logo_40pt.svg",
                       Vercel: "vercel_logo_40pt.svg",
-                      Render: "render_logo_40pt.svg"
-
+                      Render: "render_logo_40pt.svg",
+                      Gemini: "gemini_logo_40pt.svg",
+                      Copilot: "copilot_logo_40pt.svg",
+                      ChatGPT: "chatgpt_logo_40pt.svg",
+                      Codex: "codex_logo_40pt.svg",
+                      OpenClaw: "openclaw_logo_40pt.svg",
+                      "OpenAI API": "openai_logo_40pt.svg",
+                      Claude: "Claude_logo_40pt.svg"
                     };
                     const logoSrc = logoMap[tool];
 
