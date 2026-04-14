@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 40 40">
+  <!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  -->
+  <defs>
+    <style>
+      .st0, .st1 {
+        fill: none;
+      }
+
+      .st2 {
+        fill: url(#linear-gradient);
+      }
+
+      .st3 {
+        fill: #a52a22;
+        isolation: isolate;
+        opacity: .2;
+      }
+
+      .st4 {
+        fill: #ffcb2a;
+      }
+
+      .st5 {
+        fill: #f47d20;
+      }
+
+      .st1 {
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+
+      .st6 {
+        fill: #f9a01b;
+      }
+
+      .st7 {
+        fill: #fff;
+        fill-opacity: .2;
+      }
+
+      .st8 {
+        display: none;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-28.9" y1="70.77" x2="-28.58" y2="70.54" gradientTransform="translate(2750 9277.99) scale(95 -131)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity=".1"/>
+      <stop offset=".14" stop-color="#fff" stop-opacity=".08"/>
+      <stop offset=".61" stop-color="#fff" stop-opacity=".02"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_1">
+    <g>
+      <path class="st6" d="M5.38,32.25L10.29.81c.06-.39.36-.69.74-.76s.77.12.95.47l5.08,9.48,2.03-3.86c.16-.3.47-.48.8-.48s.65.19.8.48l13.71,26.11H5.38Z"/>
+      <path class="st5" d="M22.36,20l-5.29-10.01-11.69,22.26,16.98-12.25Z"/>
+      <path class="st4" d="M34.42,32.25l-3.76-23.29c-.06-.33-.3-.61-.62-.71s-.68-.02-.92.22L5.38,32.25l13.14,7.37c.82.46,1.83.46,2.65,0l13.25-7.37h0Z"/>
+      <path class="st7" d="M30.66,8.96c-.06-.33-.3-.61-.62-.71s-.68-.02-.92.22l-4.71,4.72-3.71-7.05c-.16-.3-.47-.48-.8-.48s-.65.19-.8.48l-2.03,3.86L11.99.52c-.18-.34-.57-.53-.95-.47s-.68.37-.74.76l-4.91,31.44h-.02l.02.02.13.06L29.11,8.7c.24-.24.59-.33.92-.22s.56.38.62.71l3.73,23.08.04-.02-3.76-23.29h0ZM5.42,32.21L10.29,1.03c.06-.39.36-.69.74-.76s.77.12.95.47l5.08,9.48,2.03-3.86c.16-.3.47-.48.8-.48s.65.19.8.48l3.63,6.9L5.42,32.21h0Z"/>
+      <path class="st3" d="M21.17,39.39c-.82.46-1.83.46-2.65,0l-13.1-7.35-.03.2,13.14,7.36c.82.46,1.83.46,2.65,0l13.25-7.36-.03-.21-13.22,7.35h0Z"/>
+      <path id="b" class="st2" d="M30.62,8.96c-.06-.33-.29-.61-.62-.71s-.67-.02-.91.22l-4.7,4.72-3.69-7.05c-.16-.3-.46-.48-.8-.48s-.64.19-.8.48l-2.02,3.86L12.02.53c-.18-.34-.57-.53-.95-.47s-.68.37-.74.76l-4.89,31.43,13.09,7.36c.82.46,1.82.46,2.65,0l13.2-7.36-3.75-23.28h0Z"/>
+      <line class="st0" x1="-4.94" y1="7.05" x2="-4.87" y2="7.05"/>
+    </g>
+  </g>
+  <g id="Grid_Base" class="st8">
+    <line class="st1" x1="20" x2="20" y2="40"/>
+  </g>
+</svg>
