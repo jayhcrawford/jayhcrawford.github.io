@@ -1,0 +1,70 @@
+#title,
+#slug {
+  display: flex;
+  align-contents: center;
+  justify-content: center;
+}
+
+#chartHTML {
+  background-color: rgb(248, 248, 248);
+  height: 450px;
+  width: 800px;
+  positon: relative;
+  padding: 30px 0px 0px 0px;
+}
+
+circle {
+  opacity: 0.2;
+}
+
+#tooltip {
+  height: 5em;
+  width: 13em;
+  position: absolute;
+  padding: 1em;
+  box-shadow: 4px 4px black;
+  outline: 2px solid black;
+  opacity: 0;
+}
+
+#legend {
+  background-color: lightblue;
+  margin: 1em;
+  width: 12em;
+  height: 4em;
+  padding: 1em;
+  background-color: rgb(248, 248, 248);
+
+}
+
+body {
+  position: relative;
+  font-family: arial;
+}
+
+#chart-and-legend {
+  display: flex;
+  justify-content: center;
+}
+
+#red-legend {
+  background-color: red;
+  height: 20px;
+  width: 20px;
+  opacity: .4;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+#grey-legend {
+  background-color: rgb(64,64,64);
+  height: 20px;
+  width: 20px;
+  opacity: .4;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+#stage {
+  height: 50em;
+}

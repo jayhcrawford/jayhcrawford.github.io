@@ -1,0 +1,31 @@
+#title {
+  text-align: center;
+}
+
+.bar {
+  width: 2.5px;
+}
+
+svg {
+  background-color: rgb(248,248,248);
+}
+
+.bar:hover {
+  opacity: 0;
+  cursor: pointer;
+}
+
+#tooltip {
+  background-color: white;
+  border: 1px solid black;
+  padding: 5px;
+  display: none;
+  width: 100px;
+  box-shadow: 3px 3px black;
+}
+
+svg {
+  display: flex;
+  margin: auto;
+  position: relative;
+}
