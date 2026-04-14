@@ -1,12 +1,7 @@
-import BlogListBonus, { BlogItem } from "../../components/BlogList";
+import D3VisualizationsGallery from './D3VisualizationsGallery';
 
-interface D3Visualizations__Props {
-  width: number;
-  blog_array: BlogItem[];
-}
-
-const D3Visualizations = (props: D3Visualizations__Props) => {
-  return <BlogListBonus width={props.width} blog_array={props.blog_array} />;
+const D3Visualizations = () => {
+  return <D3VisualizationsGallery />;
 };
 
 export default D3Visualizations;

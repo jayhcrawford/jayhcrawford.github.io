@@ -149,7 +149,7 @@ const App = () => {
                 <Route path="/projects/web_dev" element={<WebDev width={width} blog_array={web_dev_array} />} />
                 <Route path="/projects/programming" element={<Programming width={width} blog_array={programming_array} />} />
                 
-                <Route path="/projects/web_dev/d3-visualizations" element={<D3Visualizations width={width} blog_array={web_dev_array} />} />
+                <Route path="/projects/web_dev/d3-visualizations" element={<D3Visualizations />} />
                 
                 <Route path="/art" element={<Art width={width} category_array={art_array} />} />
                 <Route path="/art/painting" element={<Art width={width} category_array={painting_array} />} />
