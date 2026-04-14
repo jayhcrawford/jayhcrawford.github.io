@@ -11,13 +11,14 @@ const ThreeBackground = () => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({
-      alpha: true,
+      alpha: false,
       antialias: true,
-      powerPreference: 'high-performance',
     });
+
     renderer.setClearColor(0x000000, 0);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.NoToneMapping;
+    renderer.toneMappingExposure = 1;
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
     renderer.setSize(width, height);
@@ -37,9 +38,12 @@ const ThreeBackground = () => {
 
     for (let i = 0; i < 50; i++) {
       // Random scale between 0.03 and 0.1
-      const scale = 0.03 + Math.random() * (0.1 - 0.03);
-      const geometry = new THREE.SphereGeometry(scale, 7, 7);
-      const material = new THREE.MeshBasicMaterial({ color: "white" });
+      const scale = 0.02 + Math.random() * (0.1 - 0.03);
+      const geometry = new THREE.SphereGeometry(scale, 16, 16);
+      const material = new THREE.MeshBasicMaterial({
+        color: new THREE.Color(5, 5, 5), // 👈 HDR brightness
+      });
+      material.color.setRGB(4, 4.2, 3);
       const cube = new THREE.Mesh(geometry, material);
 
       cube.position.x = (Math.random() - 0.5) * 10;
@@ -57,14 +61,14 @@ const ThreeBackground = () => {
     const composer = new EffectComposer(renderer);
     composer.addPass(new RenderPass(scene, camera));
 
-    // Set up SelectiveBloomEffect
-    const selectiveBloomEffect = new BloomEffect({
-      intensity: 0.03,
-      luminanceThreshold: 0.25,
-      luminanceSmoothing: 0.35,
-      radius: 0.5,
+    // Set up bloom effect
+    const bloomEffect = new BloomEffect({
+      intensity: 1.2,
+      luminanceThreshold: 0.0,
+      luminanceSmoothing: 0.2,
+      mipmapBlur: true,
     });
-    const effectPass = new EffectPass(camera, selectiveBloomEffect);
+    const effectPass = new EffectPass(camera, bloomEffect);
     effectPass.renderToScreen = true;
     composer.addPass(effectPass);
 
@@ -73,7 +77,7 @@ const ThreeBackground = () => {
       frameId = window.requestAnimationFrame(animate);
 
       // Slow down the rotation
-      starGroup.rotation.x += 0.000089;
+      starGroup.rotation.x += 0.000199;
       starGroup.rotation.y += 0.000099;
 
       composer.render();
