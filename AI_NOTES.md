@@ -13,6 +13,7 @@ This repo is a Vite + React + TypeScript site for GitHub Pages. The CI/CD publis
 - GitHub Pages fallback: `npm run build` now copies `dist/index.html` to `dist/404.html` so BrowserRouter routes survive refreshes; keep this script (`scripts/copy-404.mjs`) if you change the build pipeline.
 - BrowserRouter runs with `basename={import.meta.env.BASE_URL}`; if you change the deployment path update this accordingly.
 - Styling is a mix of Tailwind (`src/tailwind.css`, `src/index.css`) and component CSS in `src/components/*.css`.
+- Skill/tool logos now live in `/public/*_logo_40pt.svg`; when referencing them in JSX, build the src with `${import.meta.env.BASE_URL}filename.svg` so GitHub Pages resolves correctly.
 - Fonts are in `src/assets/fonts/`.
 
 ## Commands
@@ -50,6 +51,7 @@ This repo is a Vite + React + TypeScript site for GitHub Pages. The CI/CD publis
 ## Recent Changes
 - Switched from `HashRouter` to `BrowserRouter` in `src/main.tsx` for clean URLs without `#` symbols. Updated internal links in `src/pages/About.tsx` from hash paths to regular paths (`/projects/urfriends`, `/projects/ripsheet`).
 - Built a focused Contact hero layout: `src/pages/Contact.tsx`.
+- Added a dedicated logos set for About-page skill stacks (SVGs live under `/public/*_logo_40pt.svg`) and updated blog cards to consume them.
 - Added Web Dev + Programming project list pages, data stubs, and routes:
   - `src/pages/Projects/WebDev.tsx`, `src/pages/Projects/WebDev_data.tsx`
   - `src/pages/Projects/Programming.tsx`, `src/pages/Projects/Programming_data.tsx`
