@@ -21,18 +21,21 @@ const softwareStacks = [
   },
   {
     title: "Coding / Languages",
-    tools: ["TypeScript", "JavaScript", "Python", "C++", "SQL"],
+    tools: ["TypeScript", "JavaScript", "Python", "C++", "Powershell", "SQL"],
   },
   {
     title: "Web Dev & Platforms",
     tools: ["Next.js", "Firebase", "Stripe", "Vercel", "Render", "Tailwind"],
+  },
+    {
+    title: "AI Tools",
+    tools: ["Gemini", "Copilot", "ChatGPT", "Codex", "OpenClaw", "OpenAI API"],
   },
 ];
 
 const accentText = "text-[#CCCFD9]";
 
 // TODO: Build out qualities list
-
 
 const About = () => {
   return (
@@ -107,7 +110,7 @@ const About = () => {
         <section className="space-y-6 text-lg leading-relaxed text-slate-200">
           {/* TODO: spin up a dedicated fitness/brag section that frames consistent training as a leadership habit. */}
           <Blog_Paragraph>
-            I thrive where <strong>hands-on execution</strong> meets <strong>polished storytelling</strong>. I have <strong><a href={linkedin} target='_blank' className="hover:text-white/80 transition-colors"><u>managed multimillion-dollar campus upgrades</u></a></strong>, <strong><a href="/projects/urfriends" className="hover:text-white/80 transition-colors"><u>shipped SaaS products</u></a></strong>, led hospitality teams, fabricated sets, and still carve out time to paint,
+            I thrive where <strong>hands-on execution</strong> meets <strong>polished storytelling</strong>. I have <strong><a href={linkedin} target='_blank' className="hover:text-white/80 transition-colors"><u>managed multimillion-dollar campus upgrades</u></a></strong>, <strong><a href="/projects/urfriends" className="hover:text-white/80 transition-colors"><u>shipped SaaS products</u></a></strong>, led hospitality teams, fabricated sets for film & TV, and still carve out time to paint,
             sketch, and cycle the Los Angeles river paths. Fitness is a huge passion of mine, especially running and cycling. As a runner, I love the distance and concentration, and as a cyclist I love the freedom. Each lane teaches me to stay calm, design deliberately, and
             communicate with clarity — and in every world thoughts of finding cross-pollination drive my imagination wild! I'm always looking for new ways to learn.
           </Blog_Paragraph>
@@ -135,7 +138,7 @@ const About = () => {
             {softwareStacks.map((stack) => (
               <div key={stack.title} className="space-y-3">
                 <p className={`text-s uppercase tracking-[0.4em]  p-5 text-center font-bold ${accentText}`}>{stack.title}</p>
-                <div className="grid grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+                <div className="grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-4">
                   {stack.tools.map((tool) => {
                     const logoMap: Record<string, string> = {
                       Firebase: "firebase_logo_40pt.svg",
