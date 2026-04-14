@@ -165,7 +165,7 @@ const About = () => {
                       Codex: "codex_logo_40pt.svg",
                       OpenClaw: "openclaw_logo_40pt.svg",
                       "OpenAI API": "openai_logo_40pt.svg",
-                      Claude: "Claude_logo_40pt.svg"
+                      Claude: "claude_logo_40pt.svg"
                     };
                     const logoSrc = logoMap[tool];
 
