@@ -1,4 +1,4 @@
-import { BloomEffect, EffectComposer, EffectPass, RenderPass } from 'postprocessing';
+import { EffectComposer, EffectPass, RenderPass, SelectiveBloomEffect } from "postprocessing";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import useWindowSize from '../hooks/useWindowSize';
@@ -11,8 +11,9 @@ const ThreeBackground = () => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({
-      alpha: false,
+      alpha: true,
       antialias: true,
+      powerPreference: 'high-performance',
     });
 
     renderer.setClearColor(0x000000, 0);
@@ -33,16 +34,15 @@ const ThreeBackground = () => {
       mountNode.appendChild(renderer.domElement);
     }
 
-    // Create a group to hold all the cubes
     const starGroup = new THREE.Group();
 
     for (let i = 0; i < 50; i++) {
-      // Random scale between 0.03 and 0.1
       const scale = 0.02 + Math.random() * (0.1 - 0.03);
       const geometry = new THREE.SphereGeometry(scale, 16, 16);
       const material = new THREE.MeshBasicMaterial({
-        color: new THREE.Color(5, 5, 5), // 👈 HDR brightness
+        color: new THREE.Color(5, 5, 5),
       });
+      material.toneMapped = false;
       material.color.setRGB(4, 4.2, 3);
       const cube = new THREE.Mesh(geometry, material);
 
@@ -54,38 +54,37 @@ const ThreeBackground = () => {
     }
 
     scene.add(starGroup);
-
     camera.position.z = 5;
 
-    // Set up postprocessing composer and passes
     const composer = new EffectComposer(renderer);
     composer.addPass(new RenderPass(scene, camera));
 
-    // Set up bloom effect
-    const bloomEffect = new BloomEffect({
-      intensity: 1.2,
-      luminanceThreshold: 0.0,
+    const selectiveBloomEffect = new SelectiveBloomEffect(scene, camera, {
+      blendFunction: 23,
+      intensity: 0.65,
+      luminanceThreshold: 0.08,
       luminanceSmoothing: 0.2,
+      radius: 0.6,
       mipmapBlur: true,
     });
-    const effectPass = new EffectPass(camera, bloomEffect);
+    selectiveBloomEffect.selection.add(starGroup);
+
+    const effectPass = new EffectPass(camera, selectiveBloomEffect);
     effectPass.renderToScreen = true;
     composer.addPass(effectPass);
 
     let frameId = 0;
     const animate = () => {
       frameId = window.requestAnimationFrame(animate);
-
-      // Slow down the rotation
       starGroup.rotation.x += 0.000199;
       starGroup.rotation.y += 0.000099;
-
       composer.render();
     };
+
     animate();
+
     return () => {
       window.cancelAnimationFrame(frameId);
-
       starGroup.traverse((object) => {
         if (object instanceof THREE.Mesh) {
           object.geometry.dispose();
@@ -109,4 +108,4 @@ const ThreeBackground = () => {
   return <div id="three_background" style={{ position: 'fixed', top: 0, left: 0, width: `${width}px`, height: `${height}px`, overflow: 'hidden', pointerEvents: 'none' }} ref={mountRef} />;
 };
 
-export default ThreeBackground
+export default ThreeBackground;
