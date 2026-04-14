@@ -1,4 +1,4 @@
-import { EffectComposer, EffectPass, RenderPass, SelectiveBloomEffect } from "postprocessing";
+import { BlendFunction, EffectComposer, EffectPass, RenderPass, SelectiveBloomEffect } from "postprocessing";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import useWindowSize from '../hooks/useWindowSize';
@@ -60,7 +60,7 @@ const ThreeBackground = () => {
     composer.addPass(new RenderPass(scene, camera));
 
     const selectiveBloomEffect = new SelectiveBloomEffect(scene, camera, {
-      blendFunction: 23,
+      blendFunction: BlendFunction.ADD,
       intensity: 0.65,
       luminanceThreshold: 0.08,
       luminanceSmoothing: 0.2,
