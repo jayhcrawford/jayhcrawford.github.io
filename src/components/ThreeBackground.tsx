@@ -1,7 +1,9 @@
-import { BlendFunction, EffectComposer, EffectPass, RenderPass, SelectiveBloomEffect } from "postprocessing";
+import { EffectComposer, EffectPass, RenderPass, SelectiveBloomEffect } from "postprocessing";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import useWindowSize from '../hooks/useWindowSize';
+
+const BLOOM_LAYER = 1;
 
 const ThreeBackground = () => {
   const { width, height } = useWindowSize();
@@ -10,6 +12,8 @@ const ThreeBackground = () => {
   useEffect(() => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+    camera.layers.enable(BLOOM_LAYER);
+
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
       antialias: true,
@@ -19,9 +23,7 @@ const ThreeBackground = () => {
     renderer.setClearColor(0x000000, 0);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.NoToneMapping;
-    renderer.toneMappingExposure = 1;
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-
     renderer.setSize(width, height);
     renderer.domElement.style.position = 'absolute';
     renderer.domElement.style.inset = '0';
@@ -37,20 +39,15 @@ const ThreeBackground = () => {
     const starGroup = new THREE.Group();
 
     for (let i = 0; i < 50; i++) {
-      const scale = 0.02 + Math.random() * (0.1 - 0.03);
+      const scale = 0.02 + Math.random() * 0.08;
       const geometry = new THREE.SphereGeometry(scale, 16, 16);
-      const material = new THREE.MeshBasicMaterial({
-        color: new THREE.Color(5, 5, 5),
-      });
+      const material = new THREE.MeshBasicMaterial({ color: new THREE.Color(4, 4.2, 3.8) });
       material.toneMapped = false;
-      material.color.setRGB(4, 4.2, 3);
-      const cube = new THREE.Mesh(geometry, material);
 
-      cube.position.x = (Math.random() - 0.5) * 10;
-      cube.position.y = (Math.random() - 0.5) * 10;
-      cube.position.z = (Math.random() - 0.5) * 10;
-
-      starGroup.add(cube);
+      const sphere = new THREE.Mesh(geometry, material);
+      sphere.position.set((Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10);
+      sphere.layers.enable(BLOOM_LAYER);
+      starGroup.add(sphere);
     }
 
     scene.add(starGroup);
@@ -59,25 +56,25 @@ const ThreeBackground = () => {
     const composer = new EffectComposer(renderer);
     composer.addPass(new RenderPass(scene, camera));
 
-    const selectiveBloomEffect = new SelectiveBloomEffect(scene, camera, {
-      blendFunction: BlendFunction.ADD,
-      intensity: 0.65,
-      luminanceThreshold: 0.08,
-      luminanceSmoothing: 0.2,
-      radius: 0.6,
+    const selectiveBloom = new SelectiveBloomEffect(scene, camera, {
+      blendFunction: 23,
+      intensity: 1.1,
+      luminanceThreshold: 0.02,
+      luminanceSmoothing: 0.25,
+      radius: 0.7,
       mipmapBlur: true,
     });
-    selectiveBloomEffect.selection.add(starGroup);
+    selectiveBloom.selection.add(starGroup);
 
-    const effectPass = new EffectPass(camera, selectiveBloomEffect);
+    const effectPass = new EffectPass(camera, selectiveBloom);
     effectPass.renderToScreen = true;
     composer.addPass(effectPass);
 
     let frameId = 0;
     const animate = () => {
       frameId = window.requestAnimationFrame(animate);
-      starGroup.rotation.x += 0.000199;
-      starGroup.rotation.y += 0.000099;
+      starGroup.rotation.x += 0.00018;
+      starGroup.rotation.y += 0.00011;
       composer.render();
     };
 
@@ -98,14 +95,17 @@ const ThreeBackground = () => {
 
       composer.dispose();
       renderer.dispose();
-
-      if (mountNode) {
-        mountNode.removeChild(renderer.domElement);
-      }
+      if (mountNode) mountNode.removeChild(renderer.domElement);
     };
   }, [width, height]);
 
-  return <div id="three_background" style={{ position: 'fixed', top: 0, left: 0, width: `${width}px`, height: `${height}px`, overflow: 'hidden', pointerEvents: 'none' }} ref={mountRef} />;
+  return (
+    <div
+      id="three_background"
+      style={{ position: 'fixed', top: 0, left: 0, width: `${width}px`, height: `${height}px`, overflow: 'hidden', pointerEvents: 'none' }}
+      ref={mountRef}
+    />
+  );
 };
 
 export default ThreeBackground;
