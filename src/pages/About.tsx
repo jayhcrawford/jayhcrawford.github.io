@@ -20,7 +20,7 @@ const softwareStacks = [
     tools: ["Photoshop", "Illustrator", "Maya", "Blender", "Fusion 360", "SOLIDWORKS"],
   },
   {
-    title: "Coding / Languages",
+    title: "Programming / Languages",
     tools: ["TypeScript", "JavaScript", "Python", "C++", "Powershell", "SQL"],
   },
   {
@@ -29,7 +29,7 @@ const softwareStacks = [
   },
     {
     title: "AI Tools",
-    tools: ["Gemini", "Copilot", "ChatGPT", "Codex", "OpenClaw", "OpenAI API"],
+    tools: ["Gemini", "Copilot", "ChatGPT", "Codex", "OpenClaw", "OpenAI API", "Claude"],
   },
 ];
 
@@ -132,7 +132,7 @@ const About = () => {
         <section className="space-y-8 rounded-2xl border border-white/10 bg-slate-900/40 p-6">
           <div className="flex items-baseline justify-between">
             <h2 className="text-2xl font-semibold text-white">Digital skills</h2>
-            <span className={`text-xs uppercase tracking-[0.4em] ${accentText}`}>TODO: ADD GRAPHIC</span>
+
           </div>
           <div className="space-y-6">
             {softwareStacks.map((stack) => (
@@ -141,6 +141,16 @@ const About = () => {
                 <div className="grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-4">
                   {stack.tools.map((tool) => {
                     const logoMap: Record<string, string> = {
+                      Photoshop: "photoshop_logo_40pt.svg",
+                      Illustrator: "illustrator_logo_40pt.svg",
+                      Maya: "maya_logo_40pt.svg",
+                      Blender: "blender_logo_40pt.svg",
+                      "Fusion 360": "fusion_logo_40pt.svg",
+                      SOLIDWORKS: "solidworks_logo_40pt.svg",
+                      TypeScript: "typescript_logo_40pt.svg",
+                      JavaScript: "javascript_logo_40pt.svg",
+                      Python: "python_logo_40pt.svg",
+                      "C++": "cpp_logo_40pt.svg",
                       Firebase: "firebase_logo_40pt.svg",
                       "Next.js": "next_logo_40pt.svg",
                       Stripe: "stripe_logo_40pt.svg",
