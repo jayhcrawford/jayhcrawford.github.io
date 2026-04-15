@@ -98,7 +98,7 @@ const D3VisualizationsGallery = () => {
   const accentText = BLOG_ACCENT_TEXT;
 
   return (
-    <Blog construction={false} title="D3 Visualizations">
+    <Blog construction={true} title="D3 Visualizations">
       <div className="space-y-10 text-slate-100">
         <Blog_Card tone="glass" className="space-y-6 text-center">
           <Blog_Label>Codepen workbench</Blog_Label>

@@ -19,7 +19,7 @@ const Blog__UrFriends = () => {
     const accentText = BLOG_ACCENT_TEXT;
 
     return (
-        <Blog construction={false} title="UrFriends">
+        <Blog construction={true} title="UrFriends">
             <div className="space-y-10 text-slate-100">
                 <Blog_Card tone="glass" className="space-y-6 text-center">
                     <Blog_Label>Intentional relationship OS</Blog_Label>

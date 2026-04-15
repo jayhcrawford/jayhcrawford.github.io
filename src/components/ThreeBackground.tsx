@@ -1,4 +1,4 @@
-import { EffectComposer, EffectPass, RenderPass, SelectiveBloomEffect } from "postprocessing";
+import { BlendFunction, EffectComposer, EffectPass, RenderPass, SelectiveBloomEffect } from "postprocessing";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import useWindowSize from '../hooks/useWindowSize';
@@ -41,8 +41,10 @@ const ThreeBackground = () => {
     for (let i = 0; i < 50; i++) {
       const scale = 0.02 + Math.random() * 0.08;
       const geometry = new THREE.SphereGeometry(scale, 16, 16);
-      const material = new THREE.MeshBasicMaterial({ color: new THREE.Color(4, 4.2, 3.8) });
+      const material = new THREE.MeshBasicMaterial({ color: new THREE.Color(1, 1, 1) });
       material.toneMapped = false;
+
+      material.color.multiplyScalar(4);
 
       const sphere = new THREE.Mesh(geometry, material);
       sphere.position.set((Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10);
@@ -57,14 +59,18 @@ const ThreeBackground = () => {
     composer.addPass(new RenderPass(scene, camera));
 
     const selectiveBloom = new SelectiveBloomEffect(scene, camera, {
-      blendFunction: 23,
+      blendFunction: BlendFunction.ADD,
       intensity: 1.1,
       luminanceThreshold: 0.02,
       luminanceSmoothing: 0.25,
       radius: 0.7,
       mipmapBlur: true,
     });
-    selectiveBloom.selection.add(starGroup);
+    // selectiveBloom.selection.add(starGroup);
+
+    starGroup.children.forEach((obj) => {
+      selectiveBloom.selection.add(obj);
+    });
 
     const effectPass = new EffectPass(camera, selectiveBloom);
     effectPass.renderToScreen = true;
@@ -75,7 +81,12 @@ const ThreeBackground = () => {
       frameId = window.requestAnimationFrame(animate);
       starGroup.rotation.x += 0.00018;
       starGroup.rotation.y += 0.00011;
+      
+      // Render the scene with bloom effect
       composer.render();
+
+      // DEBUG render without bloom to check performance impact
+      // renderer.render(scene, camera);
     };
 
     animate();
