@@ -66,7 +66,6 @@ const ThreeBackground = () => {
       radius: 0.7,
       mipmapBlur: true,
     });
-    // selectiveBloom.selection.add(starGroup);
 
     starGroup.children.forEach((obj) => {
       selectiveBloom.selection.add(obj);
@@ -81,7 +80,7 @@ const ThreeBackground = () => {
       frameId = window.requestAnimationFrame(animate);
       starGroup.rotation.x += 0.00018;
       starGroup.rotation.y += 0.00011;
-      
+
       // Render the scene with bloom effect
       composer.render();
 

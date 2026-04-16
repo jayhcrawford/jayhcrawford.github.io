@@ -78,7 +78,7 @@ const About = () => {
               <p className={`text-xs uppercase tracking-[0.4em] pb-5 pt-5 ${accentText}`}>What Drives Me</p>
               <div className="flex flex-wrap gap-3">
                 {curiosityList.map((item) => (
-                  <span key={item} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm">
+                  <span key={item} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 md:px-3 md:py-1 text-sm sm:px-4 sm:py-2">
                     {item}
                   </span>
                 ))}
