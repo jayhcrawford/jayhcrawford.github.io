@@ -10,8 +10,10 @@ const aboutHighlights = [
 
 const curiosityList = [
   "Designing community-driven software",
-  "Digitizing construction workflows",
-  "Making data feel human (fitness, fabrication, finance)",
+  "Digitizing workflows",
+  "Making data feel human",
+  "Creativity",
+  "Exploring and learning"
 ];
 
 const softwareStacks = [
