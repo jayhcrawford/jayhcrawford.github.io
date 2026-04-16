@@ -140,7 +140,7 @@ const About = () => {
             {softwareStacks.map((stack) => (
               <div key={stack.title} className="space-y-3">
                 <p className={`text-s uppercase tracking-[0.4em]  p-5 text-center font-bold ${accentText}`}>{stack.title}</p>
-                <div className="grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-4">
+                <div className="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] gap-4">
                   {stack.tools.map((tool) => {
                     const logoMap: Record<string, string> = {
                       Photoshop: "photoshop_logo_40pt.svg",
