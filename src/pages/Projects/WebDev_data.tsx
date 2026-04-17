@@ -6,11 +6,11 @@ export const web_dev_array: BlogItem[] = [
   {
     title: "This Website!",
     img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/product-design-icons/jayhcrawford-domain.webp",
-    about_txt: "This resposnive website uses Threejs, CSS, SVG, React, GitHub. I made the components.",
+    about_txt: "This responsive, Vite-based website uses Threejs, CSS, SVG, React, GitHub.",
     url: "https://medium.com/@jayhcrawford/taking-my-github-from-html-based-pages-to-a-vite-based-react-app-a202d7be2ad0",
     under_construction: true
   },
-    {
+  {
     title: "d3 Data Visuatilzations",
     img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/programming-icons/d3_tempGraph.webp",
     about_txt: "CSS by me; Originally written with while I did freeCodeCamp in 2023.",
