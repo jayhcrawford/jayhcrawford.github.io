@@ -22,12 +22,12 @@ const Blog__WidowBags = () => {
                 <Blog_Card tone="glass" className="space-y-6 text-center">
                     <Blog_Label>Concept studio</Blog_Label>
                     <Blog_HeroQuote quote="Widow Bags is a sculptural apparel line born at SAIC." sizePreset="balanced" />
-                    <Blog_Paragraph>The concept mixes high-energy nightlife silhouettes with utilitarian construction details. Think matte black textiles, exaggerated hardware, and pockets that feel architectural.</Blog_Paragraph>
+                    <Blog_Paragraph>The concept mixes high-energy nightlife silhouettes with utilitarian construction details. High visibility and high fashion. Think matte black textiles, exaggerated hardware, and pockets that feel architectural.</Blog_Paragraph>
                 </Blog_Card>
 
                 <Blog_Card className="space-y-6">
                     <Blog_Label align="left">Design roots</Blog_Label>
-                    <Blog_Paragraph>The earliest prototypes came out of School of the Art Institute of Chicago studios. I blended patternmaking assignments with personal experiments—laser-cut vinyl overlays, powder-coated buckles, and partnered stitching with metal fabrication classmates.</Blog_Paragraph>
+                    <Blog_Paragraph>The earliest prototypes came out of School of the Art Institute of Chicago studios. I blended patternmaking assignments with personal experiments with my experience as an urban cyclist and athlete.</Blog_Paragraph>
                     <div className="grid gap-6 md:grid-cols-2">
                         {moodboardImages.map((src, index) => (
                             <Blog_Image
