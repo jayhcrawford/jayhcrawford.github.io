@@ -11,15 +11,15 @@ import {
 const blogImages = [
     {
         src: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/the_book_images/page_snapshot_THE_BOOK.png",
-        alt: "The Book page snapshot",
-        figureLabel: "Page 1",
-        figureCaption: "Initial snapshot of The Book"
+        alt: "Snapshot of an excerpt from Too Soon Old, Too Late Smart by Gordon Livingston",
+        figureLabel: "Figure 1",
+        figureCaption: "Snapshot of an excerpt from Too Soon Old, Too Late Smart"
     },
     {
         src: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/the_book_images/page_snapshot2_THE_BOOK.png",
-        alt: "The Book page snapshot 2",
-        figureLabel: "Page 2",
-        figureCaption: "Second snapshot of The Book"
+        alt: "To obtain better results than the others, you must do something different than the others. -Sir John Templeton.",
+        figureLabel: "Figure 2",
+        figureCaption: "Snapshot of a favorite Templeton quote"
     },
 ];
 
