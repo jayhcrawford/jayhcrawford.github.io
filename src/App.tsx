@@ -26,6 +26,8 @@ import Blog__TheRipSheet from './pages/Blog__TheRipSheet/Blog__TheRipSheet';
 import Blog__UrFriends from './pages/Blog__UrFriends/Blog__UrFriends';
 import Blog__WidowBags from './pages/Blog__WidowBags/Blog__WidowBags';
 import PaintingPeriod from './pages/PaintingPeriod';
+import ComingSoon from './pages/Projects3D/ComingSoon';
+import MyPlaceGallery from './pages/Projects3D/MyPlace';
 import { art_array } from './pages/Projects/Art_data';
 import { design_array } from './pages/Projects/Design_data';
 import { drawing_array } from './pages/Projects/Drawing_data';
@@ -145,6 +147,10 @@ const App = () => {
                 <Route path="/" element={<></>} />
                 <Route path="/about" element={<About />} />
                 <Route path="/projects/3d" element={<Projects3D width={width} blog_array={projects_3d_array} />} />
+                <Route path="/projects/3d/my-place" element={<MyPlaceGallery />} />
+                <Route path="/projects/3d/blitz3d" element={<ComingSoon label="Blitz3D" />} />
+                <Route path="/projects/3d/my-place" element={<MyPlaceGallery />} />
+                <Route path="/projects/3d/blitz3d" element={<ComingSoon label="Blitz3D" />} />
                 <Route path="/projects" element={<Projects width={width} category_array={projects_array} />} />
                 <Route path="/projects/web_dev" element={<WebDev width={width} blog_array={web_dev_array} />} />
                 <Route path="/projects/programming" element={<Programming width={width} blog_array={programming_array} />} />

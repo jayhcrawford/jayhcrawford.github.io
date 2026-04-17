@@ -4,8 +4,21 @@
 export const projects_3d_array = [
     {
         title: "My Place",
+        slug: "my-place",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/orthographic-icon.jpg",
         about_txt: "Autodesk Maya and Arnold project.",
+    },
+    {
+        title: "Blitz3D",
+        slug: "blitz3d",
+        img: "https://placehold.co/400x260/0f172a/ffffff?text=Blitz3D",
+        about_txt: "Fast-paced micro FPS prototype built in Blitz3D circa 2010.",
+    },
+    {
+        title: "Blitz3D",
+        slug: "blitz3d",
+        img: "https://placehold.co/400x260/0f172a/ffffff?text=Blitz3D",
+        about_txt: "Fast-paced micro FPS prototype built in Blitz3D circa 2010.",
     },
     {
         title: "Door Project",
@@ -14,16 +27,25 @@ export const projects_3d_array = [
     },
     {
         title: "3D Me :-)",
+        slug: "3d-me",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/3d-jay-icon.jpg",
         about_txt: "Fully rigged, simple 3D character modeled after me. This helped me to better understand topology, weight-painting, and rigging.",
     },
     {
+        title: "Blitz3D",
+        slug: "blitz3d",
+        img: "https://placehold.co/400x260/0f172a/ffffff?text=Blitz3D",
+        about_txt: "Fast-paced micro FPS prototype built in Blitz3D circa 2010.",
+    },
+    {
         title: "Fusion360 Tripod",
+        slug: "fusion360-tripod",
         img: "https://jayhcrawford-webdocs.s3.us-east-2.amazonaws.com/webdocs-icons/tripod-drawing-icon.webp",
         about_txt: "In my first engineering drawing course, we used Fusion360. I made this there as my final.",
     },
     {
         title: "Solidworks Japanese Lantern",
+        slug: "solidworks-japanese-lantern",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/product-design-icons/j-lantern-icon.webp",
         about_txt: "In my second engineering drawing course, my groupmates and I collaborated together to make a Japanese-inspired lamp.",
     },

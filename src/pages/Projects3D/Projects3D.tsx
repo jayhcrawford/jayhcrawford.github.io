@@ -2,7 +2,7 @@ import BlogList, { BlogItem } from "../../components/BlogList";
 
 interface Projects3D__Props {
     width: number;
-    blog_array: BlogItem[];
+    blog_array: (BlogItem & { slug?: string })[];
 }
 
 const Projects3D = (props: Projects3D__Props) => {
