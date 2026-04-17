@@ -125,8 +125,7 @@ const About = () => {
             When I am not laboring (with love ofc), you will find me studying new fabrication techniques, spelunking the wiki of my latest fascination, long-distance or trail running, homecanning beans (they're SO good), riding my bike around LA, going to an art museum, or tinkering creatively. I'm big on "hippie" type stuff, get way into reading about present and future green-tech, and resonate with preserving the environment — you may spot me using a bicycle or public transit.
           </Blog_Paragraph>
           <Blog_Paragraph>
-            I still say yes to the weird gigs — they keep me humble
-            and curious.
+            I find myself chasing things that keep me curious.
           </Blog_Paragraph>
         </section>
 
