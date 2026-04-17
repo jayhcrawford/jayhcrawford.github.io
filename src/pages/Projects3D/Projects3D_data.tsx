@@ -7,6 +7,7 @@ export const projects_3d_array = [
         slug: "my-place",
         img: "https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/web-icons/Web+Hosted/3d-project-icons/orthographic-icon.jpg",
         about_txt: "Autodesk Maya and Arnold project.",
+        url: "/projects/3d/my-place"
     },
     {
         title: "Blitz3D",
