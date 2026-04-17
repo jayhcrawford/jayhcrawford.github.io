@@ -53,12 +53,12 @@ const About = () => {
         `
       </style>
       <div className="relative flex items-center justify-center rounded-2xl border border-dashed border-white/20 bg-slate-800/40 p-6 text-center">
-        <div>
-          <p className={`text-sm uppercase tracking-[0.3em] ${accentText}`}>
-            Portrait Placeholder
-          </p>
-          <p className="mt-3 text-xl font-semibold text-white">Drop a high-contrast photo here</p>
-          <p className="mt-2 text-sm text-slate-300">Suggested: clean lighting, subtle gradient background, confident but relaxed posture.</p>
+        <div className="flex justify-center max-w-50">
+          <img
+            src="https://jayhcrawford-webimages.s3.us-east-2.amazonaws.com/images/about_portrait.webp"
+            alt="Jay Crawford portrait"
+            className="rounded-lg h-auto"
+          />
         </div>
       </div>
       <div className="space-y-16 text-slate-100">
