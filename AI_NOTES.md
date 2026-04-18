@@ -4,12 +4,15 @@
 
 This repo is a Vite + React + TypeScript site for GitHub Pages. The CI/CD publishes when pushed to GitHub. Avoid deploying unless explicitly requested.
 
+➡️ Jay spun up an experimental branch `planet` that roughs in a new version of `ThreeBackground.tsx`. Leave it untouched unless Jay specifically asks you to work there; keep regular work on `main`.
+
 ## Quick Orientation
 - Entry points: `src/main.tsx`, `src/App.tsx`.
 - Pages live under `src/pages/`.
 - Project/category data lives in `src/pages/Projects/*_data.tsx` and `src/pages/Projects3D/Projects3D_data.tsx`.
 - Shared components live in `src/components/`.
 - Shared blog typography components (`Blog_Card`, `Blog_Label`, etc.) now live in `src/components/Blog/Blog_Pieces.tsx`; use them instead of ad-hoc Tailwind for future articles.
+- 3D gallery pages share `src/pages/Projects3D/GalleryPage.tsx`; each project exports a thin wrapper file (e.g., `MyPlace.tsx`) with intro copy + frame metadata.
 - GitHub Pages fallback: `npm run build` now copies `dist/index.html` to `dist/404.html` so BrowserRouter routes survive refreshes; keep this script (`scripts/copy-404.mjs`) if you change the build pipeline.
 - BrowserRouter runs with `basename={import.meta.env.BASE_URL}`; if you change the deployment path update this accordingly.
 - Styling is a mix of Tailwind (`src/tailwind.css`, `src/index.css`) and component CSS in `src/components/*.css`.
@@ -44,6 +47,7 @@ This repo is a Vite + React + TypeScript site for GitHub Pages. The CI/CD publis
 - Fill in painting period galleries with correct image sets per year:
   - `src/pages/Projects/Painting_periods_data.tsx`
   - `src/pages/PaintingPeriod.tsx`
+- Swap placeholder renders + captions in the new 3D gallery pages (`src/pages/Projects3D/*.tsx`) with real assets once they’re ready.
 ## Content Notes
 - Most TODOs are content/layout placeholders. Ask the user for assets and copy before filling lists or updating images.
 - Keep art/project metadata consistent with existing data object shapes in the data files.
@@ -52,14 +56,9 @@ This repo is a Vite + React + TypeScript site for GitHub Pages. The CI/CD publis
 - Switched from `HashRouter` to `BrowserRouter` in `src/main.tsx` for clean URLs without `#` symbols. Updated internal links in `src/pages/About.tsx` from hash paths to regular paths (`/projects/urfriends`, `/projects/ripsheet`).
 - Built a focused Contact hero layout: `src/pages/Contact.tsx`.
 - Added a dedicated logos set for About-page skill stacks (SVGs live under `/public/*_logo_40pt.svg`) and updated blog cards to consume them.
-- Added Web Dev + Programming project list pages, data stubs, and routes:
-  - `src/pages/Projects/WebDev.tsx`, `src/pages/Projects/WebDev_data.tsx`
-  - `src/pages/Projects/Programming.tsx`, `src/pages/Projects/Programming_data.tsx`
-  - routes in `src/App.tsx`
-- Stubbed painting period galleries with per-period image arrays and a period route:
-  - `src/pages/Projects/Painting_periods_data.tsx`
-  - `src/pages/PaintingPeriod.tsx`
-  - `/art/painting/:periodSlug` route in `src/App.tsx`
+- Added Web Dev + Programming project list pages, data stubs, and routes (see `src/pages/Projects/WebDev*.tsx`, `Programming*.tsx`, and `src/App.tsx`).
+- Stubbed painting period galleries with per-period image arrays plus the `/art/painting/:periodSlug` route.
+- Built a reusable gallery system for every 3D project: `src/pages/Projects3D/GalleryPage.tsx` plus project-specific wrappers (`MyPlace.tsx`, `Blitz3D.tsx`, etc.). `projects_3d_array` now includes `slug` + absolute `url` so the 3D hub and LocationBar link straight to each gallery.
 
 ## Suggested First Steps For Future Work
 1. Ask the user which TODOs to prioritize (content, layout, or data cleanup).
